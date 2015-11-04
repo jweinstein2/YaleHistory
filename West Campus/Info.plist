@@ -33,8 +33,14 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>YaleNew</string>
+		<string>YaleNew-Bold.otf</string>
+		<string>YaleNew-BoldItalic.otf</string>
+		<string>YaleNew-Italic.otf</string>
+		<string>YaleNew-Roman.otf</string>
 	</array>
 </dict>
 </plist>
