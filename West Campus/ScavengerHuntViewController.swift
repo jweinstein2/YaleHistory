@@ -10,6 +10,11 @@ import UIKit
 
 class ScavengerHuntViewController: UIViewController {
     
+    @IBAction func buttonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil);
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

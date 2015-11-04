@@ -9,6 +9,9 @@
 import UIKit
 
 class MapViewController: UIViewController {
+    @IBAction func buttonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
