@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var scavengerHunt: UIButton!
+    @IBOutlet weak var projectInformation: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
