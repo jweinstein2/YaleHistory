@@ -42,5 +42,10 @@
 		<string>YaleNew-Italic.otf</string>
 		<string>YaleNew-Roman.otf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

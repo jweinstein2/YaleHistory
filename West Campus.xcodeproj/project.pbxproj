@@ -21,6 +21,12 @@
 		894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */; };
 		894CA6F71BE99FBE005D2B2A /* West_CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6F61BE99FBE005D2B2A /* West_CampusTests.swift */; };
 		894CA7021BE99FBE005D2B2A /* West_CampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA7011BE99FBE005D2B2A /* West_CampusUITests.swift */; };
+		896A5A911BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 896A5A901BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */; };
+		896A5A951BEECB2E00780F79 /* Yale Y small.png in Resources */ = {isa = PBXBuildFile; fileRef = 896A5A941BEECB2E00780F79 /* Yale Y small.png */; };
+		896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896A5A961BEED24900780F79 /* AboutViewController.swift */; };
+		898136051BEEDD2800ACD35C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136031BEEDD2800ACD35C /* Project.swift */; };
+		898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136041BEEDD2800ACD35C /* ProjectData.swift */; };
+		898136081BEEDEE700ACD35C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136071BEEDEE700ACD35C /* MainModel.swift */; };
 		CF8ECEF9F140011DF590D19B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D31B6E516A232D169684FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,12 @@
 		894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-BoldItalic.otf"; sourceTree = "<group>"; };
 		894CA71E1BE9A895005D2B2A /* YaleNew-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Italic.otf"; sourceTree = "<group>"; };
 		894CA71F1BE9A895005D2B2A /* YaleNew-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Roman.otf"; sourceTree = "<group>"; };
+		896A5A901BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2015-11-06 at 5.58.30 PM.png"; sourceTree = "<group>"; };
+		896A5A941BEECB2E00780F79 /* Yale Y small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yale Y small.png"; sourceTree = "<group>"; };
+		896A5A961BEED24900780F79 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		898136031BEEDD2800ACD35C /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		898136041BEEDD2800ACD35C /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
+		898136071BEEDEE700ACD35C /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		D0D31B6E516A232D169684FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +144,10 @@
 				894CA6E01BE99FBE005D2B2A /* ViewController.swift */,
 				892B37351BE9B9C600E1174C /* MapViewController.swift */,
 				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
+				896A5A961BEED24900780F79 /* AboutViewController.swift */,
+				898136031BEEDD2800ACD35C /* Project.swift */,
+				898136071BEEDEE700ACD35C /* MainModel.swift */,
+				898136041BEEDD2800ACD35C /* ProjectData.swift */,
 				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
 				894CA6E81BE99FBE005D2B2A /* Assets.xcassets */,
 				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
@@ -162,6 +178,8 @@
 		894CA70F1BE9A5E0005D2B2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				896A5A901BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */,
+				896A5A941BEECB2E00780F79 /* Yale Y small.png */,
 				894CA7201BE9AA4E005D2B2A /* Yale Official Font */,
 			);
 			name = Resources;
@@ -300,7 +318,9 @@
 				892B37321BE9B1FB00E1174C /* YaleNew-Roman.otf in Resources */,
 				894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */,
 				894CA6E91BE99FBE005D2B2A /* Assets.xcassets in Resources */,
+				896A5A911BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */,
 				894CA6E41BE99FBE005D2B2A /* Main.storyboard in Resources */,
+				896A5A951BEECB2E00780F79 /* Yale Y small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,11 +393,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */,
 				892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */,
 				894CA6E11BE99FBE005D2B2A /* ViewController.swift in Sources */,
 				894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */,
 				894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */,
+				898136081BEEDEE700ACD35C /* MainModel.swift in Sources */,
+				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,
 				892B37361BE9B9C600E1174C /* MapViewController.swift in Sources */,
+				898136051BEEDD2800ACD35C /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
