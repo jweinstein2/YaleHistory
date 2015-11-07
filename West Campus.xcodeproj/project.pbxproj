@@ -21,6 +21,7 @@
 		894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */; };
 		894CA6F71BE99FBE005D2B2A /* West_CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6F61BE99FBE005D2B2A /* West_CampusTests.swift */; };
 		894CA7021BE99FBE005D2B2A /* West_CampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA7011BE99FBE005D2B2A /* West_CampusUITests.swift */; };
+		A39865601BED75240018DFB0 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A398655F1BED75240018DFB0 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */; };
 		CF8ECEF9F140011DF590D19B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D31B6E516A232D169684FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-BoldItalic.otf"; sourceTree = "<group>"; };
 		894CA71E1BE9A895005D2B2A /* YaleNew-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Italic.otf"; sourceTree = "<group>"; };
 		894CA71F1BE9A895005D2B2A /* YaleNew-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Roman.otf"; sourceTree = "<group>"; };
+		A398655F1BED75240018DFB0 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2015-11-06 at 5.58.30 PM.png"; path = "../../../Desktop/Screen Shot 2015-11-06 at 5.58.30 PM.png"; sourceTree = "<group>"; };
 		D0D31B6E516A232D169684FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 		894CA70F1BE9A5E0005D2B2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A398655F1BED75240018DFB0 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */,
 				894CA7201BE9AA4E005D2B2A /* Yale Official Font */,
 			);
 			name = Resources;
@@ -296,6 +299,7 @@
 			files = (
 				892B372F1BE9B1FB00E1174C /* YaleNew-Bold.otf in Resources */,
 				892B37301BE9B1FB00E1174C /* YaleNew-BoldItalic.otf in Resources */,
+				A39865601BED75240018DFB0 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */,
 				892B37311BE9B1FB00E1174C /* YaleNew-Italic.otf in Resources */,
 				892B37321BE9B1FB00E1174C /* YaleNew-Roman.otf in Resources */,
 				894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */,
