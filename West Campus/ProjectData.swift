@@ -18,8 +18,10 @@ class ProjectData: NSObject {
     init(var inputString: String){
         super.init()
         
-        inputString = inputString.substringToIndex(inputString.endIndex.predecessor())
+        inputString = inputString.substringToIndex(inputString.endIndex.predecessor())    
+        
         var projectArr = inputString.componentsSeparatedByString("}")
+        projectArr.removeLast() //remove bc separating by end braces leaves an empty string at the end
         
         for var index = 0; index < projectArr.count; ++index{
             projectArr[index] = projectArr[index].substringFromIndex(projectArr[index].startIndex.advancedBy(2))
@@ -33,7 +35,9 @@ class ProjectData: NSObject {
             let action = find(projectArr[index], element: "action")
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
             let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action)
-      
+            
+            NSLog(id + title + summary + link +  clue + action)
+            
             projectData.append(currentProject)
         }
     }
@@ -43,10 +47,9 @@ class ProjectData: NSObject {
         var tokens = project.componentsSeparatedByString(",")
         
         for var index = 0; index < tokens.count; ++index{
-            NSLog(String(index))
-            NSLog(tokens[index])
-            if tokens[index] == element {
-                return tokens[index+1]
+            var map = tokens[index].componentsSeparatedByString(":")
+            if map[0] == element {
+                return map[1]
             }
         }
         NSLog("error")

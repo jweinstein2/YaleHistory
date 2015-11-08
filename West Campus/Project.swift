@@ -15,9 +15,9 @@ class Project {
     var gpsLatitude: Double
     var gpsLongitude: Double
     var clue: String
-    var action: String
+    var action: String?
     
-    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String){
+    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?){
         NSLog("printing")
         NSLog(projectId)
         NSLog("printing")
