@@ -11,27 +11,27 @@ import UIKit
 class ProjectData: NSObject {
     var projectData = [Project]()
     
-    func initialize (var inputString: String){
+    override init() {
+        NSLog("Error please use the custom initializer")
+    }
+    
+    init(var inputString: String){
+        super.init()
         
         inputString = inputString.substringToIndex(inputString.endIndex.predecessor())
         var projectArr = inputString.componentsSeparatedByString("}")
         
-        for var index = 0; index < projectArr.capacity; ++index{
+        for var index = 0; index < projectArr.count; ++index{
             projectArr[index] = projectArr[index].substringFromIndex(projectArr[index].startIndex.advancedBy(2))
             let id = find(projectArr[index], element: "project_id")
             let title = find(projectArr[index], element: "title")
             let summary = find(projectArr[index], element: "summary")
             let link = find(projectArr[index], element: "link")
-            let gpsLatitude = Double(find(projectArr[index], element: "gps_latitude"))
-            let gpsLongitude = Double(find(projectArr[index], element: "gps_longitude"))
+            let gpsLatitude : Double! = Double(find(projectArr[index], element: "gps_latitude"))
+            let gpsLongitude : Double! = Double(find(projectArr[index], element: "gps_longitude"))
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
-            
-            NSLog("printing")
-            NSLog(id)
-            NSLog("End print")
-            
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, clue: clue, action: action)
+            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action)
       
             projectData.append(currentProject)
         }
@@ -41,7 +41,9 @@ class ProjectData: NSObject {
         project = project.stringByReplacingOccurrencesOfString("\"", withString: "")
         var tokens = project.componentsSeparatedByString(",")
         
-        for var index = 0; index <= tokens.capacity; ++index{
+        for var index = 0; index < tokens.count; ++index{
+            NSLog(String(index))
+            NSLog(tokens[index])
             if tokens[index] == element {
                 return tokens[index+1]
             }

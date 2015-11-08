@@ -9,8 +9,9 @@ import UIKit
 import Foundation
 
 class MainModel{
+    var projects : ProjectData!
 
-    var myHTMLString: String? = ""
+    var myHTMLString: String?
 
     init(){
         let myURLString = "http://contripity.net/wildwest/researchprojects.php"
@@ -22,10 +23,9 @@ class MainModel{
             }catch{
                 NSLog("ERROR: Line 21 of Main Model - Failed to download the contents of json from website")
             }
-            NSLog(myHTMLString!)
+            projects = ProjectData(inputString: myHTMLString!)
         } else {
             NSLog("Error: \(myURLString) doesn't seem to be a valid URL")
         }
-
     }
 }
