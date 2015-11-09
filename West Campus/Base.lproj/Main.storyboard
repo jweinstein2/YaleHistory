@@ -259,7 +259,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoD-mD-oz6">
-                                <rect key="frame" x="104" y="548" width="392" height="44"/>
+                                <rect key="frame" x="13" y="543" width="392" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
