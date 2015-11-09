@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: MyViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);

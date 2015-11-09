@@ -10,10 +10,12 @@ import Foundation
 
 class MainModel{
     var projects : ProjectData!
+    var currentProject : Int!
 
     var myHTMLString: String?
 
     init(){
+        currentProject = 0;
         let myURLString = "http://contripity.net/wildwest/researchprojects.php"
         
         if let myURL = NSURL(string: myURLString) {
@@ -27,5 +29,9 @@ class MainModel{
         } else {
             NSLog("Error: \(myURLString) doesn't seem to be a valid URL")
         }
+    }
+    
+    func getCurrentProject() -> Project{
+        return projects.projectData[currentProject]
     }
 }
