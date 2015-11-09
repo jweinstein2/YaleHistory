@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class MyViewController : UIViewController{
-    var model : MainModel!
+    static var model : MainModel!
 }

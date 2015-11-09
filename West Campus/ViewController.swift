@@ -17,7 +17,14 @@ class ViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        super.model = MainModel.init()
+        MyViewController.model = MainModel.init()
+        NSLog(String(MyViewController.model))
+    }
+    
+    @IBAction func demoSegue(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let nextViewController: MyViewController = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! MyViewController
+        presentViewController(nextViewController, animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +32,7 @@ class ViewController: MyViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         /*if (segue.identifier == "Load View") {
             // pass data to next view
         }*/

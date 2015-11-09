@@ -11,11 +11,16 @@ import UIKit
 class ProjectViewController: MyViewController {
     var proj : Project!
     
+    @IBOutlet weak var projTitle: UILabel!
+    @IBOutlet weak var summary: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        proj = super.model.getCurrentProject()
+        NSLog(String(MyViewController.model))
+        proj = MyViewController.model.getCurrentProject()
+        projTitle.text = proj.title
+        summary.text = proj.summary
         //google maps loading
         
     }
