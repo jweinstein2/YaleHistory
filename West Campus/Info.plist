@@ -47,5 +47,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>For scavenger hunt location capabilities</string>
 </dict>
 </plist>
