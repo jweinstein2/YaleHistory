@@ -32,13 +32,25 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
  
 
         let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
-        let distance = CLLocationDistance(5)
+        let distance = CLLocationDistance(20)
         let CEIDRegion = CLCircularRegion(center: CEIDLoc, radius: distance, identifier: "CEID1")   //create a circular region
         
+
         locationManager.startMonitoringForRegion(CEIDRegion)
+        NSLog(CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion))
         locationManager.requestStateForRegion(CEIDRegion)
         locationManager.startUpdatingLocation()
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion){
+        NSLog("started monitoring!")
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion, withError error: NSError){
+        NSLog("Failed to start monitoring" + error)
+            
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
