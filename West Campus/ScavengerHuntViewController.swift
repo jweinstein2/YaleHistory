@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ScavengerHuntViewController: MyViewController {
+class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
@@ -24,31 +24,46 @@ class ScavengerHuntViewController: MyViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         locationManager = CLLocationManager()               //configure location manager
-        locationManager.delegate = locationManager.delegate
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 5
-        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 1
+ 
 
-        let CEIDLoc = CLLocationCoordinate2D(latitude: 41.18748012, longitude: 72.55509721)
-        let distance = CLLocationDistance(10)
+        let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
+        let distance = CLLocationDistance(5)
         let CEIDRegion = CLCircularRegion(center: CEIDLoc, radius: distance, identifier: "CEID1")   //create a circular region
         
         locationManager.startMonitoringForRegion(CEIDRegion)
+        locationManager.requestStateForRegion(CEIDRegion)
+        locationManager.startUpdatingLocation()
         
     }
     
-    func locationManager(manager: CLLocationManager!, state: CLRegionState, region: CLRegion!){
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+
+        NSLog("update location: %f , %f", locations[0].coordinate.latitude, locations[0].coordinate.longitude)
+        RegionMonitor.text = String(latitude: locations[0].coordinate.latitude, longitude:  locations[0].coordinate.longitude)
+    }
+    
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, error: NSError){
+        NSLog("Error monitoring region")
+    }
+    
+    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, region: CLRegion){
+        NSLog("unknown")
         switch (state) {
         case .Unknown :
             view.backgroundColor = (UIColor.grayColor())
-            
+            NSLog("unknown")
         case .Inside :
             view.backgroundColor = (UIColor.greenColor())
+            NSLog("inside")
         
         case .Outside :
             view.backgroundColor = (UIColor.redColor())
-            
-            
+            NSLog("outside")
         }
         
     }
