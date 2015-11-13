@@ -14,13 +14,12 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        map.mapType = MKMapType.Hybrid
+        map.mapType = MKMapType.Satellite
         map.zoomEnabled = false
         map.scrollEnabled = false
         map.setCenterCoordinate(CLLocationCoordinate2D(latitude: 41.3125884, longitude: -72.9249614), animated: true)
-        map.setVisibleMapRect(mapRect: MKMapRect,
-            animated true)
-        // Do any additional setup after loading the view, typically from a nib.
+        //This needs to be configured so that the rectangle covers the appropriate part of the map
+        //map.setVisibleMapRect(mapRect: MKMapRectanimated true)
     }
     
     override func didReceiveMemoryWarning() {

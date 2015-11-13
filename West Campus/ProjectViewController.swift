@@ -33,10 +33,10 @@ class ProjectViewController: MyViewController {
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         
-        //linkLabel.text = proj.link
+        linkLabel.text = proj.link
         //let lat = proj.gpsLatitude
         //let long = proj.gpsLongitude
-        //actionLabel.text = proj.action
+        actionLabel.text = proj.action
     }
     
     override func didReceiveMemoryWarning() {
