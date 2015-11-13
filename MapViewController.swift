@@ -12,6 +12,7 @@
 //TODO: THE GOOGLE MAP EVENTUALLY NEEDS TO BE ADDED TO A SEPERATE VIEW SO THAT IT DOESNT TAKE UP THE ENTIRE SCREEN (This looks like its going to create an issue possibly large enough to necessitate a switch to apple maps. From what I'm seeing online there is no way that you can get a marker to lead you to a custom view that you made. PS http://www.raywenderlich.com/109888/google-maps-ios-sdk-tutorial may offer a valid solution)
 
 import UIKit
+import Foundation
 import GoogleMaps
 
 class MapViewController: MyViewController {
@@ -22,20 +23,7 @@ class MapViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        
-        //google maps loading
-        let camera = GMSCameraPosition.cameraWithLatitude(41.25321796,
-        longitude: -72.99570143, zoom: 16)
-        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        self.view = mapView
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(41.25321796, -72.99570143)
-        marker.title = "West Campus"
-        marker.snippet = "Yale"
-        marker.map = mapView
+        // Do any additional setup after loading the view, typically from a nib.   
     }
 
     override func didReceiveMemoryWarning() {

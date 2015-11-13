@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ProjectViewController: MyViewController {
     var proj : Project!
