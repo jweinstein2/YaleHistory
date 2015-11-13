@@ -37,21 +37,23 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
 
         locationManager.startMonitoringForRegion(CEIDRegion)
-        NSLog(CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion))
         locationManager.requestStateForRegion(CEIDRegion)
         locationManager.startUpdatingLocation()
         
+        NSLog(String(locationManager.activityType))
+        
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        monitoringDidFailForRegion region: CLRegion?,
+        withError error: NSError){
+            NSLog("Monitoring failed for manager: %@ , Error: %@, region: %@", String(manager), String(error), String(region))
     }
     
     func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion){
         NSLog("started monitoring!")
-        
     }
     
-    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion, withError error: NSError){
-        NSLog("Failed to start monitoring" + error)
-            
-    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
 
