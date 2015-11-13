@@ -14,6 +14,10 @@ class ProjectViewController: MyViewController {
     
     @IBOutlet weak var projTitle: UILabel!
     @IBOutlet weak var summary: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var actionLabel: UILabel!
+    @IBOutlet weak var mapContainer: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +26,17 @@ class ProjectViewController: MyViewController {
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title
         summary.text = proj.summary
-        //google maps loading
         
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController")
+        mapContainer.addSubview(vc.view)
+        mapContainer.bringSubviewToFront(vc.view)
+        
+        //linkLabel.text = proj.link
+        //let lat = proj.gpsLatitude
+        //let long = proj.gpsLongitude
+        //actionLabel.text = proj.action
     }
     
     override func didReceiveMemoryWarning() {

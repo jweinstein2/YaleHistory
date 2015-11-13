@@ -12,10 +12,11 @@
 		892B37301BE9B1FB00E1174C /* YaleNew-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */; };
 		892B37311BE9B1FB00E1174C /* YaleNew-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71E1BE9A895005D2B2A /* YaleNew-Italic.otf */; };
 		892B37321BE9B1FB00E1174C /* YaleNew-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71F1BE9A895005D2B2A /* YaleNew-Roman.otf */; };
-		892B37361BE9B9C600E1174C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B37351BE9B9C600E1174C /* MapViewController.swift */; };
+		892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B37351BE9B9C600E1174C /* ProjectListViewController.swift */; };
 		892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */; };
+		893AA7861BF65BDE00B451A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893AA7851BF65BDE00B451A0 /* MapViewController.swift */; };
 		894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */; };
-		894CA6E11BE99FBE005D2B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6E01BE99FBE005D2B2A /* ViewController.swift */; };
+		894CA6E11BE99FBE005D2B2A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6E01BE99FBE005D2B2A /* MainViewController.swift */; };
 		894CA6E41BE99FBE005D2B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894CA6E21BE99FBE005D2B2A /* Main.storyboard */; };
 		894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6E51BE99FBE005D2B2A /* West_Campus.xcdatamodeld */; };
 		894CA6E91BE99FBE005D2B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 894CA6E81BE99FBE005D2B2A /* Assets.xcassets */; };
@@ -54,11 +55,12 @@
 		438E032F40F526F79E81FCE4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B5313B3E8A429F4D4422054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		892B37351BE9B9C600E1174C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
+		892B37351BE9B9C600E1174C /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectListViewController.swift; path = ../ProjectListViewController.swift; sourceTree = "<group>"; };
 		892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntViewController.swift; sourceTree = "<group>"; };
+		893AA7851BF65BDE00B451A0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		894CA6DB1BE99FBE005D2B2A /* West Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "West Campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		894CA6E01BE99FBE005D2B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		894CA6E01BE99FBE005D2B2A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		894CA6E31BE99FBE005D2B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		894CA6E61BE99FBE005D2B2A /* West_Campus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = West_Campus.xcdatamodel; sourceTree = "<group>"; };
 		894CA6E81BE99FBE005D2B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				894CA70F1BE9A5E0005D2B2A /* Resources */,
 				89C08DA11BF1446C00B91EC0 /* ViewControllers */,
 				894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */,
+				893AA7851BF65BDE00B451A0 /* MapViewController.swift */,
 				898136031BEEDD2800ACD35C /* Project.swift */,
 				898136071BEEDEE700ACD35C /* MainModel.swift */,
 				898136041BEEDD2800ACD35C /* ProjectData.swift */,
@@ -205,8 +208,8 @@
 			children = (
 				89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */,
 				89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */,
-				894CA6E01BE99FBE005D2B2A /* ViewController.swift */,
-				892B37351BE9B9C600E1174C /* MapViewController.swift */,
+				894CA6E01BE99FBE005D2B2A /* MainViewController.swift */,
+				892B37351BE9B9C600E1174C /* ProjectListViewController.swift */,
 				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
 				896A5A961BEED24900780F79 /* AboutViewController.swift */,
 			);
@@ -414,12 +417,13 @@
 				89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */,
 				896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */,
 				892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */,
-				894CA6E11BE99FBE005D2B2A /* ViewController.swift in Sources */,
+				894CA6E11BE99FBE005D2B2A /* MainViewController.swift in Sources */,
 				894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */,
+				893AA7861BF65BDE00B451A0 /* MapViewController.swift in Sources */,
 				894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */,
 				898136081BEEDEE700ACD35C /* MainModel.swift in Sources */,
 				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,
-				892B37361BE9B9C600E1174C /* MapViewController.swift in Sources */,
+				892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */,
 				89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */,
 				898136051BEEDD2800ACD35C /* Project.swift in Sources */,
 			);

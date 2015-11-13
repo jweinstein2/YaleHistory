@@ -14,7 +14,7 @@
 import UIKit
 import Foundation
 
-class MapViewController: MyViewController {
+class ProjectListViewController: MyViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);
