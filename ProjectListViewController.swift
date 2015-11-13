@@ -13,7 +13,6 @@
 
 import UIKit
 import Foundation
-import GoogleMaps
 
 class MapViewController: MyViewController {
     
