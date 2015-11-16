@@ -10,10 +10,11 @@ import UIKit
 import CoreLocation
 
 class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var distanceLabel: UILabel!
     
     var locationManager: CLLocationManager!
     let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
-    let regionRadius = 30
+    let regionRadius : Double! = 30.0
     
     @IBOutlet weak var RegionMonitor: UILabel!
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -40,7 +41,14 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        let distance = 6371000 * arccos(sin(pi/180*(90-CEIDLoc.latitude)) *sin(locations[0].coordinate.latitude)*cos(locations[0].coordinate.longitude-CEIDLoc.longitude) + cos(CEIDLoc.longitude)*cos(locations[0].coordinate.longitude))   //calculate distance from starting point using the spherical coordinate formula D = Radius * arccos(sin φ1 sin φ2 cos(θ1-θ2) + cos φ1 cos φ2)
+        let destLat = (M_PI/180)*(90-CEIDLoc.latitude)
+        let destLong = (M_PI/180)*CEIDLoc.longitude
+        
+        let curLat = (M_PI/180)*(90-locations[0].coordinate.latitude)
+        let curLong = (M_PI/180)*locations[0].coordinate.longitude
+        
+        let distance = 6371000 * acos(sin(destLat) * sin(curLat)*cos(curLong-destLong) + cos(destLong)*cos(curLong))   //calculate distance from starting point using the spherical coordinate formula D = Radius * arccos(sin φ1 sin φ2 cos(θ1-θ2) + cos φ1 cos φ2)
+        distanceLabel.text = String(distance)
         
         if (distance < regionRadius){
             view.backgroundColor = UIColor.greenColor()
@@ -51,7 +59,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         }
         
         else{
-            view.backgroundColor = UIColor.greyColor()
+            view.backgroundColor = UIColor.grayColor()
         }
         
         
@@ -59,16 +67,13 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         RegionMonitor.text = String(latitude: locations[0].coordinate.latitude, longitude:  locations[0].coordinate.longitude)
     }
     
-
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
+
+    
+
 
 
