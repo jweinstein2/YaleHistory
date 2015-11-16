@@ -12,6 +12,8 @@ import CoreLocation
 class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
+    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
+    let regionRadius = 30
     
     @IBOutlet weak var RegionMonitor: UILabel!
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -26,60 +28,38 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()               //configure location manager
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.distanceFilter = 1
- 
 
-        let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
-        let distance = CLLocationDistance(20)
-        let CEIDRegion = CLCircularRegion(center: CEIDLoc, radius: distance, identifier: "CEID1")   //create a circular region
-        
 
-        locationManager.startMonitoringForRegion(CEIDRegion)
-        locationManager.requestStateForRegion(CEIDRegion)
         locationManager.startUpdatingLocation()
         
         NSLog(String(locationManager.activityType))
         
     }
     
-    func locationManager(manager: CLLocationManager,
-        monitoringDidFailForRegion region: CLRegion?,
-        withError error: NSError){
-            NSLog("Monitoring failed for manager: %@ , Error: %@, region: %@", String(manager), String(error), String(region))
-    }
-    
-    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion){
-        NSLog("started monitoring!")
-    }
-    
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
-
+        
+        let distance = 6371000 * arccos(sin(pi/180*(90-CEIDLoc.latitude)) *sin(locations[0].coordinate.latitude)*cos(locations[0].coordinate.longitude-CEIDLoc.longitude) + cos(CEIDLoc.longitude)*cos(locations[0].coordinate.longitude))   //calculate distance from starting point using the spherical coordinate formula D = Radius * arccos(sin φ1 sin φ2 cos(θ1-θ2) + cos φ1 cos φ2)
+        
+        if (distance < regionRadius){
+            view.backgroundColor = UIColor.greenColor()
+        }
+        
+        else if (distance > regionRadius){
+            view.backgroundColor = UIColor.redColor()
+        }
+        
+        else{
+            view.backgroundColor = UIColor.greyColor()
+        }
+        
+        
         NSLog("update location: %f , %f", locations[0].coordinate.latitude, locations[0].coordinate.longitude)
         RegionMonitor.text = String(latitude: locations[0].coordinate.latitude, longitude:  locations[0].coordinate.longitude)
     }
     
-    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, error: NSError){
-        NSLog("Error monitoring region")
-    }
-    
-    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, region: CLRegion){
-        NSLog("unknown")
-        switch (state) {
-        case .Unknown :
-            view.backgroundColor = (UIColor.grayColor())
-            NSLog("unknown")
-        case .Inside :
-            view.backgroundColor = (UIColor.greenColor())
-            NSLog("inside")
-        
-        case .Outside :
-            view.backgroundColor = (UIColor.redColor())
-            NSLog("outside")
-        }
-        
+
     }
     
     
