@@ -17,6 +17,7 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -38,12 +39,22 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About West Campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oim-fI-Z4N">
                                         <rect key="frame" x="132" y="30" width="337" height="51"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="37"/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="32"/>
                                         <color key="textColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
+                                        <rect key="frame" x="61" y="83" width="454" height="432"/>
+                                        <animations/>
+                                        <string key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.
+
+Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow. </string>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-bs-J66">
-                                        <rect key="frame" x="34" y="17" width="64" height="64"/>
+                                        <rect key="frame" x="61" y="39" width="64" height="64"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="18"/>
                                         <state key="normal" title="Back" image="back.png"/>
@@ -54,16 +65,6 @@
                                             <action selector="buttonPressed:" destination="T5x-nP-qhd" eventType="touchUpInside" id="C9p-rO-yXR"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
-                                        <rect key="frame" x="61" y="83" width="454" height="432"/>
-                                        <animations/>
-                                        <mutableString key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.
-
-Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow. </mutableString>
-                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -106,7 +107,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
-                                <rect key="frame" x="20" y="20" width="363" height="37"/>
+                                <rect key="frame" x="20" y="57" width="363" height="37"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,6 +139,15 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-Sf-lhH">
+                                <rect key="frame" x="-49" y="-41" width="182" height="142"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
+                                <state key="normal" title="Back" image="back.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="r9s-qt-yv1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,14 +331,14 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to West Campus Green Space..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dk-Qp-CsP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to West Campus Green Space..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dk-Qp-CsP">
                                 <rect key="frame" x="159" y="30" width="283" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
                                 <rect key="frame" x="0.0" y="124" width="600" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -340,7 +350,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="Gd5-Ao-i4S" kind="presentation" animates="NO" id="zn5-2l-DJr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
                                 <rect key="frame" x="0.0" y="178" width="600" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,7 +362,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="T5x-nP-qhd" kind="presentation" id="Yr9-oD-aFC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
                                 <rect key="frame" x="0.0" y="70" width="600" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162021484325" green="0.73050429516826987" blue="1" alpha="1" colorSpace="calibratedRGB"/>
