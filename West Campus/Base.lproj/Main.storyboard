@@ -68,11 +68,11 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <animations/>
                                 <constraints>
                                     <constraint firstItem="jAY-ha-Use" firstAttribute="leading" secondItem="EkY-wH-MoL" secondAttribute="leading" constant="10" id="MXc-EO-pcW"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="EkY-wH-MoL" secondAttribute="width" constant="30" id="NYV-m9-khe"/>
+                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="EkY-wH-MoL" secondAttribute="width" id="NYV-m9-khe"/>
                                     <constraint firstItem="Uht-bs-J66" firstAttribute="leading" secondItem="EkY-wH-MoL" secondAttribute="leading" constant="10" id="PFF-Oz-B8H"/>
                                     <constraint firstItem="oim-fI-Z4N" firstAttribute="centerX" secondItem="EkY-wH-MoL" secondAttribute="centerX" id="cAD-5K-etB"/>
                                     <constraint firstItem="oim-fI-Z4N" firstAttribute="top" secondItem="EkY-wH-MoL" secondAttribute="top" constant="20" id="fWx-RC-k5n"/>
-                                    <constraint firstAttribute="trailing" secondItem="jAY-ha-Use" secondAttribute="trailing" constant="10" id="hZj-fa-7CH"/>
+                                    <constraint firstAttribute="trailing" secondItem="jAY-ha-Use" secondAttribute="trailing" constant="8" id="hZj-fa-7CH"/>
                                     <constraint firstItem="jAY-ha-Use" firstAttribute="top" secondItem="oim-fI-Z4N" secondAttribute="bottom" constant="30" id="jeB-XX-mW4"/>
                                     <constraint firstItem="jAY-ha-Use" firstAttribute="centerY" secondItem="EkY-wH-MoL" secondAttribute="centerY" id="uh2-L2-WI1"/>
                                     <constraint firstItem="Uht-bs-J66" firstAttribute="top" secondItem="EkY-wH-MoL" secondAttribute="top" constant="10" id="wdt-4G-TEI"/>
