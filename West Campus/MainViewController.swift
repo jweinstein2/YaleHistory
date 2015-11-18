@@ -17,8 +17,8 @@ class ViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        MyViewController.model1 = MainModel.init()
-        NSLog(String(MyViewController.model1))
+        MyViewController.model = MainModel.init()
+        NSLog(String(MyViewController.model))
     }
     
     @IBAction func demoSegue(sender: AnyObject) {

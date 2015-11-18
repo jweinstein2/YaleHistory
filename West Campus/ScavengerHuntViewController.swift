@@ -10,19 +10,25 @@ import UIKit
 import CoreLocation
 
 class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var distanceLabel: UILabel!
-    
-    var locationManager: CLLocationManager!
-    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.3104198, longitude: -72.9252385)
+
+
+    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312736, longitude: -72.9252336)
     let regionRadius : Double! = 10.0
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     @IBOutlet weak var RegionMonitor: UILabel!
     @IBAction func buttonPressed(sender: AnyObject) {
+
         self.dismissViewControllerAnimated(false, completion: nil);
     }
+    @IBOutlet weak var projectTitle: UILabel!
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    var locationManager: CLLocationManager!
+
+    @IBOutlet weak var Congrats: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +49,8 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        let destLat = /*model.projects.projectData[model.currentProject].gpsLatitude*/ CEIDLoc.latitude
-        let destLong = /*model.projects.projectData[model.currentProject].gpsLongitude*/ CEIDLoc.longitude
+        let destLat = /*MyViewController.model.projects.projectData[model.currentProject].gpsLatitude*/ CEIDLoc.latitude
+        let destLong = /*MyViewController.model.projects.projectData[model.currentProject].gpsLongitude*/ CEIDLoc.longitude
         
         let curLat = locations[0].coordinate.latitude
         let curLong = locations[0].coordinate.longitude
@@ -59,15 +65,18 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         if (distance < regionRadius){
             view.backgroundColor = UIColor.greenColor()
-           
-            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            let nextViewController: MyViewController = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! MyViewController
-            presentViewController(nextViewController, animated: false, completion: nil)
-
+            
+            RegionMonitor.hidden = true
+            
+            
+            MyViewController.model.currentProject = MyViewController.model.currentProject + 1
+            
         }
         
         else if (distance > regionRadius){
             view.backgroundColor = UIColor.redColor()
+            
+            
         }
         
         
