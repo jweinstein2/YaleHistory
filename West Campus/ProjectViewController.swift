@@ -11,6 +11,8 @@ import Foundation
 
 class ProjectViewController: MyViewController {
     var proj : Project!
+    var longitude : Double!
+    var latitude : Double!
     
     @IBOutlet weak var projTitle: UILabel!
     @IBOutlet weak var summary: UILabel!
@@ -24,11 +26,12 @@ class ProjectViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         NSLog(String(MyViewController.model))
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title
         summary.text = proj.summary
+        self.longitude = proj.gpsLongitude
+        self.latitude = proj.gpsLatitude
         
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -37,8 +40,6 @@ class ProjectViewController: MyViewController {
         mapContainer.bringSubviewToFront(vc.view)
         
         linkLabel.text = proj.link
-        //let lat = proj.gpsLatitude
-        //let long = proj.gpsLongitude
         actionLabel.text = proj.action
     }
     
