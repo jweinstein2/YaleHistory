@@ -18,6 +18,10 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -145,7 +149,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
                                 <state key="normal" title="Back" image="back.png"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="r9s-qt-yv1"/>
+                                    <action selector="buttonPressed:" destination="abw-Ph-xwY" eventType="touchUpInside" id="QyM-vj-F1p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,7 +192,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scavenger Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwv-i6-dfY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Scavenger Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwv-i6-dfY">
                                 <rect key="frame" x="118" y="41" width="283" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
@@ -206,15 +210,27 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-VZ-NJv">
                                 <rect key="frame" x="10" y="290" width="560" height="20"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-PI-ap7">
                                 <rect key="frame" x="10" y="329" width="560" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-UF-raU">
+                                <rect key="frame" x="129" y="87" width="343" height="34"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgM-nJ-y5W">
+                                <rect key="frame" x="129" y="140" width="335" height="42"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -223,14 +239,21 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <constraints>
                             <constraint firstItem="KIK-VZ-NJv" firstAttribute="centerY" secondItem="1FI-gK-JSa" secondAttribute="centerY" id="7Sq-VE-PCJ"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="top" secondItem="KIK-VZ-NJv" secondAttribute="bottom" constant="19" id="C9H-eR-ApS"/>
+                            <constraint firstItem="EgM-nJ-y5W" firstAttribute="top" secondItem="PIy-UF-raU" secondAttribute="bottom" constant="19" id="HNZ-iY-tif"/>
+                            <constraint firstItem="EgM-nJ-y5W" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="Omc-Jz-J4Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KIK-VZ-NJv" secondAttribute="trailing" constant="10" id="YXw-e7-4FN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KIK-VZ-NJv" secondAttribute="leading" constant="10" id="moh-1M-gEU"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="-10" id="rhM-NW-3nX"/>
+                            <constraint firstItem="PIy-UF-raU" firstAttribute="top" secondItem="zwv-i6-dfY" secondAttribute="bottom" constant="25" id="wKT-ON-oiT"/>
+                            <constraint firstItem="PIy-UF-raU" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="zmy-0m-TjT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Congrats" destination="PIy-UF-raU" id="fcO-EZ-DYm"/>
                         <outlet property="RegionMonitor" destination="KIK-VZ-NJv" id="iOe-TK-qdF"/>
-                        <outlet property="distanceLabel" destination="foB-PI-ap7" id="h5Z-fn-olg"/>
+                        <outlet property="distanceLabel" destination="foB-PI-ap7" id="Yfg-gC-Ddy"/>
+                        <outlet property="projectTitle" destination="EgM-nJ-y5W" id="Hrj-kW-AVS"/>
+                        <outlet property="title" destination="EgM-nJ-y5W" id="EjR-Rf-lNw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bt-FR-yc3" userLabel="First Responder" sceneMemberID="firstResponder"/>

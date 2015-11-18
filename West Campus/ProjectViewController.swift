@@ -18,12 +18,15 @@ class ProjectViewController: MyViewController {
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var mapContainer: UIView!
     
+    @IBAction func buttonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NSLog(String(MyViewController.model1))
-        proj = MyViewController.model1.getCurrentProject()
+        NSLog(String(MyViewController.model))
+        proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title
         summary.text = proj.summary
         
