@@ -151,7 +151,6 @@
 				894CA70F1BE9A5E0005D2B2A /* Resources */,
 				89C08DA11BF1446C00B91EC0 /* ViewControllers */,
 				894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */,
-				893AA7851BF65BDE00B451A0 /* MapViewController.swift */,
 				898136031BEEDD2800ACD35C /* Project.swift */,
 				898136071BEEDEE700ACD35C /* MainModel.swift */,
 				898136041BEEDD2800ACD35C /* ProjectData.swift */,
@@ -206,6 +205,7 @@
 		89C08DA11BF1446C00B91EC0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				893AA7851BF65BDE00B451A0 /* MapViewController.swift */,
 				89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */,
 				89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */,
 				894CA6E01BE99FBE005D2B2A /* MainViewController.swift */,

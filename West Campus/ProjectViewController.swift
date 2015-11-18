@@ -22,8 +22,8 @@ class ProjectViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NSLog(String(MyViewController.model))
-        proj = MyViewController.model.getCurrentProject()
+        NSLog(String(MyViewController.model1))
+        proj = MyViewController.model1.getCurrentProject()
         projTitle.text = proj.title
         summary.text = proj.summary
         
@@ -38,6 +38,7 @@ class ProjectViewController: MyViewController {
         //let long = proj.gpsLongitude
         actionLabel.text = proj.action
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

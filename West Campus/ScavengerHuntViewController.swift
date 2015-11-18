@@ -13,8 +13,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     @IBOutlet weak var distanceLabel: UILabel!
     
     var locationManager: CLLocationManager!
-    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312788, longitude: -72.925319)
+    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.3104198, longitude: -72.9252385)
     let regionRadius : Double! = 10.0
+    
+    //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     @IBOutlet weak var RegionMonitor: UILabel!
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -41,10 +43,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        let destLat = (CEIDLoc.latitude)
-        let destLong = CEIDLoc.longitude
+        let destLat = /*model.projects.projectData[model.currentProject].gpsLatitude*/ CEIDLoc.latitude
+        let destLong = /*model.projects.projectData[model.currentProject].gpsLongitude*/ CEIDLoc.longitude
         
-        let curLat = (locations[0].coordinate.latitude)
+        let curLat = locations[0].coordinate.latitude
         let curLong = locations[0].coordinate.longitude
         
         let x = 111111*(curLat-destLat)
@@ -57,14 +59,15 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         if (distance < regionRadius){
             view.backgroundColor = UIColor.greenColor()
+           
+            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let nextViewController: MyViewController = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! MyViewController
+            presentViewController(nextViewController, animated: false, completion: nil)
+
         }
         
         else if (distance > regionRadius){
             view.backgroundColor = UIColor.redColor()
-        }
-        
-        else{
-            view.backgroundColor = UIColor.grayColor()
         }
         
         
