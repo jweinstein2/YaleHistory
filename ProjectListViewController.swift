@@ -7,17 +7,37 @@
 //
 
 
-//Need to complete step seven to make sure that the google link doesnt throw and exception https://developers.google.com/maps/documentation/ios-sdk/start?hl=en
-
-//TODO: THE GOOGLE MAP EVENTUALLY NEEDS TO BE ADDED TO A SEPERATE VIEW SO THAT IT DOESNT TAKE UP THE ENTIRE SCREEN (This looks like its going to create an issue possibly large enough to necessitate a switch to apple maps. From what I'm seeing online there is no way that you can get a marker to lead you to a custom view that you made. PS http://www.raywenderlich.com/109888/google-maps-ios-sdk-tutorial may offer a valid solution)
 
 import UIKit
 import Foundation
 
 class ProjectListViewController: MyViewController {
+    var projectList = MyViewController.model1.projects.projectData
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);
+    }
+    
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    {
+        return projectList.count
+    }
+    
+    func tableView(tableView: UITableView!,
+        cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell")
+        cell.textLabel?.text = projectList[indexPath.row].title
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        MyViewController.model1.currentProject = row
+        
     }
     
     override func viewDidLoad() {
