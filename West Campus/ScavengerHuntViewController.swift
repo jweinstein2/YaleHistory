@@ -11,24 +11,19 @@ import CoreLocation
 
 class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
 
-
-    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.312736, longitude: -72.9252336)
+    var locationManager: CLLocationManager!
+    var currProj: Project!
+    let CEIDLoc = CLLocationCoordinate2D(latitude: 41.31169929, longitude: -72.9284069)
     let regionRadius : Double! = 10.0
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     @IBOutlet weak var RegionMonitor: UILabel!
-    @IBAction func buttonPressed(sender: AnyObject) {
-
-        self.dismissViewControllerAnimated(false, completion: nil);
-    }
+    @IBOutlet weak var BackToHunt: UIButton!
     @IBOutlet weak var projectTitle: UILabel!
-    
+    @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    
-    var locationManager: CLLocationManager!
-
-    @IBOutlet weak var Congrats: UILabel!
+    @IBOutlet weak var Header: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +40,43 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         NSLog(String(locationManager.activityType))
         
+        Header.text = "You are looking for"
+        
+        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
+        projectTitle.text = currProj.title
+        
+        summaryLabel.hidden = true
+        BackToHunt.hidden = true
+    }
+    
+    @IBAction func huntButtonPressed(sender: AnyObject){
+        
+        MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
+        
+        RegionMonitor.hidden = false
+        distanceLabel.hidden = false
+        projectTitle.text = currProj.title
+        Header.text = "You are looking for"
+        
+        view.backgroundColor = UIColor.blueColor()
+        
+        BackToHunt.hidden = true
+        summaryLabel.hidden = true
+        
+        
+    }
+    
+    @IBAction func buttonPressed(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(false, completion: nil);
+        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        let destLat = /*MyViewController.model.projects.projectData[model.currentProject].gpsLatitude*/ CEIDLoc.latitude
-        let destLong = /*MyViewController.model.projects.projectData[model.currentProject].gpsLongitude*/ CEIDLoc.longitude
+        let destLat = currProj.gpsLatitude // CEIDLoc.latitude
+        let destLong = currProj.gpsLongitude // CEIDLoc.longitude
         
         let curLat = locations[0].coordinate.latitude
         let curLong = locations[0].coordinate.longitude
@@ -66,17 +92,14 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         if (distance < regionRadius){
             view.backgroundColor = UIColor.greenColor()
             
+            Header.text = "Congratulations, you have reached"
+            
+            summaryLabel.text = currProj.summary
+            
             RegionMonitor.hidden = true
-            
-            
-            MyViewController.model.currentProject = MyViewController.model.currentProject + 1
-            
-        }
-        
-        else if (distance > regionRadius){
-            view.backgroundColor = UIColor.redColor()
-            
-            
+            distanceLabel.hidden = true
+            BackToHunt.hidden = false
+            summaryLabel.hidden = false
         }
         
         
