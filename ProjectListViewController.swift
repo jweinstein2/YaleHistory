@@ -12,7 +12,7 @@ import UIKit
 import Foundation
 
 class ProjectListViewController: MyViewController {
-    var projectList = MyViewController.model1.projects.projectData
+    var projectList = MyViewController.model.projects.projectData
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);
@@ -36,8 +36,9 @@ class ProjectListViewController: MyViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        MyViewController.model1.currentProject = row
+        MyViewController.model.currentProject = row
         
+        self.performSegueWithIdentifier("listToProject", sender: self)
     }
     
     override func viewDidLoad() {
