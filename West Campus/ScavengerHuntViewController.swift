@@ -42,6 +42,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         Header.text = "You are looking for"
         
+        MyViewController.model.currentProject = 1
         currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
         projectTitle.text = currProj.title
         
