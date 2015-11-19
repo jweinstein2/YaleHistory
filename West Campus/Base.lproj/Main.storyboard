@@ -23,6 +23,7 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -248,8 +249,14 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <action selector="huntButtonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="lMo-xC-vn3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-eF-gse">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-eF-gse">
                                 <rect key="frame" x="96" y="238" width="368" height="304"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t48-FX-XSh">
+                                <rect key="frame" x="153" y="450" width="282" height="114"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -259,6 +266,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qDD-eF-gse" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="4VT-J6-Kek"/>
+                            <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="t48-FX-XSh" secondAttribute="bottom" constant="36" id="5IB-3J-Pz1"/>
                             <constraint firstItem="KIK-VZ-NJv" firstAttribute="centerY" secondItem="1FI-gK-JSa" secondAttribute="centerY" id="7Sq-VE-PCJ"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="top" secondItem="KIK-VZ-NJv" secondAttribute="bottom" constant="19" id="C9H-eR-ApS"/>
                             <constraint firstItem="EgM-nJ-y5W" firstAttribute="top" secondItem="PIy-UF-raU" secondAttribute="bottom" constant="19" id="HNZ-iY-tif"/>
@@ -266,6 +274,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             <constraint firstAttribute="trailingMargin" secondItem="e3J-Mb-CeI" secondAttribute="trailing" constant="-20" id="UY2-RD-n6y"/>
                             <constraint firstItem="qDD-eF-gse" firstAttribute="top" secondItem="EgM-nJ-y5W" secondAttribute="bottom" constant="56" id="Woa-rg-RLD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KIK-VZ-NJv" secondAttribute="trailing" constant="10" id="YXw-e7-4FN"/>
+                            <constraint firstItem="t48-FX-XSh" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="aIl-aN-tYN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KIK-VZ-NJv" secondAttribute="leading" constant="10" id="moh-1M-gEU"/>
                             <constraint firstItem="e3J-Mb-CeI" firstAttribute="top" secondItem="f4T-wZ-Vt3" secondAttribute="bottom" constant="-20" id="mvU-xm-w3f"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="-10" id="rhM-NW-3nX"/>
@@ -277,6 +286,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <outlet property="BackToHunt" destination="e3J-Mb-CeI" id="Ywj-s5-PpR"/>
                         <outlet property="Header" destination="PIy-UF-raU" id="woL-60-KCl"/>
                         <outlet property="RegionMonitor" destination="KIK-VZ-NJv" id="iOe-TK-qdF"/>
+                        <outlet property="clueLabel" destination="t48-FX-XSh" id="auF-7s-6h5"/>
                         <outlet property="distanceLabel" destination="foB-PI-ap7" id="Yfg-gC-Ddy"/>
                         <outlet property="projectTitle" destination="EgM-nJ-y5W" id="Hrj-kW-AVS"/>
                         <outlet property="summaryLabel" destination="qDD-eF-gse" id="4qC-0r-TeQ"/>
