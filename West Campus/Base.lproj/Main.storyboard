@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -196,51 +196,59 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Scavenger Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwv-i6-dfY">
-                                <rect key="frame" x="118" y="41" width="283" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scavenger Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwv-i6-dfY">
+                                <rect key="frame" x="118" y="41.5" width="110" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-Ym-opT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-Ym-opT">
                                 <rect key="frame" x="20" y="20" width="64" height="64"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="M1q-gt-J6M"/>
+                                    <constraint firstAttribute="width" constant="64" id="jg2-4H-7az"/>
+                                </constraints>
                                 <state key="normal" image="home"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="yto-4e-fMq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-VZ-NJv">
-                                <rect key="frame" x="10" y="290" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-VZ-NJv">
+                                <rect key="frame" x="10" y="289" width="560" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-PI-ap7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-PI-ap7">
                                 <rect key="frame" x="10" y="329" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-UF-raU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-UF-raU">
                                 <rect key="frame" x="129" y="87" width="343" height="34"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgM-nJ-y5W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgM-nJ-y5W">
                                 <rect key="frame" x="129" y="140" width="335" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3J-Mb-CeI">
-                                <rect key="frame" x="474" y="0.0" width="126" height="106"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3J-Mb-CeI">
+                                <rect key="frame" x="518" y="41" width="42" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="aa1-d8-LVe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="15"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,14 +257,16 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <action selector="huntButtonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="lMo-xC-vn3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-eF-gse">
-                                <rect key="frame" x="96" y="238" width="368" height="304"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t48-FX-XSh">
+                                <rect key="frame" x="282" y="541" width="36" height="23"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t48-FX-XSh">
-                                <rect key="frame" x="153" y="450" width="282" height="114"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-eF-gse">
+                                <rect key="frame" x="20" y="518" width="560" height="23"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -265,22 +275,36 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="e3J-Mb-CeI" firstAttribute="centerY" secondItem="zwv-i6-dfY" secondAttribute="centerY" id="09X-Cb-1HE"/>
                             <constraint firstItem="qDD-eF-gse" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="4VT-J6-Kek"/>
                             <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="t48-FX-XSh" secondAttribute="bottom" constant="36" id="5IB-3J-Pz1"/>
                             <constraint firstItem="KIK-VZ-NJv" firstAttribute="centerY" secondItem="1FI-gK-JSa" secondAttribute="centerY" id="7Sq-VE-PCJ"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="top" secondItem="KIK-VZ-NJv" secondAttribute="bottom" constant="19" id="C9H-eR-ApS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="qDD-eF-gse" secondAttribute="leading" id="HLG-ij-eaf"/>
                             <constraint firstItem="EgM-nJ-y5W" firstAttribute="top" secondItem="PIy-UF-raU" secondAttribute="bottom" constant="19" id="HNZ-iY-tif"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dx9-Ym-opT" secondAttribute="leading" id="Hcv-qF-aRl"/>
                             <constraint firstItem="EgM-nJ-y5W" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="Omc-Jz-J4Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e3J-Mb-CeI" secondAttribute="trailing" constant="-20" id="UY2-RD-n6y"/>
+                            <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="qDD-eF-gse" secondAttribute="bottom" constant="58" id="P2w-Rb-fEC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e3J-Mb-CeI" secondAttribute="trailing" constant="20" id="UY2-RD-n6y"/>
                             <constraint firstItem="qDD-eF-gse" firstAttribute="top" secondItem="EgM-nJ-y5W" secondAttribute="bottom" constant="56" id="Woa-rg-RLD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KIK-VZ-NJv" secondAttribute="trailing" constant="10" id="YXw-e7-4FN"/>
                             <constraint firstItem="t48-FX-XSh" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="aIl-aN-tYN"/>
+                            <constraint firstItem="zwv-i6-dfY" firstAttribute="centerY" secondItem="dx9-Ym-opT" secondAttribute="centerY" id="b4t-Y4-J7m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qDD-eF-gse" secondAttribute="trailing" id="gyr-SD-VO8"/>
+                            <constraint firstItem="dx9-Ym-opT" firstAttribute="top" secondItem="f4T-wZ-Vt3" secondAttribute="bottom" id="jxL-AP-p3Q"/>
+                            <constraint firstItem="zwv-i6-dfY" firstAttribute="leading" secondItem="dx9-Ym-opT" secondAttribute="trailing" constant="34" id="k5w-Bo-uQP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KIK-VZ-NJv" secondAttribute="leading" constant="10" id="moh-1M-gEU"/>
                             <constraint firstItem="e3J-Mb-CeI" firstAttribute="top" secondItem="f4T-wZ-Vt3" secondAttribute="bottom" constant="-20" id="mvU-xm-w3f"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="-10" id="rhM-NW-3nX"/>
                             <constraint firstItem="PIy-UF-raU" firstAttribute="top" secondItem="zwv-i6-dfY" secondAttribute="bottom" constant="25" id="wKT-ON-oiT"/>
                             <constraint firstItem="PIy-UF-raU" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="zmy-0m-TjT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mvU-xm-w3f"/>
+                                <exclude reference="Woa-rg-RLD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="BackToHunt" destination="e3J-Mb-CeI" id="Ywj-s5-PpR"/>
@@ -294,7 +318,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bt-FR-yc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-599" y="322"/>
+            <point key="canvasLocation" x="-600" y="366"/>
         </scene>
         <!--Project List View Controller-->
         <scene sceneID="jCl-mW-rp1">
@@ -328,7 +352,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRG-Ej-FFo" id="2Xj-fs-gf2">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
