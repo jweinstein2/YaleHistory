@@ -54,7 +54,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     @IBAction func huntButtonPressed(sender: AnyObject){
         
-        if (MyViewController.model.currentProject < MyViewController.model.projects.projectData.count){
+        if ((MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
             MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
             currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
    

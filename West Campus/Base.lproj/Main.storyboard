@@ -301,8 +301,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="mvU-xm-w3f"/>
                                 <exclude reference="Woa-rg-RLD"/>
+                                <exclude reference="mvU-xm-w3f"/>
                             </mask>
                         </variation>
                     </view>
