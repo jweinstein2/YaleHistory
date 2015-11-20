@@ -11,6 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
+    var projectsToBeDisplayed = [Project]() //This is the array containing a list of all the projects we want to display pins for. Use projectsToBeDisplayed[i].gpslatitude / longitude
     
     override func viewDidLoad() {
         super.viewDidLoad()
