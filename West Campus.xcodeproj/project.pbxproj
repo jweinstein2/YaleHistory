@@ -29,6 +29,7 @@
 		898136051BEEDD2800ACD35C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136031BEEDD2800ACD35C /* Project.swift */; };
 		898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136041BEEDD2800ACD35C /* ProjectData.swift */; };
 		898136081BEEDEE700ACD35C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136071BEEDEE700ACD35C /* MainModel.swift */; };
+		899CB22A1C0296760009F11B /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CB2291C0296760009F11B /* ImageHeaderView.swift */; };
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
 		89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */; };
 		CF8ECEF9F140011DF590D19B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D31B6E516A232D169684FF /* libPods.a */; };
@@ -82,6 +83,7 @@
 		898136031BEEDD2800ACD35C /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		898136041BEEDD2800ACD35C /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		898136071BEEDEE700ACD35C /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		899CB2291C0296760009F11B /* ImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHeaderView.swift; sourceTree = "<group>"; };
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		D0D31B6E516A232D169684FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				898136031BEEDD2800ACD35C /* Project.swift */,
 				898136071BEEDEE700ACD35C /* MainModel.swift */,
 				898136041BEEDD2800ACD35C /* ProjectData.swift */,
+				899CB2291C0296760009F11B /* ImageHeaderView.swift */,
 				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
 				894CA6E81BE99FBE005D2B2A /* Assets.xcassets */,
 				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */,
+				899CB22A1C0296760009F11B /* ImageHeaderView.swift in Sources */,
 				896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */,
 				892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */,
 				894CA6E11BE99FBE005D2B2A /* MainViewController.swift in Sources */,
