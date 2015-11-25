@@ -11,22 +11,21 @@ import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
     
-    var eventName: UILabel = UILabel()
-    var eventCity: UILabel = UILabel()
-    var eventTime: UILabel = UILabel()
+    var distanceLabel: UILabel = UILabel()
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         NSLog("custom init")
         
         //Custom initialization for a cell with information in it
-        
-        
         /*
         self.contentView.addSubview(eventName)
         self.contentView.addSubview(eventCity)
         self.contentView.addSubview(eventTime)
         */
+        
+        self.contentView.addSubview(distanceLabel)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -37,11 +36,8 @@ class ProjectTableViewCell: UITableViewCell {
         super.layoutSubviews()
         NSLog("layout subview")
         
-        /*
-        eventName = UILabel(frame: CGRectMake(20, 10, self.bounds.size.width - 40, 25))
-        eventCity = UILabel(frame: CGRectMake(0, 0, 0, 0))
-        eventTime = UILabel(frame: CGRectMake(0, 0, 0, 0))
-        */
-        
+        distanceLabel = UILabel(frame: CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height))
+        distanceLabel.text = "test"
+        distanceLabel.backgroundColor = UIColor.redColor()
     }
 }

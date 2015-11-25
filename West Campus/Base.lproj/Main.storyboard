@@ -114,15 +114,15 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
-                                <rect key="frame" x="20" y="48" width="363" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
+                                <rect key="frame" x="81" y="13" width="33.5" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
-                                <rect key="frame" x="20" y="93" width="363" height="157"/>
+                                <rect key="frame" x="20" y="136" width="363" height="127"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,13 +142,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
-                                <rect key="frame" x="0.0" y="359" width="600" height="241"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-Sf-lhH">
-                                <rect key="frame" x="20" y="15" width="49" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-Sf-lhH">
+                                <rect key="frame" x="20" y="15" width="44" height="32"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
                                 <state key="normal" title="&lt; Back"/>
@@ -156,16 +151,38 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <action selector="buttonPressed:" destination="abw-Ph-xwY" eventType="touchUpInside" id="QyM-vj-F1p"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
+                                <rect key="frame" x="0.0" y="58" width="600" height="114"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="e43-hr-NiQ"/>
+                                </constraints>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
+                                <rect key="frame" x="0.0" y="359" width="600" height="241"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="OxC-hO-N4G" firstAttribute="top" secondItem="Ady-Wp-XjU" secondAttribute="bottom" constant="57" id="Als-pk-CiA"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="UZc-Sf-lhH" secondAttribute="trailing" constant="17" id="EdC-wi-KMy"/>
+                            <constraint firstItem="kgz-Zn-SJ5" firstAttribute="top" secondItem="GGg-KH-Fj5" secondAttribute="bottom" constant="9" id="FpS-2X-Te0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kgz-Zn-SJ5" secondAttribute="trailing" constant="-20" id="PX3-SY-isQ"/>
+                            <constraint firstItem="kgz-Zn-SJ5" firstAttribute="top" secondItem="GGg-KH-Fj5" secondAttribute="bottom" constant="8" id="TbM-KV-zwc"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="-7" id="Zgn-ks-f7Z"/>
                             <constraint firstItem="Ady-Wp-XjU" firstAttribute="width" secondItem="lVN-Wy-rHI" secondAttribute="height" multiplier="1:1" id="aJW-Q3-OgG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Ady-Wp-XjU" secondAttribute="leading" id="b8q-rU-iui"/>
+                            <constraint firstItem="UZc-Sf-lhH" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="-5" id="bRV-gZ-bI4"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="centerY" secondItem="UZc-Sf-lhH" secondAttribute="centerY" id="dOG-SK-oKg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UZc-Sf-lhH" secondAttribute="leading" id="gli-bt-igd"/>
+                            <constraint firstItem="kgz-Zn-SJ5" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="ocN-Gi-Eca"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="FpS-2X-Te0"/>
                                 <exclude reference="aJW-Q3-OgG"/>
                                 <exclude reference="b8q-rU-iui"/>
                                 <exclude reference="Als-pk-CiA"/>
@@ -176,6 +193,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <outlet property="actionLabel" destination="Tf9-Va-4ce" id="f7w-RX-d41"/>
                         <outlet property="linkLabel" destination="eYQ-EZ-BnI" id="an7-LD-YH6"/>
                         <outlet property="mapContainer" destination="Ady-Wp-XjU" id="XVe-q9-ZBd"/>
+                        <outlet property="projImage" destination="kgz-Zn-SJ5" id="r2k-FT-oDN"/>
                         <outlet property="projTitle" destination="GGg-KH-Fj5" id="fUF-iA-yOb"/>
                         <outlet property="summary" destination="nb3-NH-eEW" id="eTa-5b-Wqm"/>
                     </connections>
@@ -355,15 +373,31 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" id="LRG-Ej-FFo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" id="LRG-Ej-FFo" customClass="ProjectTableViewCell" customModule="West_Campus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRG-Ej-FFo" id="2Xj-fs-gf2">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBl-Ue-MoV">
+                                                    <rect key="frame" x="502" y="11" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jBl-Ue-MoV" secondAttribute="trailing" constant="8" id="QsK-en-dZm"/>
+                                                <constraint firstItem="jBl-Ue-MoV" firstAttribute="centerY" secondItem="2Xj-fs-gf2" secondAttribute="centerY" id="tWP-DA-Tdu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="distanceLabel" destination="jBl-Ue-MoV" id="UAt-c6-tUc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

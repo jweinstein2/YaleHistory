@@ -14,6 +14,7 @@ class ProjectViewController: MyViewController {
     var longitude : Double!
     var latitude : Double!
     
+    @IBOutlet weak var projImage: UIImageView!
     @IBOutlet weak var projTitle: UILabel!
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
@@ -41,6 +42,13 @@ class ProjectViewController: MyViewController {
         
         linkLabel.text = proj.link
         actionLabel.text = proj.action
+        
+        //Edit the code below to display a custom image for each project
+        let url = NSURL(string:"http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
+        let data = NSData(contentsOfURL:url!)
+        if data != nil {
+            projImage.image = UIImage(data:data!)
+        }
     }
     
     

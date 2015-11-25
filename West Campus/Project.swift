@@ -16,6 +16,8 @@ class Project {
     var gpsLongitude: Double
     var clue: String
     var action: String?
+    var distanceToUser : Double? //Tom could you please update this so everyproject as an constantly updating distance...
+    var imageLink : String?
     
     init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?){
         self.projectId = projectId
@@ -26,5 +28,7 @@ class Project {
         self.gpsLongitude = gpsLongitude
         self.clue = clue
         self.action = action
+        distanceToUser = 2.4 //Distance in meters. This is just a default. It eventually needs to be calculated everytime. 
+        imageLink = "http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg"
     }
 }
