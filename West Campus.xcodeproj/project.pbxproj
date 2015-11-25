@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45901F1E1BF3F1B0003FB793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */; };
+		890503471C05355600420D6F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890503461C05355600420D6F /* ProjectTableViewCell.swift */; };
 		892B372F1BE9B1FB00E1174C /* YaleNew-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71C1BE9A895005D2B2A /* YaleNew-Bold.otf */; };
 		892B37301BE9B1FB00E1174C /* YaleNew-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */; };
 		892B37311BE9B1FB00E1174C /* YaleNew-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71E1BE9A895005D2B2A /* YaleNew-Italic.otf */; };
@@ -56,6 +57,7 @@
 		438E032F40F526F79E81FCE4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B5313B3E8A429F4D4422054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		890503461C05355600420D6F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		892B37351BE9B9C600E1174C /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectListViewController.swift; path = ../ProjectListViewController.swift; sourceTree = "<group>"; };
 		892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntViewController.swift; sourceTree = "<group>"; };
 		893AA7851BF65BDE00B451A0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				89C08DA11BF1446C00B91EC0 /* ViewControllers */,
 				894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */,
 				898136031BEEDD2800ACD35C /* Project.swift */,
+				890503461C05355600420D6F /* ProjectTableViewCell.swift */,
 				898136071BEEDEE700ACD35C /* MainModel.swift */,
 				898136041BEEDD2800ACD35C /* ProjectData.swift */,
 				899CB2291C0296760009F11B /* ImageHeaderView.swift */,
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */,
+				890503471C05355600420D6F /* ProjectTableViewCell.swift in Sources */,
 				899CB22A1C0296760009F11B /* ImageHeaderView.swift in Sources */,
 				896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */,
 				892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */,

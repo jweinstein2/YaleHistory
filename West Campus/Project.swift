@@ -18,9 +18,6 @@ class Project {
     var action: String?
     
     init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?){
-        NSLog("printing")
-        NSLog(projectId)
-        NSLog("printing")
         self.projectId = projectId
         self.title = title
         self.summary = summary

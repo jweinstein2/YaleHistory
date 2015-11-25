@@ -23,12 +23,12 @@ class ProjectListViewController: MyViewController {
         return projectList.count
     }
     
+    
     func tableView(tableView: UITableView!,
-        cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+        cellForRowAtIndexPath indexPath: NSIndexPath!) -> ProjectTableViewCell!
     {
-        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell")
+        let cell:ProjectTableViewCell = ProjectTableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"projectCell")
         cell.textLabel?.text = projectList[indexPath.row].title
-        
         return cell
     }
     
@@ -37,7 +37,6 @@ class ProjectListViewController: MyViewController {
         
         let row = indexPath.row
         MyViewController.model.currentProject = row
-        
         self.performSegueWithIdentifier("listToProject", sender: self)
     }
     

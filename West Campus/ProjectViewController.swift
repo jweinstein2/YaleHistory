@@ -26,7 +26,6 @@ class ProjectViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog(String(MyViewController.model))
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title
         summary.text = proj.summary

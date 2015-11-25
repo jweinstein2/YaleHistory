@@ -68,8 +68,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             polygonRender.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
             return polygonRender
         }else if overlay is MKPolyline{
-            NSLog("Jello")
-            NSLog(String(overlay.title))
             //These are the settings for our path lines
             let polylineRender = MKPolylineRenderer(overlay: overlay)
             polylineRender.strokeColor = UIColor.blueColor()
