@@ -12,7 +12,24 @@ import UIKit
 import Foundation
 
 class ProjectListViewController: MyViewController {
+    var isList = true
     var projectList = MyViewController.model.projects.projectData
+    @IBOutlet weak var mapListButton: UIButton!
+    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var map: UIView!
+    
+    @IBAction func mapListTogglePressed(sender: AnyObject) {
+        if isList {
+            isList = false
+            map.hidden = false
+            table.hidden = true
+        }else{
+            isList = true
+            map.hidden = true
+            table.hidden = false
+        }
+        
+    }
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);
@@ -48,6 +65,13 @@ class ProjectListViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
+        vc.projectsToBeDisplayed = projectList
+        map.addSubview(vc.view)
+        map.bringSubviewToFront(vc.view)
+        map.hidden = true
         // Do any additional setup after loading the view, typically from a nib.   
     }
 
