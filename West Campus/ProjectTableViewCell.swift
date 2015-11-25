@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
-    
+    var distance : String?
     var distanceLabel: UILabel = UILabel()
 
     
@@ -22,8 +22,12 @@ class ProjectTableViewCell: UITableViewCell {
         /*
         self.contentView.addSubview(eventName)
         self.contentView.addSubview(eventCity)
-        self.contentView.addSubview(eventTime)
-        */
+        self.contentView.addSubview(eventTime)*/
+        
+        distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 50, self.bounds.size.height - 10))
+        distanceLabel.text = distance
+        distanceLabel.textAlignment = NSTextAlignment.Right
+
         
         self.contentView.addSubview(distanceLabel)
     }
@@ -35,9 +39,5 @@ class ProjectTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         NSLog("layout subview")
-        
-        distanceLabel = UILabel(frame: CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height))
-        distanceLabel.text = "test"
-        distanceLabel.backgroundColor = UIColor.redColor()
     }
 }

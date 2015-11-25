@@ -379,25 +379,9 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRG-Ej-FFo" id="2Xj-fs-gf2">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBl-Ue-MoV">
-                                                    <rect key="frame" x="502" y="11" width="42" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="jBl-Ue-MoV" secondAttribute="trailing" constant="8" id="QsK-en-dZm"/>
-                                                <constraint firstItem="jBl-Ue-MoV" firstAttribute="centerY" secondItem="2Xj-fs-gf2" secondAttribute="centerY" id="tWP-DA-Tdu"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <outlet property="distanceLabel" destination="jBl-Ue-MoV" id="UAt-c6-tUc"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
