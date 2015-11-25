@@ -24,7 +24,7 @@ class ProjectTableViewCell: UITableViewCell {
         self.contentView.addSubview(eventCity)
         self.contentView.addSubview(eventTime)*/
         
-        distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 50, self.bounds.size.height - 10))
+        distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 70, self.bounds.size.height - 10))
         distanceLabel.text = distance
         distanceLabel.textAlignment = NSTextAlignment.Right
 
