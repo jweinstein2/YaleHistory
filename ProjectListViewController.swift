@@ -23,10 +23,12 @@ class ProjectListViewController: MyViewController {
             isList = false
             map.hidden = false
             table.hidden = true
+            mapListButton.setBackgroundImage(UIImage(named: "list_light"), forState: UIControlState.Normal)
         }else{
             isList = true
             map.hidden = true
             table.hidden = false
+            mapListButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
         }
         
     }

@@ -7,8 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="YaleNew-Bold.otf">
+            <string>YaleNew-Bold</string>
+        </mutableArray>
         <mutableArray key="YaleNew-Roman.otf">
-            <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
@@ -350,25 +352,46 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-22-wpW">
-                                <rect key="frame" x="20" y="20" width="34" height="34"/>
+                                <rect key="frame" x="20" y="32" width="25" height="25"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="K0l-aN-hjN"/>
                                     <constraint firstAttribute="width" constant="34" id="Zsq-no-foB"/>
+                                    <constraint firstAttribute="height" constant="43" id="taa-N4-Ltr"/>
+                                    <constraint firstAttribute="width" constant="25" id="yBu-3t-R9G"/>
                                 </constraints>
-                                <state key="normal" title="&lt;"/>
+                                <state key="normal" backgroundImage="back_light"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zsq-no-foB"/>
+                                        <exclude reference="taa-N4-Ltr"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="buttonPressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="5Pl-ua-D0X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Project Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-UD-QOJ">
-                                <rect key="frame" x="233" y="27" width="135" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ir-Eti">
+                                <rect key="frame" x="530" y="20" width="50" height="50"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Wxl-wj-95e"/>
+                                    <constraint firstAttribute="height" constant="50" id="vc1-qT-j0n"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="map_light"/>
+                                <connections>
+                                    <action selector="mapListTogglePressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="DuI-pw-n0b"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-UD-QOJ">
+                                <rect key="frame" x="206" y="31" width="188" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-VK-tdz">
-                                <rect key="frame" x="20" y="63" width="560" height="537"/>
+                                <rect key="frame" x="20" y="75" width="560" height="525"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -388,49 +411,75 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <outlet property="delegate" destination="Gd5-Ao-i4S" id="rFS-b6-7F5"/>
                                 </connections>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
-                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
+                                <rect key="frame" x="20" y="75" width="560" height="525"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ir-Eti">
-                                <rect key="frame" x="534" y="20" width="46" height="35"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="mapListTogglePressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="DuI-pw-n0b"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="bottom" id="0BQ-7V-T6Y"/>
+                            <constraint firstItem="gNH-22-wpW" firstAttribute="centerY" secondItem="Ife-ir-Eti" secondAttribute="centerY" id="0uR-bs-SfI"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" constant="72" id="2WD-BZ-5pF"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="centerX" secondItem="Z8V-VK-tdz" secondAttribute="centerX" id="7Pr-Ci-3AU"/>
                             <constraint firstItem="Nko-UD-QOJ" firstAttribute="leading" secondItem="gNH-22-wpW" secondAttribute="trailing" constant="29" id="Az8-hu-J8k"/>
+                            <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="5" id="B0v-Vz-0Ni"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" constant="72" id="CFU-RP-2kc"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="centerY" secondItem="99h-ob-TuI" secondAttribute="centerY" id="CgL-4c-t3W"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" id="CkW-Ks-xUV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ife-ir-Eti" secondAttribute="trailing" id="Ndd-41-oQk"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="P8b-Iy-5Mx"/>
                             <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="bottom" id="RBe-oc-MIb"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="height" secondItem="Z8V-VK-tdz" secondAttribute="height" id="RSM-jF-7WC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" id="Te1-AM-uHl"/>
                             <constraint firstItem="Ife-ir-Eti" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" id="TmN-2m-SSP"/>
                             <constraint firstItem="Nko-UD-QOJ" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="Vdn-wR-Qc1"/>
+                            <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="MHA-Qj-NAV" secondAttribute="bottom" id="Vhj-EO-XoP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="WjK-XE-bKJ"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" id="XCy-sv-9zr"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Nko-UD-QOJ" secondAttribute="bottom" constant="15" id="Yfs-2a-f6A"/>
                             <constraint firstItem="Ife-ir-Eti" firstAttribute="centerY" secondItem="Nko-UD-QOJ" secondAttribute="centerY" id="aBo-54-AAd"/>
+                            <constraint firstItem="gNH-22-wpW" firstAttribute="height" secondItem="Ife-ir-Eti" secondAttribute="height" id="axV-wn-Afv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="clG-TL-6bH"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" id="d5K-je-Due"/>
+                            <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="8" id="ek8-BW-9iu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MHA-Qj-NAV" secondAttribute="trailing" id="fFC-WU-F4t"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="width" secondItem="Z8V-VK-tdz" secondAttribute="width" id="lGh-Ky-DzV"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="centerY" secondItem="Z8V-VK-tdz" secondAttribute="centerY" id="lmt-dy-tmY"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="5" id="pPN-rH-C9v"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="gNH-22-wpW" secondAttribute="bottom" constant="8" id="rWB-DP-E0B"/>
                             <constraint firstItem="Nko-UD-QOJ" firstAttribute="centerY" secondItem="gNH-22-wpW" secondAttribute="centerY" id="u7W-rs-PVh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="uo2-WY-DSL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" id="xb6-1r-T4A"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Nko-UD-QOJ" secondAttribute="bottom" constant="30" id="y6g-d4-z8X"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gNH-22-wpW" secondAttribute="leading" id="ytU-XF-KUJ"/>
+                            <constraint firstItem="gNH-22-wpW" firstAttribute="width" secondItem="Ife-ir-Eti" secondAttribute="width" id="zKv-bg-W2i"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="XCy-sv-9zr"/>
+                                <exclude reference="axV-wn-Afv"/>
+                                <exclude reference="zKv-bg-W2i"/>
+                                <exclude reference="d5K-je-Due"/>
+                                <exclude reference="fFC-WU-F4t"/>
+                                <exclude reference="pPN-rH-C9v"/>
                                 <exclude reference="2WD-BZ-5pF"/>
                                 <exclude reference="CFU-RP-2kc"/>
                                 <exclude reference="CgL-4c-t3W"/>
+                                <exclude reference="P8b-Iy-5Mx"/>
+                                <exclude reference="Te1-AM-uHl"/>
+                                <exclude reference="WjK-XE-bKJ"/>
+                                <exclude reference="Yfs-2a-f6A"/>
+                                <exclude reference="ek8-BW-9iu"/>
                                 <exclude reference="rWB-DP-E0B"/>
+                                <exclude reference="uo2-WY-DSL"/>
+                                <exclude reference="xb6-1r-T4A"/>
                                 <exclude reference="y6g-d4-z8X"/>
+                                <exclude reference="Az8-hu-J8k"/>
+                                <exclude reference="RBe-oc-MIb"/>
+                                <exclude reference="Vhj-EO-XoP"/>
                             </mask>
                         </variation>
                     </view>
@@ -565,6 +614,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
         </scene>
     </scenes>
     <resources>
+        <image name="back_light" width="290" height="290"/>
         <image name="home" width="512" height="512"/>
+        <image name="map_light" width="290" height="290"/>
     </resources>
 </document>
