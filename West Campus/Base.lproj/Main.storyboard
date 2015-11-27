@@ -411,8 +411,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <outlet property="delegate" destination="Gd5-Ao-i4S" id="rFS-b6-7F5"/>
                                 </connections>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
-                                <rect key="frame" x="20" y="75" width="560" height="525"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
+                                <rect key="frame" x="0.0" y="86" width="600" height="514"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
@@ -429,6 +429,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" constant="72" id="CFU-RP-2kc"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="centerY" secondItem="99h-ob-TuI" secondAttribute="centerY" id="CgL-4c-t3W"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" id="CkW-Ks-xUV"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="height" secondItem="Z8V-VK-tdz" secondAttribute="height" id="ESo-RS-ABP"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="10" id="JRn-Re-j4z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ife-ir-Eti" secondAttribute="trailing" id="Ndd-41-oQk"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="P8b-Iy-5Mx"/>
                             <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="bottom" id="RBe-oc-MIb"/>
@@ -440,17 +442,22 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="WjK-XE-bKJ"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" id="XCy-sv-9zr"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Nko-UD-QOJ" secondAttribute="bottom" constant="15" id="Yfs-2a-f6A"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="width" secondItem="Z8V-VK-tdz" secondAttribute="width" id="Zp2-Dm-oVf"/>
                             <constraint firstItem="Ife-ir-Eti" firstAttribute="centerY" secondItem="Nko-UD-QOJ" secondAttribute="centerY" id="aBo-54-AAd"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="height" secondItem="Ife-ir-Eti" secondAttribute="height" id="axV-wn-Afv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="clG-TL-6bH"/>
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" id="d5K-je-Due"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="8" id="ek8-BW-9iu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MHA-Qj-NAV" secondAttribute="trailing" id="fFC-WU-F4t"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="gMT-5g-tud"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="MHA-Qj-NAV" secondAttribute="leading" constant="-20" id="i1C-ye-scp"/>
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="width" secondItem="Z8V-VK-tdz" secondAttribute="width" id="lGh-Ky-DzV"/>
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="centerY" secondItem="Z8V-VK-tdz" secondAttribute="centerY" id="lmt-dy-tmY"/>
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="Ife-ir-Eti" secondAttribute="bottom" constant="5" id="pPN-rH-C9v"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="gNH-22-wpW" secondAttribute="bottom" constant="8" id="rWB-DP-E0B"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="width" secondItem="Z8V-VK-tdz" secondAttribute="width" id="tzn-qI-ma1"/>
                             <constraint firstItem="Nko-UD-QOJ" firstAttribute="centerY" secondItem="gNH-22-wpW" secondAttribute="centerY" id="u7W-rs-PVh"/>
+                            <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="MHA-Qj-NAV" secondAttribute="bottom" id="uBa-bf-V0p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" id="uo2-WY-DSL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" id="xb6-1r-T4A"/>
                             <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="Nko-UD-QOJ" secondAttribute="bottom" constant="30" id="y6g-d4-z8X"/>
@@ -462,9 +469,19 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <exclude reference="XCy-sv-9zr"/>
                                 <exclude reference="axV-wn-Afv"/>
                                 <exclude reference="zKv-bg-W2i"/>
+                                <exclude reference="7Pr-Ci-3AU"/>
+                                <exclude reference="ESo-RS-ABP"/>
+                                <exclude reference="JRn-Re-j4z"/>
+                                <exclude reference="RSM-jF-7WC"/>
+                                <exclude reference="Zp2-Dm-oVf"/>
                                 <exclude reference="d5K-je-Due"/>
                                 <exclude reference="fFC-WU-F4t"/>
+                                <exclude reference="gMT-5g-tud"/>
+                                <exclude reference="i1C-ye-scp"/>
+                                <exclude reference="lGh-Ky-DzV"/>
+                                <exclude reference="lmt-dy-tmY"/>
                                 <exclude reference="pPN-rH-C9v"/>
+                                <exclude reference="tzn-qI-ma1"/>
                                 <exclude reference="2WD-BZ-5pF"/>
                                 <exclude reference="CFU-RP-2kc"/>
                                 <exclude reference="CgL-4c-t3W"/>
@@ -480,6 +497,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 <exclude reference="Az8-hu-J8k"/>
                                 <exclude reference="RBe-oc-MIb"/>
                                 <exclude reference="Vhj-EO-XoP"/>
+                                <exclude reference="uBa-bf-V0p"/>
                             </mask>
                         </variation>
                     </view>
