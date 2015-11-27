@@ -23,7 +23,6 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
-            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -458,15 +457,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to West Campus Green Space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dk-Qp-CsP">
-                                <rect key="frame" x="173" y="30" width="269" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
-                                <rect key="frame" x="0.0" y="124" width="600" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
+                                <rect key="frame" x="0.0" y="234" width="600" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
@@ -477,8 +469,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="Gd5-Ao-i4S" kind="presentation" animates="NO" id="zn5-2l-DJr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
-                                <rect key="frame" x="0.0" y="178" width="600" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
+                                <rect key="frame" x="0.0" y="288" width="600" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
@@ -489,8 +481,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="T5x-nP-qhd" kind="presentation" id="Yr9-oD-aFC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
-                                <rect key="frame" x="0.0" y="70" width="600" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
+                                <rect key="frame" x="93" y="180" width="339" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.54953162021484325" green="0.73050429516826987" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
@@ -501,32 +493,29 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="7kc-BK-ggn" kind="presentation" animates="NO" id="KE8-AL-p2j"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="WEST CAMPUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-jc-v6e">
+                                <rect key="frame" x="5" y="15" width="591" height="86"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="27"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MUq-ek-Jph" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="1WA-EA-ZaJ"/>
-                            <constraint firstItem="5Dk-Qp-CsP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hd-RM-ywg"/>
                             <constraint firstItem="d9H-3M-pBa" firstAttribute="height" secondItem="h9P-5z-NXH" secondAttribute="height" id="8oV-wL-OS3"/>
-                            <constraint firstItem="5Dk-Qp-CsP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="8px-3u-M9M"/>
+                            <constraint firstItem="s6E-jc-v6e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-5" id="Bep-Vg-OvV"/>
                             <constraint firstItem="MUq-ek-Jph" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="C8u-vF-z8q"/>
-                            <constraint firstItem="5Dk-Qp-CsP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R5S-Ve-KVf"/>
                             <constraint firstItem="MUq-ek-Jph" firstAttribute="height" secondItem="d9H-3M-pBa" secondAttribute="height" id="R87-GN-vbj"/>
                             <constraint firstItem="d9H-3M-pBa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TGB-L1-VDA"/>
                             <constraint firstItem="h9P-5z-NXH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TXe-qK-OxQ"/>
-                            <constraint firstItem="5Dk-Qp-CsP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="V47-6W-lY7"/>
                             <constraint firstItem="MUq-ek-Jph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aLk-P7-OkX"/>
                             <constraint firstItem="d9H-3M-pBa" firstAttribute="top" secondItem="MUq-ek-Jph" secondAttribute="bottom" constant="10" id="diR-ve-Qrx"/>
                             <constraint firstItem="d9H-3M-pBa" firstAttribute="width" secondItem="MUq-ek-Jph" secondAttribute="width" id="mVG-sh-ovm"/>
                             <constraint firstItem="h9P-5z-NXH" firstAttribute="top" secondItem="d9H-3M-pBa" secondAttribute="bottom" constant="10" id="mVI-Jx-oVc"/>
                             <constraint firstItem="h9P-5z-NXH" firstAttribute="width" secondItem="d9H-3M-pBa" secondAttribute="width" id="xSk-xX-beU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="R5S-Ve-KVf"/>
-                                <exclude reference="V47-6W-lY7"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="projectInformation" destination="d9H-3M-pBa" id="dNS-ds-xFt"/>
@@ -535,7 +524,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="322"/>
+            <point key="canvasLocation" x="211" y="320"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="y4v-Nw-STp">
