@@ -48,6 +48,35 @@ class ProjectViewController: MyViewController {
         let data = NSData(contentsOfURL:url!)
         if data != nil {
             projImage.image = UIImage(data:data!)
+        
+        }
+    }
+    
+    class urltest {
+        
+        var urls:[String]
+        
+        init() {
+            self.urls=[String]()  // Load URLs into here
+        }
+        
+        @IBAction func labelTapped(sender:UILabel!) {
+            
+            let urlIndex=sender.tag;
+            if (urlIndex >= 0 && urlIndex < self.urls.count) {
+                self.openUrl(self.urls[urlIndex]);
+            }
+            
+        }
+        
+        func openUrl(url:String!) {
+            
+            let targetURL=NSURL(fileURLWithPath: url)
+            
+            let application=UIApplication.sharedApplication()
+            
+            application.openURL(targetURL);
+            
         }
     }
     
