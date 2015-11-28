@@ -71,8 +71,8 @@ class ProjectListViewController: MyViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
         vc.projectsToBeDisplayed = projectList
-        vc.view.frame = CGRectMake(0, 0, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
         map.addSubview(vc.view)
+        vc.view.frame = CGRectMake(10, 10, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
         //map.bringSubviewToFront(vc.view)
         map.hidden = true
         // Do any additional setup after loading the view, typically from a nib.   
