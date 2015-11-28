@@ -34,11 +34,11 @@ class ProjectData: NSObject {
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action)
+            //let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action)
             
             // NSLog(id + title + summary + link +  clue + action) for debugging purposes
             
-            projectData.append(currentProject)
+            //projectData.append(currentProject)
         }
     }
     
