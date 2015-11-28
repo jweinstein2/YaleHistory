@@ -59,8 +59,8 @@
                                 <state key="normal" backgroundImage="back_light"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="OcK-qN-PzD"/>
                                         <exclude reference="4ZJ-jD-ZUf"/>
+                                        <exclude reference="OcK-qN-PzD"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -80,9 +80,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
                                         <rect key="frame" x="10" y="10" width="530" height="339"/>
                                         <animations/>
-                                        <mutableString key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.
+                                        <string key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.
 
-Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow. </mutableString>
+Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow. </string>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -578,8 +578,8 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="T5x-nP-qhd" kind="presentation" animates="NO" id="Yr9-oD-aFC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
-                                <rect key="frame" x="33" y="171" width="582" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
+                                <rect key="frame" x="30" y="171" width="550" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
