@@ -713,7 +713,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
         <image name="header" width="874" height="128"/>
         <image name="home" width="512" height="512"/>
         <image name="map_light" width="290" height="290"/>
-        <image name="projects" width="299" height="299"/>
+        <image name="projects" width="303" height="303"/>
         <image name="scavenger" width="299" height="299"/>
     </resources>
 </document>
