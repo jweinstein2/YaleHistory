@@ -59,7 +59,8 @@ class ProjectViewController: MyViewController {
     
     @IBAction func labelTapped() {
         NSLog("hello")
-        self.openUrl("http://google.com")
+        let url = NSURL(string: "https://google.com")!
+        UIApplication.sharedApplication().openURL(url)
     }
     
     func openUrl(url:String!) {
