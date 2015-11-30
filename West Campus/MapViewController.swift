@@ -38,7 +38,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func addOverlay(){
         var borderPoints = [CLLocationCoordinate2D]()
         //Add or remove from this list to change the displayed border
-        borderPoints.append(CLLocationCoordinate2DMake(41.243276, -73.005744))
+        borderPoints.append(CLLocationCoordinate2DMake(41.243276, -73.005744))//update this to be the border of our project
         borderPoints.append(CLLocationCoordinate2DMake(41.243276, -72.985744))
         borderPoints.append(CLLocationCoordinate2DMake(41.263276, -72.985744))
         borderPoints.append(CLLocationCoordinate2DMake(41.263276, -73.005744))
@@ -56,6 +56,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let path : MKPolyline = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path"
         map.addOverlay(path)
+        //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
