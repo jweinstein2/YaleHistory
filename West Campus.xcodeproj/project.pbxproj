@@ -54,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		438E032F40F526F79E81FCE4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		455893571C0D0E5500B7D895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/ArrivalViewController.swift; sourceTree = "<group>"; };
 		45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B5313B3E8A429F4D4422054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		890503461C05355600420D6F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 				893AA7851BF65BDE00B451A0 /* MapViewController.swift */,
 				89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */,
 				89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */,
+				455893561C0D0E5500B7D895 /* ArrivalViewController.swift */,
 				894CA6E01BE99FBE005D2B2A /* MainViewController.swift */,
 				892B37351BE9B9C600E1174C /* ProjectListViewController.swift */,
 				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
@@ -465,6 +467,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		455893561C0D0E5500B7D895 /* ArrivalViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				455893571C0D0E5500B7D895 /* Base */,
+			);
+			name = ArrivalViewController.swift;
+			sourceTree = "<group>";
+		};
 		894CA6E21BE99FBE005D2B2A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

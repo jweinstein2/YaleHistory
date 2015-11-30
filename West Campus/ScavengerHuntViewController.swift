@@ -19,10 +19,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     @IBOutlet weak var clueLabel: UILabel!
-    @IBOutlet weak var RegionMonitor: UILabel!
-    @IBOutlet weak var BackToHunt: UIButton!
     @IBOutlet weak var projectTitle: UILabel!
-    @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
     
@@ -47,9 +44,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
         projectTitle.text = currProj.title
         
-        summaryLabel.hidden = true
-        BackToHunt.hidden = true
-        
     }
     
     @IBAction func huntButtonPressed(sender: AnyObject){
@@ -60,27 +54,19 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
    
         
         clueLabel.hidden = false
-        RegionMonitor.hidden = false
         distanceLabel.hidden = false
         projectTitle.text = currProj.title
         Header.text = "You are looking for"
         
         view.backgroundColor = UIColor.blueColor()
         
-        BackToHunt.hidden = true
-        summaryLabel.hidden = true
         
         }
         
         else  {     //code for finishing the Hunt
             locationManager.stopUpdatingLocation()
-            
-            BackToHunt.hidden = true
             Header.hidden = true
             projectTitle.hidden = true
-            
-            summaryLabel.text = "Congratulations, you've finished the scavenger hunt! Tap the home button to return to the main menu."
-            
         }
     }
     
@@ -114,18 +100,12 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             
             Header.text = "Congratulations, you have reached"
             
-            summaryLabel.text = currProj.summary
-            
             clueLabel.hidden = true
-            RegionMonitor.hidden = true
             distanceLabel.hidden = true
-            BackToHunt.hidden = false
-            summaryLabel.hidden = false
         }
         
         
         NSLog("update location: %f , %f", locations[0].coordinate.latitude, locations[0].coordinate.longitude)
-        RegionMonitor.text = String(latitude: locations[0].coordinate.latitude, longitude:  locations[0].coordinate.longitude)
     }
     
     override func didReceiveMemoryWarning() {
