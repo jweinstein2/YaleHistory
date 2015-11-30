@@ -57,6 +57,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path.title = "path"
         map.addOverlay(path)
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
+       for var i = 0; i < projectsToBeDisplayed.count; i++ {
+        var lat = projectsToBeDisplayed[i].gpsLatitude
+        var long = projectsToBeDisplayed[i].gpsLongitude
+        MKAnnotation
+    }
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
