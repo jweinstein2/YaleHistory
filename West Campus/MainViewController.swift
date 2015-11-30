@@ -19,6 +19,8 @@ class ViewController: MyViewController {
         // Do any additional setup after loading the view, typically from a nib.
         MyViewController.model = MainModel.init()
         NSLog(String(MyViewController.model))
+        
+        //make button gray out
     }
     
     @IBAction func demoSegue(sender: AnyObject) {

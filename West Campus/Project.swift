@@ -19,7 +19,7 @@ class Project {
     var distanceToUser : Double? //Tom could you please update this so everyproject as an constantly updating distance...
     var imageLink : String?
     
-    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?){
+    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?, imageLink: String){
         self.projectId = projectId
         self.title = title
         self.summary = summary
@@ -29,6 +29,6 @@ class Project {
         self.clue = clue
         self.action = action
         distanceToUser =  Double(random() % 100) /  5.0 //Distance in meters. This is just a default. It eventually needs to be calculated everytime.
-        imageLink = "http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg"
+        self.imageLink = imageLink //"http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg"
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 class MainModel{
     var projects : ProjectData!
     var currentProject : Int!
+    var scavengerHuntAvailable: Bool!
 
     var myHTMLString: String?
 
@@ -26,6 +27,14 @@ class MainModel{
                 NSLog("ERROR: Line 21 of Main Model - Failed to download the contents of json from website")
             }
             projects = ProjectData(inputString: myHTMLString!)
+            
+            if projects.projectData.count == 0 {        //set availability of scavenger hunt
+                scavengerHuntAvailable = false
+            }
+            else {
+                scavengerHuntAvailable = true
+            }
+            
         } else {
             NSLog("Error: \(myURLString) doesn't seem to be a valid URL")
         }
