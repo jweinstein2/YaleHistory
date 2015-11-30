@@ -59,7 +59,7 @@ class ProjectViewController: MyViewController {
     
     @IBAction func labelTapped() {
         NSLog("hello")
-        let url = NSURL(string: "https://google.com")!
+        let url = NSURL(string: proj.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
         UIApplication.sharedApplication().openURL(url)
     }
     

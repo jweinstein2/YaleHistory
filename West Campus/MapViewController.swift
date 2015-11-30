@@ -60,7 +60,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
        for var i = 0; i < projectsToBeDisplayed.count; i++ {
         var lat = projectsToBeDisplayed[i].gpsLatitude
         var long = projectsToBeDisplayed[i].gpsLongitude
-        MKAnnotation
+        //var MKAnnotation
     }
     }
     
