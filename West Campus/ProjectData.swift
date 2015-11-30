@@ -21,6 +21,7 @@ class ProjectData: NSObject {
         if inputString != "" {
             
         inputString = inputString.substringToIndex(inputString.endIndex.predecessor())    
+        inputString = inputString.stringByReplacingOccurrencesOfString("\\/", withString: "/")
         
         var projectArr = inputString.componentsSeparatedByString("}")
         projectArr.removeLast() //remove bc separating by end braces leaves an empty string at the end
