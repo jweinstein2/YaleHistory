@@ -42,7 +42,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         borderPoints.append(CLLocationCoordinate2DMake(41.243276, -72.985744))
         borderPoints.append(CLLocationCoordinate2DMake(41.263276, -72.985744))
         borderPoints.append(CLLocationCoordinate2DMake(41.263276, -73.005744))
-        
         let border : MKPolygon! = MKPolygon.init(coordinates: &borderPoints, count: borderPoints.count)
         border.title = "Border"
         map.addOverlay(border)

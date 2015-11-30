@@ -26,6 +26,11 @@ class ProjectViewController: MyViewController {
     }
     
     override func viewDidLoad() {
+        linkLabel.userInteractionEnabled = true
+        let
+        tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "labelTapped")
+        linkLabel.addGestureRecognizer(tapGesture)
+        
         super.viewDidLoad()
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title
@@ -52,34 +57,16 @@ class ProjectViewController: MyViewController {
         }
     }
     
-    class urltest {
-        
-        var urls:[String]
-        
-        init() {
-            self.urls=[String]()  // Load URLs into here
-        }
-        
-        @IBAction func labelTapped(sender:UILabel!) {
-            
-            let urlIndex=sender.tag;
-            if (urlIndex >= 0 && urlIndex < self.urls.count) {
-                self.openUrl(self.urls[urlIndex]);
-            }
-            
-        }
-        
-        func openUrl(url:String!) {
-            
-            let targetURL=NSURL(fileURLWithPath: url)
-            
-            let application=UIApplication.sharedApplication()
-            
-            application.openURL(targetURL);
-            
-        }
+    @IBAction func labelTapped() {
+        NSLog("hello")
+        self.openUrl("http://google.com")
     }
     
+    func openUrl(url:String!) {
+        let targetURL=NSURL(fileURLWithPath: url)
+        let application=UIApplication.sharedApplication()
+        application.openURL(targetURL)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
