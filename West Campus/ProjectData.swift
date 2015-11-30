@@ -48,12 +48,14 @@ class ProjectData: NSObject {
         
     }
     
-    func find (var project: String, element: String) -> String{
-        project = project.stringByReplacingOccurrencesOfString("\"", withString: "")
+    func find (let project: String, element: String) -> String{
         var tokens = project.componentsSeparatedByString(",")
         
         for var index = 0; index < tokens.count; ++index{
-            var map = tokens[index].componentsSeparatedByString(":")
+            tokens[index] = tokens[index].substringFromIndex(tokens[index].startIndex.advancedBy(1))    //trim leading and ending quotes
+            tokens[index] = tokens[index].substringToIndex(tokens[index].endIndex.predecessor())
+            
+            var map = tokens[index].componentsSeparatedByString("\":\"")
             if map[0] == element {
                 return map[1]
             }

@@ -14,7 +14,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     var currProj: Project!
     let CEIDLoc = CLLocationCoordinate2D(latitude: 41.31169929, longitude: -72.9284069)
-    let regionRadius : Double! = 10.0
+    let regionRadius : Double! = 15.0
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
