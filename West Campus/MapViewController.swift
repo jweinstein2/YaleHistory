@@ -56,12 +56,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let path : MKPolyline = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path"
         map.addOverlay(path)
+        
+        
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
-       for var i = 0; i < projectsToBeDisplayed.count; i++ {
-        var lat = projectsToBeDisplayed[i].gpsLatitude
-        var long = projectsToBeDisplayed[i].gpsLongitude
-        //var MKAnnotation
-    }
+        for var i = 0; i < projectsToBeDisplayed.count; i++ {
+            let lat = projectsToBeDisplayed[i].gpsLatitude
+            let long = projectsToBeDisplayed[i].gpsLongitude
+            let loc : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = loc
+            annotation.title = projectsToBeDisplayed[i].title
+            //annotation.subtitle = "subtitle"
+            map.addAnnotation(annotation)
+        }
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -83,5 +90,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         NSLog("Error: mapView in mapViewController got passed an overlay that wasn't properly handled")
         let polygonRender = MKPolygonRenderer(overlay: overlay)
         return polygonRender
+    }
+    
+    //MKAnnotation Customization
+    //This needs to get called when every annotation is rendered but it isn't for some reason
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        NSLog("annotation set up")
+        let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
+        pinAnnotationView.pinTintColor = UIColor.purpleColor()
+        pinAnnotationView.canShowCallout = true
+        let moreButton = UIButton.init(type: UIButtonType.Custom) as UIButton
+        moreButton.frame.size.width = 44
+        moreButton.frame.size.height = 44
+        moreButton.backgroundColor = UIColor.redColor()
+        moreButton.setImage(UIImage(named: "home"), forState: .Normal)
+        pinAnnotationView.rightCalloutAccessoryView = moreButton
+        return pinAnnotationView
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            NSLog("COOL")
     }
 }
