@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-lA-WTh">
-                                <rect key="frame" x="0.0" y="30" width="540" height="87"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-lA-WTh">
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ta9-lA-WTh" secondAttribute="height" multiplier="169:27" id="Fk3-uy-Fbd"/>
@@ -47,8 +47,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cND-mo-So7">
-                                <rect key="frame" x="20" y="40" width="67" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cND-mo-So7">
+                                <rect key="frame" x="20" y="40" width="66.5" height="66.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cND-mo-So7" secondAttribute="height" multiplier="1:1" id="0Cj-2h-NE7"/>
@@ -67,21 +67,19 @@
                                     <action selector="buttonPressed:" destination="T5x-nP-qhd" eventType="touchUpInside" id="QZN-C2-mrY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ABOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
-                                <rect key="frame" x="96" y="30" width="85" height="87"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
+                                <rect key="frame" x="96" y="30" width="84.5" height="86.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-4a-800">
-                                <rect key="frame" x="-11" y="104" width="584" height="468"/>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-4a-800">
+                                <rect key="frame" x="30" y="121" width="570" height="468.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
-                                        <rect key="frame" x="10" y="10" width="530" height="339"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
+                                        <rect key="frame" x="0.0" y="10" width="550" height="565"/>
                                         <animations/>
-                                        <string key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.
-
-Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow. </string>
+                                        <string key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.   Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow.   helo     helo      helo</string>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -89,18 +87,15 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="NJA-4a-800" secondAttribute="width" id="Rdy-6t-e4f"/>
-                                    <constraint firstAttribute="trailing" secondItem="jAY-ha-Use" secondAttribute="trailing" constant="10" id="RsZ-cf-fCw"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="leading" secondItem="NJA-4a-800" secondAttribute="leading" constant="10" id="VDd-zj-9l8"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="height" secondItem="NJA-4a-800" secondAttribute="height" id="bnG-Vr-Q2I"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="NJA-4a-800" secondAttribute="width" constant="-10" id="iaH-cs-vez"/>
+                                    <constraint firstAttribute="trailing" secondItem="jAY-ha-Use" secondAttribute="trailing" id="ATh-bA-KSt"/>
+                                    <constraint firstItem="jAY-ha-Use" firstAttribute="leading" secondItem="NJA-4a-800" secondAttribute="leading" id="VDd-zj-9l8"/>
+                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="NJA-4a-800" secondAttribute="width" id="ciI-33-Vsk"/>
+                                    <constraint firstAttribute="bottom" secondItem="jAY-ha-Use" secondAttribute="bottom" id="jFW-Im-PCL"/>
                                     <constraint firstItem="jAY-ha-Use" firstAttribute="top" secondItem="NJA-4a-800" secondAttribute="top" constant="10" id="rir-SE-EQt"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Rdy-6t-e4f"/>
-                                        <exclude reference="RsZ-cf-fCw"/>
-                                        <exclude reference="bnG-Vr-Q2I"/>
+                                        <exclude reference="ciI-33-Vsk"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -108,17 +103,17 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ta9-lA-WTh" firstAttribute="width" secondItem="ta9-lA-WTh" secondAttribute="height" multiplier="169:27" id="1fn-ai-hbB"/>
                             <constraint firstItem="ta9-lA-WTh" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" constant="-20" id="3q8-FY-Y35"/>
-                            <constraint firstItem="cND-mo-So7" firstAttribute="width" secondItem="cND-mo-So7" secondAttribute="height" multiplier="1:1" id="6Hl-9O-LL4"/>
+                            <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="MWH-wZ-DTQ" secondAttribute="width" constant="-50" id="9N9-Ss-FlP"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="height" secondItem="ta9-lA-WTh" secondAttribute="height" id="HXo-sM-p0v"/>
                             <constraint firstItem="zZo-3Y-x5n" firstAttribute="top" secondItem="NJA-4a-800" secondAttribute="bottom" constant="10" id="IQK-jp-ahJ"/>
                             <constraint firstItem="ta9-lA-WTh" firstAttribute="top" secondItem="BYN-aM-1a1" secondAttribute="bottom" constant="10" id="ImG-M8-wAj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jAY-ha-Use" secondAttribute="trailing" constant="20" id="RUW-Fi-dF2"/>
                             <constraint firstItem="NJA-4a-800" firstAttribute="top" secondItem="ta9-lA-WTh" secondAttribute="bottom" constant="5" id="XHT-mb-RjA"/>
                             <constraint firstItem="NJA-4a-800" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" constant="10" id="Zfd-1X-dO6"/>
                             <constraint firstItem="cND-mo-So7" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" id="akK-pa-kxW"/>
                             <constraint firstItem="cND-mo-So7" firstAttribute="top" secondItem="ta9-lA-WTh" secondAttribute="top" constant="10" id="ipq-cH-KQb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NJA-4a-800" secondAttribute="trailing" constant="10" id="j8G-Az-4kz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NJA-4a-800" secondAttribute="trailing" constant="-20" id="j8G-Az-4kz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ta9-lA-WTh" secondAttribute="trailing" constant="40" id="ja2-pY-TR2"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="leading" secondItem="cND-mo-So7" secondAttribute="trailing" constant="10" id="oe4-me-3QE"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="centerY" secondItem="ta9-lA-WTh" secondAttribute="centerY" id="tc4-KG-4dh"/>
@@ -126,8 +121,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="1fn-ai-hbB"/>
-                                <exclude reference="6Hl-9O-LL4"/>
+                                <exclude reference="RUW-Fi-dF2"/>
                             </mask>
                         </variation>
                     </view>
@@ -148,77 +142,92 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
-                                <rect key="frame" x="81" y="13" width="34" height="36"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
-                                <rect key="frame" x="20" y="136" width="363" height="127"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
-                                <rect key="frame" x="20" y="271" width="363" height="22"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
+                                <rect key="frame" x="391" y="130" width="189" height="22"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
-                                <rect key="frame" x="20" y="301" width="363" height="22"/>
+                                <rect key="frame" x="20" y="293" width="560" height="22"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-Sf-lhH">
-                                <rect key="frame" x="20" y="15" width="44" height="32"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
+                                <rect key="frame" x="391" y="160" width="209" height="125"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
-                                <state key="normal" title="&lt; Back"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="abw-Ph-xwY" eventType="touchUpInside" id="QyM-vj-F1p"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
-                                <rect key="frame" x="0.0" y="58" width="600" height="114"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="114" id="e43-hr-NiQ"/>
-                                </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
                                 <rect key="frame" x="0.0" y="359" width="600" height="241"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-Cy-9H7">
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XgA-Cy-9H7" secondAttribute="height" multiplier="169:27" id="URM-Ag-9kD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-Sf-lhH">
+                                <rect key="frame" x="20" y="40" width="66.5" height="66.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UZc-Sf-lhH" secondAttribute="height" multiplier="1:1" id="2HZ-Xf-w5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
+                                <state key="normal" image="back_light"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="abw-Ph-xwY" eventType="touchUpInside" id="QyM-vj-F1p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT TITLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
+                                <rect key="frame" x="96" y="30" width="393.5" height="86.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
+                                <rect key="frame" x="20" y="124" width="560" height="162.5"/>
+                                <animations/>
+                                <string key="text">Summary: To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" id="4TQ-dP-hWP"/>
+                            <constraint firstItem="XgA-Cy-9H7" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="4d5-7F-UU1"/>
                             <constraint firstItem="OxC-hO-N4G" firstAttribute="top" secondItem="Ady-Wp-XjU" secondAttribute="bottom" constant="57" id="Als-pk-CiA"/>
-                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="UZc-Sf-lhH" secondAttribute="trailing" constant="17" id="EdC-wi-KMy"/>
+                            <constraint firstItem="UZc-Sf-lhH" firstAttribute="bottom" secondItem="XgA-Cy-9H7" secondAttribute="bottom" constant="-10" id="BvR-d7-8IR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UZc-Sf-lhH" secondAttribute="leading" id="CNB-D7-WDe"/>
                             <constraint firstItem="kgz-Zn-SJ5" firstAttribute="top" secondItem="GGg-KH-Fj5" secondAttribute="bottom" constant="9" id="FpS-2X-Te0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kgz-Zn-SJ5" secondAttribute="trailing" constant="-20" id="PX3-SY-isQ"/>
-                            <constraint firstItem="kgz-Zn-SJ5" firstAttribute="top" secondItem="GGg-KH-Fj5" secondAttribute="bottom" constant="8" id="TbM-KV-zwc"/>
-                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="-7" id="Zgn-ks-f7Z"/>
+                            <constraint firstItem="UZc-Sf-lhH" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" constant="10" id="MaM-bc-qv2"/>
+                            <constraint firstItem="XgA-Cy-9H7" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="10" id="RxI-5c-ah9"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="UZc-Sf-lhH" secondAttribute="trailing" constant="10" id="UT8-Q0-Hoa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nb3-NH-eEW" secondAttribute="trailing" id="Uza-Ug-nVT"/>
+                            <constraint firstItem="nb3-NH-eEW" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" id="ZkO-pr-fjS"/>
                             <constraint firstItem="Ady-Wp-XjU" firstAttribute="width" secondItem="lVN-Wy-rHI" secondAttribute="height" multiplier="1:1" id="aJW-Q3-OgG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Ady-Wp-XjU" secondAttribute="leading" id="b8q-rU-iui"/>
-                            <constraint firstItem="UZc-Sf-lhH" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="-5" id="bRV-gZ-bI4"/>
-                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="centerY" secondItem="UZc-Sf-lhH" secondAttribute="centerY" id="dOG-SK-oKg"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="UZc-Sf-lhH" secondAttribute="leading" id="gli-bt-igd"/>
-                            <constraint firstItem="kgz-Zn-SJ5" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="ocN-Gi-Eca"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="40" id="buW-ri-gw2"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="trailing" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="-50" id="lfw-Nc-CLK"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="height" secondItem="XgA-Cy-9H7" secondAttribute="height" id="sha-Rv-Lrj"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="-443.5" id="uYq-uo-55K"/>
+                            <constraint firstItem="nb3-NH-eEW" firstAttribute="top" secondItem="GGg-KH-Fj5" secondAttribute="bottom" constant="7.5" id="ump-6A-EsH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="FpS-2X-Te0"/>
+                                <exclude reference="uYq-uo-55K"/>
                                 <exclude reference="aJW-Q3-OgG"/>
                                 <exclude reference="b8q-rU-iui"/>
+                                <exclude reference="FpS-2X-Te0"/>
                                 <exclude reference="Als-pk-CiA"/>
                             </mask>
                         </variation>
@@ -250,12 +259,14 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-1b-dtR">
                                 <rect key="frame" x="-5" y="13" width="540" height="87"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ENo-1b-dtR" secondAttribute="height" multiplier="169:27" id="xHb-Qa-rRB"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCq-tC-B7h">
                                 <rect key="frame" x="515" y="166" width="42" height="20"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="shb-Yf-uKL"/>
                                 </constraints>
@@ -269,17 +280,20 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-OS-vJg">
                                 <rect key="frame" x="130" y="195" width="335" height="42"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx8-PY-4qj">
                                 <rect key="frame" x="36" y="541" width="560" height="23"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.89411764705882357" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ENo-1b-dtR" firstAttribute="width" secondItem="ENo-1b-dtR" secondAttribute="height" multiplier="169:27" id="XYr-No-MjC"/>
@@ -332,6 +346,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="CHe-PR-Jsn">
                                 <rect key="frame" x="0.0" y="28" width="540" height="87"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CHe-PR-Jsn" secondAttribute="height" multiplier="180:29" id="ByA-yQ-du2"/>
                                     <constraint firstAttribute="width" secondItem="CHe-PR-Jsn" secondAttribute="height" multiplier="169:27" id="T4p-KI-YuQ"/>
@@ -345,6 +360,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SCAVENGER HUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAQ-nS-D4T">
                                 <rect key="frame" x="95" y="28" width="226" height="87"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mAQ-nS-D4T" secondAttribute="height" multiplier="226:87" id="T3M-qt-Zcx"/>
                                 </constraints>
@@ -353,6 +369,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Az-6G-Tzz">
                                 <rect key="frame" x="33" y="47" width="47" height="50"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="C86-FL-xkF"/>
                                     <constraint firstAttribute="width" constant="34" id="Pzj-03-8Ea"/>
@@ -474,20 +491,20 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-cS-e8t">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-cS-e8t">
                                 <rect key="frame" x="0.0" y="30" width="540" height="87"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u5r-cS-e8t" secondAttribute="height" multiplier="169:27" id="snM-5Y-xw3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PROJECT INFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yio-fK-RdV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT INFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yio-fK-RdV">
                                 <rect key="frame" x="96" y="30" width="173" height="87"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ir-Eti">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ir-Eti">
                                 <rect key="frame" x="550" y="40" width="67" height="67"/>
                                 <animations/>
                                 <constraints>
@@ -498,7 +515,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <action selector="mapListTogglePressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="DuI-pw-n0b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-22-wpW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-22-wpW">
                                 <rect key="frame" x="20" y="40" width="67" height="67"/>
                                 <animations/>
                                 <constraints>
@@ -517,7 +534,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <action selector="buttonPressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="5Pl-ua-D0X"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
                                 <rect key="frame" x="10" y="122" width="580" height="474"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -531,7 +548,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                         <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRG-Ej-FFo" id="2Xj-fs-gf2">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -631,20 +648,20 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-Yh-90s">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-Yh-90s">
                                 <rect key="frame" x="0.0" y="30" width="540" height="87"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GB6-Yh-90s" secondAttribute="height" multiplier="169:27" id="PUU-Ul-mgZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WEST CAMPUS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-jc-v6e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEST CAMPUS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-jc-v6e">
                                 <rect key="frame" x="40" y="30" width="183" height="87"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
                                 <rect key="frame" x="30" y="226" width="550" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -656,7 +673,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="Gd5-Ao-i4S" kind="presentation" animates="NO" id="zn5-2l-DJr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
                                 <rect key="frame" x="30" y="281" width="550" height="40"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
@@ -667,7 +684,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="T5x-nP-qhd" kind="presentation" animates="NO" id="Yr9-oD-aFC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
                                 <rect key="frame" x="30" y="171" width="550" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -679,7 +696,7 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <segue destination="7kc-BK-ggn" kind="presentation" animates="NO" id="KE8-AL-p2j"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="scavenger" translatesAutoresizingMaskIntoConstraints="NO" id="QYY-Fk-AbU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scavenger" translatesAutoresizingMaskIntoConstraints="NO" id="QYY-Fk-AbU">
                                 <rect key="frame" x="20" y="171" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
@@ -687,14 +704,14 @@ Discover Yale’s West Campus—where today’s discoveries are helping to shape
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="Gdd-Rl-QZU"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="Fm8-Zk-ePf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="Fm8-Zk-ePf">
                                 <rect key="frame" x="20" y="281" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fm8-Zk-ePf" secondAttribute="height" multiplier="1:1" id="Gbr-Mh-bNT"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="projects" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-yJ-vWp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="projects" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-yJ-vWp">
                                 <rect key="frame" x="20" y="226" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
