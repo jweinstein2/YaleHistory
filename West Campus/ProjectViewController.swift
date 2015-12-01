@@ -42,6 +42,7 @@ class ProjectViewController: MyViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
         vc.projectsToBeDisplayed = [proj]
+        vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height);
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         

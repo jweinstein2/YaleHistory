@@ -142,15 +142,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
-                                <rect key="frame" x="7" y="226" width="209" height="125"/>
-                                <animations/>
-                            </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
-                                <rect key="frame" x="0.0" y="359" width="600" height="241"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-Cy-9H7">
                                 <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <animations/>
@@ -177,41 +168,80 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
-                                <rect key="frame" x="20" y="124" width="409" height="162.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-85-r7e">
+                                <rect key="frame" x="20" y="126.5" width="560" height="453.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-es-hUX">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="722.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="268"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kgz-Zn-SJ5" secondAttribute="height" multiplier="140:67" id="1Hv-kQ-PGi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
+                                                <rect key="frame" x="0.0" y="268" width="560" height="162.5"/>
+                                                <animations/>
+                                                <string key="text">Summary: To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
+                                                <rect key="frame" x="0.0" y="430" width="560" height="20.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
+                                                <rect key="frame" x="0.0" y="451" width="560" height="20.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
+                                                <rect key="frame" x="0.0" y="471" width="560" height="251"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Ady-Wp-XjU" secondAttribute="height" multiplier="560:251" id="17E-jl-mS7"/>
+                                                </constraints>
+                                            </containerView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.73036388419999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <mutableString key="text">Summary: To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
-                                <rect key="frame" x="20" y="293" width="560" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
-                                <rect key="frame" x="20" y="323" width="189" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="dFN-es-hUX" firstAttribute="top" secondItem="FcV-85-r7e" secondAttribute="top" id="A4a-gi-3dd"/>
+                                    <constraint firstAttribute="bottom" secondItem="dFN-es-hUX" secondAttribute="bottom" id="E90-VG-1Ns"/>
+                                    <constraint firstAttribute="trailing" secondItem="dFN-es-hUX" secondAttribute="trailing" id="LXi-Fh-nI0"/>
+                                    <constraint firstItem="dFN-es-hUX" firstAttribute="leading" secondItem="FcV-85-r7e" secondAttribute="leading" id="WgF-kh-lcv"/>
+                                    <constraint firstItem="dFN-es-hUX" firstAttribute="width" secondItem="FcV-85-r7e" secondAttribute="width" id="hlP-Hp-ho6"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" id="4TQ-dP-hWP"/>
                             <constraint firstItem="XgA-Cy-9H7" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="4d5-7F-UU1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FcV-85-r7e" secondAttribute="leading" id="AJK-6L-ZI0"/>
+                            <constraint firstItem="FcV-85-r7e" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="bottom" constant="10" id="BlC-TB-jhk"/>
                             <constraint firstItem="UZc-Sf-lhH" firstAttribute="bottom" secondItem="XgA-Cy-9H7" secondAttribute="bottom" constant="-10" id="BvR-d7-8IR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="UZc-Sf-lhH" secondAttribute="leading" id="CNB-D7-WDe"/>
                             <constraint firstItem="UZc-Sf-lhH" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" constant="10" id="MaM-bc-qv2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FcV-85-r7e" secondAttribute="trailing" id="OI9-6g-Em4"/>
                             <constraint firstItem="XgA-Cy-9H7" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="10" id="RxI-5c-ah9"/>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="UZc-Sf-lhH" secondAttribute="trailing" constant="10" id="UT8-Q0-Hoa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="40" id="buW-ri-gw2"/>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="trailing" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="-50" id="lfw-Nc-CLK"/>
+                            <constraint firstItem="OxC-hO-N4G" firstAttribute="top" secondItem="FcV-85-r7e" secondAttribute="bottom" constant="20" id="pPk-Dq-W4w"/>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="height" secondItem="XgA-Cy-9H7" secondAttribute="height" id="sha-Rv-Lrj"/>
                         </constraints>
                     </view>
@@ -226,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV4-ns-vlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="-1260"/>
+            <point key="canvasLocation" x="1337" y="-1237"/>
         </scene>
         <!--Arrival View Controller-->
         <scene sceneID="9hZ-WR-l6b">
