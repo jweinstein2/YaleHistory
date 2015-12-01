@@ -22,12 +22,6 @@ class ViewController: MyViewController {
         
         //make button gray out
     }
-    
-    @IBAction func demoSegue(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let nextViewController: MyViewController = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! MyViewController
-        presentViewController(nextViewController, animated: false, completion: nil)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

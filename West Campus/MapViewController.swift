@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //map.delegate = self //The pins are added even if this line is commented out
         setUpMap()
     }
     
@@ -22,7 +23,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.mapType = MKMapType.Satellite
         map.zoomEnabled = true
         map.scrollEnabled = true
-        map.delegate = self
         map.showsUserLocation = true
         let initialLocation = CLLocationCoordinate2D(latitude: 41.253276, longitude: -72.995744)
         map.setCenterCoordinate(initialLocation, animated: true)
@@ -63,7 +63,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let lat = projectsToBeDisplayed[i].gpsLatitude
             let long = projectsToBeDisplayed[i].gpsLongitude
             let loc : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            let annotation = MKPointAnnotation()
+            let annotation = MKPointAnnotation.init()
             annotation.coordinate = loc
             annotation.title = projectsToBeDisplayed[i].title
             //annotation.subtitle = "subtitle"
@@ -92,21 +92,40 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         return polygonRender
     }
     
-    //MKAnnotation Customization
+    //MKAnnotation Customization ------NONE OF THIS IS GETTING CALLED ---------------
     //This needs to get called when every annotation is rendered but it isn't for some reason
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        NSLog("CALLED VIEWFORANNOTATION")
+        if annotation is MKUserLocation {
+            //return nil so map view draws "blue dot" for standard user location
+            return nil
+        }
         
-        NSLog("annotation set up")
-        let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
-        pinAnnotationView.pinTintColor = UIColor.purpleColor()
-        pinAnnotationView.canShowCallout = true
-        let moreButton = UIButton.init(type: UIButtonType.Custom) as UIButton
-        moreButton.frame.size.width = 44
-        moreButton.frame.size.height = 44
-        moreButton.backgroundColor = UIColor.redColor()
-        moreButton.setImage(UIImage(named: "home"), forState: .Normal)
-        pinAnnotationView.rightCalloutAccessoryView = moreButton
-        return pinAnnotationView
+        let reuseId = "myPin"
+        let pinView = map.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            NSLog("annotation set up")
+            let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
+            pinAnnotationView.pinTintColor = UIColor.purpleColor()
+            pinAnnotationView.canShowCallout = true
+            let moreButton = UIButton.init(type: UIButtonType.Custom) as UIButton
+            moreButton.frame.size.width = 44
+            moreButton.frame.size.height = 44
+            moreButton.backgroundColor = UIColor.purpleColor()
+            moreButton.setImage(UIImage(named: "home"), forState: .Normal)
+            pinAnnotationView.rightCalloutAccessoryView = moreButton
+            return pinAnnotationView
+        }
+        return nil
+    }
+    
+    //None of these are getting called. Possible issue where the delegate is not set correctly.
+    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
+        NSLog("hello")
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        NSLog("HELLO")
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

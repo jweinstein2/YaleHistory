@@ -33,7 +33,7 @@ class ProjectViewController: MyViewController {
         
         super.viewDidLoad()
         proj = MyViewController.model.getCurrentProject()
-        projTitle.text = proj.title
+        projTitle.text = proj.title.uppercaseString
         summary.text = proj.summary
         self.longitude = proj.gpsLongitude
         self.latitude = proj.gpsLatitude
