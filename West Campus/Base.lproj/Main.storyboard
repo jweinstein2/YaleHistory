@@ -534,10 +534,10 @@
             </objects>
             <point key="canvasLocation" x="-600" y="366"/>
         </scene>
-        <!--View Controller-->
+        <!--About This App View Controller-->
         <scene sceneID="eQT-NU-ccO">
             <objects>
-                <viewController id="xPe-ja-9gO" sceneMemberID="viewController">
+                <viewController id="xPe-ja-9gO" customClass="AboutThisAppViewController" customModule="West_Campus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wc6-vq-IFp"/>
                         <viewControllerLayoutGuide type="bottom" id="4N4-ET-Jcw"/>
@@ -552,20 +552,23 @@
                                 <string key="text">This goal of this app is to engage and connect the visitors of West Campus to the wealth of resources in the West Campus green space. This is the ENAS 118 final project of Jared Weinstein, Karina Rodriguez, Thomas Chu, and Julia Shan in collaboration with Justin Freiberg, the sustainability project manager of West Campus.  
 </string>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.14113105519999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-ZN-8gQ">
-                                <rect key="frame" x="0.0" y="30" width="340" height="128"/>
+                                <rect key="frame" x="0.0" y="30" width="540" height="87"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLS-16-AIu">
-                                <rect key="frame" x="12" y="64" width="46" height="46"/>
+                                <rect key="frame" x="20" y="42" width="64" height="64"/>
                                 <animations/>
                                 <state key="normal" backgroundImage="back_light"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="xPe-ja-9gO" eventType="touchUpInside" id="ebd-Tt-5A2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT THIS APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-Xm-5ao">
-                                <rect key="frame" x="71" y="43" width="540" height="87"/>
+                                <rect key="frame" x="107" y="30" width="540" height="87"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

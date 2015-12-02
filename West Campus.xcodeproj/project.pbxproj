@@ -33,6 +33,7 @@
 		898136081BEEDEE700ACD35C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136071BEEDEE700ACD35C /* MainModel.swift */; };
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
 		89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */; };
+		A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */; };
 		CF8ECEF9F140011DF590D19B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D31B6E516A232D169684FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		898136071BEEDEE700ACD35C /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 		D0D31B6E516A232D169684FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				892B37351BE9B9C600E1174C /* ProjectListViewController.swift */,
 				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
 				896A5A961BEED24900780F79 /* AboutViewController.swift */,
+				A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				894CA6E11BE99FBE005D2B2A /* MainViewController.swift in Sources */,
 				894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */,
 				893AA7861BF65BDE00B451A0 /* MapViewController.swift in Sources */,
+				A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */,
 				894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */,
 				898136081BEEDEE700ACD35C /* MainModel.swift in Sources */,
 				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,
