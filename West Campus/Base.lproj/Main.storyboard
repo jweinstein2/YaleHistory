@@ -555,7 +555,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-ZN-8gQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-ZN-8gQ">
                                 <rect key="frame" x="0.0" y="30" width="540" height="87"/>
                                 <animations/>
                             </imageView>
@@ -579,6 +579,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9EQ-Ay-cp8" firstAttribute="top" secondItem="Wc6-vq-IFp" secondAttribute="bottom" constant="200" id="7qk-MF-yIu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rvh-ZN-8gQ" secondAttribute="trailing" constant="40" id="p1U-L5-0Gk"/>
                             <constraint firstItem="9EQ-Ay-cp8" firstAttribute="leading" secondItem="J7V-Fn-aJQ" secondAttribute="leadingMargin" id="pQj-rl-eXW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9EQ-Ay-cp8" secondAttribute="trailing" id="r3b-pY-HZ0"/>
                             <constraint firstItem="9EQ-Ay-cp8" firstAttribute="width" secondItem="J7V-Fn-aJQ" secondAttribute="width" constant="-50" id="zc3-Bi-BiW"/>
