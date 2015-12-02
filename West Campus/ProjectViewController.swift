@@ -46,7 +46,7 @@ class ProjectViewController: MyViewController {
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         
-        linkLabel.text = proj.link
+        linkLabel.text = String(stringInterpolation: proj.link)
         actionLabel.text = proj.action
         
         //Edit the code below to display a custom image for each project

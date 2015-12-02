@@ -168,62 +168,97 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-85-r7e">
-                                <rect key="frame" x="20" y="126.5" width="560" height="453.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-85-r7e">
+                                <rect key="frame" x="5" y="126.5" width="590" height="453.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-es-hUX">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="722.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-es-hUX">
+                                        <rect key="frame" x="0.0" y="0.0" width="570" height="867"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="268"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="570" height="273"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kgz-Zn-SJ5" secondAttribute="height" multiplier="140:67" id="1Hv-kQ-PGi"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
-                                                <rect key="frame" x="0.0" y="268" width="560" height="162.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT WE DO..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-Lx-s4T">
+                                                <rect key="frame" x="0.0" y="277" width="570" height="31"/>
                                                 <animations/>
-                                                <string key="text">Summary: To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </string>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
+                                                <rect key="frame" x="0.0" y="312" width="570" height="163"/>
+                                                <animations/>
+                                                <mutableString key="text">To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
-                                                <rect key="frame" x="0.0" y="430" width="560" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="479" width="570" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WE NEED YOUR HELP..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-mP-nnr">
+                                                <rect key="frame" x="0.0" y="503" width="570" height="31"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
-                                                <rect key="frame" x="0.0" y="451" width="560" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="538" width="570" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiU-kd-79Q">
+                                                <rect key="frame" x="0.0" y="563" width="570" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
-                                                <rect key="frame" x="0.0" y="471" width="560" height="251"/>
+                                                <rect key="frame" x="0.0" y="587" width="570" height="256"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ady-Wp-XjU" secondAttribute="height" multiplier="560:251" id="17E-jl-mS7"/>
                                                 </constraints>
                                             </containerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5I-ac-mdw">
+                                                <rect key="frame" x="0.0" y="847" width="570" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.73036388419999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.73036388419999998" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </stackView>
                                 </subviews>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstItem="dFN-es-hUX" firstAttribute="centerX" secondItem="FcV-85-r7e" secondAttribute="centerX" id="3yq-gs-CS4"/>
                                     <constraint firstItem="dFN-es-hUX" firstAttribute="top" secondItem="FcV-85-r7e" secondAttribute="top" id="A4a-gi-3dd"/>
                                     <constraint firstAttribute="bottom" secondItem="dFN-es-hUX" secondAttribute="bottom" id="E90-VG-1Ns"/>
                                     <constraint firstAttribute="trailing" secondItem="dFN-es-hUX" secondAttribute="trailing" id="LXi-Fh-nI0"/>
                                     <constraint firstItem="dFN-es-hUX" firstAttribute="leading" secondItem="FcV-85-r7e" secondAttribute="leading" id="WgF-kh-lcv"/>
-                                    <constraint firstItem="dFN-es-hUX" firstAttribute="width" secondItem="FcV-85-r7e" secondAttribute="width" id="hlP-Hp-ho6"/>
+                                    <constraint firstItem="dFN-es-hUX" firstAttribute="width" secondItem="FcV-85-r7e" secondAttribute="width" constant="-20" id="hlP-Hp-ho6"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LXi-Fh-nI0"/>
+                                        <exclude reference="WgF-kh-lcv"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <animations/>
@@ -231,12 +266,12 @@
                         <constraints>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" id="4TQ-dP-hWP"/>
                             <constraint firstItem="XgA-Cy-9H7" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="4d5-7F-UU1"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="FcV-85-r7e" secondAttribute="leading" id="AJK-6L-ZI0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FcV-85-r7e" secondAttribute="leading" constant="15" id="AJK-6L-ZI0"/>
                             <constraint firstItem="FcV-85-r7e" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="bottom" constant="10" id="BlC-TB-jhk"/>
                             <constraint firstItem="UZc-Sf-lhH" firstAttribute="bottom" secondItem="XgA-Cy-9H7" secondAttribute="bottom" constant="-10" id="BvR-d7-8IR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="UZc-Sf-lhH" secondAttribute="leading" id="CNB-D7-WDe"/>
                             <constraint firstItem="UZc-Sf-lhH" firstAttribute="top" secondItem="XgA-Cy-9H7" secondAttribute="top" constant="10" id="MaM-bc-qv2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FcV-85-r7e" secondAttribute="trailing" id="OI9-6g-Em4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FcV-85-r7e" secondAttribute="trailing" constant="-15" id="OI9-6g-Em4"/>
                             <constraint firstItem="XgA-Cy-9H7" firstAttribute="top" secondItem="MhT-vm-lsq" secondAttribute="bottom" constant="10" id="RxI-5c-ah9"/>
                             <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" secondItem="UZc-Sf-lhH" secondAttribute="trailing" constant="10" id="UT8-Q0-Hoa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XgA-Cy-9H7" secondAttribute="trailing" constant="40" id="buW-ri-gw2"/>
