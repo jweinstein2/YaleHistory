@@ -29,6 +29,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSLog("ViewDidLoad Ran!")
         
         if (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count{
             
@@ -43,10 +44,13 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
                 NSLog(String(locationManager.activityType))
                 
                 MyViewController.model.currentProject = 0
+                
+                MyViewController.model.scavengerHuntProgress = 1
             }
             
             else {
                 MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+                MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
             }
             
             currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
@@ -61,11 +65,17 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             if data != nil {
                 imageView.image = UIImage(data:data!)
             }
+            else {
+                let url2 = NSURL(string: "http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
+                let data2 = NSData(contentsOfURL:url2!)
+                if data2 != nil{
+                    imageView.image = UIImage(data: data2!)
+                }
+            }
             
             //update progress bar
             progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
             
-            MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
         }
             
         else  {     //OTHER CODE FOR FINISHING HUNT
@@ -95,8 +105,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
         presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
     }
     
@@ -119,8 +128,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         distanceLabel.text = NSString(format: "Distance from project: %.2f", distance) as String
         
         if (distance < regionRadius){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
         }
         

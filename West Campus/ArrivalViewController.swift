@@ -36,8 +36,7 @@ class ArrivalViewController: UIViewController {
 
 
     @IBAction func moreInfoPressed(sender: AnyObject) {     //go to projectViewController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
         presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
     }
     
