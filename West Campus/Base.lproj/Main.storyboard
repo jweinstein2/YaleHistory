@@ -567,7 +567,7 @@
                                     <action selector="buttonPressed:" destination="xPe-ja-9gO" eventType="touchUpInside" id="ebd-Tt-5A2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT THIS APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-Xm-5ao">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ABOUT THIS APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-Xm-5ao">
                                 <rect key="frame" x="107" y="30" width="540" height="87"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
@@ -579,6 +579,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9EQ-Ay-cp8" firstAttribute="top" secondItem="Wc6-vq-IFp" secondAttribute="bottom" constant="200" id="7qk-MF-yIu"/>
+                            <constraint firstItem="Rvh-ZN-8gQ" firstAttribute="height" secondItem="Gxl-Xm-5ao" secondAttribute="height" id="lYO-2O-qqF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rvh-ZN-8gQ" secondAttribute="trailing" constant="40" id="p1U-L5-0Gk"/>
                             <constraint firstItem="9EQ-Ay-cp8" firstAttribute="leading" secondItem="J7V-Fn-aJQ" secondAttribute="leadingMargin" id="pQj-rl-eXW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9EQ-Ay-cp8" secondAttribute="trailing" id="r3b-pY-HZ0"/>
