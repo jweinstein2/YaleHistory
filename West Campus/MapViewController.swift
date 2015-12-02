@@ -24,7 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = true
-        let initialLocation = CLLocationCoordinate2D(latitude: 41.310833, longitude: -72.926114)
+        let initialLocation = CLLocationCoordinate2D(latitude: 41.313150, longitude: -72.927468)
         map.setCenterCoordinate(initialLocation, animated: true)
         let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {
@@ -38,10 +38,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func addOverlay(){
         var borderPoints = [CLLocationCoordinate2D]()
         //Add or remove from this list to change the displayed border
-        borderPoints.append(CLLocationCoordinate2DMake(41.243276, -73.005744))//update this to be the border of our project
-        borderPoints.append(CLLocationCoordinate2DMake(41.243276, -72.985744))
-        borderPoints.append(CLLocationCoordinate2DMake(41.263276, -72.985744))
-        borderPoints.append(CLLocationCoordinate2DMake(41.263276, -73.005744))
+        borderPoints.append(CLLocationCoordinate2DMake(41.315307, -72.930474))//update this to be the border of our project
+        borderPoints.append(CLLocationCoordinate2DMake(41.315307, -72.924788))
+        borderPoints.append(CLLocationCoordinate2DMake(41.310560, -72.924788))
+        borderPoints.append(CLLocationCoordinate2DMake(41.310560, -72.930474))
         let border : MKPolygon! = MKPolygon.init(coordinates: &borderPoints, count: borderPoints.count)
         border.title = "Border"
         map.addOverlay(border)
@@ -49,10 +49,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var pathPoints = [CLLocationCoordinate2D]()
         //Add or remove from this list to change the displayed border
-        pathPoints.append(CLLocationCoordinate2DMake(41.254276, -72.996744))
-        pathPoints.append(CLLocationCoordinate2DMake(41.254276, -72.994744))
-        pathPoints.append(CLLocationCoordinate2DMake(41.252276, -72.994744))
-        pathPoints.append(CLLocationCoordinate2DMake(41.252276, -72.996744))
+        pathPoints.append(CLLocationCoordinate2DMake(41.312276, -72.996744))
+        pathPoints.append(CLLocationCoordinate2DMake(41.310544, -72.926282))
+        pathPoints.append(CLLocationCoordinate2DMake(41.311729, -72.925563))
+        pathPoints.append(CLLocationCoordinate2DMake(41.312933, -72.925271))
+        pathPoints.append(CLLocationCoordinate2DMake(41.314061, -72.925506))
+        pathPoints.append(CLLocationCoordinate2DMake(41.314416, -72.925892))
         let path : MKPolyline = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path"
         map.addOverlay(path)
