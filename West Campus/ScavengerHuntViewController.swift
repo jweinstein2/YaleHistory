@@ -21,7 +21,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
-   
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var huntProgress: UILabel!
+    @IBOutlet weak var foundIt: UIButton!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -37,17 +40,28 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         Header.text = "You are looking for"
         
-        //PROGRESS BAR
         //MANUAL CHECK-IN BUTTON
         
         MyViewController.model.currentProject = 0
         currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
         projectTitle.text = currProj.title
         clueLabel.text = "To find this project... " + currProj.clue
+        huntProgress.text = "Hunt Progress:"
+        
+        
+        progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
+        
+        let url = NSURL(string: currProj.imageLink!)
+        let data = NSData(contentsOfURL:url!)
+        if data != nil {
+            imageView.image = UIImage(data:data!)
+            
+        }
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
@@ -66,6 +80,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         else  {     //OTHER CODE FOR FINISHING HUNT
             
             locationManager.stopUpdatingLocation()
+            progressBar.setProgress(1.0, animated: false)
             
         }
         
@@ -77,6 +92,12 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         self.dismissViewControllerAnimated(false, completion: nil);
         
+    }
+    
+    @IBAction func foundButtonPressed(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
+        presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -101,9 +122,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
-            
-            // PROGRESS BAR UPDATE
-            
         }
         
         
