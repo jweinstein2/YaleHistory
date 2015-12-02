@@ -12,6 +12,7 @@ class MainModel{
     var projects : ProjectData!
     var currentProject : Int!
     var scavengerHuntAvailable: Bool!
+    var scavengerHuntProgress: Int!
 
     var myHTMLString: String?
 
@@ -33,6 +34,7 @@ class MainModel{
             }
             else {
                 scavengerHuntAvailable = true
+                scavengerHuntProgress = 0
             }
             
         } else {

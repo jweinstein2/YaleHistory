@@ -26,66 +26,66 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     @IBOutlet weak var huntProgress: UILabel!
     @IBOutlet weak var foundIt: UIButton!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        locationManager = CLLocationManager()               //configure location manager
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 1
-        locationManager.startUpdatingLocation()
-        
-        NSLog(String(locationManager.activityType))
-        
-        Header.text = "You are looking for"
-        
-        //MANUAL CHECK-IN BUTTON
-        
-        MyViewController.model.currentProject = 0
-        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
-        projectTitle.text = currProj.title
-        clueLabel.text = "To find this project... " + currProj.clue
-        huntProgress.text = "Hunt Progress:"
-        
-        
-        progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
-        
-        let url = NSURL(string: currProj.imageLink!)
-        let data = NSData(contentsOfURL:url!)
-        if data != nil {
-            imageView.image = UIImage(data:data!)
-            
-        }
-        
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-
-        if ((MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
+        if (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count{
             
-            MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+            if MyViewController.model.scavengerHuntProgress == 0 {
+                locationManager = CLLocationManager()               //configure location manager
+                locationManager.delegate = self
+                locationManager.requestWhenInUseAuthorization()
+                locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+                locationManager.distanceFilter = 1
+                locationManager.startUpdatingLocation()
+                
+                NSLog(String(locationManager.activityType))
+                
+                MyViewController.model.currentProject = 0
+            }
+            
+            else {
+                MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+            }
             
             currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
             
+            
+            //set up display
+            Header.text = "You are looking for"
+            clueLabel.text = "To find this project... " + currProj.clue
+            projectTitle.text = currProj.title
+            let url = NSURL(string: currProj.imageLink!)
+            let data = NSData(contentsOfURL:url!)
+            if data != nil {
+                imageView.image = UIImage(data:data!)
+            }
+            
+            //update progress bar
+            progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
+            
+            MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
         }
             
         else  {     //OTHER CODE FOR FINISHING HUNT
             
             locationManager.stopUpdatingLocation()
             progressBar.setProgress(1.0, animated: false)
+            MyViewController.model.scavengerHuntProgress = 0
+            
+            Header.text = "Congratulations, you've finished the hunt!"
+            projectTitle.text = "Click the back arrow to return to the main menu"
+            clueLabel.hidden = true
+            distanceLabel.hidden = true
+            
+            let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
+            let data = NSData(contentsOfURL:url!)
+            if data != nil {
+                imageView.image = UIImage(data:data!)
+            }
             
         }
-        
-        //IMAGE SETUP
-        projectTitle.text = currProj.title
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
