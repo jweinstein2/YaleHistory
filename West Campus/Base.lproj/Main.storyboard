@@ -24,6 +24,8 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -532,6 +534,42 @@
             </objects>
             <point key="canvasLocation" x="-600" y="366"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eQT-NU-ccO">
+            <objects>
+                <viewController id="xPe-ja-9gO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wc6-vq-IFp"/>
+                        <viewControllerLayoutGuide type="bottom" id="4N4-ET-Jcw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J7V-Fn-aJQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Ay-cp8">
+                                <rect key="frame" x="107" y="255" width="345" height="213"/>
+                                <animations/>
+                                <string key="text">This goal of this app is to engage and connect the visitors of West Campus to the wealth of resources in the West Campus green space. This is the ENAS 118 final project of Jared Weinstein, Karina Rodriguez, Thomas Chu, and Julia Shan in collaboration with Justin Freiberg, the sustainability project manager of West Campus.  
+</string>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.14113105519999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9EQ-Ay-cp8" firstAttribute="top" secondItem="Wc6-vq-IFp" secondAttribute="bottom" constant="200" id="7qk-MF-yIu"/>
+                            <constraint firstItem="9EQ-Ay-cp8" firstAttribute="leading" secondItem="J7V-Fn-aJQ" secondAttribute="leadingMargin" id="pQj-rl-eXW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9EQ-Ay-cp8" secondAttribute="trailing" id="r3b-pY-HZ0"/>
+                            <constraint firstItem="9EQ-Ay-cp8" firstAttribute="width" secondItem="J7V-Fn-aJQ" secondAttribute="width" constant="-50" id="zc3-Bi-BiW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1u-Xp-KUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-386"/>
+        </scene>
         <!--Project List View Controller-->
         <scene sceneID="jCl-mW-rp1">
             <objects>
@@ -779,6 +817,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ral-2Z-RAR">
+                                <rect key="frame" x="139" y="510" width="147" height="40"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="21"/>
+                                <state key="normal" title="About this App">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xPe-ja-9gO" kind="presentation" id="Ik6-Av-QRP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -788,6 +837,7 @@
                             <constraint firstItem="QYY-Fk-AbU" firstAttribute="centerY" secondItem="MUq-ek-Jph" secondAttribute="centerY" id="3Ma-7K-yi7"/>
                             <constraint firstItem="GB6-Yh-90s" firstAttribute="leading" secondItem="s6E-jc-v6e" secondAttribute="trailing" constant="-432" id="40T-kM-PmM"/>
                             <constraint firstItem="GB6-Yh-90s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="4mi-OY-AHa"/>
+                            <constraint firstItem="Ral-2Z-RAR" firstAttribute="width" secondItem="aw2-P9-YVg" secondAttribute="width" id="5a4-Mp-LsH"/>
                             <constraint firstItem="s6E-jc-v6e" firstAttribute="centerY" secondItem="GB6-Yh-90s" secondAttribute="centerY" id="9e8-ma-0vg"/>
                             <constraint firstItem="h9P-5z-NXH" firstAttribute="leading" secondItem="Fm8-Zk-ePf" secondAttribute="trailing" constant="-30" id="9k0-8F-q8Q"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QYY-Fk-AbU" secondAttribute="leading" id="AxE-UN-hbw"/>
@@ -814,6 +864,7 @@
                             <constraint firstItem="d9H-3M-pBa" firstAttribute="top" secondItem="MUq-ek-Jph" secondAttribute="bottom" constant="15" id="jLa-wD-0gL"/>
                             <constraint firstItem="GB6-Yh-90s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="kaf-ds-PLG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GB6-Yh-90s" secondAttribute="trailing" constant="40" id="luz-Dv-k4E"/>
+                            <constraint firstItem="Ral-2Z-RAR" firstAttribute="top" secondItem="aw2-P9-YVg" secondAttribute="top" constant="250" id="sYj-f3-nhV"/>
                             <constraint firstItem="MUq-ek-Jph" firstAttribute="leading" secondItem="QYY-Fk-AbU" secondAttribute="trailing" constant="-30" id="tn0-fj-KbX"/>
                             <constraint firstItem="lbw-yJ-vWp" firstAttribute="height" secondItem="d9H-3M-pBa" secondAttribute="height" id="uE4-aT-oLz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Fm8-Zk-ePf" secondAttribute="leading" id="uOx-Xr-trc"/>
