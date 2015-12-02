@@ -15,16 +15,21 @@ class ArrivalViewController: UIViewController {
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var MoreInfo: UIButton!
+    var currProj: Project!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //SET UP LABELS AND CURRENT PROJECT
+        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
+        
+        announcement.text = "Congratulations! You have reached the site!"
+        projectTitle.text = currProj.title
+        summaryLabel.text = currProj.summary
     }
     
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        MyViewController.model.currentProject = MyViewController.model.currentProject + 1   //go to the next project
+        
         self.dismissViewControllerAnimated(false, completion: nil);
         
     }

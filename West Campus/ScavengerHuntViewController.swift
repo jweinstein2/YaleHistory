@@ -22,18 +22,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
    
-    /*
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?){
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }*/
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         locationManager = CLLocationManager()               //configure location manager
         locationManager.delegate = self
@@ -48,13 +39,38 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         //PROGRESS BAR
         //MANUAL CHECK-IN BUTTON
-        //TUTORIAL
         
         MyViewController.model.currentProject = 0
         currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
         projectTitle.text = currProj.title
-        clueLabel.text = "Clue: " + currProj.clue
+        clueLabel.text = "To find this project... " + currProj.clue
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        
+
+        if ((MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
+            
+            MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+            
+            currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
+            
+        }
+            
+        else  {     //OTHER CODE FOR FINISHING HUNT
+            
+            locationManager.stopUpdatingLocation()
+            
+        }
+        
+        //IMAGE SETUP
+        projectTitle.text = currProj.title
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -79,7 +95,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         let distance :Double = sqrt(x*x+y*y)
         
-        clueLabel.text = currProj.clue
         distanceLabel.text = NSString(format: "Distance from project: %.2f", distance) as String
         
         if (distance < regionRadius){
@@ -88,14 +103,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
             
             // PROGRESS BAR UPDATE
-            
-            if ((MyViewController.model.currentProject) < MyViewController.model.projects.projectData.count){
-                currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
-            }
-                
-            else  {     //OTHER CODE FOR FINISHING HUNT
-                locationManager.stopUpdatingLocation()
-            }
             
         }
         

@@ -21,6 +21,10 @@ class ViewController: MyViewController {
         NSLog(String(MyViewController.model))
         
         //make button gray out
+        
+        if (!MyViewController.model.scavengerHuntAvailable){
+           scavengerHunt.enabled = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
