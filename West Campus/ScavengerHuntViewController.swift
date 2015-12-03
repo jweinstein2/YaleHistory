@@ -29,35 +29,48 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSLog("ViewDidLoad Ran!")
+        locationManager = CLLocationManager()               //configure location manager
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.distanceFilter = 1
+        locationManager.startUpdatingLocation()
         
-        if (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count{
-            
-            if MyViewController.model.scavengerHuntProgress == 0 {
-                locationManager = CLLocationManager()               //configure location manager
-                locationManager.delegate = self
-                locationManager.requestWhenInUseAuthorization()
-                locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-                locationManager.distanceFilter = 1
-                locationManager.startUpdatingLocation()
-                
-                NSLog(String(locationManager.activityType))
-                
-                MyViewController.model.currentProject = 0
-                
-                MyViewController.model.scavengerHuntProgress = 1
+        NSLog(String(locationManager.activityType))
+        
+        MyViewController.model.currentProject = MyViewController.model.scavengerHuntProgress
+        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
+        
+        Header.text = "You are looking for"
+        clueLabel.text = "To find this project... " + currProj.clue
+        projectTitle.text = currProj.title
+        let url = NSURL(string: currProj.imageLink!)
+        let data = NSData(contentsOfURL:url!)
+        if data != nil {
+            imageView.image = UIImage(data:data!)
+        }
+        else {
+            let url2 = NSURL(string: "http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
+            let data2 = NSData(contentsOfURL:url2!)
+            if data2 != nil{
+                imageView.image = UIImage(data: data2!)
             }
-            
-            else {
-                MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
-                MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
+        }
+
+        progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
+        
             }
+    
+    override func viewWillAppear(animated: Bool) {
+        NSLog("ViewWillAppear Called!")
+        if (MyViewController.model.sHtransition == true && (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
+            
+            MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
+            MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
             
             currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
             
-            
             //set up display
-            Header.text = "You are looking for"
             clueLabel.text = "To find this project... " + currProj.clue
             projectTitle.text = currProj.title
             let url = NSURL(string: currProj.imageLink!)
@@ -78,24 +91,27 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             
         }
             
-        else  {     //OTHER CODE FOR FINISHING HUNT
+        else if (MyViewController.model.sHtransition == true) {
             
-            locationManager.stopUpdatingLocation()
             progressBar.setProgress(1.0, animated: false)
             MyViewController.model.scavengerHuntProgress = 0
             
-            Header.text = "Congratulations, you've finished the hunt!"
-            projectTitle.text = "Click the back arrow to return to the main menu"
-            clueLabel.hidden = true
+            Header.text = "Congratulations!"
+            projectTitle.text = "You've finished the hunt!"
+            clueLabel.text = "Click the back arrow to return to the Main Menu"
             distanceLabel.hidden = true
+            foundIt.enabled = false
             
             let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
             let data = NSData(contentsOfURL:url!)
             if data != nil {
                 imageView.image = UIImage(data:data!)
             }
-            
+            locationManager.stopUpdatingLocation()
         }
+        
+        MyViewController.model.sHtransition = false
+
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -131,7 +147,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
         }
-        
         
         NSLog("update location: %f , %f", locations[0].coordinate.latitude, locations[0].coordinate.longitude)
     }

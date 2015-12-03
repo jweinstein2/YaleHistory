@@ -30,6 +30,7 @@ class ArrivalViewController: UIViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
+        MyViewController.model.sHtransition = true
         self.dismissViewControllerAnimated(false, completion: nil);
         
     }
@@ -37,7 +38,7 @@ class ArrivalViewController: UIViewController {
 
     @IBAction func moreInfoPressed(sender: AnyObject) {     //go to projectViewController
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
-        presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+        presentViewController(vc, animated: false, completion: nil) //transition to project view controller
     }
     
     /*

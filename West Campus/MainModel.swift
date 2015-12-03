@@ -13,6 +13,7 @@ class MainModel{
     var currentProject : Int!
     var scavengerHuntAvailable: Bool!
     var scavengerHuntProgress: Int!
+    var sHtransition: Bool!
 
     var myHTMLString: String?
 
@@ -35,6 +36,7 @@ class MainModel{
             else {
                 scavengerHuntAvailable = true
                 scavengerHuntProgress = 0
+                sHtransition = false
             }
             
         } else {
