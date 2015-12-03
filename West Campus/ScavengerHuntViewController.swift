@@ -62,7 +62,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             }
     
     override func viewWillAppear(animated: Bool) {
-        NSLog("ViewWillAppear Called!")
         if (MyViewController.model.sHtransition == true && (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
             
             MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
@@ -140,8 +139,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         let y = 111111*(curLong-destLong)
         
         let distance :Double = sqrt(x*x+y*y)
+
         
-        distanceLabel.text = NSString(format: "Distance from project: %.2f", distance) as String
+        distanceLabel.text = NSString(format: "Distance from project: %d m", Int(distance)) as String
         
         if (distance < regionRadius){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController

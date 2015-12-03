@@ -183,7 +183,7 @@
                                 <rect key="frame" x="5" y="127" width="590" height="453"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-es-hUX">
-                                        <rect key="frame" x="0.0" y="0.0" width="570" height="870"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="570" height="854"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
                                                 <rect key="frame" x="0.0" y="0.0" width="570" height="273"/>
@@ -199,52 +199,52 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
-                                                <rect key="frame" x="0.0" y="312" width="570" height="159"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-NH-eEW">
+                                                <rect key="frame" x="0.0" y="312" width="570" height="143"/>
                                                 <animations/>
                                                 <string key="text">To be or not to be that is the question whether tis nobler in hte mind to suffert he slings and arrows of outrageosu fortune or take arms against a sea of troubles and by opposing end them to die to sleep no more and by a sleep to say we end the heartached and the thousand natural shocks that flesh is heir to tis a consumation devoutly to be wished to die dto sleep to sleep perchance to dream aye theres the rub for in that sleep of death what dreams may come when we have shuffled off these mortal coils must give us ppause. </string>
                                                 <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
-                                                <rect key="frame" x="0.0" y="475" width="570" height="23"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-EZ-BnI">
+                                                <rect key="frame" x="0.0" y="459" width="570" height="23"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="19"/>
                                                 <color key="textColor" red="0.54953162020000001" green="0.73050429520000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WE NEED YOUR HELP..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-mP-nnr">
-                                                <rect key="frame" x="0.0" y="502" width="570" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WE NEED YOUR HELP..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-mP-nnr">
+                                                <rect key="frame" x="0.0" y="486" width="570" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
-                                                <rect key="frame" x="0.0" y="537" width="570" height="23"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Va-4ce">
+                                                <rect key="frame" x="0.0" y="521" width="570" height="23"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiU-kd-79Q">
-                                                <rect key="frame" x="0.0" y="564" width="570" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiU-kd-79Q">
+                                                <rect key="frame" x="0.0" y="548" width="570" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
-                                                <rect key="frame" x="0.0" y="589" width="570" height="256"/>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
+                                                <rect key="frame" x="0.0" y="573" width="570" height="256"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ady-Wp-XjU" secondAttribute="height" multiplier="560:251" id="17E-jl-mS7"/>
                                                 </constraints>
                                             </containerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5I-ac-mdw">
-                                                <rect key="frame" x="0.0" y="849" width="570" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5I-ac-mdw">
+                                                <rect key="frame" x="0.0" y="833" width="570" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -461,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cb-Bf-3OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1232" y="404"/>
+            <point key="canvasLocation" x="-1872" y="416"/>
         </scene>
         <!--Scavenger Hunt View Controller-->
         <scene sceneID="OCm-FL-enU">
@@ -572,7 +572,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nCW-HH-hMC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCW-HH-hMC">
                                 <rect key="frame" x="0.0" y="281" width="600" height="267"/>
                                 <animations/>
                             </imageView>
@@ -766,7 +766,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bt-FR-yc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551" y="404"/>
+            <point key="canvasLocation" x="-1185" y="364"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="Qek-E9-t6D">
+            <objects>
+                <viewController storyboardIdentifier="sHWelcomeViewController" id="AFl-rD-Ca5" customClass="SHWelcomeViewController" customModule="West_Campus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m7Y-xX-yrL"/>
+                        <viewControllerLayoutGuide type="bottom" id="uc3-dq-p9a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6HX-Mv-fcA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2r-8O-bgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="339"/>
         </scene>
         <!--About This App View Controller-->
         <scene sceneID="eQT-NU-ccO">
@@ -798,14 +816,14 @@
                                     <action selector="buttonPressed:" destination="xPe-ja-9gO" eventType="touchUpInside" id="ebd-Tt-5A2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ABOUT THIS APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-Xm-5ao">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ABOUT THIS APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-Xm-5ao">
                                 <rect key="frame" x="96" y="30" width="394" height="87"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Ay-cp8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Ay-cp8">
                                 <rect key="frame" x="22" y="239" width="555" height="123"/>
                                 <animations/>
                                 <constraints>
@@ -824,7 +842,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kvh-GG-CqC">
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kvh-GG-CqC">
                                 <rect key="frame" x="259" y="149" width="82" height="82"/>
                                 <animations/>
                                 <constraints>
@@ -1080,7 +1098,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7kc-BK-ggn" kind="presentation" animates="NO" id="KE8-AL-p2j"/>
+                                    <action selector="scavengerHuntButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bpj-7J-HWp"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scavenger" translatesAutoresizingMaskIntoConstraints="NO" id="QYY-Fk-AbU">
@@ -1114,7 +1132,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ral-2Z-RAR">
-                                <rect key="frame" x="280" y="567" width="39" height="33"/>
+                                <rect key="frame" x="279" y="568" width="41" height="32"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <state key="normal" title="v. 1.0">
@@ -1226,7 +1244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about" width="303" height="333"/>
+        <image name="about" width="303" height="303"/>
         <image name="back_light" width="299" height="299"/>
         <image name="header" width="874" height="128"/>
         <image name="logo" width="1024" height="1024"/>

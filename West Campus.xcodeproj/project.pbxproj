@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451F68141C10D950008CB714 /* ScavengerHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F68131C10D950008CB714 /* ScavengerHunt.swift */; };
+		451F68161C10DC6E008CB714 /* SHWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */; };
 		45901F1E1BF3F1B0003FB793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */; };
 		45A7ED481C0E3032007BD402 /* ArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */; };
 		890503471C05355600420D6F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890503461C05355600420D6F /* ProjectTableViewCell.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		438E032F40F526F79E81FCE4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		451F68131C10D950008CB714 /* ScavengerHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHunt.swift; sourceTree = "<group>"; };
+		451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHWelcomeViewController.swift; sourceTree = "<group>"; };
 		45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalViewController.swift; sourceTree = "<group>"; };
 		6B5313B3E8A429F4D4422054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		894CA6DD1BE99FBE005D2B2A /* West Campus */ = {
 			isa = PBXGroup;
 			children = (
+				451F68131C10D950008CB714 /* ScavengerHunt.swift */,
 				894CA70F1BE9A5E0005D2B2A /* Resources */,
 				89C08DA11BF1446C00B91EC0 /* ViewControllers */,
 				894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */,
@@ -217,6 +222,7 @@
 				89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */,
 				894CA6E01BE99FBE005D2B2A /* MainViewController.swift */,
 				45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */,
+				451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */,
 				892B37351BE9B9C600E1174C /* ProjectListViewController.swift */,
 				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
 				896A5A961BEED24900780F79 /* AboutViewController.swift */,
@@ -426,6 +432,7 @@
 				89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */,
 				890503471C05355600420D6F /* ProjectTableViewCell.swift in Sources */,
 				896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */,
+				451F68161C10DC6E008CB714 /* SHWelcomeViewController.swift in Sources */,
 				892B37381BE9B9FC00E1174C /* ScavengerHuntViewController.swift in Sources */,
 				45A7ED481C0E3032007BD402 /* ArrivalViewController.swift in Sources */,
 				894CA6E11BE99FBE005D2B2A /* MainViewController.swift in Sources */,
@@ -434,6 +441,7 @@
 				A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */,
 				894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */,
 				898136081BEEDEE700ACD35C /* MainModel.swift in Sources */,
+				451F68141C10D950008CB714 /* ScavengerHunt.swift in Sources */,
 				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,
 				892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */,
 				89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */,

@@ -14,6 +14,7 @@ class MainModel{
     var scavengerHuntAvailable: Bool!
     var scavengerHuntProgress: Int!
     var sHtransition: Bool!
+    var hunt: ScavengerHunt!
 
     var myHTMLString: String?
 
@@ -38,6 +39,7 @@ class MainModel{
                 scavengerHuntProgress = 0
                 sHtransition = false
             }
+            //hunt.isSetUp = false
             
         } else {
             NSLog("Error: \(myURLString) doesn't seem to be a valid URL")

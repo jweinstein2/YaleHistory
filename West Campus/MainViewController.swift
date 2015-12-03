@@ -27,6 +27,18 @@ class ViewController: MyViewController {
         }
     }
 
+    @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
+        
+        if MyViewController.model.hunt.isSetUp == true {
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
+            presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+        }
+        else {
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("sHWelcomeViewController") as! SHWelcomeViewController
+            presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
