@@ -22,6 +22,12 @@ class ArrivalViewController: UIViewController {
         
         currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
         
+        let imageView = UIImageView(frame: self.view.frame); // set as you want
+        let image = UIImage(named: "success");
+        imageView.image = image;
+        self.view.addSubview(imageView);
+        self.view.sendSubviewToBack(imageView)
+        
         announcement.text = "Congratulations! You have reached the site!"
         projectTitle.text = currProj.title
         summaryLabel.text = currProj.summary

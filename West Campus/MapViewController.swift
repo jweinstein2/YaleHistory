@@ -49,7 +49,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var pathPoints = [CLLocationCoordinate2D]()
         //Add or remove from this list to change the displayed border
-        pathPoints.append(CLLocationCoordinate2DMake(41.312276, -72.996744))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.312276, -72.996744))
         pathPoints.append(CLLocationCoordinate2DMake(41.310544, -72.926282))
         pathPoints.append(CLLocationCoordinate2DMake(41.311729, -72.925563))
         pathPoints.append(CLLocationCoordinate2DMake(41.312933, -72.925271))

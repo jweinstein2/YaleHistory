@@ -15,7 +15,8 @@ class MyViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //This loads a pretty background and adds it to all views
+        //This loads a pretty background and adds it to all view
+        
         let imageView = UIImageView(frame: self.view.frame); // set as you want
         let image = UIImage(named: "background");
         imageView.image = image;
