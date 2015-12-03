@@ -36,12 +36,12 @@ class ProjectData: NSObject {
             let gpsLongitude : Double! = Double(find(projectArr[index], element: "gps_longitude"))
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
-            let imageLink = find(projectArr[index], element: "imageLink")
+            let imageLink = find(projectArr[index], element: "photo")
             
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
             let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink)
             
-            // NSLog(id + title + summary + link +  clue + action) for debugging purposes
+            NSLog("image link: " + imageLink)
             
             projectData.append(currentProject)
             }

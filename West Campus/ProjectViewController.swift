@@ -50,14 +50,22 @@ class ProjectViewController: MyViewController {
         actionLabel.text = proj.action
         
         //Edit the code below to display a custom image for each project
-        let url = NSURL(string:"http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
+        let url = NSURL(string: proj.imageLink!)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
             projImage.image = UIImage(data:data!)
-        
         }
-    }
-    
+        else {
+            let url2 = NSURL(string: "http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
+            let data2 = NSData(contentsOfURL:url2!)
+            if data2 != nil{
+                projImage.image = UIImage(data: data2!)
+            }
+        }
+
+        
+}
+
     @IBAction func labelTapped() {
         NSLog("hello")
         let url = NSURL(string: proj.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
