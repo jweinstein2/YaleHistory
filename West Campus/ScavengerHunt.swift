@@ -11,7 +11,7 @@ import UIKit
 class ScavengerHunt: NSObject {
     var projects: ProjectData!
     var progress: Int!
-    var isSetUp: Bool!
+    var transition: Bool!
     
     override init(){
         NSLog("Error: please use custom initializer")
@@ -19,5 +19,9 @@ class ScavengerHunt: NSObject {
     
     init(allProjects: ProjectData){
         super.init()
+        
+        projects = allProjects
+        progress = 0
+        transition = false
     }
 }

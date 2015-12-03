@@ -779,8 +779,20 @@
                     <view key="view" contentMode="scaleToFill" id="6HX-Mv-fcA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-SE-dIH">
+                                <rect key="frame" x="175" y="173" width="111" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="Vso-5G-abl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="toHunt" destination="hgF-SE-dIH" id="b3H-8l-iIE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2r-8O-bgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

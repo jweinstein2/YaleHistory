@@ -38,8 +38,8 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         NSLog(String(locationManager.activityType))
         
-        MyViewController.model.currentProject = MyViewController.model.scavengerHuntProgress
-        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
+        MyViewController.model.currentProject = MyViewController.model.hunt.progress
+        currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]
         
         Header.text = "You are looking for"
         clueLabel.text = "To find this project... " + currProj.clue
@@ -57,17 +57,17 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             }
         }
 
-        progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
+        progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
         
             }
     
     override func viewWillAppear(animated: Bool) {
-        if (MyViewController.model.sHtransition == true && (MyViewController.model.currentProject + 1) < MyViewController.model.projects.projectData.count){
+        if (MyViewController.model.hunt.transition == true && (MyViewController.model.currentProject + 1) < MyViewController.model.hunt.projects.projectData.count){
             
             MyViewController.model.currentProject = MyViewController.model.currentProject + 1 //go to next project
-            MyViewController.model.scavengerHuntProgress = MyViewController.model.currentProject
+            MyViewController.model.hunt.progress = MyViewController.model.currentProject
             
-            currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]   //update currProj
+            currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]  //update currProj
             
             //set up display
             clueLabel.text = "To find this project... " + currProj.clue
@@ -90,16 +90,17 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             
         }
             
-        else if (MyViewController.model.sHtransition == true) {
+        else if (MyViewController.model.hunt.transition == true) {
             
             progressBar.setProgress(1.0, animated: false)
-            MyViewController.model.scavengerHuntProgress = 0
+            MyViewController.model.hunt.progress = 0
+            MyViewController.model.scavengerHuntIsSetUp = false
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the hunt!"
             clueLabel.text = "Click the back arrow to return to the Main Menu"
             distanceLabel.hidden = true
-            foundIt.enabled = false
+            foundIt.hidden = true
             
             let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
             let data = NSData(contentsOfURL:url!)
@@ -109,7 +110,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
         }
         
-        MyViewController.model.sHtransition = false
+        MyViewController.model.hunt.transition = false
 
     }
     

@@ -29,7 +29,7 @@ class ViewController: MyViewController {
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
         
-        if MyViewController.model.hunt.isSetUp == true {
+        if MyViewController.model.scavengerHuntIsSetUp == true {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
         }

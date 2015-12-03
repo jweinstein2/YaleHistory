@@ -12,8 +12,7 @@ class MainModel{
     var projects : ProjectData!
     var currentProject : Int!
     var scavengerHuntAvailable: Bool!
-    var scavengerHuntProgress: Int!
-    var sHtransition: Bool!
+    var scavengerHuntIsSetUp: Bool!
     var hunt: ScavengerHunt!
 
     var myHTMLString: String?
@@ -21,6 +20,7 @@ class MainModel{
     init(){
         currentProject = 0;
         let myURLString = "http://contripity.net/wildwest/researchprojects.php"
+        scavengerHuntIsSetUp = false
         
         if let myURL = NSURL(string: myURLString) {
             
@@ -36,10 +36,7 @@ class MainModel{
             }
             else {
                 scavengerHuntAvailable = true
-                scavengerHuntProgress = 0
-                sHtransition = false
             }
-            //hunt.isSetUp = false
             
         } else {
             NSLog("Error: \(myURLString) doesn't seem to be a valid URL")

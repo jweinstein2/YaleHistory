@@ -36,7 +36,7 @@ class ArrivalViewController: UIViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
-        MyViewController.model.sHtransition = true
+        MyViewController.model.hunt.transition = true
         self.dismissViewControllerAnimated(false, completion: nil);
         
     }

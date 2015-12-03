@@ -10,26 +10,27 @@ import UIKit
 
 class SHWelcomeViewController: MyViewController {
 
+    @IBOutlet weak var toHunt: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects)
+        MyViewController.model.scavengerHuntIsSetUp = true
+        
+    }
+    
+    @IBAction func buttonPressed(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
+        self.dismissViewControllerAnimated(false, completion: nil)
+        NSLog("Got past dismissal")
+        presentViewController(vc, animated: false, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
