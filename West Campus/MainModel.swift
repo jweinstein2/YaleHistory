@@ -14,6 +14,7 @@ class MainModel{
     var scavengerHuntAvailable: Bool!
     var scavengerHuntIsSetUp: Bool!
     var hunt: ScavengerHunt!
+    var prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     var myHTMLString: String?
 
@@ -23,19 +24,21 @@ class MainModel{
         scavengerHuntIsSetUp = false
         
         if let myURL = NSURL(string: myURLString) {
+            var failed : Bool = false
             
             do{
                 myHTMLString = try NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding) as String
+                self.downloadData()
             }catch{
+                //This catch is called if there was any error downloading the content from the database
                 NSLog("ERROR: Line 21 of Main Model - Failed to download the contents of json from website")
+                
+                failed = true
+                self.loadNSUserDefaults()
             }
-            projects = ProjectData(inputString: myHTMLString!)
             
-            if projects.projectData.count == 0 {        //set availability of scavenger hunt
-                scavengerHuntAvailable = false
-            }
-            else {
-                scavengerHuntAvailable = true
+            if failed == false{
+                self.downloadData()
             }
             
         } else {
@@ -45,5 +48,33 @@ class MainModel{
     
     func getCurrentProject() -> Project{
         return projects.projectData[currentProject]
+    }
+    
+    
+    //This method is called when the application fails to connect to the database
+    //NOTE: A more comprehensive implementation would use core data. For the sake of speed I'm implementing persistant data using NSUserDefaults instead.
+    func loadNSUserDefaults(){
+        let projNumber = prefs.integerForKey("numberOfProjects")
+        
+        if projNumber != 0{
+            NSLog("Retrieving NSUserDefaults")
+            //Previously saved defaults are avalible
+            
+        }else{
+            NSLog("No Data found. Unable to continue.")
+            //No data is found. Need to alert the user that the app is unusable until we connect to data
+            
+        }
+    }
+    
+    func downloadData(){
+        projects = ProjectData(inputString: myHTMLString!)
+        
+        if projects.projectData.count == 0 {        //set availability of scavenger hunt
+            scavengerHuntAvailable = false
+        }
+        else {
+            scavengerHuntAvailable = true
+        }
     }
 }

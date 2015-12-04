@@ -18,13 +18,13 @@ class ViewController: MyViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         MyViewController.model = MainModel.init()
-        NSLog(String(MyViewController.model))
+        //NSLog(String(MyViewController.model))
         
         //make button gray out
         
-        if (!MyViewController.model.scavengerHuntAvailable){
-           scavengerHunt.enabled = false
-        }
+        //if (!MyViewController.model.scavengerHuntAvailable){
+        //   scavengerHunt.enabled = false
+       // }
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
