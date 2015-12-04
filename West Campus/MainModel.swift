@@ -28,7 +28,6 @@ class MainModel{
             
             do{
                 myHTMLString = try NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding) as String
-                self.downloadData()
             }catch{
                 //This catch is called if there was any error downloading the content from the database
                 NSLog("ERROR: Line 21 of Main Model - Failed to download the contents of json from website")
@@ -54,10 +53,11 @@ class MainModel{
     //This method is called when the application fails to connect to the database
     //NOTE: A more comprehensive implementation would use core data. For the sake of speed I'm implementing persistant data using NSUserDefaults instead.
     func loadNSUserDefaults(){
-        let projNumber = prefs.integerForKey("numberOfProjects")
-        
-        if projNumber != 0{
+        let json : String = String(prefs.objectForKey("json")) as String!
+        if json != "nil"{
             NSLog("Retrieving NSUserDefaults")
+            projects = ProjectData(inputString: json)
+            prefs.synchronize()
             //Previously saved defaults are avalible
             
         }else{
@@ -77,8 +77,8 @@ class MainModel{
             scavengerHuntAvailable = true
         }
         
-        
         //Save Data as Defaults
-        prefs.setInteger(projects.projectData.count, forKey: "numberOfProjects")
+        prefs.setObject(myHTMLString!, forKey: "json")
+        prefs.synchronize()
     }
 }
