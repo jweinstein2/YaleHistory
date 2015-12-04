@@ -76,5 +76,9 @@ class MainModel{
         else {
             scavengerHuntAvailable = true
         }
+        
+        
+        //Save Data as Defaults
+        prefs.setInteger(projects.projectData.count, forKey: "numberOfProjects")
     }
 }
