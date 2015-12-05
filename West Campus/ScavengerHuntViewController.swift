@@ -17,6 +17,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
+    //@IBOutlet weak var locationLabel: UILabel! //for testing purposes
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -134,6 +135,8 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         let curLat = locations[0].coordinate.latitude
         let curLong = locations[0].coordinate.longitude
+        
+        //locationLabel.text = "lat: " + String(curLat) + "long: " + String(curLong) //For testing purposes
         
         let x = 111111*(curLat-destLat)
         

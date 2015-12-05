@@ -24,7 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = true
-        let initialLocation = CLLocationCoordinate2D(latitude: 41.313150, longitude: -72.927468)
+        let initialLocation = CLLocationCoordinate2D(latitude: 41.253214, longitude: -72.993835)
         map.setCenterCoordinate(initialLocation, animated: true)
         let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {
@@ -49,16 +49,94 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var pathPoints = [CLLocationCoordinate2D]()
         //Add or remove from this list to change the displayed border
-        //pathPoints.append(CLLocationCoordinate2DMake(41.312276, -72.996744))
+        /*
         pathPoints.append(CLLocationCoordinate2DMake(41.310544, -72.926282))
         pathPoints.append(CLLocationCoordinate2DMake(41.311729, -72.925563))
         pathPoints.append(CLLocationCoordinate2DMake(41.312933, -72.925271))
         pathPoints.append(CLLocationCoordinate2DMake(41.314061, -72.925506))
         pathPoints.append(CLLocationCoordinate2DMake(41.314416, -72.925892))
-        let path : MKPolyline = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
-        path.title = "path"
+        */
+        var path : MKPolyline = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
+        //path.title = "path"
+        //map.addOverlay(path)
+
+        
+        pathPoints = [CLLocationCoordinate2D]()
+        /*
+        pathPoints.append(CLLocationCoordinate2DMake(41.253042, -72.995909))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253036, -72.995667))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.995385))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253016, -72.995225))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253035, -72.995118))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253091, -72.995021))
+        path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
+        path.title = "path2"
+        map.addOverlay(path)
+*/
+        
+        pathPoints = [CLLocationCoordinate2D]()
+        //pathPoints.append(CLLocationCoordinate2DMake(41.252988, -72.994438))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253035, -72.994874))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.995385))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.994581))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253036, -72.994495))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253040, -72.994715))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253035, -72.994874))
+        
+        pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.994581))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252855, -72.994380))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252872, -72.994372))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252850, -72.994254))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252851, -72.994036))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252825, -72.993949))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252793, -72.993897))
+        
+        pathPoints.append(CLLocationCoordinate2DMake(41.252339, -72.993493))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252307, -72.993447))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252286, -72.993355))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252379, -72.993352))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252486, -72.993316))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252568, -72.993329))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252606, -72.993336))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252714, -72.993436))
+        
+        pathPoints.append(CLLocationCoordinate2DMake(41.252814, -72.993494))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252881, -72.993584))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252928, -72.993645))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253028, -72.993565))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253110, -72.993536))
+        path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
+        path.title = "path3"
         map.addOverlay(path)
         
+        pathPoints.append(CLLocationCoordinate2DMake(41.253110, -72.993536))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253107, -72.993633))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253232, -72.993673))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253290, -72.993743))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253275, -72.993866))
+        
+        pathPoints.append(CLLocationCoordinate2DMake(41.253252, -72.993961))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253182, -72.994092))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253231, -72.994159))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253204, -72.994464))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253186, -72.994514))
+        
+        pathPoints.append(CLLocationCoordinate2DMake(41.253178, -72.994550))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253199, -72.994626))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253145, -72.994955))
+        
+        path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
+        path.title = "path4"
+        map.addOverlay(path)
+
+        
+        
+        
+        
+        
+
         
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
         for var i = 0; i < projectsToBeDisplayed.count; i++ {
