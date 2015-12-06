@@ -73,6 +73,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path.title = "path2"
         map.addOverlay(path)
 */
+        pathPoints.append(CLLocationCoordinate2DMake(41.252978, -72.995873))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252967, -72.995601))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252992, -72.995307))
+        pathPoints.append(CLLocationCoordinate2DMake(41.252967, -72.995164))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253036, -72.994982))
+    
+        path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
+        path.title = "path2"
+        map.addOverlay(path)
         
         pathPoints = [CLLocationCoordinate2D]()
         //pathPoints.append(CLLocationCoordinate2DMake(41.252988, -72.994438))
@@ -81,11 +90,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.994581))
         //pathPoints.append(CLLocationCoordinate2DMake(41.253036, -72.994495))
         //pathPoints.append(CLLocationCoordinate2DMake(41.253040, -72.994715))
-        pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
-        pathPoints.append(CLLocationCoordinate2DMake(41.253035, -72.994874))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253035, -72.994874))
         
-        pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.994581))
-        pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
+        //pathPoints.append(CLLocationCoordinate2DMake(41.253044, -72.994581))
+        pathPoints.append(CLLocationCoordinate2DMake(41.253036, -72.994982))
         pathPoints.append(CLLocationCoordinate2DMake(41.252855, -72.994380))
         pathPoints.append(CLLocationCoordinate2DMake(41.252872, -72.994372))
         pathPoints.append(CLLocationCoordinate2DMake(41.252850, -72.994254))
