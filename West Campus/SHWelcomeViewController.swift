@@ -16,16 +16,20 @@ class SHWelcomeViewController: MyViewController {
         super.viewDidLoad()
         
         MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects)
-        MyViewController.model.scavengerHuntIsSetUp = true
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if (MyViewController.model.scavengerHuntIsSetUp == true){
+            self.dismissViewControllerAnimated(false, completion: nil);
+        }
+    }
+    
     @IBAction func buttonPressed(sender: AnyObject) {
+        MyViewController.model.scavengerHuntIsSetUp = true
+       
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
-        self.dismissViewControllerAnimated(false, completion: nil)
-        NSLog("Got past dismissal")
         presentViewController(vc, animated: false, completion: nil)
-        
     }
 
     override func didReceiveMemoryWarning() {
