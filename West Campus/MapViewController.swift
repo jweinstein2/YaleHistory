@@ -15,12 +15,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //map.delegate = self //The pins are added even if this line is commented out
+        map.delegate = self
         setUpMap()
     }
     
     func setUpMap(){
         map.mapType = MKMapType.Satellite
+
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = true
@@ -84,7 +85,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.addOverlay(path)
         //Jared path
 
-        
+        //-----------------------------------------------------------------
         pathPoints = [CLLocationCoordinate2D]()
         
         pathPoints.append(CLLocationCoordinate2DMake(41.253042, -72.995909))
@@ -96,6 +97,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path2"
         map.addOverlay(path)
+
+        //-----------------------------------------------------------------
+        pathPoints = [CLLocationCoordinate2D]()
 
         pathPoints.append(CLLocationCoordinate2DMake(41.252978, -72.995873))
         pathPoints.append(CLLocationCoordinate2DMake(41.252967, -72.995601))
@@ -113,6 +117,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path.title = "path2"
         map.addOverlay(path)
         
+        //-----------------------------------------------------------------
         pathPoints = [CLLocationCoordinate2D]()
         pathPoints.append(CLLocationCoordinate2DMake(41.252988, -72.994438))
         pathPoints.append(CLLocationCoordinate2DMake(41.253033, -72.995001))
@@ -157,6 +162,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path.title = "path3"
         map.addOverlay(path)
         
+        //-----------------------------------------------------------------
+        
+        pathPoints = [CLLocationCoordinate2D]()
+        
         pathPoints.append(CLLocationCoordinate2DMake(41.253505, -72.995549))
         pathPoints.append(CLLocationCoordinate2DMake(41.253525, -72.995592))
         pathPoints.append(CLLocationCoordinate2DMake(41.253520, -72.995671))
@@ -188,6 +197,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path4"
         map.addOverlay(path)
+        
+        //-----------------------------------------------------------------
+        
+        pathPoints = [CLLocationCoordinate2D]()
 
         pathPoints.append(CLLocationCoordinate2DMake(41.253505, -72.995549))
         pathPoints.append(CLLocationCoordinate2DMake(41.253510, -72.995585))
@@ -202,6 +215,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path.title = "path5"
         map.addOverlay(path)
         
+        //-----------------------------------------------------------------
+        
+        pathPoints = [CLLocationCoordinate2D]()
+        
         pathPoints.append(CLLocationCoordinate2DMake(41.253965, -72.995176))
         pathPoints.append(CLLocationCoordinate2DMake(41.253962, -72.995084))
         pathPoints.append(CLLocationCoordinate2DMake(41.253895, -72.995046))
@@ -209,6 +226,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path6"
         map.addOverlay(path)
+        
+        //-----------------------------------------------------------------
+        
+        pathPoints = [CLLocationCoordinate2D]()
         
         pathPoints.append(CLLocationCoordinate2DMake(41.253965, -72.995176))
         pathPoints.append(CLLocationCoordinate2DMake(41.254030, -72.995127))
@@ -224,6 +245,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         path = MKPolyline.init(coordinates: &pathPoints, count: pathPoints.count)
         path.title = "path7"
         map.addOverlay(path)
+        
+        //-----------------------------------------------------------------
+        
+        pathPoints = [CLLocationCoordinate2D]()
         
         
 
@@ -252,7 +277,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }else if overlay is MKPolyline{
             //These are the settings for our path lines
             let polylineRender = MKPolylineRenderer(overlay: overlay)
-            polylineRender.strokeColor = UIColor.blueColor()
+            
+            //Random color is used for testing purposes only. Final revision should be blue
+            let randomRed:CGFloat = CGFloat(drand48())
+            let randomGreen:CGFloat = CGFloat(drand48())
+            let randomBlue:CGFloat = CGFloat(drand48())
+            polylineRender.strokeColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+            
             polylineRender.lineWidth = 2
             polylineRender.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
             return polylineRender

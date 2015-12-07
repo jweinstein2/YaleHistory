@@ -14,6 +14,7 @@ import Foundation
 class ProjectListViewController: MyViewController {
     var isList = true
     var projectList = MyViewController.model.projects.projectData
+    var locationEnabled : Bool = false
     @IBOutlet weak var mapListButton: UIButton!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var map: UIView!
@@ -48,11 +49,14 @@ class ProjectListViewController: MyViewController {
     {
         let cell:ProjectTableViewCell = ProjectTableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"projectCell")
         cell.textLabel?.text = projectList[indexPath.row].title
-        
+        cell.locationEnabled = self.locationEnabled
         //Need to make this dynamically update
-        cell.distanceLabel.text = NSString(format: "%.2fm", projectList[indexPath.row].distanceToUser!) as String
-        if projectList[indexPath.row].distanceToUser < 10{
-            cell.backgroundColor = UIColor(red: 0.0, green: 0.8, blue: 0.0, alpha: 0.15)
+        // NOT CURRENTLY BEING USED *
+        if locationEnabled {
+            cell.distanceLabel.text = NSString(format: "%.2fm", projectList[indexPath.row].distanceToUser!) as String
+            if projectList[indexPath.row].distanceToUser < 10{
+                cell.backgroundColor = UIColor(red: 0.0, green: 0.8, blue: 0.0, alpha: 0.15)
+            }
         }
         return cell
     }

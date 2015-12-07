@@ -10,26 +10,23 @@ import Foundation
 import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
+    var locationEnabled : Bool?
     var distance : String?
-    var distanceLabel: UILabel = UILabel()
+    var distanceLabel: UILabel = UILabel() //not currently used
 
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         NSLog("custom init")
         
-        //Custom initialization for a cell with information in it
-        /*
-        self.contentView.addSubview(eventName)
-        self.contentView.addSubview(eventCity)
-        self.contentView.addSubview(eventTime)*/
-        
-        distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 70, self.bounds.size.height - 10))
-        distanceLabel.text = distance
-        distanceLabel.textAlignment = NSTextAlignment.Right
-
-        
-        self.contentView.addSubview(distanceLabel)
+        if locationEnabled == true {
+            //Custom initialization for a cell with distance label in it **NOT USED**
+            distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 70, self.bounds.size.height - 10))
+            distanceLabel.text = distance
+            distanceLabel.textAlignment = NSTextAlignment.Right
+            
+            self.contentView.addSubview(distanceLabel)
+        }
     }
     
     required init(coder aDecoder: NSCoder) {
