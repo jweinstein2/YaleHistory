@@ -12,6 +12,7 @@ class SHWelcomeViewController: MyViewController {
     
     var stage: Int!
     
+
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var tag1: UILabel!
     @IBOutlet weak var tag2: UILabel!
@@ -24,13 +25,24 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var next: UIButton!
     @IBOutlet weak var previous: UIButton!
     @IBOutlet weak var directions: UILabel!
+    @IBOutlet weak var vertStackView: UIStackView!
+    @IBOutlet weak var hoStack1: UIStackView!
+    @IBOutlet weak var hoStack2: UIStackView!
+    @IBOutlet weak var hoStack3: UIStackView!
+    @IBOutlet weak var hoStack4: UIStackView!
+    @IBOutlet weak var buttonHoStack: UIStackView!
     
     //Add label and switch for randomized
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stage = 0
-        
+        vertStackView.spacing = 20
+        hoStack1.spacing = 40
+        hoStack2.spacing = 40
+        hoStack3.spacing = 40
+        hoStack4.spacing = 40
+        buttonHoStack.spacing = 40
         
     }
     
@@ -52,6 +64,8 @@ class SHWelcomeViewController: MyViewController {
             previousLabel.hidden = false
             
             directions.hidden = true
+            
+            stage = 1
             
         }
         else {
