@@ -17,8 +17,9 @@ class ScavengerHunt: NSObject {
         NSLog("Error: please use custom initializer")
     }
     
-    init(allProjects: ProjectData){
+    init(allProjects: ProjectData, tag1: Bool, tag2: Bool, tag3: Bool, random: Bool){
         super.init()
+        //SET UP INITIALIZER
         
         projects = allProjects
         progress = 0
