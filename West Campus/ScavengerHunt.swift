@@ -17,14 +17,14 @@ class ScavengerHunt: NSObject {
         NSLog("Error: please use custom initializer")
     }
     
-    init(allProjects: ProjectData, /* forestry: Bool, sustainability: Bool, construction: Bool,*/ random: Bool){
+    init(allProjects: ProjectData, innovations: Bool, ecology: Bool, health: Bool, random: Bool){
         super.init()
         
         projects = ProjectData()
         
         for var i = 0; i < allProjects.projectData.count; i++ { //adds projects to Hunt if they are tagged
             
-            if (true/*(forestry && allProjects.projectData[i].forestry) || (sustainability && allProjects.projectData[i].sustainability) || (construction && allProjects.projectData[i].construction)*/){
+            if ((innovations && allProjects.projectData[i].innovations) || (ecology && allProjects.projectData[i].ecology) || (health && allProjects.projectData[i].health)){
                 
                 projects.projectData.append(allProjects.projectData[i])
             }

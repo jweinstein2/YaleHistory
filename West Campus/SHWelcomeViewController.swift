@@ -11,6 +11,9 @@ import UIKit
 class SHWelcomeViewController: MyViewController {
     
     var stage: Int!
+    var tag1count: Int!
+    var tag2count: Int!
+    var tag3count: Int!
     
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var tag1: UILabel!
@@ -32,6 +35,8 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var randomSwitch: UISwitch!
     @IBOutlet weak var hoStack4: UIStackView!
     @IBOutlet weak var buttonHoStack: UIStackView!
+    @IBOutlet weak var projCount: UILabel!
+    @IBOutlet weak var timeEstimate: UILabel!
     
     //Add label and switch for randomized
     
@@ -44,15 +49,23 @@ class SHWelcomeViewController: MyViewController {
         hoStack3.spacing = 40
         hoStack4.spacing = 40
         buttonHoStack.spacing = 40
-        
+        tag1.text = "Innovations, Inventions, and Ideas in Pilot Form"
+        tag2.text = "Ecology, Plants, and the Natural Environment"
+        tag3.text = "Health, Community, and Wellness"
         setStage(true)
         
+        determineTagNumbers()
+        updateProjCount()
     }
     
     override func viewWillAppear(animated: Bool) {
         if (MyViewController.model.scavengerHuntIsSetUp == true){
             self.dismissViewControllerAnimated(false, completion: nil);
         }
+    }
+    
+    @IBAction func switchFlipped(sender: AnyObject) {
+        updateProjCount()
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -73,7 +86,7 @@ class SHWelcomeViewController: MyViewController {
             announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
-            MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects, /*forestry:  switch1.on, sustainability:  switch2.on, construction: switch3.on,*/ random: randomSwitch.on)
+            MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects, innovations:  switch1.on, ecology:  switch2.on, health: switch3.on, random: randomSwitch.on)
             MyViewController.model.scavengerHuntIsSetUp = true
         
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
@@ -103,9 +116,40 @@ class SHWelcomeViewController: MyViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func determineTagNumbers(){     //set tag1,2,3count so that they represent the number of projects with the given tags
+        
+        tag1count = 0
+        tag2count = 0
+        tag3count = 0
+        
+        for var i = 0; i < MyViewController.model.projects.projectData.count; i++ {
+            if MyViewController.model.projects.projectData[i].innovations {
+                tag1count = tag1count + 1
+            }
+            if MyViewController.model.projects.projectData[i].ecology {
+                tag2count = tag2count + 1
+            }
+            if MyViewController.model.projects.projectData[i].health {
+                tag3count = tag3count + 1
+            }
+        }
+    }
+    
+    func updateProjCount(){
+        var projectCount = 0
+        
+        if (switch1.on){
+            projectCount += tag1count
+        }
+        if (switch2.on){
+            projectCount += tag2count
+        }
+        if (switch3.on){
+            projectCount += tag3count
+        }
+        
+        projCount.text = String(format: "Projects to be Found: %d", projectCount)
+        timeEstimate.text = String(format: "Time Estimate: %d min", projectCount*5)
     }
 
 }

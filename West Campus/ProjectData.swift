@@ -36,32 +36,32 @@ class ProjectData: NSObject {
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
             let imageLink = find(projectArr[index], element: "photo")
-            /*
-            let forestry: Bool
-            let sustainability: Bool
-            let construction: Bool
             
-            if find(projectArr[index], element: "forestry") == "1" {
-                forestry = true
+            let innovations: Bool
+            let ecology: Bool
+            let health: Bool
+            
+            if find(projectArr[index], element: "innovations") == "1" {
+                innovations = true
             }
             else{
-                forestry = false
+                innovations = false
             }
-            if find(projectArr[index], element: "sustainability") == "1" {
-                sustainability = true
-            }
-            else{
-                sustainability = false
-            }
-            if find(projectArr[index], element: "construction") == "1" {
-                construction = true
+            if find(projectArr[index], element: "ecology") == "1" {
+                ecology = true
             }
             else{
-                construction = false
+                ecology = false
             }
-            */
+            if find(projectArr[index], element: "health") == "1" {
+                health = true
+            }
+            else{
+                health = false
+            }
+
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink/*, forestry: forestry, sustainability: sustainability, construction: construction*/)
+            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health)
             
             NSLog("image link: " + imageLink)
             

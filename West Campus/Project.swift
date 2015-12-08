@@ -18,13 +18,13 @@ class Project {
     var action: String?
     var imageLink : String?
     
-    /*
-    var forestry: Bool
-    var sustainability: Bool
-    var construction: Bool
-    */
     
-    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?, imageLink: String?/*, forestry: Bool, sustainability: Bool, construction: Bool*/){
+    var innovations: Bool
+    var ecology: Bool
+    var health: Bool
+
+    
+    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?, imageLink: String?, innovations: Bool, ecology: Bool, health: Bool){
         self.projectId = projectId
         self.title = title
         self.summary = summary
@@ -35,10 +35,10 @@ class Project {
         self.action = action
         self.imageLink = imageLink //"http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg"
         
-        /*
-        self.forestry = forestry
-        self.sustainability = sustainability
-        self.construction = construction
-        */
+        
+        self.innovations = innovations
+        self.ecology = ecology
+        self.health = health
+
     }
 }

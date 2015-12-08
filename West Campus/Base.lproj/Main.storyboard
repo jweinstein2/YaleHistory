@@ -38,6 +38,8 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -869,69 +871,90 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fhH-Gl-VuD">
-                                <rect key="frame" x="235" y="226" width="130" height="124"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fhH-Gl-VuD">
+                                <rect key="frame" x="205" y="219" width="191" height="124"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffy-s2-hpH">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="191" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-5I-wR8">
-                                                <rect key="frame" x="0.0" y="0.0" width="81" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-5I-wR8">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1p-pY-jnr">
-                                                <rect key="frame" x="81" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="valueChanged" id="Vch-b4-ybz"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-oe-sUX">
-                                        <rect key="frame" x="0.0" y="31" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="31" width="191" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-rR-F4e">
-                                                <rect key="frame" x="0.0" y="0.0" width="81" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-rR-F4e">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rud-aU-HHG">
-                                                <rect key="frame" x="81" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="valueChanged" id="JSC-o9-NJh"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aof-Z1-JeR">
-                                        <rect key="frame" x="0.0" y="62" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="62" width="191" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-d3-yO0">
-                                                <rect key="frame" x="0.0" y="0.0" width="81" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-d3-yO0">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcl-MJ-MQ8">
-                                                <rect key="frame" x="81" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="Rzz-w0-Rec"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="com-Bh-tNj">
-                                        <rect key="frame" x="0.0" y="93" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="93" width="191" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-kg-Oes">
-                                                <rect key="frame" x="0.0" y="0.0" width="81" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-kg-Oes">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXN-I6-H4o" userLabel="randomSwitch">
-                                                <rect key="frame" x="81" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-KC-Rjp">
-                                <rect key="frame" x="241" y="499" width="130" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Projects to be Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-jL-OXJ">
+                                <rect key="frame" x="225" y="433" width="146" height="21"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Estimate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugd-ca-XHW">
+                                <rect key="frame" x="247" y="462" width="106" height="21"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-KC-Rjp">
+                                <rect key="frame" x="235" y="494" width="130" height="86"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-ty-lOV">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="86"/>
@@ -998,9 +1021,12 @@
                             <constraint firstItem="22B-ad-wgB" firstAttribute="centerY" secondItem="6HX-Mv-fcA" secondAttribute="centerY" id="2lm-X1-8SS"/>
                             <constraint firstItem="Ana-1S-vC4" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="-10" id="2tE-01-JRd"/>
                             <constraint firstItem="uc3-dq-p9a" firstAttribute="top" secondItem="Mmg-KC-Rjp" secondAttribute="bottom" constant="20" id="4bo-aW-vbJ"/>
+                            <constraint firstItem="2gn-8B-dJ4" firstAttribute="top" secondItem="dtC-jL-OXJ" secondAttribute="bottom" constant="40" id="5Ev-8h-URU"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="50" id="8YJ-60-cQt"/>
+                            <constraint firstItem="dtC-jL-OXJ" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="8qM-dF-4JL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipn-5Z-AmV" secondAttribute="trailing" id="BOy-lu-AYp"/>
                             <constraint firstItem="7Sd-5I-wR8" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" constant="10" id="BfZ-rt-ZHp"/>
+                            <constraint firstItem="Ugd-ca-XHW" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="G0a-oO-ZJq"/>
                             <constraint firstItem="fhH-Gl-VuD" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" constant="8" id="G64-qU-agW"/>
                             <constraint firstItem="22B-ad-wgB" firstAttribute="width" secondItem="6HX-Mv-fcA" secondAttribute="width" id="J81-Uy-ikd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="22B-ad-wgB" secondAttribute="trailing" id="Jsq-Qq-lUi"/>
@@ -1021,6 +1047,7 @@
                             <constraint firstItem="fhH-Gl-VuD" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="s7M-ue-pqk"/>
                             <constraint firstItem="ipn-5Z-AmV" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" id="v0f-Ed-FfY"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="-79" id="xVp-bO-aYL"/>
+                            <constraint firstItem="Ugd-ca-XHW" firstAttribute="top" secondItem="dtC-jL-OXJ" secondAttribute="bottom" constant="8" id="zwg-jQ-GrN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1046,6 +1073,7 @@
                         <outlet property="nextLabel" destination="CkX-Ar-Hv6" id="T9H-Gc-Ir3"/>
                         <outlet property="previous" destination="mFT-Ty-3FI" id="fLl-Pe-c96"/>
                         <outlet property="previousLabel" destination="2gn-8B-dJ4" id="U8K-Mm-BY9"/>
+                        <outlet property="projCount" destination="dtC-jL-OXJ" id="mAy-U7-uBH"/>
                         <outlet property="randomLabel" destination="Bgi-kg-Oes" id="8Ce-9C-VuY"/>
                         <outlet property="randomSwitch" destination="FXN-I6-H4o" id="JP7-XY-eui"/>
                         <outlet property="switch1" destination="f1p-pY-jnr" id="W5B-38-P3Y"/>
@@ -1054,6 +1082,7 @@
                         <outlet property="tag1" destination="7Sd-5I-wR8" id="FJJ-i6-d6a"/>
                         <outlet property="tag2" destination="SuS-rR-F4e" id="yfT-ze-0H2"/>
                         <outlet property="tag3" destination="OVU-d3-yO0" id="hIc-Kp-foV"/>
+                        <outlet property="timeEstimate" destination="Ugd-ca-XHW" id="fS9-Ov-lsp"/>
                         <outlet property="vertStackView" destination="fhH-Gl-VuD" id="1XD-LB-2NC"/>
                     </connections>
                 </viewController>
