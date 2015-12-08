@@ -20,7 +20,7 @@ class ArrivalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currProj = MyViewController.model.projects.projectData[MyViewController.model.currentProject]
+        currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]
         
         let imageView = UIImageView(frame: self.view.frame); // set as you want
         let image = UIImage(named: "success");

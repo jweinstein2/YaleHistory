@@ -20,6 +20,7 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var previousLabel: UILabel!
     @IBOutlet weak var switch1: UISwitch!
     @IBOutlet weak var switch2: UISwitch!
+    @IBOutlet weak var randomLabel: UILabel!
     @IBOutlet weak var switch3: UISwitch!
     @IBOutlet weak var next: UIButton!
     @IBOutlet weak var previous: UIButton!
@@ -28,6 +29,7 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var hoStack1: UIStackView!
     @IBOutlet weak var hoStack2: UIStackView!
     @IBOutlet weak var hoStack3: UIStackView!
+    @IBOutlet weak var randomSwitch: UISwitch!
     @IBOutlet weak var hoStack4: UIStackView!
     @IBOutlet weak var buttonHoStack: UIStackView!
     
@@ -43,6 +45,8 @@ class SHWelcomeViewController: MyViewController {
         hoStack4.spacing = 40
         buttonHoStack.spacing = 40
         
+        setStage(true)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,30 +55,54 @@ class SHWelcomeViewController: MyViewController {
         }
     }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil);
+    }
+    
+    @IBAction func previousButtonPressed(sender: AnyObject) {
+        stage = 0
+        setStage(true)
+    }
+    
+    @IBAction func nextbuttonPressed(sender: AnyObject) {
         if stage == 0{
-            tag1.hidden = false
-            tag2.hidden = false
-            tag3.hidden = false
-            switch1.hidden = false
-            switch2.hidden = false
-            switch3.hidden = false
-            previous.hidden = false
-            previousLabel.hidden = false
-            
-            directions.hidden = true
+            setStage(false)
             stage = 1
-            
+        }
+        else if (!switch1.on && !switch2.on && !switch3.on) { //if they selected no projects, send error
+            announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
-            MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects, tag1: switch1.selected, tag2: switch2.selected, tag3: switch3.selected, random: false)
+            MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects, /*forestry:  switch1.on, sustainability:  switch2.on, construction: switch3.on,*/ random: randomSwitch.on)
             MyViewController.model.scavengerHuntIsSetUp = true
         
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
             presentViewController(vc, animated: false, completion: nil)
         }
     }
-
+    
+    func setStage(stageIs0: Bool){
+        tag1.hidden = stageIs0
+        tag2.hidden = stageIs0
+        tag3.hidden = stageIs0
+        randomLabel.hidden = stageIs0
+        switch1.hidden = stageIs0
+        switch2.hidden = stageIs0
+        switch3.hidden = stageIs0
+        randomSwitch.hidden = stageIs0
+        previous.hidden = stageIs0
+        previousLabel.hidden = stageIs0
+        
+        directions.hidden = !stageIs0
+        
+        if stageIs0 {
+            announcement.text = "Welcome to the Scavenger Hunt!"
+        }
+        else{
+            announcement.text = "I want to see projects that relate to:"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

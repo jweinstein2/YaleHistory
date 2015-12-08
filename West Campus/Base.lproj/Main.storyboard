@@ -840,6 +840,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="backButtonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="rBw-Sv-dW2"/>
                                     <action selector="buttonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="CGJ-zr-Juv"/>
                                 </connections>
                             </button>
@@ -929,47 +930,58 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-KC-Rjp">
-                                <rect key="frame" x="245" y="504" width="110" height="76"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-KC-Rjp">
+                                <rect key="frame" x="241" y="499" width="130" height="86"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-ty-lOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="55" height="76"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="86"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-8B-dJ4">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="AIT-pz-f3M"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFT-Ty-3FI">
-                                                <rect key="frame" x="0.0" y="21" width="55" height="55"/>
+                                                <rect key="frame" x="0.0" y="21" width="65" height="65"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="55" id="Ai4-we-lui"/>
+                                                    <constraint firstAttribute="width" constant="65" id="Ai4-we-lui" userLabel="width = 65"/>
                                                     <constraint firstAttribute="width" secondItem="mFT-Ty-3FI" secondAttribute="height" multiplier="1:1" id="UI6-bN-3CS"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="back_light"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Ai4-we-lui"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="previousButtonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="JnF-0d-JR3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QLS-ps-Ujt">
-                                        <rect key="frame" x="55" y="0.0" width="55" height="76"/>
+                                        <rect key="frame" x="65" y="0.0" width="65" height="86"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkX-Ar-Hv6">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-SE-dIH">
-                                                <rect key="frame" x="0.0" y="21" width="55" height="55"/>
+                                                <rect key="frame" x="0.0" y="21" width="65" height="65"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hgF-SE-dIH" secondAttribute="height" multiplier="1:1" id="OOZ-bw-2ow"/>
-                                                    <constraint firstAttribute="width" constant="55" id="kgL-CI-QlM"/>
+                                                    <constraint firstAttribute="width" constant="65" id="kgL-CI-QlM"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="back_light_reversed"/>
                                                 <connections>
-                                                    <action selector="buttonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="Vso-5G-abl"/>
+                                                    <action selector="nextbuttonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="7Ek-qx-BmT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -984,8 +996,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="22B-ad-wgB" secondAttribute="trailing" constant="-14" id="181-PF-LtV"/>
                             <constraint firstItem="22B-ad-wgB" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" id="2K6-Am-oGX"/>
                             <constraint firstItem="22B-ad-wgB" firstAttribute="centerY" secondItem="6HX-Mv-fcA" secondAttribute="centerY" id="2lm-X1-8SS"/>
-                            <constraint firstItem="Ana-1S-vC4" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="10" id="2tE-01-JRd"/>
+                            <constraint firstItem="Ana-1S-vC4" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="-10" id="2tE-01-JRd"/>
                             <constraint firstItem="uc3-dq-p9a" firstAttribute="top" secondItem="Mmg-KC-Rjp" secondAttribute="bottom" constant="20" id="4bo-aW-vbJ"/>
+                            <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="50" id="8YJ-60-cQt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipn-5Z-AmV" secondAttribute="trailing" id="BOy-lu-AYp"/>
                             <constraint firstItem="7Sd-5I-wR8" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" constant="10" id="BfZ-rt-ZHp"/>
                             <constraint firstItem="fhH-Gl-VuD" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" constant="8" id="G64-qU-agW"/>
@@ -1014,6 +1027,7 @@
                                 <exclude reference="0Kr-qo-f6p"/>
                                 <exclude reference="Wux-Ag-Nle"/>
                                 <exclude reference="kot-IR-1YK"/>
+                                <exclude reference="xVp-bO-aYL"/>
                                 <exclude reference="2K6-Am-oGX"/>
                                 <exclude reference="Jsq-Qq-lUi"/>
                                 <exclude reference="BfZ-rt-ZHp"/>
@@ -1032,6 +1046,8 @@
                         <outlet property="nextLabel" destination="CkX-Ar-Hv6" id="T9H-Gc-Ir3"/>
                         <outlet property="previous" destination="mFT-Ty-3FI" id="fLl-Pe-c96"/>
                         <outlet property="previousLabel" destination="2gn-8B-dJ4" id="U8K-Mm-BY9"/>
+                        <outlet property="randomLabel" destination="Bgi-kg-Oes" id="8Ce-9C-VuY"/>
+                        <outlet property="randomSwitch" destination="FXN-I6-H4o" id="JP7-XY-eui"/>
                         <outlet property="switch1" destination="f1p-pY-jnr" id="W5B-38-P3Y"/>
                         <outlet property="switch2" destination="Rud-aU-HHG" id="p7P-wi-mG9"/>
                         <outlet property="switch3" destination="Vcl-MJ-MQ8" id="WDH-ol-W4q"/>

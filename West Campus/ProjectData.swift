@@ -12,7 +12,6 @@ class ProjectData: NSObject {
     var projectData = [Project]()
     
     override init() {
-        NSLog("Error please use the custom initializer")
     }
     
     init(var inputString: String){
@@ -37,9 +36,32 @@ class ProjectData: NSObject {
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
             let imageLink = find(projectArr[index], element: "photo")
+            /*
+            let forestry: Bool
+            let sustainability: Bool
+            let construction: Bool
             
+            if find(projectArr[index], element: "forestry") == "1" {
+                forestry = true
+            }
+            else{
+                forestry = false
+            }
+            if find(projectArr[index], element: "sustainability") == "1" {
+                sustainability = true
+            }
+            else{
+                sustainability = false
+            }
+            if find(projectArr[index], element: "construction") == "1" {
+                construction = true
+            }
+            else{
+                construction = false
+            }
+            */
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink)
+            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink/*, forestry: forestry, sustainability: sustainability, construction: construction*/)
             
             NSLog("image link: " + imageLink)
             
