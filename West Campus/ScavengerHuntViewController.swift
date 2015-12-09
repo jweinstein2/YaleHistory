@@ -26,6 +26,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var huntProgress: UILabel!
     @IBOutlet weak var foundIt: UIButton!
+    @IBOutlet weak var nextLabel: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var previousLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +60,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             if data2 != nil{
                 imageView.image = UIImage(data: data2!)
             }
+            
+            //hide previous button & label
+            previousButton.hidden = true
+            previousLabel.hidden = true
         }
 
         progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
@@ -69,6 +77,11 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             MyViewController.model.hunt.progress = MyViewController.model.currentProject
             
             currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]  //update currProj
+            
+            if MyViewController.model.hunt.progress == 0 {
+                previousButton.hidden = true
+                previousLabel.hidden = true
+            }
             
             //set up display
             clueLabel.text = "To find this project... " + currProj.clue
@@ -102,6 +115,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             clueLabel.text = "Click the back arrow to return to the Main Menu"
             distanceLabel.hidden = true
             foundIt.hidden = true
+            nextLabel.hidden = true
             
             let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
             let data = NSData(contentsOfURL:url!)
@@ -122,8 +136,14 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
-        presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+        MyViewController.model.hunt.transition = true
+        viewWillAppear(false)
+    }
+    
+    @IBAction func previousButtonPressed(sender: AnyObject) {
+        MyViewController.model.hunt.progress = MyViewController.model.hunt.progress - 2
+        MyViewController.model.hunt.transition = true
+        viewWillAppear(false)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
