@@ -61,9 +61,15 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
                 imageView.image = UIImage(data: data2!)
             }
             
-            //hide previous button & label
-            previousButton.hidden = true
-            previousLabel.hidden = true
+            //hide previous button if necessary
+            if MyViewController.model.hunt.progress == 0 {
+                previousButton.hidden = true
+                previousLabel.hidden = true
+            }
+            else{
+                previousButton.hidden = false
+                previousLabel.hidden = false
+            }
         }
 
         progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
@@ -114,6 +120,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         else if (MyViewController.model.hunt.transition == true) {
             
             progressBar.setProgress(1.0, animated: false)
+            MyViewController.model.hunt.progress = -1
             MyViewController.model.scavengerHuntIsSetUp = false
             
             Header.text = "Congratulations!"

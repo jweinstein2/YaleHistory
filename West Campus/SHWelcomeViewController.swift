@@ -29,24 +29,23 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var previous: UIButton!
     @IBOutlet weak var directions: UILabel!
     @IBOutlet weak var vertStackView: UIStackView!
-    @IBOutlet weak var hoStack1: UIStackView!
-    @IBOutlet weak var hoStack2: UIStackView!
-    @IBOutlet weak var hoStack3: UIStackView!
     @IBOutlet weak var randomSwitch: UISwitch!
     @IBOutlet weak var hoStack4: UIStackView!
     @IBOutlet weak var buttonHoStack: UIStackView!
     @IBOutlet weak var projCount: UILabel!
     @IBOutlet weak var timeEstimate: UILabel!
+    @IBOutlet weak var banner1: UIImageView!
+    @IBOutlet weak var banner2: UIImageView!
+    @IBOutlet weak var banner3: UIImageView!
+    @IBOutlet weak var banner4: UIImageView!
+    @IBOutlet weak var backToMainButton: UIButton!
     
     //Add label and switch for randomized
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stage = 0
-        vertStackView.spacing = 20
-        hoStack1.spacing = 40
-        hoStack2.spacing = 40
-        hoStack3.spacing = 40
+        vertStackView.spacing = 10
         hoStack4.spacing = 40
         buttonHoStack.spacing = 40
         tag1.text = "Innovations, Inventions, and Ideas in Pilot Form"
@@ -63,10 +62,9 @@ class SHWelcomeViewController: MyViewController {
             self.dismissViewControllerAnimated(false, completion: nil);
         }
         if MyViewController.model.hunt != nil {
-            if (MyViewController.model.hunt.projects.projectData.count == MyViewController.model.hunt.progress + 1){
+            if (MyViewController.model.hunt.progress != -1){
                 self.dismissViewControllerAnimated(false, completion: nil);
             }
-            MyViewController.model.hunt.progress = 0
         }
         
     }
@@ -114,6 +112,11 @@ class SHWelcomeViewController: MyViewController {
         previousLabel.hidden = stageIs0
         projCount.hidden = stageIs0
         timeEstimate.hidden = stageIs0
+        banner1.hidden = stageIs0
+        banner2.hidden = stageIs0
+        banner3.hidden = stageIs0
+        banner4.hidden = stageIs0
+        banner4.sendSubviewToBack(self.view)
         
         directions.hidden = !stageIs0
         
