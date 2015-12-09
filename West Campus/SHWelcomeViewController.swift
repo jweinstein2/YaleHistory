@@ -62,8 +62,9 @@ class SHWelcomeViewController: MyViewController {
             self.dismissViewControllerAnimated(false, completion: nil);
         }
         if MyViewController.model.hunt != nil {
-            if (MyViewController.model.hunt.progress != -1){
+            if (MyViewController.model.hunt.progress == -1){
                 self.dismissViewControllerAnimated(false, completion: nil);
+                MyViewController.model.hunt.progress = 0
             }
         }
         
