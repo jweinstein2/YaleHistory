@@ -20,6 +20,7 @@ class ProjectViewController: MyViewController {
     @IBOutlet weak var linkLabel: UILabel!
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var mapContainer: UIView!
+    @IBOutlet weak var contributersLabel: UILabel!
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil);
@@ -35,6 +36,7 @@ class ProjectViewController: MyViewController {
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title.uppercaseString
         summary.text = proj.summary
+        //contributersLabel.text = proj.contributers
         self.longitude = proj.gpsLongitude
         self.latitude = proj.gpsLatitude
         
