@@ -27,7 +27,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.showsUserLocation = true
         let initialLocation = CLLocationCoordinate2D(latitude: 41.251938,longitude: -72.994110)
         map.setCenterCoordinate(initialLocation, animated: true)
-        let regionRadius: CLLocationDistance = 500
+        let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2.0, regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated: true)
