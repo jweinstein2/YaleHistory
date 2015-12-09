@@ -36,7 +36,7 @@ class ProjectViewController: MyViewController {
         proj = MyViewController.model.getCurrentProject()
         projTitle.text = proj.title.uppercaseString
         summary.text = proj.summary
-        //contributersLabel.text = proj.contributers
+        contributersLabel.text = proj.contributors
         self.longitude = proj.gpsLongitude
         self.latitude = proj.gpsLatitude
         
@@ -52,7 +52,7 @@ class ProjectViewController: MyViewController {
         actionLabel.text = proj.action
         
         //Edit the code below to display a custom image for each project
-        let url = NSURL(string: proj.imageLink!)
+        let url = NSURL(string: proj.imageLink)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
             projImage.image = UIImage(data:data!)

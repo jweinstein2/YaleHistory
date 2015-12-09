@@ -49,7 +49,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         Header.text = "You are looking for"
         clueLabel.text = "To find this project... " + currProj.clue
         projectTitle.text = currProj.title
-        let url = NSURL(string: currProj.imageLink!)
+        let url = NSURL(string: currProj.imageLink)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
             imageView.image = UIImage(data:data!)
@@ -99,7 +99,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             //set up display
             clueLabel.text = "To find this project... " + currProj.clue
             projectTitle.text = currProj.title
-            let url = NSURL(string: currProj.imageLink!)
+            let url = NSURL(string: currProj.imageLink)
             let data = NSData(contentsOfURL:url!)
             if data != nil {
                 imageView.image = UIImage(data:data!)
