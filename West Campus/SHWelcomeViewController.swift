@@ -62,6 +62,13 @@ class SHWelcomeViewController: MyViewController {
         if (MyViewController.model.scavengerHuntIsSetUp == true){
             self.dismissViewControllerAnimated(false, completion: nil);
         }
+        if MyViewController.model.hunt != nil {
+            if (MyViewController.model.hunt.projects.projectData.count == MyViewController.model.hunt.progress + 1){
+                self.dismissViewControllerAnimated(false, completion: nil);
+            }
+            MyViewController.model.hunt.progress = 0
+        }
+        
     }
     
     @IBAction func switchFlipped(sender: AnyObject) {

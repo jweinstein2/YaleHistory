@@ -86,6 +86,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
                 previousButton.hidden = false
                 previousLabel.hidden = false
             }
+            foundIt.hidden = false
+            nextLabel.hidden = false
+            
             
             //set up display
             clueLabel.text = "To find this project... " + currProj.clue
@@ -104,22 +107,23 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             }
             
             //update progress bar
-            progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.projects.projectData.count), animated: false)
+            progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
             
         }
             
         else if (MyViewController.model.hunt.transition == true) {
             
             progressBar.setProgress(1.0, animated: false)
-            MyViewController.model.hunt.progress = 0
             MyViewController.model.scavengerHuntIsSetUp = false
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the hunt!"
-            clueLabel.text = "Click the back arrow to return to the Main Menu"
+            clueLabel.text = "Click the top left arrow to return to the Main Menu"
             distanceLabel.hidden = true
             foundIt.hidden = true
             nextLabel.hidden = true
+            previousButton.hidden = true
+            previousLabel.hidden = true
             
             let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
             let data = NSData(contentsOfURL:url!)
@@ -145,7 +149,8 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
-        MyViewController.model.hunt.progress = MyViewController.model.hunt.progress - 2
+        MyViewController.model.currentProject = MyViewController.model.currentProject - 2
+
         MyViewController.model.hunt.transition = true
         viewWillAppear(false)
     }

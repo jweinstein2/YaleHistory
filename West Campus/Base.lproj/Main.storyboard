@@ -589,14 +589,14 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DHJ-Ls-yX3">
-                                <rect key="frame" x="43" y="546" width="514" height="46"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHJ-Ls-yX3">
+                                <rect key="frame" x="19" y="547" width="562" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQH-JX-Z6V">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yQH-JX-Z6V" secondAttribute="height" multiplier="1:1" id="GI3-CJ-Iry"/>
-                                            <constraint firstAttribute="width" constant="46" id="Q7o-mn-IZA"/>
+                                            <constraint firstAttribute="width" constant="45" id="Q7o-mn-IZA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="15"/>
                                         <state key="normal" backgroundImage="back_dark_reversed">
@@ -606,38 +606,43 @@
                                             <action selector="previousButtonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="LgY-0t-K0V"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-7o-XWf">
-                                        <rect key="frame" x="56" y="0.0" width="65" height="46"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-7o-XWf">
+                                        <rect key="frame" x="45" y="0.0" width="40" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="65" id="Y5U-1S-xzG"/>
+                                            <constraint firstAttribute="width" constant="40" id="Y5U-1S-xzG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3xe-Ke-qrH">
-                                        <rect key="frame" x="131" y="0.0" width="277" height="46"/>
+                                        <rect key="frame" x="85" y="0.0" width="392" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunt Progress:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2b-jd-2kC">
-                                                <rect key="frame" x="0.0" y="0.0" width="277" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="392" height="43"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-gv-8vG">
-                                                <rect key="frame" x="0.0" y="44" width="277" height="2"/>
+                                                <rect key="frame" x="0.0" y="43" width="392" height="2"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="277" id="wLO-dr-JLk"/>
                                                 </constraints>
                                                 <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="wLO-dr-JLk"/>
+                                                    </mask>
+                                                </variation>
                                             </progressView>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-vu-DI0">
-                                        <rect key="frame" x="418" y="0.0" width="40" height="46"/>
+                                        <rect key="frame" x="477" y="0.0" width="40" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="tx2-Z3-69D"/>
                                         </constraints>
@@ -646,11 +651,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpx-Nz-sS5">
-                                        <rect key="frame" x="468" y="0.0" width="46" height="46"/>
+                                        <rect key="frame" x="517" y="0.0" width="45" height="45"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vpx-Nz-sS5" secondAttribute="height" multiplier="1:1" id="RvI-63-r6B"/>
-                                            <constraint firstAttribute="width" constant="46" id="w79-lf-QLP"/>
+                                            <constraint firstAttribute="width" constant="45" id="w79-lf-QLP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="15"/>
                                         <state key="normal" backgroundImage="back_dark">
@@ -658,19 +663,27 @@
                                         </state>
                                         <connections>
                                             <action selector="foundButtonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="1O7-Hf-fym"/>
-                                            <segue destination="HUo-ni-9gb" kind="presentation" id="DFy-ep-xzs"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="562" id="Xma-75-Nnw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xma-75-Nnw"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="DHJ-Ls-yX3" secondAttribute="bottom" constant="8" id="0Fq-3F-B7p"/>
+                            <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="DHJ-Ls-yX3" secondAttribute="bottom" constant="9" id="0Fq-3F-B7p"/>
                             <constraint firstItem="nCW-HH-hMC" firstAttribute="top" secondItem="foB-PI-ap7" secondAttribute="bottom" constant="3" id="0r4-RJ-GBu"/>
                             <constraint firstItem="DHJ-Ls-yX3" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="4Yw-fY-hGX"/>
                             <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="t48-FX-XSh" secondAttribute="bottom" constant="36" id="5IB-3J-Pz1"/>
+                            <constraint firstItem="DHJ-Ls-yX3" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="-1" id="6it-VQ-UTa"/>
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="top" secondItem="f4T-wZ-Vt3" secondAttribute="bottom" constant="10" id="7MM-kf-4ON"/>
                             <constraint firstItem="9Az-6G-Tzz" firstAttribute="width" secondItem="1FI-gK-JSa" secondAttribute="height" multiplier="67:600" id="8Bx-Cq-gq8"/>
                             <constraint firstItem="PIy-UF-raU" firstAttribute="top" secondItem="f4T-wZ-Vt3" secondAttribute="bottom" constant="120" id="8KR-g4-TaK"/>
@@ -693,7 +706,7 @@
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="leading" secondItem="mAQ-nS-D4T" secondAttribute="trailing" constant="-321" id="JcR-aa-CBK"/>
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="-20" id="Kfa-80-hhZ"/>
                             <constraint firstItem="9Az-6G-Tzz" firstAttribute="top" secondItem="CHe-PR-Jsn" secondAttribute="bottom" constant="-77" id="L9m-QN-7it"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DHJ-Ls-yX3" secondAttribute="trailing" constant="23" id="LqI-xg-euv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DHJ-Ls-yX3" secondAttribute="trailing" constant="24" id="LqI-xg-euv"/>
                             <constraint firstItem="foB-PI-ap7" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="MB4-kx-BkV"/>
                             <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="nCW-HH-hMC" secondAttribute="bottom" constant="70" id="Mdf-uq-d1f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t48-FX-XSh" secondAttribute="trailing" id="Neh-OB-kkK"/>
@@ -706,6 +719,7 @@
                             <constraint firstItem="mAQ-nS-D4T" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="75" id="SDZ-30-8Ee"/>
                             <constraint firstAttribute="leadingMargin" secondItem="t48-FX-XSh" secondAttribute="leading" id="See-qw-w2V"/>
                             <constraint firstItem="nCW-HH-hMC" firstAttribute="top" secondItem="foB-PI-ap7" secondAttribute="bottom" constant="18" id="UZl-aS-qh6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DHJ-Ls-yX3" secondAttribute="trailing" constant="-1" id="W01-zl-yfz"/>
                             <constraint firstItem="mAQ-nS-D4T" firstAttribute="height" secondItem="CHe-PR-Jsn" secondAttribute="height" id="Wuw-S5-KKu"/>
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="leading" secondItem="9Az-6G-Tzz" secondAttribute="trailing" constant="-73" id="ZXA-jc-f32"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Az-6G-Tzz" secondAttribute="leading" priority="750" constant="10" id="Zj1-0f-SPA"/>
@@ -726,8 +740,9 @@
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="leading" secondItem="mAQ-nS-D4T" secondAttribute="trailing" constant="-321" id="gu4-Vj-Ehq"/>
                             <constraint firstItem="mAQ-nS-D4T" firstAttribute="centerY" secondItem="CHe-PR-Jsn" secondAttribute="centerY" id="hg3-bM-pnv"/>
                             <constraint firstItem="CHe-PR-Jsn" firstAttribute="top" secondItem="9Az-6G-Tzz" secondAttribute="bottom" constant="-77" id="irJ-Qs-lwe"/>
-                            <constraint firstItem="DHJ-Ls-yX3" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="23" id="jqh-yl-aFN"/>
+                            <constraint firstItem="DHJ-Ls-yX3" firstAttribute="leading" secondItem="1FI-gK-JSa" secondAttribute="leadingMargin" constant="22" id="jqh-yl-aFN"/>
                             <constraint firstItem="9Az-6G-Tzz" firstAttribute="width" secondItem="9Az-6G-Tzz" secondAttribute="height" multiplier="1:1" id="llD-hP-HxN"/>
+                            <constraint firstItem="DHJ-Ls-yX3" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="m91-ik-dDV"/>
                             <constraint firstItem="9Az-6G-Tzz" firstAttribute="top" secondItem="CHe-PR-Jsn" secondAttribute="top" constant="10" id="of9-a1-TnC"/>
                             <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="nCW-HH-hMC" secondAttribute="bottom" constant="52" id="pQP-nU-Zyn"/>
                             <constraint firstItem="mAQ-nS-D4T" firstAttribute="width" secondItem="CHe-PR-Jsn" secondAttribute="height" multiplier="226:87" id="prZ-Cf-k63"/>
@@ -791,7 +806,10 @@
                                 <exclude reference="sRc-N3-R8b"/>
                                 <exclude reference="4Yw-fY-hGX"/>
                                 <exclude reference="Fvd-0j-Eo2"/>
+                                <exclude reference="LqI-xg-euv"/>
                                 <exclude reference="aIj-Dj-Mbd"/>
+                                <exclude reference="jqh-yl-aFN"/>
+                                <exclude reference="m91-ik-dDV"/>
                                 <exclude reference="5IB-3J-Pz1"/>
                                 <exclude reference="pQP-nU-Zyn"/>
                             </mask>
@@ -1099,6 +1117,7 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="AmT-eD-HlH"/>
+                                    <constraint firstAttribute="width" constant="562" id="XiS-CA-f6P"/>
                                     <constraint firstAttribute="width" constant="577" id="cf7-aR-9GC"/>
                                 </constraints>
                                 <mutableString key="text"> This feature will guide you on a hunt to find some research projects. After you click "Next," you will be able to customize your hunt: what kind of projects you want to see and whether you would like the projects to be in a random order or a standard order that minimizes walking. After you embark on the hunt, you can use the information given to you there or the info from the "Project Info" page to find your way to the projects. The app will automatically register when you arrive and start guiding you to the next project.</mutableString>
@@ -1122,6 +1141,7 @@
                             <constraint firstItem="22B-ad-wgB" firstAttribute="centerY" secondItem="6HX-Mv-fcA" secondAttribute="centerY" id="2lm-X1-8SS"/>
                             <constraint firstItem="Ana-1S-vC4" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="-10" id="2tE-01-JRd"/>
                             <constraint firstItem="uc3-dq-p9a" firstAttribute="top" secondItem="Mmg-KC-Rjp" secondAttribute="bottom" constant="20" id="4bo-aW-vbJ"/>
+                            <constraint firstItem="22B-ad-wgB" firstAttribute="centerY" secondItem="6HX-Mv-fcA" secondAttribute="centerY" id="5fH-VQ-JvK"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="50" id="8YJ-60-cQt"/>
                             <constraint firstItem="dtC-jL-OXJ" firstAttribute="top" secondItem="aof-Z1-JeR" secondAttribute="bottom" constant="40" id="BJs-bX-Uyn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipn-5Z-AmV" secondAttribute="trailing" id="BOy-lu-AYp"/>
@@ -1142,6 +1162,7 @@
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="leading" secondItem="Ana-1S-vC4" secondAttribute="trailing" constant="10" id="VPO-jZ-eDk"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="leading" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="-438" id="Wux-Ag-Nle"/>
                             <constraint firstItem="22B-ad-wgB" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" id="ZtE-R5-aMq"/>
+                            <constraint firstItem="22B-ad-wgB" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="bhN-b8-uCv"/>
                             <constraint firstItem="Gbk-e0-QN5" firstAttribute="width" secondItem="Gbk-e0-QN5" secondAttribute="height" multiplier="169:27" id="dOZ-y4-TIT"/>
                             <constraint firstItem="Gbk-e0-QN5" firstAttribute="top" secondItem="m7Y-xX-yrL" secondAttribute="bottom" constant="10" id="dki-B5-hCS"/>
                             <constraint firstItem="fhH-Gl-VuD" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="10" id="e3m-s9-WJr"/>
@@ -1161,7 +1182,10 @@
                                 <exclude reference="Wux-Ag-Nle"/>
                                 <exclude reference="kot-IR-1YK"/>
                                 <exclude reference="xVp-bO-aYL"/>
+                                <exclude reference="181-PF-LtV"/>
                                 <exclude reference="2K6-Am-oGX"/>
+                                <exclude reference="2lm-X1-8SS"/>
+                                <exclude reference="J81-Uy-ikd"/>
                                 <exclude reference="Jsq-Qq-lUi"/>
                                 <exclude reference="BfZ-rt-ZHp"/>
                                 <exclude reference="s7M-ue-pqk"/>
