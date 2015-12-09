@@ -17,8 +17,6 @@ class Project {
     var clue: String
     var action: String?
     var imageLink : String?
-    
-    
     var innovations: Bool
     var ecology: Bool
     var health: Bool

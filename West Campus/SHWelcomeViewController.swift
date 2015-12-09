@@ -82,7 +82,7 @@ class SHWelcomeViewController: MyViewController {
             setStage(false)
             stage = 1
         }
-        else if (!switch1.on && !switch2.on && !switch3.on) { //if they selected no projects, send error
+        else if (updateProjCount() == 0) { //if they selected no projects, send error
             announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
@@ -105,6 +105,8 @@ class SHWelcomeViewController: MyViewController {
         randomSwitch.hidden = stageIs0
         previous.hidden = stageIs0
         previousLabel.hidden = stageIs0
+        projCount.hidden = stageIs0
+        timeEstimate.hidden = stageIs0
         
         directions.hidden = !stageIs0
         
@@ -135,7 +137,7 @@ class SHWelcomeViewController: MyViewController {
         }
     }
     
-    func updateProjCount(){
+    func updateProjCount() -> Int{
         var projectCount = 0
         
         if (switch1.on){
@@ -150,6 +152,8 @@ class SHWelcomeViewController: MyViewController {
         
         projCount.text = String(format: "Projects to be Found: %d", projectCount)
         timeEstimate.text = String(format: "Time Estimate: %d min", projectCount*5)
+        
+        return projectCount
     }
 
 }

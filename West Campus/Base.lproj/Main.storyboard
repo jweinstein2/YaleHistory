@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -100,7 +100,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
                                         <rect key="frame" x="0.0" y="10" width="550" height="565"/>
                                         <animations/>
-                                        <mutableString key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.   Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow.             </mutableString>
+                                        <string key="text">Yale University is one of the world’s leading research institutions, where community members explore the boundaries of the possible and advance knowledge in service to society. Yale recruits the brightest scientists and scholars from around the globe and provides them with the resources to perform transformative work.   At West Campus, there is extensive laboratory space where experts from diverse disciplines are working side by side using innovative technologies to address important issues in science, art conservation, health, energy, and the environment. Scholars from Yale’s libraries and museums are employing the latest digital imaging technology to conserve Yale’s vast collections, while also revolutionizing the science of preservation. Additionally, West Campus is now the headquarters for the Yale School of Nursing, providing a modern space where the school can expand its mission of education, research, and clinical practice.   Discover Yale’s West Campus—where today’s discoveries are helping to shape a healthier and more sustainable tomorrow.             </string>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -877,21 +877,25 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fhH-Gl-VuD">
-                                <rect key="frame" x="205" y="219" width="191" height="124"/>
+                                <rect key="frame" x="205" y="219" width="98" height="145"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffy-s2-hpH">
-                                        <rect key="frame" x="0.0" y="0.0" width="191" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffy-s2-hpH">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tag 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-5I-wR8">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Sd-5I-wR8">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1p-pY-jnr">
-                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1p-pY-jnr">
+                                                <rect key="frame" x="49" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="49" id="Peu-85-BSv"/>
+                                                    <constraint firstAttribute="width" secondItem="f1p-pY-jnr" secondAttribute="height" multiplier="49:31" id="kwP-yD-YWv"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="valueChanged" id="Vch-b4-ybz"/>
                                                 </connections>
@@ -899,19 +903,23 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-oe-sUX">
-                                        <rect key="frame" x="0.0" y="31" width="191" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-oe-sUX">
+                                        <rect key="frame" x="0.0" y="31" width="98" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tag 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-rR-F4e">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-rR-F4e">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rud-aU-HHG">
-                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rud-aU-HHG">
+                                                <rect key="frame" x="49" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Rud-aU-HHG" secondAttribute="height" multiplier="49:31" id="0ck-rR-nUc"/>
+                                                    <constraint firstAttribute="width" constant="49" id="m0z-H6-z6C"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="valueChanged" id="JSC-o9-NJh"/>
                                                 </connections>
@@ -919,19 +927,23 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aof-Z1-JeR">
-                                        <rect key="frame" x="0.0" y="62" width="191" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aof-Z1-JeR">
+                                        <rect key="frame" x="0.0" y="62" width="98" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tag 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-d3-yO0">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-d3-yO0">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcl-MJ-MQ8">
-                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcl-MJ-MQ8">
+                                                <rect key="frame" x="49" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="49" id="Ai9-ca-Vnu"/>
+                                                    <constraint firstAttribute="width" secondItem="Vcl-MJ-MQ8" secondAttribute="height" multiplier="49:31" id="NjD-gd-ePf"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="switchFlipped:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="Rzz-w0-Rec"/>
                                                 </connections>
@@ -939,18 +951,25 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Projects to be Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-jL-OXJ">
+                                        <rect key="frame" x="0.0" y="93" width="98" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="com-Bh-tNj">
-                                        <rect key="frame" x="0.0" y="93" width="191" height="31"/>
+                                        <rect key="frame" x="0.0" y="114" width="98" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Random Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-kg-Oes">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Random Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgi-kg-Oes">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXN-I6-H4o" userLabel="randomSwitch">
-                                                <rect key="frame" x="142" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FXN-I6-H4o" userLabel="randomSwitch">
+                                                <rect key="frame" x="49" y="0.0" width="51" height="31"/>
                                                 <animations/>
                                             </switch>
                                         </subviews>
@@ -959,25 +978,18 @@
                                 </subviews>
                                 <animations/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Projects to be Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-jL-OXJ">
-                                <rect key="frame" x="225" y="433" width="146" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Estimate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugd-ca-XHW">
-                                <rect key="frame" x="247" y="462" width="106" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time Estimate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugd-ca-XHW">
+                                <rect key="frame" x="247" y="472" width="106" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-KC-Rjp">
-                                <rect key="frame" x="235" y="494" width="130" height="86"/>
+                                <rect key="frame" x="240" y="504" width="120" height="76"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-ty-lOV">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="86"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-ty-lOV">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Previous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-8B-dJ4">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
@@ -990,16 +1002,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFT-Ty-3FI">
-                                                <rect key="frame" x="0.0" y="21" width="65" height="65"/>
+                                                <rect key="frame" x="5" y="21" width="55" height="55"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="Ai4-we-lui" userLabel="width = 65"/>
                                                     <constraint firstAttribute="width" secondItem="mFT-Ty-3FI" secondAttribute="height" multiplier="1:1" id="UI6-bN-3CS"/>
+                                                    <constraint firstAttribute="width" constant="55" id="eka-C5-Bzf"/>
+                                                    <constraint firstAttribute="height" constant="55" id="qoG-rq-7cd"/>
+                                                    <constraint firstAttribute="width" secondItem="mFT-Ty-3FI" secondAttribute="height" multiplier="13:11" id="ti2-Kr-6gx"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="back_light"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="Ai4-we-lui"/>
+                                                        <exclude reference="UI6-bN-3CS"/>
+                                                        <exclude reference="ti2-Kr-6gx"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -1009,24 +1026,36 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QLS-ps-Ujt">
-                                        <rect key="frame" x="65" y="0.0" width="65" height="86"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QLS-ps-Ujt">
+                                        <rect key="frame" x="65" y="0.0" width="55" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkX-Ar-Hv6">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
+                                                <rect key="frame" x="11" y="0.0" width="34" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-SE-dIH">
-                                                <rect key="frame" x="0.0" y="21" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="21" width="55" height="55"/>
                                                 <animations/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="1Bw-yU-JbD"/>
+                                                    <constraint firstAttribute="width" secondItem="hgF-SE-dIH" secondAttribute="height" multiplier="1:1" id="5Qt-wF-BV6"/>
+                                                    <constraint firstAttribute="width" secondItem="hgF-SE-dIH" secondAttribute="height" multiplier="1:1" id="GYJ-Q9-Jho"/>
+                                                    <constraint firstAttribute="width" secondItem="hgF-SE-dIH" secondAttribute="height" multiplier="1:1" id="KJo-eV-bxz"/>
                                                     <constraint firstAttribute="width" secondItem="hgF-SE-dIH" secondAttribute="height" multiplier="1:1" id="OOZ-bw-2ow"/>
-                                                    <constraint firstAttribute="width" constant="65" id="kgL-CI-QlM"/>
+                                                    <constraint firstAttribute="width" constant="55" id="kgL-CI-QlM"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="back_light_reversed"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1Bw-yU-JbD"/>
+                                                        <exclude reference="5Qt-wF-BV6"/>
+                                                        <exclude reference="KJo-eV-bxz"/>
+                                                        <exclude reference="OOZ-bw-2ow"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="nextbuttonPressed:" destination="AFl-rD-Ca5" eventType="touchUpInside" id="7Ek-qx-BmT"/>
                                                 </connections>
@@ -1047,9 +1076,7 @@
                             <constraint firstItem="22B-ad-wgB" firstAttribute="centerY" secondItem="6HX-Mv-fcA" secondAttribute="centerY" id="2lm-X1-8SS"/>
                             <constraint firstItem="Ana-1S-vC4" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" constant="-10" id="2tE-01-JRd"/>
                             <constraint firstItem="uc3-dq-p9a" firstAttribute="top" secondItem="Mmg-KC-Rjp" secondAttribute="bottom" constant="20" id="4bo-aW-vbJ"/>
-                            <constraint firstItem="2gn-8B-dJ4" firstAttribute="top" secondItem="dtC-jL-OXJ" secondAttribute="bottom" constant="40" id="5Ev-8h-URU"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="50" id="8YJ-60-cQt"/>
-                            <constraint firstItem="dtC-jL-OXJ" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="8qM-dF-4JL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipn-5Z-AmV" secondAttribute="trailing" id="BOy-lu-AYp"/>
                             <constraint firstItem="7Sd-5I-wR8" firstAttribute="top" secondItem="ipn-5Z-AmV" secondAttribute="bottom" constant="10" id="BfZ-rt-ZHp"/>
                             <constraint firstItem="Ugd-ca-XHW" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="G0a-oO-ZJq"/>
@@ -1073,7 +1100,6 @@
                             <constraint firstItem="fhH-Gl-VuD" firstAttribute="centerX" secondItem="6HX-Mv-fcA" secondAttribute="centerX" id="s7M-ue-pqk"/>
                             <constraint firstItem="ipn-5Z-AmV" firstAttribute="leading" secondItem="6HX-Mv-fcA" secondAttribute="leadingMargin" id="v0f-Ed-FfY"/>
                             <constraint firstItem="t4e-97-Ahk" firstAttribute="trailing" secondItem="Gbk-e0-QN5" secondAttribute="trailing" constant="-79" id="xVp-bO-aYL"/>
-                            <constraint firstItem="Ugd-ca-XHW" firstAttribute="top" secondItem="dtC-jL-OXJ" secondAttribute="bottom" constant="8" id="zwg-jQ-GrN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
