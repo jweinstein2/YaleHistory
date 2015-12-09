@@ -36,6 +36,8 @@ class ProjectData: NSObject {
             let clue = find(projectArr[index], element: "clue")
             let action = find(projectArr[index], element: "action")
             let imageLink = find(projectArr[index], element: "photo")
+            let radius = Int(find(projectArr[index], element: "radius"))
+            
             
             let innovations: Bool
             let ecology: Bool
@@ -61,7 +63,7 @@ class ProjectData: NSObject {
             }
 
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health)
+            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: radius!)
             
             NSLog("image link: " + imageLink)
             

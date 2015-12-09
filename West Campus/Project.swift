@@ -20,9 +20,10 @@ class Project {
     var innovations: Bool
     var ecology: Bool
     var health: Bool
+    var radius: Int
 
     
-    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?, imageLink: String?, innovations: Bool, ecology: Bool, health: Bool){
+    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String?, imageLink: String?, innovations: Bool, ecology: Bool, health: Bool, radius: Int){
         self.projectId = projectId
         self.title = title
         self.summary = summary
@@ -37,6 +38,7 @@ class Project {
         self.innovations = innovations
         self.ecology = ecology
         self.health = health
+        self.radius = radius
 
     }
 }

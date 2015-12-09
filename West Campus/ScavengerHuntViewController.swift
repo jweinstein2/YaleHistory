@@ -82,6 +82,10 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
                 previousButton.hidden = true
                 previousLabel.hidden = true
             }
+            else{
+                previousButton.hidden = false
+                previousLabel.hidden = false
+            }
             
             //set up display
             clueLabel.text = "To find this project... " + currProj.clue
@@ -167,7 +171,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         
         distanceLabel.text = NSString(format: "Distance from project: %d m", Int(distance)) as String
         
-        if (distance < regionRadius){
+        if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
         }
