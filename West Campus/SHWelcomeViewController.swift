@@ -11,9 +11,6 @@ import UIKit
 class SHWelcomeViewController: MyViewController {
     
     var stage: Int!
-    var tag1count: Int!
-    var tag2count: Int!
-    var tag3count: Int!
     
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var tag1: UILabel!
@@ -51,7 +48,6 @@ class SHWelcomeViewController: MyViewController {
         tag3.text = "Health, Community, and Wellness"
         setStage(true)
         
-        determineTagNumbers()
         updateProjCount()
     }
     
@@ -126,36 +122,19 @@ class SHWelcomeViewController: MyViewController {
         }
     }
     
-    func determineTagNumbers(){     //set tag1,2,3count so that they represent the number of projects with the given tags
-        
-        tag1count = 0
-        tag2count = 0
-        tag3count = 0
-        
-        for var i = 0; i < MyViewController.model.projects.projectData.count; i++ {
-            if MyViewController.model.projects.projectData[i].innovations {
-                tag1count = tag1count + 1
-            }
-            if MyViewController.model.projects.projectData[i].ecology {
-                tag2count = tag2count + 1
-            }
-            if MyViewController.model.projects.projectData[i].health {
-                tag3count = tag3count + 1
-            }
-        }
-    }
-    
     func updateProjCount() -> Int{
         var projectCount = 0
         
-        if (switch1.on){
-            projectCount += tag1count
-        }
-        if (switch2.on){
-            projectCount += tag2count
-        }
-        if (switch3.on){
-            projectCount += tag3count
+        for var i = 0; i < MyViewController.model.projects.projectData.count; i++ {
+            if MyViewController.model.projects.projectData[i].innovations && switch1.on {
+                projectCount++
+            }
+            else if MyViewController.model.projects.projectData[i].ecology && switch2.on {
+                projectCount++
+            }
+            else if MyViewController.model.projects.projectData[i].health && switch3.on {
+                projectCount++
+            }
         }
         
         projCount.text = String(format: "Projects to be Found: %d", projectCount)

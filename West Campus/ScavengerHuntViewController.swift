@@ -54,6 +54,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         if data != nil {
             imageView.image = UIImage(data:data!)
         }
+        else{
+            imageView.image = UIImage(named: "west_campus_default")
+        }
         
         progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
         
@@ -95,6 +98,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             let data = NSData(contentsOfURL:url!)
             if data != nil {
                 imageView.image = UIImage(data:data!)
+            }
+            else{
+                imageView.image = UIImage(named: "west_campus_default")
             }
             
             //update progress bar

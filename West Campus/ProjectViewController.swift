@@ -58,7 +58,7 @@ class ProjectViewController: MyViewController {
             projImage.image = UIImage(data:data!)
         }
         else{
-            
+            projImage.image = UIImage(named: "west_campus_default")
         }
         
         

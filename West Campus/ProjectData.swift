@@ -67,6 +67,7 @@ class ProjectData: NSObject {
             
             projectData.append(currentProject)
             }
+            
         }
         
     }
