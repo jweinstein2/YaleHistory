@@ -17,7 +17,7 @@ class ProjectData: NSObject {
     init(let inputArray: NSArray){
         super.init()
         
-        NSLog(String(inputArray[0] as! NSDictionary))
+        NSLog(String(inputArray[0] as! NSDictionary)) //This shows that the input array is filled correctly (This just prints out the data for the first project)
         
         if inputArray != "" {
             
@@ -57,6 +57,8 @@ class ProjectData: NSObject {
             else{
                 health = false
             }
+            
+            //These are either not working or have a weird Optional(...) thing around them... See the console output
             
             NSLog(String(id))
              NSLog(String(title))
