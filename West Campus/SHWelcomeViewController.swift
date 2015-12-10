@@ -111,6 +111,7 @@ class SHWelcomeViewController: MyViewController {
         banner3.hidden = stageIs0
         banner4.hidden = stageIs0
         banner4.sendSubviewToBack(self.view)
+        backToMainButton.hidden = stageIs0
         
         directions.hidden = !stageIs0
         
