@@ -43,7 +43,7 @@ class ProjectData: NSObject {
             let ecology: Bool
             let health: Bool
             
-            if find(projectArr[index], element: "innovations") == "1" {
+            if find(projectArr[index], element: "innovation") == "1" {
                 innovations = true
             }
             else{
