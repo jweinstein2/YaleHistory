@@ -65,8 +65,6 @@ class ProjectData: NSObject {
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
             let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: radius!)
             
-            NSLog("image link: " + imageLink)
-            
             projectData.append(currentProject)
             }
         }
@@ -83,7 +81,6 @@ class ProjectData: NSObject {
                 return map[1]
             }
         }
-        NSLog("error")
         return "fail"
     }
 }

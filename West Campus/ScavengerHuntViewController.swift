@@ -54,27 +54,19 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         if data != nil {
             imageView.image = UIImage(data:data!)
         }
-        else {
-            let url2 = NSURL(string: "http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
-            let data2 = NSData(contentsOfURL:url2!)
-            if data2 != nil{
-                imageView.image = UIImage(data: data2!)
-            }
-            
-            //hide previous button if necessary
-            if MyViewController.model.hunt.progress == 0 {
-                previousButton.hidden = true
-                previousLabel.hidden = true
-            }
-            else{
-                previousButton.hidden = false
-                previousLabel.hidden = false
-            }
-        }
-
+        
         progressBar.setProgress(Float(MyViewController.model.currentProject)/Float(MyViewController.model.hunt.projects.projectData.count), animated: false)
         
-            }
+        //hide previous button if necessary
+        if MyViewController.model.hunt.progress == 0 {
+            previousButton.hidden = true
+            previousLabel.hidden = true
+        }
+        else{
+            previousButton.hidden = false
+            previousLabel.hidden = false
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         if (MyViewController.model.hunt.transition == true && (MyViewController.model.currentProject + 1) < MyViewController.model.hunt.projects.projectData.count){
@@ -103,13 +95,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             let data = NSData(contentsOfURL:url!)
             if data != nil {
                 imageView.image = UIImage(data:data!)
-            }
-            else {
-                let url2 = NSURL(string: "http://photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg")
-                let data2 = NSData(contentsOfURL:url2!)
-                if data2 != nil{
-                    imageView.image = UIImage(data: data2!)
-                }
             }
             
             //update progress bar

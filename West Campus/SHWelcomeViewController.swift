@@ -19,8 +19,6 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var tag1: UILabel!
     @IBOutlet weak var tag2: UILabel!
     @IBOutlet weak var tag3: UILabel!
-    @IBOutlet weak var nextLabel: UILabel!
-    @IBOutlet weak var previousLabel: UILabel!
     @IBOutlet weak var switch1: UISwitch!
     @IBOutlet weak var switch2: UISwitch!
     @IBOutlet weak var randomLabel: UILabel!
@@ -110,7 +108,6 @@ class SHWelcomeViewController: MyViewController {
         switch3.hidden = stageIs0
         randomSwitch.hidden = stageIs0
         previous.hidden = stageIs0
-        previousLabel.hidden = stageIs0
         projCount.hidden = stageIs0
         timeEstimate.hidden = stageIs0
         banner1.hidden = stageIs0
