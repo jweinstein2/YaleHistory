@@ -20,7 +20,7 @@ class MainModel{
 
     init(){
         currentProject = 0;
-        let myURLString = "http://contripity.net/wildwest/researchprojects.php"
+        let myURLString = "http://contripity.net/wildwest/researchprojects.php"//needs to be changed to where the file is stored that parses our database
         scavengerHuntIsSetUp = false
         
         if let myURL = NSURL(string: myURLString) {
