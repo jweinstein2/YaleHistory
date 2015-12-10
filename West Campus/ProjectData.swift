@@ -14,13 +14,73 @@ class ProjectData: NSObject {
     override init() {
     }
     
-    init(var inputString: String){
+    init(let inputArray: NSArray){
         super.init()
         
-        if inputString != "" {
+        NSLog(String(inputArray[0] as! NSDictionary))
+        
+        if inputArray != "" {
             
-        inputString = inputString.substringToIndex(inputString.endIndex.predecessor())    
-        inputString = inputString.stringByReplacingOccurrencesOfString("\\/", withString: "/")
+        for var i = 0; i < inputArray.count; i++ {
+            let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
+            let id = String(jsonElement.objectForKey("id"))
+            let title = String(jsonElement.objectForKey("title"))
+            let summary = String(jsonElement.objectForKey("summary"))
+            let link = String(jsonElement.objectForKey("link"))
+            let gpsLatitude : Double! = Double(String(jsonElement.objectForKey("gps_latitude")))
+            let gpsLongitude : Double! = Double(String(jsonElement.objectForKey("gps_longitude")))
+            let clue = String(jsonElement.objectForKey("clue"))
+            let action = String(jsonElement.objectForKey("action"))
+            let imageLink = String(jsonElement.objectForKey("photo"))
+            let radius = Int(String(jsonElement.objectForKey("radius")))
+            let contributors = String(jsonElement.objectForKey("contributors"))
+            
+            let innovations: Bool
+            let ecology: Bool
+            let health: Bool
+            
+            if String(jsonElement.objectForKey("innovation")) == "1" {
+                innovations = true
+            }
+            else{
+                innovations = false
+            }
+            if String(jsonElement.objectForKey("ecology")) == "1" {
+                ecology = true
+            }
+            else{
+                ecology = false
+            }
+            if String(jsonElement.objectForKey("health")) == "1" {
+                health = true
+            }
+            else{
+                health = false
+            }
+            
+            NSLog(String(id))
+             NSLog(String(title))
+             NSLog(String(summary))
+             NSLog(String(gpsLatitude))
+             NSLog(String(gpsLongitude))
+             NSLog(String(clue))
+            
+             NSLog(String(action))
+             NSLog(String(contributors))
+             NSLog(String(imageLink))
+             NSLog(String(innovations))
+             NSLog(String(ecology))
+             NSLog(String(health))
+             NSLog(String(radius))
+            
+            
+            //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
+            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: radius!)
+            
+            projectData.append(currentProject)
+        }
+            
+        /*
         
         var projectArr = inputString.componentsSeparatedByString("}")
         projectArr.removeLast() //remove bc separating by end braces leaves an empty string at the end
@@ -67,10 +127,14 @@ class ProjectData: NSObject {
             
             projectData.append(currentProject)
             }
+
+    */
             
         }
         
     }
+    
+    /*
     
     func find (let project: String, element: String) -> String{
         var tokens = project.componentsSeparatedByString("\",\"")
@@ -84,4 +148,5 @@ class ProjectData: NSObject {
         }
         return "fail"
     }
+*/
 }
