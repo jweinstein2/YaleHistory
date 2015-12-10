@@ -47,7 +47,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]
         
         Header.text = "You are looking for"
-        clueLabel.text = "To find this project... " + currProj.clue
+        clueLabel.text = "Clue: " + currProj.clue
         projectTitle.text = currProj.title
         let url = NSURL(string: currProj.imageLink)
         let data = NSData(contentsOfURL:url!)
@@ -92,7 +92,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             
             
             //set up display
-            clueLabel.text = "To find this project... " + currProj.clue
+            clueLabel.text = "Clue: " + currProj.clue
             projectTitle.text = currProj.title
             let url = NSURL(string: currProj.imageLink)
             let data = NSData(contentsOfURL:url!)
