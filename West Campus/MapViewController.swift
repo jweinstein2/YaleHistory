@@ -209,12 +209,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //These are the settings for our path lines
             let polylineRender = MKPolylineRenderer(overlay: overlay)
             
-            //Random color is used for testing purposes only. Final revision should be blue
-            let randomRed:CGFloat = CGFloat(drand48())
-            let randomGreen:CGFloat = CGFloat(drand48())
-            let randomBlue:CGFloat = CGFloat(drand48())
-            polylineRender.strokeColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-            
+            polylineRender.strokeColor = UIColor(red:0.00, green: 0.40, blue: 0.00, alpha: 1.0)
             polylineRender.lineWidth = 2
             polylineRender.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
             return polylineRender
