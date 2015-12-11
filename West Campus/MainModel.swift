@@ -17,6 +17,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     var scavengerHuntIsSetUp: Bool!
     var hunt: ScavengerHunt!
     var prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var key = "savedjsonarray"
 
     override init(){
         super.init()
@@ -31,17 +32,19 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     
     //This method is called when the application fails to connect to the database
     func loadNSUserDefaults(){
-        let json : String = String(prefs.objectForKey("json")) as String!
-        if json != "nil"{
+        let json = prefs.objectForKey(key) as! NSArray
+        if json.count == 0{
             NSLog("Retrieving NSUserDefaults")
+            NSLog(String(jsonData))
             projects = ProjectData(inputArray: jsonData)
             prefs.synchronize()
-            //Previously saved defaults are avalible
+            //Previously saved defaults are availible
             
         }else{
             NSLog("No Data found. Unable to continue.")
             //No data is found. Need to alert the user that the app is unusable until we connect to data
             
+            _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("startConnection"), userInfo: nil, repeats: false)
         }
     }
     
@@ -56,7 +59,9 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         }
         
         //Save Data as Defaults
-        prefs.setObject(jsonData, forKey: "json")
+        NSLog(String(jsonData))
+        NSLog("Data saved to NSUserDefaults")
+        prefs.setObject(jsonData, forKey: key)
         prefs.synchronize()
     }
     
@@ -68,6 +73,12 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         let request: NSURLRequest = NSURLRequest(URL: url)
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
         connection.start()
+    }
+    
+    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+        NSLog("Error: unable to download JSON string")
+        NSLog(String(error))
+        self.loadNSUserDefaults()
     }
     
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
@@ -95,42 +106,5 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         if failed == false{
             downloadData()
         }
-        
-        
-        
-        ////////////////////////////////////////////////////////////
-        
-        /*
-        currentProject = 0;
-        let myURLString = "http://contripity.net/wildwest/researchprojects.php"//needs to be changed to where the file is stored that parses our database
-        scavengerHuntIsSetUp = false
-        
-        if let myURL = NSURL(string: myURLString) {
-            var failed : Bool = false
-            
-            do{
-                myHTMLString = try NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding) as String
-            }catch{
-                //This catch is called if there was any error downloading the content from the database
-                NSLog("ERROR: Line 21 of Main Model - Failed to download the contents of json from website")
-                
-                failed = true
-                self.loadNSUserDefaults()
-            }
-            
-            if failed == false{
-                for var i = 0; i < jsonArray.count i++ {
-                    var jsonElement as NSDictionary = jsonArray[i];
-                    
-                    // Create a new location object and set its props to JsonElement properties
-                    //Login *newLogin = [[Login alloc] init];
-                    NSLog(jsonElement("summary"));
-                }
-            }
-            
-        } else {
-            NSLog("Error: \(myURLString) doesn't seem to be a valid URL")
-        }
-*/
     }
 }

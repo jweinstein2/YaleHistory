@@ -58,79 +58,12 @@ class ProjectData: NSObject {
                 health = false
             }
             
-            //These are either not working or have a weird Optional(...) thing around them... See the console output
-            
-            NSLog(String(id))
-             NSLog(String(title))
-             NSLog(String(summary))
-             NSLog(String(gpsLatitude))
-             NSLog(String(gpsLongitude))
-             NSLog(String(clue))
-            
-             NSLog(String(action))
-             NSLog(String(contributors))
-             NSLog(String(imageLink))
-             NSLog(String(innovations))
-             NSLog(String(ecology))
-             NSLog(String(health))
-             NSLog(String(radius))
-            
             
             //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
             let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: Double(gpsLatitude)!, gpsLongitude: Double(gpsLongitude)!, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: Int(radius)!)
             
             projectData.append(currentProject)
-        }
-            
-        /*
-        
-        var projectArr = inputString.componentsSeparatedByString("}")
-        projectArr.removeLast() //remove bc separating by end braces leaves an empty string at the end
-        
-        for var index = 0; index < projectArr.count; ++index{
-            projectArr[index] = projectArr[index].substringFromIndex(projectArr[index].startIndex.advancedBy(2))
-            let id = find(projectArr[index], element: "project_id")
-            let title = find(projectArr[index], element: "title")
-            let summary = find(projectArr[index], element: "summary")
-            let link = find(projectArr[index], element: "link")
-            let gpsLatitude : Double! = Double(find(projectArr[index], element: "gps_latitude"))
-            let gpsLongitude : Double! = Double(find(projectArr[index], element: "gps_longitude"))
-            let clue = find(projectArr[index], element: "clue")
-            let action = find(projectArr[index], element: "action")
-            let imageLink = find(projectArr[index], element: "photo")
-            let radius = Int(find(projectArr[index], element: "radius"))
-            let contributors = find(projectArr[index], element: "contributors")
-            
-            let innovations: Bool
-            let ecology: Bool
-            let health: Bool
-            
-            if find(projectArr[index], element: "innovation") == "1" {
-                innovations = true
             }
-            else{
-                innovations = false
-            }
-            if find(projectArr[index], element: "ecology") == "1" {
-                ecology = true
-            }
-            else{
-                ecology = false
-            }
-            if find(projectArr[index], element: "health") == "1" {
-                health = true
-            }
-            else{
-                health = false
-            }
-
-            //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-            let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: radius!)
-            
-            projectData.append(currentProject)
-            }
-
-    */
             
         }
         
