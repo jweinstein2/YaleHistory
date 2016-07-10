@@ -158,17 +158,13 @@
 		894CA6DD1BE99FBE005D2B2A /* West Campus */ = {
 			isa = PBXGroup;
 			children = (
-				451F68131C10D950008CB714 /* ScavengerHunt.swift */,
 				894CA70F1BE9A5E0005D2B2A /* Resources */,
+				89958D151D32C05C009E020F /* Data */,
+				89958D141D32C04C009E020F /* Util */,
+				89958D131D32C01C009E020F /* User Interface */,
 				89C08DA11BF1446C00B91EC0 /* ViewControllers */,
 				894CA6DE1BE99FBE005D2B2A /* AppDelegate.swift */,
-				898136031BEEDD2800ACD35C /* Project.swift */,
-				890503461C05355600420D6F /* ProjectTableViewCell.swift */,
-				898136071BEEDEE700ACD35C /* MainModel.swift */,
-				898136041BEEDD2800ACD35C /* ProjectData.swift */,
-				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
 				894CA6E81BE99FBE005D2B2A /* Assets.xcassets */,
-				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
 				894CA6ED1BE99FBE005D2B2A /* Info.plist */,
 				894CA6E51BE99FBE005D2B2A /* West_Campus.xcdatamodeld */,
 			);
@@ -212,6 +208,34 @@
 				894CA71F1BE9A895005D2B2A /* YaleNew-Roman.otf */,
 			);
 			name = "Yale Official Font";
+			sourceTree = "<group>";
+		};
+		89958D131D32C01C009E020F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				890503461C05355600420D6F /* ProjectTableViewCell.swift */,
+				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
+				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		89958D141D32C04C009E020F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		89958D151D32C05C009E020F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				451F68131C10D950008CB714 /* ScavengerHunt.swift */,
+				898136071BEEDEE700ACD35C /* MainModel.swift */,
+				898136041BEEDD2800ACD35C /* ProjectData.swift */,
+				898136031BEEDD2800ACD35C /* Project.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		89C08DA11BF1446C00B91EC0 /* ViewControllers */ = {
