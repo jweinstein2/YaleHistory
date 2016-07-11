@@ -21,7 +21,7 @@ class ProjectData: NSObject {
         
         if inputArray != "" {
             
-        for var i = 0; i < inputArray.count; i++ {
+        for i in 0 ..< inputArray.count {
             let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
             let id = String(jsonElement.objectForKey("id") as! String)
             let title = String(jsonElement.objectForKey("title")as! String)

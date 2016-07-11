@@ -10,9 +10,7 @@ import UIKit
 import Foundation
 
 class ProjectViewController: MyViewController {
-    var proj : Project!
-    var longitude : Double!
-    var latitude : Double!
+    var project : Project! //This needs to be set by the calling class when presenting the ProjectViewController
     
     @IBOutlet weak var projImage: UIImageView!
     @IBOutlet weak var projTitle: UILabel!
@@ -23,36 +21,31 @@ class ProjectViewController: MyViewController {
     @IBOutlet weak var contributersLabel: UILabel!
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil);
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {
         linkLabel.userInteractionEnabled = true
-        let
-        tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: "labelTapped")
+        let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.labelTapped))
         linkLabel.addGestureRecognizer(tapGesture)
         
         super.viewDidLoad()
-        proj = MyViewController.model.getCurrentProject()
-        projTitle.text = proj.title.uppercaseString
-        summary.text = proj.summary
-        contributersLabel.text = proj.contributors
-        self.longitude = proj.gpsLongitude
-        self.latitude = proj.gpsLatitude
-        
+        projTitle.text = project.title.uppercaseString
+        summary.text = project.summary
+        contributersLabel.text = project.contributors
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
-        vc.projectsToBeDisplayed = [proj]
-        vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height);
+        vc.projectsToBeDisplayed = [project]
+        vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height)
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         
-        linkLabel.text = String(stringInterpolation: proj.link)
-        actionLabel.text = proj.action
+        linkLabel.text = String(stringInterpolation: project.link)
+        actionLabel.text = project.action
         
         //Edit the code below to display a custom image for each project
-        let url = NSURL(string: proj.imageLink)
+        let url = NSURL(string: project.imageLink)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
             projImage.image = UIImage(data:data!)
@@ -66,7 +59,7 @@ class ProjectViewController: MyViewController {
 
     @IBAction func labelTapped() {
         NSLog("hello")
-        let url = NSURL(string: proj.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
+        let url = NSURL(string: project.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
         UIApplication.sharedApplication().openURL(url)
     }
     

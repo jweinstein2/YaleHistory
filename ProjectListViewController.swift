@@ -35,7 +35,7 @@ class ProjectListViewController: MyViewController {
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil);
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
@@ -58,8 +58,11 @@ class ProjectListViewController: MyViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        MyViewController.model.currentProject = row
-        self.performSegueWithIdentifier("listToProject", sender: self)
+        let proj = MyViewController.model.projects.projectData[row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
+        vc.project = proj
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -69,6 +72,7 @@ class ProjectListViewController: MyViewController {
         let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
         vc.projectsToBeDisplayed = projectList
         map.addSubview(vc.view)
+        self.addChildViewController(vc)
         vc.view.frame = CGRectMake(10, 10, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
         //map.bringSubviewToFront(vc.view)
         map.hidden = true
