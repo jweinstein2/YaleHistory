@@ -35,7 +35,7 @@ class ProjectViewController: MyViewController {
         contributersLabel.text = project.contributors
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         vc.projectsToBeDisplayed = [project]
         vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height)
         mapContainer.addSubview(vc.view)

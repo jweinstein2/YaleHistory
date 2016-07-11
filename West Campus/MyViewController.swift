@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MyViewController : UIViewController{
-    static var model : MainModel!
+    //static var model : MainModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

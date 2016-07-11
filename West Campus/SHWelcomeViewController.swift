@@ -52,13 +52,13 @@ class SHWelcomeViewController: MyViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (MyViewController.model.scavengerHuntIsSetUp == true){
+        if (MainModel.scavengerHuntIsSetUp == true){
             self.dismissViewControllerAnimated(false, completion: nil);
         }
-        if MyViewController.model.hunt != nil {
-            if (MyViewController.model.hunt.progress == -1){
+        if MainModel.hunt != nil {
+            if (MainModel.hunt.progress == -1){
                 self.dismissViewControllerAnimated(false, completion: nil);
-                MyViewController.model.hunt.progress = 0
+                MainModel.hunt.progress = 0
             }
         }
         
@@ -86,8 +86,8 @@ class SHWelcomeViewController: MyViewController {
             announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
-            MyViewController.model.hunt = ScavengerHunt(allProjects: MyViewController.model.projects, innovations:  switch1.on, ecology:  switch2.on, health: switch3.on, random: randomSwitch.on)
-            MyViewController.model.scavengerHuntIsSetUp = true
+            MainModel.hunt = ScavengerHunt(allProjects: MainModel.projects, innovations:  switch1.on, ecology:  switch2.on, health: switch3.on, random: randomSwitch.on)
+            MainModel.scavengerHuntIsSetUp = true
         
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
             presentViewController(vc, animated: false, completion: nil)
@@ -126,15 +126,15 @@ class SHWelcomeViewController: MyViewController {
     func updateProjCount() -> Int{
         var projectCount = 0
         
-        for var i = 0; i < MyViewController.model.projects.projectData.count; i++ {
-            if MyViewController.model.projects.projectData[i].innovations && switch1.on {
-                projectCount++
+        for i in 0 ..< MainModel.projects.projectData.count {
+            if MainModel.projects.projectData[i].innovations && switch1.on {
+                projectCount += 1
             }
-            else if MyViewController.model.projects.projectData[i].ecology && switch2.on {
-                projectCount++
+            else if MainModel.projects.projectData[i].ecology && switch2.on {
+                projectCount += 1
             }
-            else if MyViewController.model.projects.projectData[i].health && switch3.on {
-                projectCount++
+            else if MainModel.projects.projectData[i].health && switch3.on {
+                projectCount += 1
             }
         }
         

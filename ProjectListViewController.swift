@@ -13,7 +13,7 @@ import Foundation
 
 class ProjectListViewController: MyViewController {
     var isList = true
-    var projectList = MyViewController.model.projects.projectData
+    var projectList = MainModel.projects.projectData
     var locationEnabled : Bool = false
     @IBOutlet weak var mapListButton: UIButton!
     @IBOutlet weak var table: UITableView!
@@ -58,7 +58,7 @@ class ProjectListViewController: MyViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        let proj = MyViewController.model.projects.projectData[row]
+        let proj = MainModel.projects.projectData[row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
         vc.project = proj
@@ -69,11 +69,11 @@ class ProjectListViewController: MyViewController {
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("mapViewController") as! MapViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         vc.projectsToBeDisplayed = projectList
         map.addSubview(vc.view)
         self.addChildViewController(vc)
-        vc.view.frame = CGRectMake(10, 10, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
+        //vc.view.frame = CGRectMake(10, 10, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
         //map.bringSubviewToFront(vc.view)
         map.hidden = true
         // Do any additional setup after loading the view, typically from a nib.   

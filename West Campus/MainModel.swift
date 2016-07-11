@@ -9,29 +9,24 @@ import UIKit
 import Foundation
 
 class MainModel : NSObject, NSURLConnectionDelegate{
-    lazy var data = NSMutableData()
-    var jsonData = NSArray()
-    var projects : ProjectData!
-    var currentProject : Int!
-    var scavengerHuntAvailable: Bool!
-    var scavengerHuntIsSetUp: Bool!
-    var hunt: ScavengerHunt!
-    var prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    var key = "savedjsonarray"
+    static var data = NSMutableData()
+    static var jsonData = NSArray()
+    static var projects : ProjectData!
+    static var currentProject : Int!
+    static var scavengerHuntAvailable: Bool!
+    static var scavengerHuntIsSetUp: Bool!
+    static var hunt: ScavengerHunt!
+    static let prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    static let key = "savedjsonarray"
 
-    override init(){
-        super.init()
-        
-        startConnection()
-    }
     
-    func getCurrentProject() -> Project{
+    class func getCurrentProject() -> Project{
         return projects.projectData[currentProject]
     }
     
     
     //This method is called when the application fails to connect to the database
-    func loadNSUserDefaults(){
+    class func loadNSUserDefaults(){
         let json = prefs.objectForKey(key) as! NSArray
         if json.count == 0{
             NSLog("Retrieving NSUserDefaults")
@@ -44,11 +39,11 @@ class MainModel : NSObject, NSURLConnectionDelegate{
             NSLog("No Data found. Unable to continue.")
             //No data is found. Need to alert the user that the app is unusable until we connect to data
             
-            _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("startConnection"), userInfo: nil, repeats: false)
+            _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(MainModel.startConnection), userInfo: nil, repeats: false)
         }
     }
     
-    func downloadData(){
+    class func downloadData(){
         projects = ProjectData(inputArray: jsonData)
         
         if projects.projectData.count == 0 {        //set availability of scavenger hunt
@@ -65,8 +60,8 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         prefs.synchronize()
     }
     
-    //JSON CONNECTION METHODS BELOW
-    func startConnection(){
+    //MARK: Json Connection Methods
+    class func startConnection(){
         let urlPath: String = "http://contripity.net/wildwest/researchprojects.php" //this needs to be changed to the new website
         let url: NSURL = NSURL(string: urlPath)!
         let request: NSURLRequest = NSURLRequest(URL: url)
@@ -74,21 +69,21 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         connection.start()
     }
     
-    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
+    class func connection(connection: NSURLConnection, didFailWithError error: NSError) {
         NSLog("Error: unable to download JSON string")
         NSLog(String(error))
         self.loadNSUserDefaults()
     }
     
-    func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
+    class func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
         self.data.appendData(data)
     }
     
-    func buttonAction(sender: UIButton!){
+    class func buttonAction(sender: UIButton!){
         startConnection()
     }
     
-    func connectionDidFinishLoading(connection: NSURLConnection!) {
+    class func connectionDidFinishLoading(connection: NSURLConnection!) {
         scavengerHuntIsSetUp = false
         currentProject = 0;
         

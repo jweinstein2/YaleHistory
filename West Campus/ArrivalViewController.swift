@@ -20,7 +20,7 @@ class ArrivalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currProj = MyViewController.model.hunt.projects.projectData[MyViewController.model.currentProject]
+        currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]
         
         let imageView = UIImageView(frame: self.view.frame); // set as you want
         let image = UIImage(named: "success");
@@ -36,7 +36,7 @@ class ArrivalViewController: UIViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
-        MyViewController.model.hunt.transition = true
+        MainModel.hunt.transition = true
         self.dismissViewControllerAnimated(false, completion: nil);
         
     }

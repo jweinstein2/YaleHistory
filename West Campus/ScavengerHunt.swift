@@ -22,16 +22,15 @@ class ScavengerHunt: NSObject {
         
         projects = ProjectData()
         
-        for var i = 0; i < allProjects.projectData.count; i++ { //adds projects to Hunt if they are tagged
+        for project in allProjects.projectData {
+            //adds projects to Hunt if they are tagged
+            //if ((innovations && project.innovations) || (ecology && allProjects.projectData.ecology) || (health && project.health)){
+            projects.projectData.append(project)
             
-            if ((innovations && allProjects.projectData[i].innovations) || (ecology && allProjects.projectData[i].ecology) || (health && allProjects.projectData[i].health)){
-                
-                projects.projectData.append(allProjects.projectData[i])
-            }
         }
         
         if random {
-            for var index = projects.projectData.count - 1; index > 0; index--
+            for var index = projects.projectData.count - 1; index > 0; index -= 1
             {
                 // Random int from 0 to index-1
                 let j = Int(arc4random_uniform(UInt32(index-1)))
