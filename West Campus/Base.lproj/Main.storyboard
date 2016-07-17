@@ -312,6 +312,7 @@
                             <constraint firstItem="eYQ-EZ-BnI" firstAttribute="bottom" secondItem="bGU-v7-nmV" secondAttribute="bottom" id="J6n-vF-XOT"/>
                             <constraint firstItem="FcV-85-r7e" firstAttribute="top" secondItem="kgz-Zn-SJ5" secondAttribute="bottom" constant="40" id="M7r-CW-NJ5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FcV-85-r7e" secondAttribute="trailing" constant="-15" id="OI9-6g-Em4"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="GGg-KH-Fj5" secondAttribute="trailing" constant="10" id="PXD-0y-5nd"/>
                             <constraint firstItem="r9O-hC-i6h" firstAttribute="top" secondItem="tEf-8j-7ql" secondAttribute="bottom" constant="4" id="S0a-gD-vtf"/>
                             <constraint firstItem="eYQ-EZ-BnI" firstAttribute="centerX" secondItem="lVN-Wy-rHI" secondAttribute="centerX" id="ZPT-NK-ye3"/>
                             <constraint firstItem="tEf-8j-7ql" firstAttribute="centerX" secondItem="lVN-Wy-rHI" secondAttribute="centerX" id="bds-o8-OzT"/>
@@ -321,6 +322,7 @@
                             <constraint firstItem="r9O-hC-i6h" firstAttribute="centerY" secondItem="eYQ-EZ-BnI" secondAttribute="centerY" id="fNi-be-bkv"/>
                             <constraint firstItem="FcV-85-r7e" firstAttribute="top" secondItem="bGU-v7-nmV" secondAttribute="bottom" id="gbo-0e-4Df"/>
                             <constraint firstItem="0Dh-NC-eJN" firstAttribute="centerX" secondItem="kgz-Zn-SJ5" secondAttribute="centerX" id="iZQ-gE-aJr"/>
+                            <constraint firstItem="GGg-KH-Fj5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="10" id="mpJ-SU-uyQ"/>
                             <constraint firstItem="bGU-v7-nmV" firstAttribute="width" secondItem="lVN-Wy-rHI" secondAttribute="width" id="o4r-c3-FtN"/>
                             <constraint firstItem="OxC-hO-N4G" firstAttribute="top" secondItem="FcV-85-r7e" secondAttribute="bottom" constant="20" id="pPk-Dq-W4w"/>
                             <constraint firstItem="tEf-8j-7ql" firstAttribute="top" secondItem="kgz-Zn-SJ5" secondAttribute="bottom" id="tzf-Gz-E3p"/>

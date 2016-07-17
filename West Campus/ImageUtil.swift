@@ -9,13 +9,20 @@
 import Foundation
 import UIKit
 
-//TODO: Switch this over to UIImage extension
 class ImageUtil {
-    class func imageFromURL(url: String) -> UIImage {
-        let url = NSURL(string: url)
+    static var cachedImages : [String : UIImage] = [:]
+    
+    class func imageFromURL(urlString: String) -> UIImage {
+        if let image = cachedImages[urlString] {
+            return image
+        }
+        
+        let url = NSURL(string: urlString)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
-            return UIImage(data: data!)!
+            let img = UIImage(data: data!)!
+            cachedImages[urlString] = img
+            return img
         } else {
             return UIImage(named: "west_campus_default")!
         }

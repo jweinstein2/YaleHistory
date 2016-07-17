@@ -22,7 +22,6 @@ class Project {
     var ecology: Bool
     var health: Bool
     var radius: Int
-
     
     init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String, contributors: String, imageLink: String, innovations: Bool, ecology: Bool, health: Bool, radius: Int){
         self.projectId = projectId
@@ -40,6 +39,5 @@ class Project {
         self.ecology = ecology
         self.health = health
         self.radius = radius
-
     }
 }
