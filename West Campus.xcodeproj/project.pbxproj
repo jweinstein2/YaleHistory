@@ -33,7 +33,7 @@
 		898136051BEEDD2800ACD35C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136031BEEDD2800ACD35C /* Project.swift */; };
 		898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136041BEEDD2800ACD35C /* ProjectData.swift */; };
 		898136081BEEDEE700ACD35C /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898136071BEEDEE700ACD35C /* MainModel.swift */; };
-		89958D171D32C18B009E020F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89958D161D32C18B009E020F /* TableViewCell.xib */; };
+		898E8C401D3B585300D4CB1B /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */; };
 		89958D1F1D33211E009E020F /* MapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89958D1E1D33211E009E020F /* MapPointAnnotation.swift */; };
 		89958D211D332A58009E020F /* GlobalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89958D201D332A58009E020F /* GlobalKeys.swift */; };
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
@@ -95,7 +95,7 @@
 		898136031BEEDD2800ACD35C /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		898136041BEEDD2800ACD35C /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		898136071BEEDEE700ACD35C /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		89958D161D32C18B009E020F /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		89958D1E1D33211E009E020F /* MapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointAnnotation.swift; sourceTree = "<group>"; };
 		89958D201D332A58009E020F /* GlobalKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeys.swift; sourceTree = "<group>"; };
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 				890503461C05355600420D6F /* ProjectTableViewCell.swift */,
 				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
 				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
-				89958D161D32C18B009E020F /* TableViewCell.xib */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -231,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				89958D201D332A58009E020F /* GlobalKeys.swift */,
+				898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -382,7 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				892B372F1BE9B1FB00E1174C /* YaleNew-Bold.otf in Resources */,
-				89958D171D32C18B009E020F /* TableViewCell.xib in Resources */,
 				892B37301BE9B1FB00E1174C /* YaleNew-BoldItalic.otf in Resources */,
 				892B37311BE9B1FB00E1174C /* YaleNew-Italic.otf in Resources */,
 				892B37321BE9B1FB00E1174C /* YaleNew-Roman.otf in Resources */,
@@ -482,6 +481,7 @@
 				892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */,
 				89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */,
 				898136051BEEDD2800ACD35C /* Project.swift in Sources */,
+				898E8C401D3B585300D4CB1B /* ImageUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

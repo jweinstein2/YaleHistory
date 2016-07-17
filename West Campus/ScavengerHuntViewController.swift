@@ -49,14 +49,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         Header.text = "You are looking for"
         clueLabel.text = "Clue: " + currProj.clue
         projectTitle.text = currProj.title
-        let url = NSURL(string: currProj.imageLink)
-        let data = NSData(contentsOfURL:url!)
-        if data != nil {
-            imageView.image = UIImage(data:data!)
-        }
-        else{
-            imageView.image = UIImage(named: "west_campus_default")
-        }
+        imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
         
         progressBar.setProgress(Float(MainModel.currentProject)/Float(MainModel.hunt.projects.projectData.count), animated: false)
         
@@ -94,14 +87,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             //set up display
             clueLabel.text = "Clue: " + currProj.clue
             projectTitle.text = currProj.title
-            let url = NSURL(string: currProj.imageLink)
-            let data = NSData(contentsOfURL:url!)
-            if data != nil {
-                imageView.image = UIImage(data:data!)
-            }
-            else{
-                imageView.image = UIImage(named: "west_campus_default")
-            }
+            imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
             
             //update progress bar
             progressBar.setProgress(Float(MainModel.currentProject)/Float(MainModel.hunt.projects.projectData.count), animated: false)
@@ -122,12 +108,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             nextLabel.hidden = true
             previousButton.hidden = true
             previousLabel.hidden = true
-            
-            let url = NSURL(string: "http://www.cwu.edu/~jonase/goodjob.jpg")
-            let data = NSData(contentsOfURL:url!)
-            if data != nil {
-                imageView.image = UIImage(data:data!)
-            }
+            imageView.image = ImageUtil.imageFromURL("http://www.cwu.edu/~jonase/goodjob.jpg")
             locationManager.stopUpdatingLocation()
         }
         

@@ -38,6 +38,29 @@ class ProjectListViewController: MyViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+        vc.projectsToBeDisplayed = projectList
+        map.addSubview(vc.view)
+        self.addChildViewController(vc)
+        map.layoutIfNeeded()
+        vc.view.frame = map.bounds
+        map.hidden = true
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+
+//MARK: TableView functions
+extension ProjectListViewController {
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
         return projectList.count
@@ -45,12 +68,14 @@ class ProjectListViewController: MyViewController {
     
     
     func tableView(tableView: UITableView!,
-        cellForRowAtIndexPath indexPath: NSIndexPath!) -> ProjectTableViewCell!
+                   cellForRowAtIndexPath indexPath: NSIndexPath!) -> ProjectTableViewCell!
     {
-        let cell:ProjectTableViewCell = ProjectTableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"projectCell")
-        cell.textLabel?.text = projectList[indexPath.row].title
+        let cell = self.table.dequeueReusableCellWithIdentifier("projectCell") as! ProjectTableViewCell
+        let proj = projectList[indexPath.row]
+        cell.titleLabel.text = proj.title
         cell.locationEnabled = self.locationEnabled
-        
+        cell.distanceLabel.text = String(proj.radius)
+        cell.backgroundImage.image = ImageUtil.imageFromURL(proj.imageLink)
         return cell
     }
     
@@ -65,25 +90,7 @@ class ProjectListViewController: MyViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.projectsToBeDisplayed = projectList
-        map.addSubview(vc.view)
-        self.addChildViewController(vc)
-        //vc.view.frame = CGRectMake(10, 10, map.frame.size.width - 20, map.frame.size.height - 20) // THIS NEEDS TO BE CHANGED TO DISPLAY THE MAP CORRECTLY IN THE FRAME
-        //map.bringSubviewToFront(vc.view)
-        map.hidden = true
-        // Do any additional setup after loading the view, typically from a nib.   
+    func tableView(tableView: UITableView, heightForRowAtIndexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 }
-

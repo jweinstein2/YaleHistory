@@ -45,20 +45,12 @@ class ProjectViewController: MyViewController {
         actionLabel.text = project.action
         
         //Edit the code below to display a custom image for each project
-        let url = NSURL(string: project.imageLink)
-        let data = NSData(contentsOfURL:url!)
-        if data != nil {
-            projImage.image = UIImage(data:data!)
-        }
-        else{
-            projImage.image = UIImage(named: "west_campus_default")
-        }
+        projImage.image = ImageUtil.imageFromURL(project.imageLink)
         
         
 }
 
     @IBAction func labelTapped() {
-        NSLog("hello")
         let url = NSURL(string: project.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
         UIApplication.sharedApplication().openURL(url)
     }

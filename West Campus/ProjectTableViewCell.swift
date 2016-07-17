@@ -11,22 +11,13 @@ import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
     var locationEnabled : Bool?
-    var distance : String?
-    var distanceLabel: UILabel = UILabel() //not currently used
-
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         NSLog("custom init")
-        
-        if locationEnabled == true {
-            //Custom initialization for a cell with distance label in it **NOT USED**
-            distanceLabel = UILabel(frame: CGRectMake(self.bounds.size.width - 55, 5, 70, self.bounds.size.height - 10))
-            distanceLabel.text = distance
-            distanceLabel.textAlignment = NSTextAlignment.Right
-            
-            self.contentView.addSubview(distanceLabel)
-        }
     }
     
     required init(coder aDecoder: NSCoder) {
