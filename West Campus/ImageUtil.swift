@@ -12,6 +12,7 @@ import UIKit
 class ImageUtil {
     static var cachedImages : [String : UIImage] = [:]
     
+    //Loads an image from a URLString ("http:/...") and caches it for quick loading the second time
     class func imageFromURL(urlString: String) -> UIImage {
         if let image = cachedImages[urlString] {
             return image

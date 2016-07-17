@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreLocation
 
 class ViewController: MyViewController {
     
@@ -16,6 +17,12 @@ class ViewController: MyViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: Handle the different cases resulting from this
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            LocationUtil.manager.requestWhenInUseAuthorization()
+        }
+        
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {

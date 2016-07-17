@@ -27,6 +27,7 @@
 		894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */; };
 		894CA6F71BE99FBE005D2B2A /* West_CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA6F61BE99FBE005D2B2A /* West_CampusTests.swift */; };
 		894CA7021BE99FBE005D2B2A /* West_CampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CA7011BE99FBE005D2B2A /* West_CampusUITests.swift */; };
+		896141981D3BF608001B21A3 /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896141971D3BF608001B21A3 /* LocationUtil.swift */; };
 		896A5A911BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 896A5A901BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */; };
 		896A5A951BEECB2E00780F79 /* Yale Y small.png in Resources */ = {isa = PBXBuildFile; fileRef = 896A5A941BEECB2E00780F79 /* Yale Y small.png */; };
 		896A5A971BEED24900780F79 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896A5A961BEED24900780F79 /* AboutViewController.swift */; };
@@ -89,6 +90,7 @@
 		894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-BoldItalic.otf"; sourceTree = "<group>"; };
 		894CA71E1BE9A895005D2B2A /* YaleNew-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Italic.otf"; sourceTree = "<group>"; };
 		894CA71F1BE9A895005D2B2A /* YaleNew-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YaleNew-Roman.otf"; sourceTree = "<group>"; };
+		896141971D3BF608001B21A3 /* LocationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
 		896A5A901BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2015-11-06 at 5.58.30 PM.png"; sourceTree = "<group>"; };
 		896A5A941BEECB2E00780F79 /* Yale Y small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yale Y small.png"; sourceTree = "<group>"; };
 		896A5A961BEED24900780F79 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				89958D201D332A58009E020F /* GlobalKeys.swift */,
 				898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */,
+				896141971D3BF608001B21A3 /* LocationUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */,
 				89958D1F1D33211E009E020F /* MapPointAnnotation.swift in Sources */,
 				894CA6E71BE99FBE005D2B2A /* West_Campus.xcdatamodeld in Sources */,
+				896141981D3BF608001B21A3 /* LocationUtil.swift in Sources */,
 				898136081BEEDEE700ACD35C /* MainModel.swift in Sources */,
 				451F68141C10D950008CB714 /* ScavengerHunt.swift in Sources */,
 				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,

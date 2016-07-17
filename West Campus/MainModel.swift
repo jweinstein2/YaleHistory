@@ -7,6 +7,7 @@
 //
 import UIKit
 import Foundation
+import CoreLocation
 
 class MainModel : NSObject, NSURLConnectionDelegate{
     static var data = NSMutableData()
