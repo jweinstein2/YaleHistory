@@ -63,7 +63,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     
     //MARK: Json Connection Methods
     class func startConnection(){
-        let urlPath: String = "http://contripity.net/wildwest/researchprojects.php" //this needs to be changed to the new website
+        let urlPath: String = "http://contripity.net/yalehistory/researchprojects.php"
         let url: NSURL = NSURL(string: urlPath)!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
