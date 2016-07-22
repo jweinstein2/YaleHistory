@@ -31,7 +31,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         let json = prefs.objectForKey(key) as! NSArray
         if json.count == 0{
             NSLog("Retrieving NSUserDefaults")
-            NSLog(String(jsonData))
+            //NSLog(String(jsonData))
             projects = ProjectData(inputArray: jsonData)
             prefs.synchronize()
             //Previously saved defaults are availible
@@ -55,7 +55,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         }
         
         //Save Data as Defaults
-        NSLog(String(jsonData))
+        //NSLog(String(jsonData))
         NSLog("Data saved to NSUserDefaults")
         prefs.setObject(jsonData, forKey: key)
         prefs.synchronize()

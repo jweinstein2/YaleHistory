@@ -37,6 +37,7 @@
 		898E8C401D3B585300D4CB1B /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */; };
 		89958D1F1D33211E009E020F /* MapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89958D1E1D33211E009E020F /* MapPointAnnotation.swift */; };
 		89958D211D332A58009E020F /* GlobalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89958D201D332A58009E020F /* GlobalKeys.swift */; };
+		89C04CB61D41DFB300D34A29 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04CB51D41DFB300D34A29 /* Extensions.swift */; };
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
 		89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */; };
 		A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */; };
@@ -100,6 +101,7 @@
 		898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		89958D1E1D33211E009E020F /* MapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointAnnotation.swift; sourceTree = "<group>"; };
 		89958D201D332A58009E020F /* GlobalKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeys.swift; sourceTree = "<group>"; };
+		89C04CB51D41DFB300D34A29 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				89958D201D332A58009E020F /* GlobalKeys.swift */,
 				898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */,
 				896141971D3BF608001B21A3 /* LocationUtil.swift */,
+				89C04CB51D41DFB300D34A29 /* Extensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				894CA6E11BE99FBE005D2B2A /* HomeViewController.swift in Sources */,
 				894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */,
 				89958D211D332A58009E020F /* GlobalKeys.swift in Sources */,
+				89C04CB61D41DFB300D34A29 /* Extensions.swift in Sources */,
 				893AA7861BF65BDE00B451A0 /* MapViewController.swift in Sources */,
 				A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */,
 				89958D1F1D33211E009E020F /* MapPointAnnotation.swift in Sources */,

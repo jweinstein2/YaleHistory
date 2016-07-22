@@ -9,6 +9,35 @@
 import Foundation
 import CoreLocation
 
-class LocationUtil {
-    static let manager = CLLocationManager()
+
+class LocationUtil : NSObject, CLLocationManagerDelegate {
+    static let sharedInstance = LocationUtil()
+    
+    let manager = CLLocationManager()
+    
+    func setup (){
+        handleLocationPermissions()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        manager.distanceFilter = 1
+        manager.startUpdatingLocation()
+    }
+    
+    private func handleLocationPermissions(){
+        //TODO: Handle the different cases resulting from this
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            self.manager.requestWhenInUseAuthorization()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        let currentLoc = locations.last!
+        print("did update location to \(String(currentLoc))")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.locationUpdate, object: currentLoc)
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        NSLog("Location Manager Failed" )
+    }
 }

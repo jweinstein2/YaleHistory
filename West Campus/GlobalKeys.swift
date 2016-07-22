@@ -11,3 +11,8 @@ import Foundation
 struct vcIdentifiers {
     static let mapVC = "mapViewController"
 }
+
+struct GlobalNotificationKeys {
+    static let locationUpdate = "on_loc_update"
+    static let onNearbyProject = "on_nearby_project"
+}

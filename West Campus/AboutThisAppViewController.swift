@@ -24,7 +24,7 @@ class AboutThisAppViewController: MyViewController {
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil);
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 

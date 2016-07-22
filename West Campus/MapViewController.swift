@@ -41,8 +41,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func addOverlay(){
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
         for i in 0 ..< projectsToBeDisplayed.count {
-            let lat = projectsToBeDisplayed[i].gpsLatitude
-            let long = projectsToBeDisplayed[i].gpsLongitude
+            let lat = projectsToBeDisplayed[i].location.coordinate.latitude
+            let long = projectsToBeDisplayed[i].location.coordinate.longitude
             let loc : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
             let annotation = MapPointAnnotation.init()
             annotation.coordinate = loc

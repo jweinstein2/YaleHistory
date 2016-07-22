@@ -9,9 +9,8 @@
 import UIKit
 import CoreLocation
 
-class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
+class ScavengerHuntViewController: MyViewController {
 
-    var locationManager: CLLocationManager!
     var currProj: Project!
     let regionRadius : Double! = 15.0
     
@@ -33,16 +32,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager = CLLocationManager()               //configure location manager
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.distanceFilter = 1
-        locationManager.startUpdatingLocation()
-        
-        NSLog(String(locationManager.activityType))
-        
         MainModel.currentProject = MainModel.hunt.progress
         currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]
         
@@ -62,6 +51,9 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             previousButton.hidden = false
             previousLabel.hidden = false
         }
+        
+        //Subscribe to location update notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -109,7 +101,6 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
             previousButton.hidden = true
             previousLabel.hidden = true
             imageView.image = ImageUtil.imageFromURL("http://www.cwu.edu/~jonase/goodjob.jpg")
-            locationManager.stopUpdatingLocation()
         }
         
         MainModel.hunt.transition = false
@@ -117,9 +108,7 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        
         self.dismissViewControllerAnimated(false, completion: nil);
-        
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
@@ -134,33 +123,16 @@ class ScavengerHuntViewController: MyViewController, CLLocationManagerDelegate {
         viewWillAppear(false)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
-        
-        NSLog("%f", currProj.gpsLatitude)
-        
-        let destLat = currProj.gpsLatitude
-        let destLong = currProj.gpsLongitude
-        
-        let curLat = locations[0].coordinate.latitude
-        let curLong = locations[0].coordinate.longitude
-        
-        //locationLabel.text = "lat: " + String(curLat) + "long: " + String(curLong) //For testing purposes
-        
-        let x = 111111*(curLat-destLat)
-        
-        let y = 111111*(curLong-destLong)
-        
-        let distance :Double = sqrt(x*x+y*y)
-
-        
-        distanceLabel.text = NSString(format: "Distance from project: %d m", Int(distance)) as String
+    func onLocUpdate(notification: NSNotification){        
+        //Take Action on Notification
+        let userLoc = notification.object as! CLLocation
+        let distance = currProj.location.distanceFromLocation(userLoc)
+        self.distanceLabel.text = distance.toString()
         
         if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
         }
-        
-        NSLog("update location: %f , %f", locations[0].coordinate.latitude, locations[0].coordinate.longitude)
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ProjectData: NSObject {
     var projectData = [Project]()
@@ -63,8 +64,17 @@ class ProjectData: NSObject {
                 let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: Double(gpsLatitude)!, gpsLongitude: Double(gpsLongitude)!, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: Int(radius)!)
                 projectData.append(currentProject)
             }
-            
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
+    }
+    
+    func onLocUpdate(notification: NSNotification){
+        //Take Action on Notification
+        let userLoc = notification.object as! CLLocation
+        
+        for project in projectData {
+            project.distanceToUser = project.location.distanceFromLocation(userLoc)
+        }
     }
 }

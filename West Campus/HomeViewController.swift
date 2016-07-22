@@ -18,11 +18,7 @@ class ViewController: MyViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: Handle the different cases resulting from this
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            LocationUtil.manager.requestWhenInUseAuthorization()
-        }
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNearbyProject(_:)), name: GlobalNotificationKeys.onNearbyProject, object: nil)
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
@@ -45,6 +41,14 @@ class ViewController: MyViewController {
         /*if (segue.identifier == "Load View") {
             // pass data to next view
         }*/
+    }
+    
+    func onNearbyProject(notification: NSNotification){
+        //Take Action on Notification
+        let proj = notification.object as! Project
+        
+        NSLog("You have walked near \(proj.title)")
+        //TODO - have a little pop up displaying nearby projects
     }
 }
 
