@@ -15,11 +15,11 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var tag1: UILabel!
     @IBOutlet weak var tag2: UILabel!
-    @IBOutlet weak var tag3: UILabel!
-    @IBOutlet weak var switch1: UISwitch!
-    @IBOutlet weak var switch2: UISwitch!
+
+    @IBOutlet weak var projectCountSlider: UISlider!
+
     @IBOutlet weak var randomLabel: UILabel!
-    @IBOutlet weak var switch3: UISwitch!
+
     @IBOutlet weak var next: UIButton!
     @IBOutlet weak var previous: UIButton!
     @IBOutlet weak var directions: UILabel!
@@ -31,7 +31,7 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var timeEstimate: UILabel!
     @IBOutlet weak var banner1: UIImageView!
     @IBOutlet weak var banner2: UIImageView!
-    @IBOutlet weak var banner3: UIImageView!
+
     @IBOutlet weak var banner4: UIImageView!
     @IBOutlet weak var backToMainButton: UIButton!
     
@@ -43,10 +43,12 @@ class SHWelcomeViewController: MyViewController {
         vertStackView.spacing = 10
         hoStack4.spacing = 40
         buttonHoStack.spacing = 40
-        tag1.text = "Innovations, Inventions, and Ideas in Pilot Form"
-        tag2.text = "Ecology, Plants, and the Natural Environment"
-        tag3.text = "Health, Community, and Wellness"
+        tag1.text = "How many residential colleges would you like to see?"
+        tag2.text = "Would you like to see the two new colleges under construction?"
+        projectCountSlider.maximumValue = 14.0
+        projectCountSlider.setValue(14.0, animated: false)
         setStage(true)
+        
         
         updateProjCount()
     }
@@ -86,7 +88,7 @@ class SHWelcomeViewController: MyViewController {
             announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
-            MainModel.hunt = ScavengerHunt(allProjects: MainModel.projects, innovations:  switch1.on, ecology:  switch2.on, health: switch3.on, random: randomSwitch.on)
+            MainModel.hunt = ScavengerHunt(allProjects: MainModel.projects, projectCount: Int(projectCountSlider.value))
             MainModel.scavengerHuntIsSetUp = true
         
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
@@ -97,18 +99,14 @@ class SHWelcomeViewController: MyViewController {
     func setStage(stageIs0: Bool){
         tag1.hidden = stageIs0
         tag2.hidden = stageIs0
-        tag3.hidden = stageIs0
         randomLabel.hidden = stageIs0
-        switch1.hidden = stageIs0
-        switch2.hidden = stageIs0
-        switch3.hidden = stageIs0
+        projectCountSlider.hidden = stageIs0
         randomSwitch.hidden = stageIs0
         previous.hidden = stageIs0
         projCount.hidden = stageIs0
         timeEstimate.hidden = stageIs0
         banner1.hidden = stageIs0
         banner2.hidden = stageIs0
-        banner3.hidden = stageIs0
         banner4.hidden = stageIs0
         banner4.sendSubviewToBack(self.view)
         backToMainButton.hidden = stageIs0
@@ -124,20 +122,7 @@ class SHWelcomeViewController: MyViewController {
     }
     
     func updateProjCount() -> Int{
-        var projectCount = 0
-        
-        for i in 0 ..< MainModel.projects.projectData.count {
-            if MainModel.projects.projectData[i].innovations && switch1.on {
-                projectCount += 1
-            }
-            else if MainModel.projects.projectData[i].ecology && switch2.on {
-                projectCount += 1
-            }
-            else if MainModel.projects.projectData[i].health && switch3.on {
-                projectCount += 1
-            }
-        }
-        
+        let projectCount : Int = Int(projectCountSlider.value)
         projCount.text = String(format: "Projects to be Found: %d", projectCount)
         timeEstimate.text = String(format: "Time Estimate: %d min", projectCount*5)
         

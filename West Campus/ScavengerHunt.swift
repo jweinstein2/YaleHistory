@@ -16,19 +16,46 @@ class ScavengerHunt: NSObject {
     override init(){
         NSLog("Error: please use custom initializer")
     }
-    
-    init(allProjects: ProjectData, innovations: Bool, ecology: Bool, health: Bool, random: Bool){
+
+    init(allProjects: ProjectData, projectCount: Int){
         super.init()
         
         projects = ProjectData()
         
+        //find closest project, start from there
+        var minDist : Double = -1
+        var closeId : Int = -1
         for project in allProjects.projectData {
-            //adds projects to Hunt if they are tagged
-            //if ((innovations && project.innovations) || (ecology && allProjects.projectData.ecology) || (health && project.health)){
-            projects.projectData.append(project)
             
+            
+            if project.projectId == "1" {
+                minDist = project.distanceToUser!
+                closeId = Int(project.projectId)!
+            }
+            else if project.distanceToUser < minDist {
+                minDist = project.distanceToUser!
+                closeId = Int(project.projectId)!
+            }
         }
         
+        let projectCountMinus = projectCount - 1 //avoids off by one error below
+        
+        for project in allProjects.projectData {
+            let projectNum : Int = Int(project.projectId)!
+            let upperBound : Int = (closeId + projectCountMinus) % allProjects.projectData.count
+            
+            if (closeId + projectCountMinus) / allProjects.projectData.count < 1 {
+                if projectNum <= upperBound && projectNum >= closeId {
+                    projects.projectData.append(project)
+                }
+            }
+            else if projectNum >= closeId || projectNum <= upperBound {
+                projects.projectData.append(project)
+            }
+        }
+        
+        
+        /* No need for random functionality
         if random {
             for var index = projects.projectData.count - 1; index > 0; index -= 1
             {
@@ -41,6 +68,8 @@ class ScavengerHunt: NSObject {
             
             //NOTE: code for this shuffle was taken from http://iosdevelopertips.com/swift-code/swift-shuffle-array-type.html
         }
+        */
+        
         
         progress = 0
         transition = false

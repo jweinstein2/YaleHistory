@@ -5,6 +5,9 @@
       location = "group:/Users/jaredweinstein/Yale History/GitRepository/Yale History.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Yale History.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
