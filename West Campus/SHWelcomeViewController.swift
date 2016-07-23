@@ -16,23 +16,23 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var tag1: UILabel!
     @IBOutlet weak var tag2: UILabel!
 
-    @IBOutlet weak var projectCountSlider: UISlider!
+    @IBOutlet weak var projectCountSlider: UISlider! //No connection
 
-    @IBOutlet weak var randomLabel: UILabel!
+    @IBOutlet weak var randomLabel: UILabel! //No connection
 
     @IBOutlet weak var next: UIButton!
     @IBOutlet weak var previous: UIButton!
     @IBOutlet weak var directions: UILabel!
     @IBOutlet weak var vertStackView: UIStackView!
-    @IBOutlet weak var randomSwitch: UISwitch!
-    @IBOutlet weak var hoStack4: UIStackView!
+    @IBOutlet weak var randomSwitch: UISwitch! //This has no connection
+    @IBOutlet weak var hoStack4: UIStackView! //This has no connection
     @IBOutlet weak var buttonHoStack: UIStackView!
     @IBOutlet weak var projCount: UILabel!
     @IBOutlet weak var timeEstimate: UILabel!
     @IBOutlet weak var banner1: UIImageView!
     @IBOutlet weak var banner2: UIImageView!
 
-    @IBOutlet weak var banner4: UIImageView!
+    @IBOutlet weak var banner4: UIImageView! //This has no connection
     @IBOutlet weak var backToMainButton: UIButton!
     
     //Add label and switch for randomized
