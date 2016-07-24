@@ -29,14 +29,7 @@ class Project {
     var radius: Int
     
     //Run Time Variables
-    let thresholdDistance = 30.0
-    var distanceToUser : Double? = nil {        //Distance is always stored in meters
-        didSet {
-            if distanceToUser < thresholdDistance {
-                NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.onNearbyProject, object: self)
-            }
-        }
-    }
+    var distanceToUser : Double? = nil        //Distance is always stored in meters
     
     init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String, contributors: String, imageLink: String, innovations: Bool, ecology: Bool, health: Bool, radius: Int){
         self.projectId = projectId

@@ -13,10 +13,16 @@ import CoreLocation
 class ViewController: MyViewController {
     
     @IBOutlet weak var scavengerHunt: UIButton!
+    @IBOutlet weak var bottomNotificationView: UIView!
     @IBOutlet weak var projectInformation: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bottomNotificationView.layer.cornerRadius = 5;
+        bottomNotificationView.layer.masksToBounds = true
+        bottomNotificationView.layer.borderWidth = 2
+        bottomNotificationView.layer.borderColor = UIColor.whiteColor().CGColor
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNearbyProject(_:)), name: GlobalNotificationKeys.onNearbyProject, object: nil)
     }
@@ -45,9 +51,22 @@ class ViewController: MyViewController {
     
     func onNearbyProject(notification: NSNotification){
         //Take Action on Notification
-        let proj = notification.object as! Project
+        let proj = notification.object as? Project
         
-        NSLog("You have walked near \(proj.title)")
+        if proj == nil {
+            //self.topSpacing.constant = -42
+            UIView.animateWithDuration(0.5) {
+                self.view.layoutIfNeeded()
+            }
+            self.bottomNotificationView.hidden = true
+        } else {
+            //self.topSpacing.constant = -42
+            UIView.animateWithDuration(0.5) {
+                self.view.layoutIfNeeded()
+            }
+            self.bottomNotificationView.hidden = false
+            NSLog("You have walked near \(proj?.title)")
+        }
         //TODO - have a little pop up displaying nearby projects
     }
 }
