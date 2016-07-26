@@ -18,7 +18,7 @@ class Project {
     //var gpsLatitude: Double
     //var gpsLongitude: Double
     var location: CLLocation
-    var placemark: MKPlacemark
+    var mapItem: MKMapItem
     var clue: String
     var action: String
     var contributors: String
@@ -38,7 +38,8 @@ class Project {
         self.link = link
         self.location = CLLocation.init(latitude: gpsLatitude, longitude: gpsLongitude)
         let loc = CLLocationCoordinate2D.init(latitude: gpsLatitude, longitude: gpsLongitude)
-        self.placemark = MKPlacemark.init(coordinate: loc, addressDictionary: nil)
+        self.mapItem = MKMapItem(placemark: MKPlacemark(coordinate: loc, addressDictionary: nil))
+        self.mapItem.name = title
         self.clue = clue
         self.action = action
         self.imageLink = imageLink
