@@ -11,4 +11,5 @@ import MapKit
 
 class MapPointAnnotation: MKPointAnnotation {
     var project : Project!
+    var color : UIColor!
 }

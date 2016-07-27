@@ -10,6 +10,7 @@
 
 import UIKit
 import Foundation
+import MapKit
 
 class ProjectListViewController: MyViewController {
     var isList = true
@@ -44,7 +45,7 @@ class ProjectListViewController: MyViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.projectsToBeDisplayed = projectList
+        vc.displayData = [(MKPinAnnotationView.redPinColor(), projectList)]
         map.addSubview(vc.view)
         self.addChildViewController(vc)
         map.layoutIfNeeded()

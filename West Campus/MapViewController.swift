@@ -12,8 +12,10 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     
-    var projectsToBeDisplayed = [Project]() //This is the array containing a list of all the projects we want to display pins for.
-    let reuseId = "com.yalehistory.mappin"
+    var displayData = [(color: UIColor, projects: [Project])]()
+    var shouldDisplayUsersLocation = false
+
+    private let reuseId = "com.yalehistory.mappin"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func setUpMap(){
         self.addOverlay()
         
-        map.mapType = MKMapType.Satellite
+        map.mapType = MKMapType.Hybrid
 
         map.zoomEnabled = true
         map.scrollEnabled = true
-        map.showsUserLocation = false
+        map.showsUserLocation = shouldDisplayUsersLocation
         let initialLocation = CLLocationCoordinate2D(latitude: 41.251938,longitude: -72.994110)
         map.setCenterCoordinate(initialLocation, animated: true)
         let regionRadius: CLLocationDistance = 1000
@@ -40,16 +42,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func addOverlay(){
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
-        for i in 0 ..< projectsToBeDisplayed.count {
-            let lat = projectsToBeDisplayed[i].location.coordinate.latitude
-            let long = projectsToBeDisplayed[i].location.coordinate.longitude
-            let loc : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            let annotation = MapPointAnnotation.init()
-            annotation.coordinate = loc
-            annotation.title = projectsToBeDisplayed[i].title
-            annotation.project = projectsToBeDisplayed[i]
-            //annotation.subtitle = "subtitle"
-            self.map.addAnnotation(annotation)
+        for projectList in displayData {
+            for project in projectList.projects {
+                let lat = project.location.coordinate.latitude
+                let long = project.location.coordinate.longitude
+                let loc : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                let annotation = MapPointAnnotation.init()
+                annotation.coordinate = loc
+                annotation.color = projectList.color
+                annotation.title = project.title
+                annotation.project = project
+                self.map.addAnnotation(annotation)
+            }
         }
     }
     
@@ -80,10 +84,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //return nil so map view draws "blue dot" for standard user location
             return nil
         } else if annotation is MapPointAnnotation {
+            let color = (annotation as! MapPointAnnotation).color
+            //let highlighted = mapPointAnnotation.project === highlightedProject
             var pinView = map.dequeueReusableAnnotationViewWithIdentifier(self.reuseId) as? MKPinAnnotationView
             if pinView == nil {
+                //if highLightedProjects?.contains(pinView.pr)
                 pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: self.reuseId)
-                pinView!.pinTintColor = MKPinAnnotationView.purplePinColor()
+                pinView!.pinTintColor = color
                 pinView!.canShowCallout = true
                 pinView!.rightCalloutAccessoryView = UIButton.init(type: .DetailDisclosure)
             }

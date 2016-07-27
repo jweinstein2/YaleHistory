@@ -147,8 +147,8 @@ class ScavengerHuntViewController: MyViewController {
         // 1
         let request: MKDirectionsRequest = MKDirectionsRequest()
         
-        request.source =
-        request.destination = currProj.mapItem
+        //request.source =
+        //request.destination = currProj.mapItem
         // 2
         request.requestsAlternateRoutes = true
         // 3
