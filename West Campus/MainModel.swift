@@ -12,7 +12,7 @@ import CoreLocation
 class MainModel : NSObject, NSURLConnectionDelegate{
     static var data = NSMutableData()
     static var jsonData = NSArray()
-    static var projects : ProjectData!
+    static var projects = ProjectData()
     static var currentProject : Int!
     static var scavengerHuntAvailable: Bool!
     static var scavengerHuntIsSetUp: Bool!
@@ -32,7 +32,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         if json.count == 0{
             NSLog("Retrieving NSUserDefaults")
             //NSLog(String(jsonData))
-            projects = ProjectData(inputArray: jsonData)
+            projects.add(jsonData)
             prefs.synchronize()
             //Previously saved defaults are availible
             
@@ -45,7 +45,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     }
     
     class func downloadData(){
-        projects = ProjectData(inputArray: jsonData)
+        projects.add(jsonData)
         
         if projects.projectData.count == 0 {        //set availability of scavenger hunt
             scavengerHuntAvailable = false

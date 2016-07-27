@@ -40,4 +40,20 @@ class LocationUtil : NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         NSLog("Location Manager Failed" )
     }
+    
+    static func isLocationAvailable() -> Bool {
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .NotDetermined, .Restricted, .Denied:
+                //print("No access")
+                return false
+            case .AuthorizedAlways, .AuthorizedWhenInUse:
+                //print("Access")
+                return true
+            }
+        } else {
+            //print("Location services are not enabled")
+            return false
+        }
+    }
 }

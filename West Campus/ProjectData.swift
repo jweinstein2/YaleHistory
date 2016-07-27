@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class ProjectData: NSObject {
-    final let thresholdDistance = 1000.0 //How close before a project shows up on the home screen
+    final let thresholdDistance = 50.0 //How close before a project shows up on the home screen
     var projectData = [Project]()
     
     var nearestProject : Project? {
@@ -19,6 +19,7 @@ class ProjectData: NSObject {
                 NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.onNearbyProject, object: nil)
             }
             if nearestProject?.distanceToUser < thresholdDistance {
+                NSLog("New Nearest Project")
                 NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.onNearbyProject, object: nearestProject)
             }
         }
@@ -27,9 +28,7 @@ class ProjectData: NSObject {
     override init() {
     }
     
-    init(let inputArray: NSArray){
-        super.init()
-        
+    func add(let inputArray: NSArray){
         //NSLog(String(inputArray[0] as! NSDictionary)) //This shows that the input array is filled correctly (This just prints out the data for the first project)
         
         if inputArray != "" {
@@ -82,6 +81,8 @@ class ProjectData: NSObject {
     }
     
     func onLocUpdate(notification: NSNotification){
+        
+        print("updating location")
         //Take Action on Notification
         let userLoc = notification.object as! CLLocation
         
@@ -90,7 +91,7 @@ class ProjectData: NSObject {
         for project in projectData {
             let distance = project.location.distanceFromLocation(userLoc)
             project.distanceToUser = distance
-            if distance < nearProj?.distanceToUser {
+            if distance < nearProj?.distanceToUser || nearProj == nil {
                 nearProj = project
             }
         }
