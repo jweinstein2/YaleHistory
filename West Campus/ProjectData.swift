@@ -15,6 +15,7 @@ class ProjectData: NSObject {
     
     var nearestProject : Project? {
         didSet {
+            NSLog("DID SET")
             if nearestProject == nil {
                 NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.onNearbyProject, object: nil)
             }

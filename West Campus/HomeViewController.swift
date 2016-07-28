@@ -11,6 +11,7 @@ import Foundation
 import CoreLocation
 
 class ViewController: MyViewController {
+    @IBOutlet weak var notificationCenterConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var scavengerHunt: UIButton!
     @IBOutlet weak var projectInformation: UIButton!
@@ -104,9 +105,10 @@ class ViewController: MyViewController {
             self.notificationButton.setTitle(buttonText, forState: .Normal)
             
             
-            //self.topSpacing.constant = -42
-            self.bottomNotificationView.hidden = false
+            self.view.layoutIfNeeded()
             UIView.animateWithDuration(0.5) {
+                self.notificationCenterConstraint.constant = 0
+                self.bottomNotificationView.hidden = false
                 self.view.layoutIfNeeded()
             }
         }
@@ -115,14 +117,14 @@ class ViewController: MyViewController {
     private func hideNotification(completion: (() -> ())? ) {
         //moves the notification off the screen and then sets it to hidden
         
-        if self.bottomNotificationView.hidden == true { completion?() }
+        if self.bottomNotificationView.hidden == true { completion?(); return }
         
-        
-        //self.topSpacing.constant = -42
+        self.view.layoutIfNeeded()
+        self.notificationCenterConstraint.constant = 300
+        self.bottomNotificationView.hidden = true
         UIView.animateWithDuration(0.5) {
             self.view.layoutIfNeeded()
         }
-        self.bottomNotificationView.hidden = true
         completion?()
     }
 }
