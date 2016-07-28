@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class SHWelcomeViewController: MyViewController {
     
@@ -94,6 +95,8 @@ class SHWelcomeViewController: MyViewController {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
             presentViewController(vc, animated: false, completion: nil)
         }
+        
+        calculateDirections()
     }
     
     func setStage(stageIs0: Bool){
@@ -127,6 +130,51 @@ class SHWelcomeViewController: MyViewController {
         timeEstimate.text = String(format: "Time Estimate: %d min", projectCount*5)
         
         return projectCount
+    }
+    
+    func calculateDirections() {
+        
+        for i in 0...MainModel.hunt.projects.projectData.count-1 {
+            
+        
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        
+            if i == 0 {
+
+          //       request.source = MKMapItem(placemark: MKPlacemark(coordinate: USER LOCATION, addressDictionary: nil))
+            }
+            else {
+                request.source = MKMapItem(placemark: MKPlacemark(coordinate: MainModel.hunt.projects.projectData[i-1].location.coordinate, addressDictionary: nil))
+            }
+        request.destination = MainModel.hunt.projects.projectData[i].mapItem
+        request.requestsAlternateRoutes = false
+        request.transportType = .Walking
+        
+        let directions = MKDirections(request: request)
+        directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in
+            if let routeResponse = response?.routes {
+                let quickestRouteForSegment: MKRoute =
+                    routeResponse.sort({$0.expectedTravelTime <
+                        $1.expectedTravelTime})[0]
+                
+                if i == 0 {
+                    MainModel.hunt.routes = [quickestRouteForSegment]
+                    MainModel.hunt.timeEstimate = quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                }
+                else {
+                MainModel.hunt.routes.append(quickestRouteForSegment)
+                MainModel.hunt.timeEstimate = MainModel.hunt.timeEstimate + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                }
+                
+            } else if let _ = error {
+                let alert = UIAlertController(title: nil, message: "Directions not available.", preferredStyle: .Alert)
+                let okButton = UIAlertAction(title: "OK", style: .Cancel) { (alert) -> Void in self.navigationController?.popViewControllerAnimated(true)
+                }
+                alert.addAction(okButton)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        })
+        }
     }
 
 }

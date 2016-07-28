@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class ScavengerHunt: NSObject {
     var projects: ProjectData!
     var progress: Int!
+    var routes: [MKRoute]!
+    var timeEstimate: NSTimeInterval!
     var transition: Bool!
     
     override init(){

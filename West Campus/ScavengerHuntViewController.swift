@@ -64,9 +64,7 @@ class ScavengerHuntViewController: MyViewController {
             MainModel.hunt.progress = MainModel.currentProject
             
             currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]  //update currProj
-            
-            calculateSegmentDirections()
-            
+                      
             if MainModel.hunt.progress == 0 {
                 previousButton.hidden = true
                 previousLabel.hidden = true
@@ -143,27 +141,7 @@ class ScavengerHuntViewController: MyViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func calculateSegmentDirections() {
-        // 1
-        let request: MKDirectionsRequest = MKDirectionsRequest()
-        
-        //request.source =
-        //request.destination = currProj.mapItem
-        // 2
-        request.requestsAlternateRoutes = true
-        // 3
-        request.transportType = .Automobile
-        // 4
-        let directions = MKDirections(request: request)
-        directions.calculateDirectionsWithCompletionHandler ({
-            (response: MKDirectionsResponse?, error: NSError?) in
-            if let routeResponse = response?.routes {
-                
-            } else if let _ = error {
-                
-            }
-        })
-    }
+    
 }
 
 
