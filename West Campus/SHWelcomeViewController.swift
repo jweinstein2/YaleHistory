@@ -50,6 +50,7 @@ class SHWelcomeViewController: MyViewController {
         projectCountSlider.setValue(14.0, animated: false)
         setStage(true)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
         
         updateProjCount()
     }
@@ -132,6 +133,8 @@ class SHWelcomeViewController: MyViewController {
         return projectCount
     }
     
+    
+    //calculates walking directions for all of the routes in the tour
     func calculateDirections() {
         
         for i in 0...MainModel.hunt.projects.projectData.count-1 {
@@ -144,10 +147,10 @@ class SHWelcomeViewController: MyViewController {
           //       request.source = MKMapItem(placemark: MKPlacemark(coordinate: USER LOCATION, addressDictionary: nil))
             }
             else {
-                request.source = MKMapItem(placemark: MKPlacemark(coordinate: MainModel.hunt.projects.projectData[i-1].location.coordinate, addressDictionary: nil))
+                request.source = MainModel.hunt.projects.projectData[i-1].mapItem
             }
         request.destination = MainModel.hunt.projects.projectData[i].mapItem
-        request.requestsAlternateRoutes = false
+        request.requestsAlternateRoutes = true
         request.transportType = .Walking
         
         let directions = MKDirections(request: request)

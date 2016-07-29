@@ -57,6 +57,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func addRoutes(){
+        for route in MainModel.hunt.routes {
+            mapView(map, rendererForOverlay: route.polyline)
+        }
+    }
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolygon {
             //These are the settings for our outer border

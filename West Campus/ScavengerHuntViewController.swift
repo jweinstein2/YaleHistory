@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import Foundation
 import MapKit
 import CoreLocation
 
 class ScavengerHuntViewController: MyViewController {
 
+    var mapShown: Bool!
     var currProj: Project!
     let regionRadius : Double! = 15.0
+    var projectList : [Project]!
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     //@IBOutlet weak var locationLabel: UILabel! //for testing purposes
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var projectTitle: UILabel!
+    @IBOutlet weak var mapImageButton: UIButton!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
+    @IBOutlet weak var map: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var huntProgress: UILabel!
@@ -30,16 +35,45 @@ class ScavengerHuntViewController: MyViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var previousLabel: UILabel!
 
+    @IBAction func mapImageTogglePressed(sender: AnyObject) {
+        if mapShown==true {
+            mapShown = false
+            map.hidden = true
+            imageView.hidden = false
+            mapImageButton.setBackgroundImage(UIImage(named: "image_light"), forState: UIControlState.Normal)
+        }else{
+            mapShown = true
+            map.hidden = true
+            imageView.hidden = false
+            mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
+        }
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MainModel.currentProject = MainModel.hunt.progress
-        currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]
+        projectList = MainModel.hunt.projects.projectData
+        currProj = projectList[MainModel.currentProject]
         
         Header.text = "You are looking for"
         clueLabel.text = "Clue: " + currProj.clue
         projectTitle.text = currProj.title
         imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+        vc.displayData = [(MKPinAnnotationView.redPinColor(), MainModel.hunt.projects.projectData)]
+        vc.shouldDisplayUsersLocation = true
+        map.addSubview(vc.view)
+        self.addChildViewController(vc)
+        map.layoutIfNeeded()
+        vc.view.frame = map.bounds
+        imageView.hidden = true
+        mapShown = true
+        
+        
         
         progressBar.setProgress(Float(MainModel.currentProject)/Float(MainModel.hunt.projects.projectData.count), animated: false)
         
