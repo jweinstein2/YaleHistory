@@ -13,9 +13,11 @@ import CoreLocation
 
 class ScavengerHuntViewController: MyViewController {
 
-    var mapShown: Bool!
+    var storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
+    lazy var vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+    var mapShown = false
     var currProj: Project!
-    let regionRadius : Double! = 15.0
+    let regionRadius = 15.0
     var projectList : [Project]!
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
@@ -62,8 +64,6 @@ class ScavengerHuntViewController: MyViewController {
         projectTitle.text = currProj.title
         imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         vc.displayData = [(MKPinAnnotationView.redPinColor(), MainModel.hunt.projects.projectData)]
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)

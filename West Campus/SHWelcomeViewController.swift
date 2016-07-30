@@ -100,6 +100,34 @@ class SHWelcomeViewController: MyViewController {
         calculateDirections()
     }
     
+    func onLocUpdate(notification: NSNotification){
+        
+        print("updating location")
+        //Take Action on Notification
+        let userLoc = notification.object as! CLLocation
+        
+        var nearProj = projectData.first
+        
+        for project in projectData {
+            let distance = project.location.distanceFromLocation(userLoc)
+            project.distanceToUser = distance
+            if distance < nearProj?.distanceToUser || nearProj == nil {
+                nearProj = project
+            }
+        }
+        
+        if nearProj == nil { self.nearestProject = nil }
+        
+        if nearProj!.distanceToUser <= self.thresholdDistance {
+            //if nearProj != self.nearestProject { //TODO: Test whether project is replaced with itself
+            self.nearestProject = nearProj
+            //}
+        } else {
+            self.nearestProject = nil
+        }
+    }
+
+    
     func setStage(stageIs0: Bool){
         tag1.hidden = stageIs0
         tag2.hidden = stageIs0
