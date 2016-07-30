@@ -20,6 +20,8 @@ class ScavengerHunt: NSObject {
         NSLog("Error: please use custom initializer")
     }
 
+
+    
     init(allProjects: ProjectData, projectCount: Int){
         super.init()
         
@@ -41,19 +43,21 @@ class ScavengerHunt: NSObject {
             }
         }
         
+        closeId -= 1                    //avoids off by one error below
         let projectCountMinus = projectCount - 1 //avoids off by one error below
         
-        for project in allProjects.projectData {
-            let projectNum : Int = Int(project.projectId)!
-            let upperBound : Int = (closeId + projectCountMinus) % allProjects.projectData.count
+        for index in closeId...(closeId + projectCountMinus) {
+            let i = index % allProjects.projectData.count
+            
+            let upperBound = (closeId + projectCountMinus) % allProjects.projectData.count
             
             if (closeId + projectCountMinus) / allProjects.projectData.count < 1 {
-                if projectNum <= upperBound && projectNum >= closeId {
-                    projects.projectData.append(project)
+                if i <= upperBound && i >= closeId {
+                    projects.projectData.append(MainModel.projects.projectData[i])
                 }
             }
-            else if projectNum >= closeId || projectNum <= upperBound {
-                projects.projectData.append(project)
+            else if i >= closeId || i <= upperBound {
+                projects.projectData.append(MainModel.projects.projectData[i])
             }
         }
         

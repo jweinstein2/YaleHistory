@@ -12,7 +12,7 @@ import CoreLocation
 
 class LocationUtil : NSObject, CLLocationManagerDelegate {
     static let sharedInstance = LocationUtil()
-    
+    static var lastLocation : CLLocation?
     let manager = CLLocationManager()
     
     func setup (){
@@ -32,6 +32,7 @@ class LocationUtil : NSObject, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         let currentLoc = locations.last!
+        LocationUtil.lastLocation = currentLoc
         print("did update location to \(String(currentLoc))")
         
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.locationUpdate, object: currentLoc)
