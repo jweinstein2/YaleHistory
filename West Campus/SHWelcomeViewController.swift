@@ -69,7 +69,7 @@ class SHWelcomeViewController: MyViewController {
         }
         else {
             //Set up scavenger hunt and transition appropriately
-            MainModel.hunt = ScavengerHunt(allProjects: MainModel.projects, projectCount: 5)
+            MainModel.hunt = ScavengerHunt(destinations: MainModel.projects.projectData, projectCount: 5)
             
             
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
@@ -85,7 +85,7 @@ class SHWelcomeViewController: MyViewController {
     //calculate directions for the entire hunt
     func calculateDirections(hunt: ScavengerHunt) -> ScavengerHunt {
         
-        for i in 0...hunt.projects.projectData.count-1 {
+        for i in 0...hunt.projects.count-1 {
             
             
             let request: MKDirectionsRequest = MKDirectionsRequest()
@@ -94,9 +94,9 @@ class SHWelcomeViewController: MyViewController {
                 request.source = MKMapItem(placemark: MKPlacemark(coordinate: LocationUtil.lastLocation!.coordinate, addressDictionary: nil))
             }
             else {
-                request.source = hunt.projects.projectData[i-1].mapItem
+                request.source = hunt.projects[i-1].mapItem
             }
-            request.destination = hunt.projects.projectData[i].mapItem
+            request.destination = hunt.projects[i].mapItem
             request.requestsAlternateRoutes = true
             request.transportType = .Walking
             

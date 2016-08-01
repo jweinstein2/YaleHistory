@@ -55,9 +55,8 @@ class ScavengerHuntViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MainModel.currentProject = scavengerHunt.progress
-        projectList = scavengerHunt.projects.projectData
-        currProj = projectList[MainModel.currentProject]
+        projectList = scavengerHunt.projects
+        currProj = scavengerHunt.currentProject
         
         Header.text = "You are looking for"
         clueLabel.text = "Clue: " + currProj.clue
@@ -66,7 +65,7 @@ class ScavengerHuntViewController: MyViewController {
         
         storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), scavengerHunt.projects.projectData)]
+        vc.displayData = [(MKPinAnnotationView.redPinColor(), scavengerHunt.projects)]
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
         self.addChildViewController(vc)
@@ -77,7 +76,7 @@ class ScavengerHuntViewController: MyViewController {
         
         
         
-        progressBar.setProgress(Float(MainModel.currentProject)/Float(scavengerHunt.projects.projectData.count), animated: false)
+        progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
         
         //hide previous button if necessary
         if scavengerHunt.progress == 0 {
@@ -94,12 +93,11 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (scavengerHunt.transition == true && (MainModel.currentProject + 1) < scavengerHunt.projects.projectData.count){
+        if (scavengerHunt.transition == true && (scavengerHunt.progress + 1) < scavengerHunt.projects.count){
+
+            scavengerHunt.progress += 1
             
-            MainModel.currentProject = MainModel.currentProject + 1 //go to next project
-            scavengerHunt.progress = MainModel.currentProject
-            
-            currProj = scavengerHunt.projects.projectData[MainModel.currentProject]  //update currProj
+            currProj = scavengerHunt.currentProject  //update currProj
                       
             if scavengerHunt.progress == 0 {
                 previousButton.hidden = true
@@ -119,7 +117,7 @@ class ScavengerHuntViewController: MyViewController {
             imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
             
             //update progress bar
-            progressBar.setProgress(Float(MainModel.currentProject)/Float(scavengerHunt.projects.projectData.count), animated: false)
+            progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
             
         }
             
@@ -151,7 +149,8 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
-        MainModel.currentProject = MainModel.currentProject - 2
+        scavengerHunt.progress = scavengerHunt.progress - 2
+            //Tom - why does this decrease by two and not one? If im confused just delete this comment
 
         scavengerHunt.transition = true
         viewWillAppear(false)

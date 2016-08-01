@@ -10,29 +10,25 @@ import UIKit
 import MapKit
 
 class ScavengerHunt: NSObject {
-    var projects: ProjectData!
-    var progress = 0
+    var projects: [Project] = []
+    var progress = 0 //Represents the index of the currentProject
     var routes: [MKRoute]!
     var timeEstimate: NSTimeInterval!
     var transition: Bool!
     
-    override init(){
-        NSLog("Error: please use custom initializer")
+    var currentProject : Project {
+        return projects[progress]
     }
 
-
-    
-    init(allProjects: ProjectData, projectCount: Int){
+    //Initializer adds the nearest project and (n-1) projects in the loop
+    //TODO: This needs testing :)
+    init(destinations: [Project], projectCount: Int){
         super.init()
-        
-        projects = ProjectData()
         
         //find closest project, start from there
         var minDist : Double = -1
         var closeId : Int = -1
-        for project in allProjects.projectData {
-            
-            
+        for project in destinations {
             if project.projectId == "1" {
                 minDist = project.distanceToUser!
                 closeId = Int(project.projectId)!
@@ -48,42 +44,21 @@ class ScavengerHunt: NSObject {
         let projectCountMinus = projectCount - 1 //avoids off by one error below
         
         for index in closeId...(closeId + projectCountMinus) {
-            let i = index % allProjects.projectData.count
+            let i = index % destinations.count
             
-            let upperBound = (closeId + projectCountMinus) % allProjects.projectData.count
+            let upperBound = (closeId + projectCountMinus) % destinations.count
             
-            if (closeId + projectCountMinus) / allProjects.projectData.count < 1 {
+            if (closeId + projectCountMinus) / destinations.count < 1 {
                 if i <= upperBound && i >= closeId {
-                    projects.projectData.append(MainModel.projects.projectData[i])
+                    projects.append(destinations[i])
                 }
             }
             else if i >= closeId || i <= upperBound {
-                projects.projectData.append(MainModel.projects.projectData[i])
+                projects.append(destinations[i])
             }
         }
-        
-        
-        /* No need for random functionality
-        if random {
-            for var index = projects.projectData.count - 1; index > 0; index -= 1
-            {
-                // Random int from 0 to index-1
-                let j = Int(arc4random_uniform(UInt32(index-1)))
-                
-                //swap current project and a random one
-                swap(&projects.projectData[index], &projects.projectData[j])
-            }
-            
-            //NOTE: code for this shuffle was taken from http://iosdevelopertips.com/swift-code/swift-shuffle-array-type.html
-        }
-        */
-        
         
         progress = 0
         transition = false
-    }
-    
-    init (projects: [Project]){
-        
     }
 }

@@ -24,7 +24,6 @@ extension CLLocation {
         return Int(sqrt(x*x + y*y))
     }
     */
-    
 }
 
 extension Double {

@@ -13,7 +13,6 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     static var data = NSMutableData()
     static var jsonData = NSArray()
     static var projects = ProjectData()
-    static var currentProject : Int!
     static var scavengerHuntAvailable: Bool!
     //static var scavengerHuntIsSetUp: Bool! use if hunt == nil to see if its set up or not
     static var hunt: ScavengerHunt?
@@ -21,9 +20,12 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     static let key = "savedjsonarray"
 
     
+    //I moved this to the ScavengerHunt object
+    /*
     class func getCurrentProject() -> Project{
         return projects.projectData[currentProject]
     }
+    */
     
     
     //This method is called when the application fails to connect to the database
@@ -85,8 +87,6 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     }
     
     class func connectionDidFinishLoading(connection: NSURLConnection!) {
-        currentProject = 0;
-        
         var failed : Bool = false
         // throwing an error on the line below (can't figure out where the error message is)
         do{

@@ -21,7 +21,7 @@ class ArrivalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currProj = scavengerHunt.projects.projectData[MainModel.currentProject]
+        currProj = scavengerHunt.currentProject
         
         let imageView = UIImageView(frame: self.view.frame); // set as you want
         let image = UIImage(named: "success");
