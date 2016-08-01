@@ -33,13 +33,13 @@ class ViewController: MyViewController {
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
-        if MainModel.scavengerHuntIsSetUp == true {
+        if MainModel.hunt != nil {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
-            presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("sHWelcomeViewController") as! SHWelcomeViewController
-            presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -121,10 +121,10 @@ class ViewController: MyViewController {
         
         self.view.layoutIfNeeded()
         self.notificationCenterConstraint.constant = 300
-        self.bottomNotificationView.hidden = true
         UIView.animateWithDuration(0.5) {
             self.view.layoutIfNeeded()
         }
+        self.bottomNotificationView.hidden = true
         completion?()
     }
 }

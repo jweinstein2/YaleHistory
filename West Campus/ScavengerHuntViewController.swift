@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 
 class ScavengerHuntViewController: MyViewController {
-
+    let scavengerHunt = MainModel.hunt!
     var mapShown: Bool!
     var currProj: Project!
     let regionRadius : Double! = 15.0
@@ -53,8 +53,8 @@ class ScavengerHuntViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MainModel.currentProject = MainModel.hunt.progress
-        projectList = MainModel.hunt.projects.projectData
+        MainModel.currentProject = scavengerHunt.progress
+        projectList = scavengerHunt.projects.projectData
         currProj = projectList[MainModel.currentProject]
         
         Header.text = "You are looking for"
@@ -64,7 +64,7 @@ class ScavengerHuntViewController: MyViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), MainModel.hunt.projects.projectData)]
+        vc.displayData = [(MKPinAnnotationView.redPinColor(), scavengerHunt.projects.projectData)]
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
         self.addChildViewController(vc)
@@ -75,10 +75,10 @@ class ScavengerHuntViewController: MyViewController {
         
         
         
-        progressBar.setProgress(Float(MainModel.currentProject)/Float(MainModel.hunt.projects.projectData.count), animated: false)
+        progressBar.setProgress(Float(MainModel.currentProject)/Float(scavengerHunt.projects.projectData.count), animated: false)
         
         //hide previous button if necessary
-        if MainModel.hunt.progress == 0 {
+        if scavengerHunt.progress == 0 {
             previousButton.hidden = true
             previousLabel.hidden = true
         }
@@ -92,14 +92,14 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (MainModel.hunt.transition == true && (MainModel.currentProject + 1) < MainModel.hunt.projects.projectData.count){
+        if (scavengerHunt.transition == true && (MainModel.currentProject + 1) < scavengerHunt.projects.projectData.count){
             
             MainModel.currentProject = MainModel.currentProject + 1 //go to next project
-            MainModel.hunt.progress = MainModel.currentProject
+            scavengerHunt.progress = MainModel.currentProject
             
-            currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]  //update currProj
+            currProj = scavengerHunt.projects.projectData[MainModel.currentProject]  //update currProj
                       
-            if MainModel.hunt.progress == 0 {
+            if scavengerHunt.progress == 0 {
                 previousButton.hidden = true
                 previousLabel.hidden = true
             }
@@ -117,15 +117,15 @@ class ScavengerHuntViewController: MyViewController {
             imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
             
             //update progress bar
-            progressBar.setProgress(Float(MainModel.currentProject)/Float(MainModel.hunt.projects.projectData.count), animated: false)
+            progressBar.setProgress(Float(MainModel.currentProject)/Float(scavengerHunt.projects.projectData.count), animated: false)
             
         }
             
-        else if (MainModel.hunt.transition == true) {
-            
+        else if (scavengerHunt.transition == true) {
             progressBar.setProgress(1.0, animated: false)
-            MainModel.hunt.progress = -1
-            MainModel.scavengerHuntIsSetUp = false
+            scavengerHunt.progress = -1
+           
+            MainModel.hunt = nil
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the hunt!"
@@ -137,9 +137,6 @@ class ScavengerHuntViewController: MyViewController {
             previousLabel.hidden = true
             imageView.image = ImageUtil.imageFromURL("http://www.cwu.edu/~jonase/goodjob.jpg")
         }
-        
-        MainModel.hunt.transition = false
-
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -147,14 +144,14 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
-        MainModel.hunt.transition = true
+        scavengerHunt.transition = true
         viewWillAppear(false)
     }
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
         MainModel.currentProject = MainModel.currentProject - 2
 
-        MainModel.hunt.transition = true
+        scavengerHunt.transition = true
         viewWillAppear(false)
     }
     
@@ -162,7 +159,7 @@ class ScavengerHuntViewController: MyViewController {
         //Take Action on Notification
         let userLoc = notification.object as! CLLocation
         let distance = currProj.location.distanceFromLocation(userLoc)
-        self.distanceLabel.text = distance.toString()
+        self.distanceLabel.text = distance.toDistanceString()
         
         if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController

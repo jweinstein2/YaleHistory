@@ -27,12 +27,12 @@ extension CLLocation {
     
 }
 
-extension CLLocationDistance {
-    func toString() -> String {
+extension Double {
+    func toDistanceString() -> String {
         if self <= 1000 {
-            return "\(self) meters"
+            return String(format: "%.1d meters", self)
         } else {
-            return "\(self / 1000) km"
+            return String(format: "%.1d km", self / 1000)
         }
     }
 }

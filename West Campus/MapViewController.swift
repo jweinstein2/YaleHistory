@@ -12,6 +12,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     
+    var routes : [MKRoute] = []
     var displayData = [(color: UIColor, projects: [Project])]()
     var shouldDisplayUsersLocation = false
 
@@ -24,6 +25,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func setUpMap(){
         self.addOverlay()
+        self.addRoutes()
         
         map.mapType = MKMapType.Hybrid
 
@@ -40,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         centerMapOnLocation(initialLocation)
     }
     
-    func addOverlay(){
+    private func addOverlay(){
         //iterate through the projectsToBeDisplayed array list, [i].longitude, latitude
         for projectList in displayData {
             for project in projectList.projects {
@@ -57,8 +59,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func addRoutes(){
-        for route in MainModel.hunt.routes {
+    private func addRoutes(){
+        for route in routes {
             mapView(map, rendererForOverlay: route.polyline)
         }
     }

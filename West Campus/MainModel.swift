@@ -15,8 +15,8 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     static var projects = ProjectData()
     static var currentProject : Int!
     static var scavengerHuntAvailable: Bool!
-    static var scavengerHuntIsSetUp: Bool!
-    static var hunt: ScavengerHunt!
+    //static var scavengerHuntIsSetUp: Bool! use if hunt == nil to see if its set up or not
+    static var hunt: ScavengerHunt?
     static let prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
     static let key = "savedjsonarray"
 
@@ -85,7 +85,6 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     }
     
     class func connectionDidFinishLoading(connection: NSURLConnection!) {
-        scavengerHuntIsSetUp = false
         currentProject = 0;
         
         var failed : Bool = false

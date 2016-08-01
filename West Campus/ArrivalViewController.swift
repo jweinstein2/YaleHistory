@@ -9,7 +9,8 @@
 import UIKit
 
 class ArrivalViewController: UIViewController {
-
+    let scavengerHunt = MainModel.hunt!
+    
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var projectTitle: UILabel!
@@ -20,7 +21,7 @@ class ArrivalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currProj = MainModel.hunt.projects.projectData[MainModel.currentProject]
+        currProj = scavengerHunt.projects.projectData[MainModel.currentProject]
         
         let imageView = UIImageView(frame: self.view.frame); // set as you want
         let image = UIImage(named: "success");
@@ -36,7 +37,7 @@ class ArrivalViewController: UIViewController {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
-        MainModel.hunt.transition = true
+        scavengerHunt.transition = true
         self.dismissViewControllerAnimated(false, completion: nil);
         
     }

@@ -51,11 +51,17 @@ class ProjectListViewController: MyViewController {
         map.layoutIfNeeded()
         vc.view.frame = map.bounds
         map.hidden = true
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: GlobalNotificationKeys.locationUpdate, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh() {
+        self.table.reloadData()
     }
 }
 
@@ -75,7 +81,11 @@ extension ProjectListViewController {
         let proj = projectList[indexPath.row]
         cell.titleLabel.text = proj.title
         cell.locationEnabled = self.locationEnabled
-        cell.distanceLabel.text = String(proj.radius)
+        if let dist = proj.distanceToUser {
+            cell.distanceLabel.text = dist.toDistanceString()
+        } else {
+            cell.distanceLabel.text = ""
+        }
         cell.backgroundImage.image = ImageUtil.imageFromURL(proj.imageLink)
         return cell
     }

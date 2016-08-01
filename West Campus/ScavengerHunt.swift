@@ -11,7 +11,7 @@ import MapKit
 
 class ScavengerHunt: NSObject {
     var projects: ProjectData!
-    var progress: Int!
+    var progress = 0
     var routes: [MKRoute]!
     var timeEstimate: NSTimeInterval!
     var transition: Bool!
@@ -36,7 +36,8 @@ class ScavengerHunt: NSObject {
                 closeId = Int(project.projectId)!
             }
             else if project.distanceToUser < minDist {
-                minDist = project.distanceToUser!
+                minDist = project.distanceToUser! //This could be nil and crash
+                //if LocationUtil.lastLocation == nil then we havent gotten location data yeete
                 closeId = Int(project.projectId)!
             }
         }
@@ -76,5 +77,9 @@ class ScavengerHunt: NSObject {
         
         progress = 0
         transition = false
+    }
+    
+    init (projects: [Project]){
+        
     }
 }
