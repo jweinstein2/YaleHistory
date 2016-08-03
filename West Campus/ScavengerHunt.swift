@@ -34,7 +34,6 @@ class ScavengerHunt: NSObject {
     init(destinations: [Project]){
         super.init()
         
-        NSLog("THIS FUCKER CALLED")
         projects = destinations
         progress = 0
         transition = false

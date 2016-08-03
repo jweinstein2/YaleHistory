@@ -13,9 +13,8 @@ class ProjectData: NSObject {
     final let thresholdDistance = 50.0 //How close before a project shows up on the home screen
     var projectData = [Project]()
     
-    var nearestProject : Project? {
+    var nearestProject : Project? { //Nearest project within the threshold Distance
         didSet {
-            NSLog("DID SET")
             if nearestProject == nil {
                 NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.onNearbyProject, object: nil)
             }
@@ -109,7 +108,7 @@ class ProjectData: NSObject {
     }
     
     func nearestProjects(num n : Int) -> [Project]?{
-        if nearestProject == nil {
+        if LocationUtil.lastLocation == nil {
             return nil
         }
         
