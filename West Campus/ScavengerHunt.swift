@@ -9,17 +9,16 @@
 import UIKit
 import MapKit
 
+
+
 class ScavengerHunt: NSObject {
-    var projects: [Project] = []{
-        didSet{
-            NSLog("updating projects: \(projects.count)")
-        }
-    }
+    var projects: [Project] = []
     var progress = 0 //Represents the index of the currentProject
     var routes = [MKRoute]()
     var transition = false
     var timeEstimate: NSTimeInterval? {
         didSet{
+            NSLog("DID SET TIME ESTIMATE")
             //Or do delegate method
             //Send out notification that timeEstimate for a project has been updated
         }
@@ -37,12 +36,13 @@ class ScavengerHunt: NSObject {
         projects = destinations
         progress = 0
         transition = false
-        //calculateDirections() //This is currently broken
+        calculateDirections() //This is currently broken
     }
     
     
     //calculate directions for the entire hunt
     func calculateDirections() -> NSTimeInterval? {
+        NSLog("CALCULATED DIRECTIONS")
         for i in 0...projects.count-1 {
             
             
@@ -56,7 +56,7 @@ class ScavengerHunt: NSObject {
             }
             request.destination = projects[i].mapItem
             request.requestsAlternateRoutes = true
-            request.transportType = .Walking
+            request.transportType = .Any
             
             let directions = MKDirections(request: request)
             directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in
@@ -71,12 +71,12 @@ class ScavengerHunt: NSObject {
                     }
                     else {
                         self.routes.append(quickestRouteForSegment)
-                        self.timeEstimate = self.timeEstimate! + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                        self.timeEstimate = (self.timeEstimate ?? 0) + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
                     }
                     
-                } else if let _ = error {
+                } else if let error = error {
                     //If the directions fail to load
-                    NSLog("directions failed to load")
+                    NSLog("Error loading directions : \(error)")
                 }
             })
         }
