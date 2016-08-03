@@ -10,11 +10,20 @@ import UIKit
 import MapKit
 
 class ScavengerHunt: NSObject {
-    var projects: [Project] = []
+    var projects: [Project] = []{
+        didSet{
+            NSLog("updating projects: \(projects.count)")
+        }
+    }
     var progress = 0 //Represents the index of the currentProject
-    var routes: [MKRoute]!
-    var timeEstimate: NSTimeInterval!
-    var transition: Bool!
+    var routes = [MKRoute]()
+    var transition = false
+    var timeEstimate: NSTimeInterval? {
+        didSet{
+            //Or do delegate method
+            //Send out notification that timeEstimate for a project has been updated
+        }
+    }
     
     var currentProject : Project {
         return projects[progress]
@@ -22,43 +31,56 @@ class ScavengerHunt: NSObject {
 
     //Initializer adds the nearest project and (n-1) projects in the loop
     //TODO: This needs testing :)
-    init(destinations: [Project], projectCount: Int){
+    init(destinations: [Project]){
         super.init()
         
-        //find closest project, start from there
-        var minDist : Double = -1
-        var closeId : Int = -1
-        for project in destinations {
-            if project.projectId == "1" {
-                minDist = project.distanceToUser!
-                closeId = Int(project.projectId)!
-            }
-            else if project.distanceToUser < minDist {
-                minDist = project.distanceToUser! //This could be nil and crash
-                //if LocationUtil.lastLocation == nil then we havent gotten location data yeete
-                closeId = Int(project.projectId)!
-            }
-        }
-        
-        closeId -= 1                    //avoids off by one error below
-        let projectCountMinus = projectCount - 1 //avoids off by one error below
-        
-        for index in closeId...(closeId + projectCountMinus) {
-            let i = index % destinations.count
-            
-            let upperBound = (closeId + projectCountMinus) % destinations.count
-            
-            if (closeId + projectCountMinus) / destinations.count < 1 {
-                if i <= upperBound && i >= closeId {
-                    projects.append(destinations[i])
-                }
-            }
-            else if i >= closeId || i <= upperBound {
-                projects.append(destinations[i])
-            }
-        }
-        
+        NSLog("THIS FUCKER CALLED")
+        projects = destinations
         progress = 0
         transition = false
+        //calculateDirections() //This is currently broken
+    }
+    
+    
+    //calculate directions for the entire hunt
+    func calculateDirections() -> NSTimeInterval? {
+        for i in 0...projects.count-1 {
+            
+            
+            let request: MKDirectionsRequest = MKDirectionsRequest()
+            
+            if i == 0 {
+                request.source = MKMapItem(placemark: MKPlacemark(coordinate: LocationUtil.lastLocation!.coordinate, addressDictionary: nil))
+            }
+            else {
+                request.source = projects[i-1].mapItem
+            }
+            request.destination = projects[i].mapItem
+            request.requestsAlternateRoutes = true
+            request.transportType = .Walking
+            
+            let directions = MKDirections(request: request)
+            directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in
+                if let routeResponse = response?.routes {
+                    let quickestRouteForSegment: MKRoute =
+                        routeResponse.sort({$0.expectedTravelTime <
+                            $1.expectedTravelTime})[0]
+                    
+                    if i == 0 {
+                        self.routes = [quickestRouteForSegment]
+                        self.timeEstimate = quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                    }
+                    else {
+                        self.routes.append(quickestRouteForSegment)
+                        self.timeEstimate = self.timeEstimate! + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                    }
+                    
+                } else if let _ = error {
+                    //If the directions fail to load
+                    NSLog("directions failed to load")
+                }
+            })
+        }
+        return timeEstimate
     }
 }

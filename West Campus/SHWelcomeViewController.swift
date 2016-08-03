@@ -10,8 +10,11 @@ import UIKit
 import MapKit
 
 class SHWelcomeViewController: MyViewController {
-    var selectedProjects : [Project] = []
-    var tourData : [(description: String, projectList: [Project])] = [("Take a quick tour of the 5 nearest points of interest", [MainModel.projects.projectData.first!]), ("Embark on a full tour of all 14 colleges and their hidden historical significance", MainModel.projects.projectData)]
+    var currentlySelectedIndex = 0
+    var possibleTours : [(description: String, hunt: ScavengerHunt)] = []
+    var currentHunt : ScavengerHunt {
+        return possibleTours[currentlySelectedIndex].hunt
+    }
     
     let basicTourCount = 5 //Add these two properties to the tourData variable
     let fullTourCount = 14
@@ -19,24 +22,25 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var tourDescription: UILabel!
     @IBOutlet weak var tourOptionSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var destinationTable : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViewForSegment(0)
         
-        //var basicHunt = ScavengerHunt(allProjects: MainModel.projects, projectCount: basicTourCount)
-        //basicHunt = calculateDirections(basicHunt)
+        let shortTourStops = MainModel.projects.nearestProjects(num: 5) ?? []
+        possibleTours.append(("Take a quick tour of the 5 nearest points of interest", ScavengerHunt(destinations: shortTourStops)))
+        let allTourStops = MainModel.projects.nearestProjects(num: MainModel.projects.projectData.count) ?? []
+        possibleTours.append(("Embark on a full tour of all 14 colleges and their hidden historical significance", ScavengerHunt(destinations: allTourStops)))
         
-        //var fullHunt = ScavengerHunt(allProjects: MainModel.projects, projectCount: fullTourCount)
-        //fullHunt = calculateDirections(fullHunt)
-        
-        //Move this initialization into my TourData variable
-        
-        
-        
+        updateViewForSegment(currentlySelectedIndex)
     }
     
     override func viewWillAppear(animated: Bool) {
+        //TODO: We probably want to update the projects for the nearest 5 scavenger hunt
+        
+        
+        // I believe this is deprecated... requires testing
+        
         /*
          if (MainModel.scavengerHuntIsSetUp == true){
          self.dismissViewControllerAnimated(false, completion: nil);
@@ -51,12 +55,13 @@ class SHWelcomeViewController: MyViewController {
     }
     
     @IBAction func onTourTypeChanged(sender: UISegmentedControl) {
-        updateViewForSegment(sender.selectedSegmentIndex)
+        currentlySelectedIndex = sender.selectedSegmentIndex
+        updateViewForSegment(currentlySelectedIndex)
     }
     
     private func updateViewForSegment(n: Int) {
-        tourDescription.text = tourData[n].description
-        selectedProjects = tourData[n].projectList
+        tourDescription.text = possibleTours[n].description
+        destinationTable.reloadData()
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -64,13 +69,12 @@ class SHWelcomeViewController: MyViewController {
     }
     
     @IBAction func nextbuttonPressed(sender: AnyObject) {
-        if (selectedProjects.count == 0) { //if they selected no projects, send error
+        if (currentHunt.projects.count == 0) { //if they selected no projects, send error
             //announcement.text = "Sorry, please select at least one tag to move forward"
         }
         else {
             //Set up scavenger hunt and transition appropriately
-            MainModel.hunt = ScavengerHunt(destinations: MainModel.projects.projectData, projectCount: 5)
-            
+            MainModel.hunt = currentHunt
             
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
             presentViewController(vc, animated: false, completion: nil)
@@ -79,52 +83,19 @@ class SHWelcomeViewController: MyViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //Set up the scavenger hunt object here and then save it to the data model
+    }
+}
+
+extension SHWelcomeViewController : UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("scavengerHuntListCell")!
+        let project = self.currentHunt.projects[indexPath.row]
+        cell.textLabel?.text = project.title
+        cell.detailTextLabel?.text = project.summary
+        return cell
     }
     
-    //calculate directions for the entire hunt
-    func calculateDirections(hunt: ScavengerHunt) -> ScavengerHunt {
-        
-        for i in 0...hunt.projects.count-1 {
-            
-            
-            let request: MKDirectionsRequest = MKDirectionsRequest()
-            
-            if i == 0 {
-                request.source = MKMapItem(placemark: MKPlacemark(coordinate: LocationUtil.lastLocation!.coordinate, addressDictionary: nil))
-            }
-            else {
-                request.source = hunt.projects[i-1].mapItem
-            }
-            request.destination = hunt.projects[i].mapItem
-            request.requestsAlternateRoutes = true
-            request.transportType = .Walking
-            
-            let directions = MKDirections(request: request)
-            directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in
-                if let routeResponse = response?.routes {
-                    let quickestRouteForSegment: MKRoute =
-                        routeResponse.sort({$0.expectedTravelTime <
-                            $1.expectedTravelTime})[0]
-                    
-                    if i == 0 {
-                        hunt.routes = [quickestRouteForSegment]
-                        hunt.timeEstimate = quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
-                    }
-                    else {
-                        hunt.routes.append(quickestRouteForSegment)
-                        hunt.timeEstimate = hunt.timeEstimate + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
-                    }
-                    
-                } else if let _ = error {
-                    let alert = UIAlertController(title: nil, message: "Directions not available.", preferredStyle: .Alert)
-                    let okButton = UIAlertAction(title: "OK", style: .Cancel) { (alert) -> Void in self.navigationController?.popViewControllerAnimated(true)
-                    }
-                    alert.addAction(okButton)
-                    self.presentViewController(alert, animated: true, completion: nil)
-                }
-            })
-        }
-        return hunt
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.currentHunt.projects.count
     }
 }

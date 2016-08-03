@@ -107,4 +107,14 @@ class ProjectData: NSObject {
             self.nearestProject = nil
         }
     }
+    
+    func nearestProjects(num n : Int) -> [Project]?{
+        if nearestProject == nil {
+            return nil
+        }
+        
+        let sortedByDistance = projectData.sort({ $0.distanceToUser > $1.distanceToUser })
+        let firstN = sortedByDistance.prefix(n)
+        return Array(firstN)
+    }
 }
