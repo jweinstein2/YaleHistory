@@ -150,7 +150,6 @@ class ScavengerHuntViewController: MyViewController {
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
         scavengerHunt.progress = scavengerHunt.progress - 2
-            //Tom - why does this decrease by two and not one? If im confused just delete this comment
 
         scavengerHunt.transition = true
         viewWillAppear(false)

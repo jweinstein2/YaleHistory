@@ -13,7 +13,7 @@ class ArrivalViewController: UIViewController {
     
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var announcement: UILabel!
-    @IBOutlet weak var projectTitle: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var MoreInfo: UIButton!
     var currProj: Project!
@@ -30,7 +30,7 @@ class ArrivalViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
         
         announcement.text = "Congratulations! You have reached the site!"
-        projectTitle.text = currProj.title
+        //projectTitle.text = currProj.title
         summaryLabel.text = currProj.summary
     }
     

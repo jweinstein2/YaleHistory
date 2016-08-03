@@ -43,10 +43,13 @@ class ScavengerHunt: NSObject {
     //calculate directions for the entire hunt
     func calculateDirections() -> NSTimeInterval? {
         NSLog("CALCULATED DIRECTIONS")
-        for i in 0...projects.count-1 {
-            
+        
+        for it in 1...projects.count {
+        
             
             let request: MKDirectionsRequest = MKDirectionsRequest()
+            
+            let i = it - 1
             
             if i == 0 {
                 request.source = MKMapItem(placemark: MKPlacemark(coordinate: LocationUtil.lastLocation!.coordinate, addressDictionary: nil))
