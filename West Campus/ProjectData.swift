@@ -45,12 +45,9 @@ class ProjectData: NSObject {
                 let clue = String(jsonElement.objectForKey("clue")as! String)
                 let action = String(jsonElement.objectForKey("action")as! String)
                 let imageLink = String(jsonElement.objectForKey("photo")as! String)
-                /*
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
                     _ = ImageUtil.imageFromURL(imageLink)
                 }
-                */
-                ImageUtil.imageFromURL(imageLink)
                 let radius = String(jsonElement.objectForKey("radius")as! String)
                 let contributors = String(jsonElement.objectForKey("contributors")as! String)
                 
