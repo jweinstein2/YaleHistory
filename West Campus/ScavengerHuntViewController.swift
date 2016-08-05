@@ -140,7 +140,7 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil);
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
@@ -171,8 +171,6 @@ class ScavengerHuntViewController: MyViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
 

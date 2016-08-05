@@ -35,3 +35,14 @@ extension Double {
         }
     }
 }
+
+extension NSTimeInterval {
+    func toString() -> String {
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.currentLocale()
+        formatter.dateFormat = "HH:mm"
+        let string = formatter.stringFromDate(NSDate(timeIntervalSinceReferenceDate: self))
+        return string
+    }
+}
+

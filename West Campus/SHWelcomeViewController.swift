@@ -23,14 +23,19 @@ class SHWelcomeViewController: MyViewController {
     @IBOutlet weak var tourDescription: UILabel!
     @IBOutlet weak var tourOptionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var destinationTable : UITableView!
+    @IBOutlet weak var timeEstimateLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let shortTourStops = MainModel.projects.nearestProjects(num: 5) ?? []
-        possibleTours.append(("Take a quick tour of the 5 nearest points of interest", ScavengerHunt(destinations: shortTourStops)))
-        let allTourStops = MainModel.projects.nearestProjects(num: MainModel.projects.projectData.count) ?? []
-        possibleTours.append(("Embark on a full tour of all 14 colleges and their hidden historical significance", ScavengerHunt(destinations: allTourStops)))
+        
+        
+        let shortScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: 5) ?? [])
+        shortScavenger.delegate = self
+        possibleTours.append(("Take a quick tour of the 5 nearest points of interest", shortScavenger))
+        let fullScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: MainModel.projects.projectData.count) ?? [])
+        fullScavenger.delegate = self
+        possibleTours.append(("Embark on a full tour of all 14 colleges and their hidden historical significance", fullScavenger))
         
         updateViewForSegment(currentlySelectedIndex)
     }
@@ -62,6 +67,7 @@ class SHWelcomeViewController: MyViewController {
     private func updateViewForSegment(n: Int) {
         tourDescription.text = possibleTours[n].description
         destinationTable.reloadData()
+        updateTimeEstimate()
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -83,6 +89,9 @@ class SHWelcomeViewController: MyViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        for scavenger in possibleTours {
+            scavenger.hunt.delegate = nil
+        }
     }
 }
 
@@ -97,5 +106,20 @@ extension SHWelcomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.currentHunt.projects.count
+    }
+}
+
+extension SHWelcomeViewController : ScavengerHuntDelegate {
+    func onTimeEstimateChanged(timeEstimate: NSTimeInterval) {
+        updateTimeEstimate()
+    }
+    
+    private func updateTimeEstimate(){
+        let timeString = currentHunt.timeEstimate?.toString()
+        if timeString == nil {
+            timeEstimateLabel.text = "Estimated Time: calculating..."
+            return
+        }
+        timeEstimateLabel.text = "Estimated Time: \(timeString!)"
     }
 }

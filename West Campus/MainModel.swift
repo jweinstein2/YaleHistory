@@ -14,27 +14,18 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     static var jsonData = NSArray()
     static var projects = ProjectData()
     static var scavengerHuntAvailable: Bool!
-    //static var scavengerHuntIsSetUp: Bool! use if hunt == nil to see if its set up or not
     static var hunt: ScavengerHunt?
     static let prefs : NSUserDefaults = NSUserDefaults.standardUserDefaults()
     static let key = "savedjsonarray"
-
-    
-    //I moved this to the ScavengerHunt object
-    /*
-    class func getCurrentProject() -> Project{
-        return projects.projectData[currentProject]
-    }
-    */
-    
     
     //This method is called when the application fails to connect to the database
     class func loadNSUserDefaults(){
-        let json = prefs.objectForKey(key) as! NSArray
-        if json.count == 0{
+        let json = prefs.objectForKey(key) as? NSArray
+        print(json)
+        if json != nil && json!.count > 0 {
             NSLog("Retrieving NSUserDefaults")
             //NSLog(String(jsonData))
-            projects.add(jsonData)
+            projects.add(json!)
             prefs.synchronize()
             //Previously saved defaults are availible
             

@@ -9,9 +9,13 @@
 import UIKit
 import MapKit
 
+@objc protocol ScavengerHuntDelegate {
+    optional func onTimeEstimateChanged(timeEstimate: NSTimeInterval)
+}
 
 
 class ScavengerHunt: NSObject {
+    var delegate : ScavengerHuntDelegate?
     var projects: [Project] = []
     var progress = 0 //Represents the index of the currentProject
     var routes = [MKRoute]()
@@ -19,8 +23,9 @@ class ScavengerHunt: NSObject {
     var timeEstimate: NSTimeInterval? {
         didSet{
             NSLog("DID SET TIME ESTIMATE")
-            //Or do delegate method
-            //Send out notification that timeEstimate for a project has been updated
+            if timeEstimate != nil {
+                delegate?.onTimeEstimateChanged?(timeEstimate!)
+            }
         }
     }
     
