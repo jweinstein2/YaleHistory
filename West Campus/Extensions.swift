@@ -31,6 +31,9 @@ extension Double {
         if self <= 1000 {
             return String(format: "%.1d meters", self)
         } else {
+            if self > 100000 {
+                return "100+ km"
+            }
             return String(format: "%.1d km", self / 1000)
         }
     }

@@ -21,9 +21,14 @@ class ImageUtil {
         let url = NSURL(string: urlString)
         let data = NSData(contentsOfURL:url!)
         if data != nil {
-            let img = UIImage(data: data!)!
-            cachedImages[urlString] = img
-            return img
+            let img = UIImage(data: data!)
+            
+            if img == nil {
+                return UIImage(named: "west_campus_default")!
+            }
+            
+            cachedImages[urlString] = img!
+            return img!
         } else {
             return UIImage(named: "west_campus_default")!
         }
