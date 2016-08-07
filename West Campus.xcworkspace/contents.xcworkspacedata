@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Stiles.gpx">
+   </FileRef>
+   <FileRef
       location = "group:/Users/jaredweinstein/Yale History/GitRepository/Yale History.xcodeproj">
    </FileRef>
    <FileRef

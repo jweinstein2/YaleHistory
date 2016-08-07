@@ -45,8 +45,8 @@ class ScavengerHuntViewController: MyViewController {
             mapImageButton.setBackgroundImage(UIImage(named: "image_light"), forState: UIControlState.Normal)
         }else{
             mapShown = true
-            map.hidden = true
-            imageView.hidden = false
+            map.hidden = false
+            imageView.hidden = true
             mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
         }
         
@@ -66,6 +66,7 @@ class ScavengerHuntViewController: MyViewController {
         storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         vc.displayData = [(MKPinAnnotationView.redPinColor(), scavengerHunt.projects)]
+        vc.routes = scavengerHunt.routes
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
         self.addChildViewController(vc)
