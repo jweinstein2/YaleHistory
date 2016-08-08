@@ -32,7 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = shouldDisplayUsersLocation
-        let initialLocation = CLLocationCoordinate2D(latitude: 41.251938,longitude: -72.994110)
+        let initialLocation = CLLocationCoordinate2D(latitude: 41.3120434,longitude: -72.9311489)
         map.setCenterCoordinate(initialLocation, animated: true)
         let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {
@@ -57,12 +57,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.map.addAnnotation(annotation)
             }
         }
+        
+        for route in routes {
+            map.addOverlay(route.polyline)
+        }
     }
     
     private func addRoutes(){
-        for route in routes {
-            mapView(map, rendererForOverlay: route.polyline)
-        }
+        
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -77,7 +79,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //These are the settings for our path lines
             let polylineRender = MKPolylineRenderer(overlay: overlay)
             
-            polylineRender.strokeColor = UIColor(red:0.00, green: 0.40, blue: 0.00, alpha: 1.0)
+            polylineRender.strokeColor = UIColor(red:0.00, green: 0.00, blue: 0.40, alpha: 1.0)
             polylineRender.lineWidth = 2
             polylineRender.fillColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
             return polylineRender

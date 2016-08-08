@@ -64,7 +64,7 @@ class ScavengerHunt: NSObject {
             }
             request.destination = projects[i].mapItem
             request.requestsAlternateRoutes = true
-            request.transportType = .Any
+            request.transportType = .Walking
             
             let directions = MKDirections(request: request)
             directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in

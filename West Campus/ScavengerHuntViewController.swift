@@ -24,12 +24,12 @@ class ScavengerHuntViewController: MyViewController {
     
     //@IBOutlet weak var locationLabel: UILabel! //for testing purposes
     @IBOutlet weak var clueLabel: UILabel!
+    @IBOutlet weak var table: UITableView!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var mapImageButton: UIButton!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
     @IBOutlet weak var map: UIView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var huntProgress: UILabel!
     @IBOutlet weak var foundIt: UIButton!
@@ -41,12 +41,12 @@ class ScavengerHuntViewController: MyViewController {
         if mapShown==true {
             mapShown = false
             map.hidden = true
-            imageView.hidden = false
+            table.hidden = false
             mapImageButton.setBackgroundImage(UIImage(named: "image_light"), forState: UIControlState.Normal)
         }else{
             mapShown = true
             map.hidden = false
-            imageView.hidden = true
+            table.hidden = true
             mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
         }
         
@@ -61,21 +61,21 @@ class ScavengerHuntViewController: MyViewController {
         Header.text = "You are looking for"
         clueLabel.text = "Clue: " + currProj.clue
         projectTitle.text = currProj.title
-        imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
         
         storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), scavengerHunt.projects)]
+        var notDestination = scavengerHunt.projects
+        notDestination.removeAtIndex(scavengerHunt.progress)
+        vc.displayData = [(MKPinAnnotationView.redPinColor(), notDestination),(MKPinAnnotationView.purplePinColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
         vc.routes = scavengerHunt.routes
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
         self.addChildViewController(vc)
         map.layoutIfNeeded()
         vc.view.frame = map.bounds
-        imageView.hidden = true
+        table.hidden = true
         mapShown = true
-        
-        
+        self.table.reloadData()
         
         progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
         
@@ -115,7 +115,21 @@ class ScavengerHuntViewController: MyViewController {
             //set up display
             clueLabel.text = "Clue: " + currProj.clue
             projectTitle.text = currProj.title
-            imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
+            
+            storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
+            vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+            var notDestination = scavengerHunt.projects
+            notDestination.removeAtIndex(scavengerHunt.progress)
+            vc.displayData = [(MKPinAnnotationView.redPinColor(), notDestination),(MKPinAnnotationView.purplePinColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
+            vc.routes = scavengerHunt.routes
+            vc.shouldDisplayUsersLocation = true
+            map.addSubview(vc.view)
+            self.addChildViewController(vc)
+            map.layoutIfNeeded()
+            vc.view.frame = map.bounds
+            table.hidden = true
+            mapShown = true
+            self.table.reloadData()
             
             //update progress bar
             progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
@@ -136,7 +150,6 @@ class ScavengerHuntViewController: MyViewController {
             nextLabel.hidden = true
             previousButton.hidden = true
             previousLabel.hidden = true
-            imageView.image = ImageUtil.imageFromURL("http://www.cwu.edu/~jonase/goodjob.jpg")
         }
     }
     
@@ -174,7 +187,30 @@ class ScavengerHuntViewController: MyViewController {
     }
 }
 
-
+extension ScavengerHuntViewController {
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    {
+        return scavengerHunt.routes[scavengerHunt.progress].steps.count
+    }
+    
+    
+    func tableView(tableView: UITableView!,
+                   cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+        let cell = self.table.dequeueReusableCellWithIdentifier("instructionCell")
+        cell?.userInteractionEnabled = false
+        let steps = scavengerHunt.routes[scavengerHunt.progress].steps
+        let step = steps[indexPath.row]
+        let instructions = step.instructions
+        let distance = step.distance
+        cell?.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) miles"
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+}
 
 
 

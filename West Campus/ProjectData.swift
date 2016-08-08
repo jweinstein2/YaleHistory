@@ -81,6 +81,8 @@ class ProjectData: NSObject {
             }
         }
         
+        
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
     }
     
@@ -116,7 +118,7 @@ class ProjectData: NSObject {
             return nil
         }
         
-        let sortedByDistance = projectData.sort({ $0.distanceToUser > $1.distanceToUser })
+        let sortedByDistance = projectData.sort({ $0.distanceToUser < $1.distanceToUser })
         let firstN = sortedByDistance.prefix(n)
         return Array(firstN)
     }
