@@ -42,12 +42,12 @@ class ScavengerHuntViewController: MyViewController {
             mapShown = false
             map.hidden = true
             table.hidden = false
-            mapImageButton.setBackgroundImage(UIImage(named: "image_light"), forState: UIControlState.Normal)
+            mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
         }else{
             mapShown = true
             map.hidden = false
             table.hidden = true
-            mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
+            mapImageButton.setBackgroundImage(UIImage(named: "list_light"), forState: UIControlState.Normal)
         }
         
     }
@@ -59,14 +59,14 @@ class ScavengerHuntViewController: MyViewController {
         currProj = scavengerHunt.currentProject
         
         Header.text = "You are looking for"
-        clueLabel.text = "Clue: " + currProj.clue
+        clueLabel.text = "Your destination is in yellow. Use the top right button to switch between the map and direction list."
         projectTitle.text = currProj.title
         
         storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
         vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         var notDestination = scavengerHunt.projects
         notDestination.removeAtIndex(scavengerHunt.progress)
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), notDestination),(MKPinAnnotationView.purplePinColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
+        vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
         vc.routes = scavengerHunt.routes
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
@@ -74,6 +74,7 @@ class ScavengerHuntViewController: MyViewController {
         map.layoutIfNeeded()
         vc.view.frame = map.bounds
         table.hidden = true
+        map.hidden = false
         mapShown = true
         self.table.reloadData()
         
@@ -113,14 +114,13 @@ class ScavengerHuntViewController: MyViewController {
             
             
             //set up display
-            clueLabel.text = "Clue: " + currProj.clue
             projectTitle.text = currProj.title
             
             storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
             vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
             var notDestination = scavengerHunt.projects
             notDestination.removeAtIndex(scavengerHunt.progress)
-            vc.displayData = [(MKPinAnnotationView.redPinColor(), notDestination),(MKPinAnnotationView.purplePinColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
+            vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
             vc.routes = scavengerHunt.routes
             vc.shouldDisplayUsersLocation = true
             map.addSubview(vc.view)
@@ -128,6 +128,7 @@ class ScavengerHuntViewController: MyViewController {
             map.layoutIfNeeded()
             vc.view.frame = map.bounds
             table.hidden = true
+            map.hidden = false
             mapShown = true
             self.table.reloadData()
             
@@ -173,7 +174,7 @@ class ScavengerHuntViewController: MyViewController {
         //Take Action on Notification
         let userLoc = notification.object as! CLLocation
         let distance = currProj.location.distanceFromLocation(userLoc)
-        self.distanceLabel.text = distance.toDistanceString()
+        self.distanceLabel.text = "Distance: " + distance.toDistanceString()
         
         if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
@@ -202,7 +203,7 @@ extension ScavengerHuntViewController : UITableViewDelegate, UITableViewDataSour
         let step = steps[indexPath.row]
         let instructions = step.instructions
         let distance = step.distance
-        cell.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) miles"
+        cell.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) meters"
         return cell
     }
     

@@ -25,7 +25,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func setUpMap(){
         self.addOverlay()
-        self.addRoutes()
         
         map.mapType = MKMapType.Hybrid
 
@@ -58,13 +57,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
-        for route in routes {
-            map.addOverlay(route.polyline)
+        if (routes.count > 0){
+            map.addOverlay(routes[(MainModel.hunt?.progress)!].polyline)
         }
-    }
-    
-    private func addRoutes(){
-        
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {

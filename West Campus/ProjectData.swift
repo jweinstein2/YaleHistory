@@ -119,7 +119,28 @@ class ProjectData: NSObject {
         }
         
         let sortedByDistance = projectData.sort({ $0.distanceToUser < $1.distanceToUser })
-        let firstN = sortedByDistance.prefix(n)
-        return Array(firstN)
+        let firstN = sortedByDistance[0]
+        
+        let closeId = Int(firstN.projectId)! - 1      //avoids off by one error below
+        let projectCountMinus = n - 1 //avoids off by one error below
+        var projects : [Project] = []
+        
+        for index in closeId...(closeId + projectCountMinus) {
+            
+            let i = index % projectData.count
+            
+            let upperBound = (closeId + projectCountMinus) % projectData.count
+            
+            if (closeId + projectCountMinus) / projectData.count < 1 {
+                if i <= upperBound && i >= closeId {
+                    projects.append(projectData[i])
+                }
+                else if i >= closeId || i <= upperBound {
+                    projects.append(projectData[i])
+                }
+            }
+        }
+        
+        return projects
     }
 }

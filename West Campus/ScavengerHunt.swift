@@ -41,7 +41,7 @@ class ScavengerHunt: NSObject {
         projects = destinations
         progress = 0
         transition = false
-        calculateDirections() //This is currently broken
+        calculateDirections()
     }
     
     

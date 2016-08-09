@@ -45,7 +45,7 @@ class ProjectListViewController: MyViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), projectList)]
+        vc.displayData = [(UIColor.blueColor(), projectList)]
         map.addSubview(vc.view)
         self.addChildViewController(vc)
         map.layoutIfNeeded()
