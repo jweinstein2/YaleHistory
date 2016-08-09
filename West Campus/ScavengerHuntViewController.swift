@@ -187,23 +187,22 @@ class ScavengerHuntViewController: MyViewController {
     }
 }
 
-extension ScavengerHuntViewController {
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+extension ScavengerHuntViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return scavengerHunt.routes[scavengerHunt.progress].steps.count
     }
     
     
-    func tableView(tableView: UITableView!,
-                   cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = self.table.dequeueReusableCellWithIdentifier("instructionCell")
-        cell?.userInteractionEnabled = false
+        let cell = self.table.dequeueReusableCellWithIdentifier("instructionCell")!
+        cell.userInteractionEnabled = false
         let steps = scavengerHunt.routes[scavengerHunt.progress].steps
         let step = steps[indexPath.row]
         let instructions = step.instructions
         let distance = step.distance
-        cell?.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) miles"
+        cell.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) miles"
         return cell
     }
     
@@ -211,6 +210,3 @@ extension ScavengerHuntViewController {
         return 100
     }
 }
-
-
-

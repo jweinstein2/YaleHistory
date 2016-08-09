@@ -83,7 +83,11 @@ class SHWelcomeViewController: MyViewController {
             MainModel.hunt = currentHunt
             
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("scavengerHuntViewController") as! ScavengerHuntViewController
-            presentViewController(vc, animated: false, completion: nil)
+            
+            var vcs = self.navigationController!.viewControllers
+            vcs.removeLast()
+            vcs.append(vc)
+            self.navigationController?.setViewControllers(vcs, animated: true)
         }
         
     }
