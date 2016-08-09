@@ -31,7 +31,7 @@ class ProjectViewController: MyViewController {
         linkLabel.addGestureRecognizer(tapGesture)
         
         super.viewDidLoad()
-        projTitle.text = project.title.uppercaseString
+        projTitle.text = project.title.capitalizedString
         summary.text = project.summary
         contributersLabel.text = project.contributors
         
@@ -42,7 +42,7 @@ class ProjectViewController: MyViewController {
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         
-        linkLabel.text = String(stringInterpolation: project.link)
+        linkLabel.text = "Learn More"
         actionLabel.text = project.action
         
         //Edit the code below to display a custom image for each project
