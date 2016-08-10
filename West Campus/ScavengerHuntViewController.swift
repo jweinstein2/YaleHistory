@@ -19,6 +19,14 @@ class ScavengerHuntViewController: MyViewController {
     var currProj: Project!
     let regionRadius = 15.0
     var projectList : [Project]!
+    var currentRoute:MKRoute?{
+        didSet{
+            if currentRoute != nil{
+                displaySetup()
+            }
+        }
+    }
+    
     
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
@@ -60,25 +68,8 @@ class ScavengerHuntViewController: MyViewController {
         
         Header.text = "You are looking for"
         clueLabel.text = "Your destination is in yellow. Use the top right button to switch between the map and direction list."
-        projectTitle.text = currProj.title
-        
-        storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
-        vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        var notDestination = scavengerHunt.projects
-        notDestination.removeAtIndex(scavengerHunt.progress)
-        vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
-        vc.routes = scavengerHunt.routes
-        vc.shouldDisplayUsersLocation = true
-        map.addSubview(vc.view)
-        self.addChildViewController(vc)
-        map.layoutIfNeeded()
-        vc.view.frame = map.bounds
-        table.hidden = true
-        map.hidden = false
-        mapShown = true
-        self.table.reloadData()
-        
-        progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
+        calculateDirections()
+        displaySetup()
         
         //hide previous button if necessary
         if scavengerHunt.progress == 0 {
@@ -114,27 +105,8 @@ class ScavengerHuntViewController: MyViewController {
             
             
             //set up display
-            projectTitle.text = currProj.title
-            
-            storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
-            vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-            var notDestination = scavengerHunt.projects
-            notDestination.removeAtIndex(scavengerHunt.progress)
-            vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
-            vc.routes = scavengerHunt.routes
-            vc.shouldDisplayUsersLocation = true
-            map.addSubview(vc.view)
-            self.addChildViewController(vc)
-            map.layoutIfNeeded()
-            vc.view.frame = map.bounds
-            table.hidden = true
-            map.hidden = false
-            mapShown = true
-            self.table.reloadData()
-            
-            //update progress bar
-            progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
-            
+            calculateDirections()
+            displaySetup()
         }
             
         else if (scavengerHunt.transition == true) {
@@ -159,13 +131,14 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {
+        currentRoute = nil
         scavengerHunt.transition = true
         viewWillAppear(false)
     }
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
+        currentRoute = nil
         scavengerHunt.progress = scavengerHunt.progress - 2
-
         scavengerHunt.transition = true
         viewWillAppear(false)
     }
@@ -186,12 +159,68 @@ class ScavengerHuntViewController: MyViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func calculateDirections(){
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: LocationUtil.lastLocation!.coordinate, addressDictionary: nil))
+        request.destination = scavengerHunt.projects[scavengerHunt.progress].mapItem
+        request.requestsAlternateRoutes = true
+        request.transportType = .Walking
+        
+        let directions = MKDirections(request: request)
+        directions.calculateDirectionsWithCompletionHandler ({(response: MKDirectionsResponse?, error: NSError?) in
+            if let routeResponse = response?.routes {
+                self.currentRoute =
+                    routeResponse.sort({$0.expectedTravelTime <
+                        $1.expectedTravelTime})[0]
+                
+            } else if error != nil {
+                self.currentRoute = nil
+            }
+        })
+
+    }
+    
+    func displaySetup(){
+        projectTitle.text = currProj.title
+        
+        if currentRoute != nil{
+        storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
+        vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+        var notDestination = scavengerHunt.projects
+        notDestination.removeAtIndex(scavengerHunt.progress)
+        vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
+        vc.route = currentRoute
+        vc.shouldDisplayUsersLocation = true
+        map.addSubview(vc.view)
+        self.addChildViewController(vc)
+        map.layoutIfNeeded()
+        vc.view.frame = map.bounds
+        self.table.reloadData()
+        }
+        else {
+            //Loading screen
+        }
+        table.hidden = true
+        map.hidden = false
+        mapShown = true
+        
+        //update progress bar
+        progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
+    }
 }
 
 extension ScavengerHuntViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return scavengerHunt.routes[scavengerHunt.progress].steps.count
+        if currentRoute == nil{
+            return 1
+        }
+        else{
+            return currentRoute!.steps.count
+        }
+        
     }
     
     
@@ -199,11 +228,17 @@ extension ScavengerHuntViewController : UITableViewDelegate, UITableViewDataSour
     {
         let cell = self.table.dequeueReusableCellWithIdentifier("instructionCell")!
         cell.userInteractionEnabled = false
-        let steps = scavengerHunt.routes[scavengerHunt.progress].steps
-        let step = steps[indexPath.row]
-        let instructions = step.instructions
-        let distance = step.distance
-        cell.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) meters"
+        
+        if currentRoute != nil{
+            let steps = scavengerHunt.routes[scavengerHunt.progress].steps
+            let step = steps[indexPath.row]
+            let instructions = step.instructions
+            let distance = step.distance
+            cell.textLabel?.text = "\(indexPath.row+1). \(instructions) - \(distance) meters"
+        }
+        else{
+            cell.textLabel?.text = "Directions Not Available"
+        }
         return cell
     }
     

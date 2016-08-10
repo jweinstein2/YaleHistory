@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     
-    var routes : [MKRoute] = []
+    var route : MKRoute?
     var displayData = [(color: UIColor, projects: [Project])]()
     var shouldDisplayUsersLocation = false
 
@@ -57,8 +57,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
-        if (routes.count > 0){
-            map.addOverlay(routes[(MainModel.hunt?.progress)!].polyline)
+        if route != nil{
+            map.addOverlay(route!.polyline)
         }
     }
     
