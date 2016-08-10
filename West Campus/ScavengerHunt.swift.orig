@@ -11,7 +11,6 @@ import MapKit
 
 @objc protocol ScavengerHuntDelegate {
     optional func onTimeEstimateChanged(timeEstimate: NSTimeInterval)
-    optional func onDirectionsFailed()
 }
 
 
@@ -42,12 +41,13 @@ class ScavengerHunt: NSObject {
         projects = destinations
         progress = 0
         transition = false
+<<<<<<< Updated upstream
+        calculateDirections()
+=======
+    
         //Dispatch this asynhronously
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            // do the task in the background
-            self.calculateDirections()
-        }
+        calculateDirections() //This is currently broken
+>>>>>>> Stashed changes
     }
     
     
@@ -90,7 +90,6 @@ class ScavengerHunt: NSObject {
                     
                 } else if let error = error {
                     //If the directions fail to load
-                    self.delegate?.onDirectionsFailed?()
                     NSLog("Error loading directions : \(error)")
                 }
             })
