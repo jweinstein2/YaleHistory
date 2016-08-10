@@ -102,7 +102,7 @@ class ScavengerHuntViewController: MyViewController {
             }
             foundIt.hidden = false
             nextLabel.hidden = false
-            
+            scavengerHunt.transition = false
             
             //set up display
             calculateDirections()
@@ -123,6 +123,8 @@ class ScavengerHuntViewController: MyViewController {
             nextLabel.hidden = true
             previousButton.hidden = true
             previousLabel.hidden = true
+            scavengerHunt.transition = false
+            mapImageButton.userInteractionEnabled = false
         }
     }
     
@@ -230,7 +232,7 @@ extension ScavengerHuntViewController : UITableViewDelegate, UITableViewDataSour
         cell.userInteractionEnabled = false
         
         if currentRoute != nil{
-            let steps = scavengerHunt.routes[scavengerHunt.progress].steps
+            let steps = currentRoute!.steps
             let step = steps[indexPath.row]
             let instructions = step.instructions
             let distance = step.distance

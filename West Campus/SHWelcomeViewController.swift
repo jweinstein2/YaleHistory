@@ -29,11 +29,11 @@ class SHWelcomeViewController: MyViewController {
         super.viewDidLoad()
         
         
-        
-        let shortScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: 5) ?? [])
+    
+        let shortScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: basicTourCount) ?? [])
         shortScavenger.delegate = self
         possibleTours.append(("Take a quick tour of the 5 nearest points of interest", shortScavenger))
-        let fullScavenger = ScavengerHunt(destinations: MainModel.projects.projectData)
+        let fullScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: fullTourCount) ?? [])
         fullScavenger.delegate = self
         possibleTours.append(("Embark on a full tour of all 14 colleges and their hidden historical significance", fullScavenger))
         
@@ -41,22 +41,6 @@ class SHWelcomeViewController: MyViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //TODO: We probably want to update the projects for the nearest 5 scavenger hunt
-        
-        
-        // I believe this is deprecated... requires testing
-        
-        /*
-         if (MainModel.scavengerHuntIsSetUp == true){
-         self.dismissViewControllerAnimated(false, completion: nil);
-         }
-         if MainModel.hunt != nil {
-         if (MainModel.hunt.progress == -1){
-         self.dismissViewControllerAnimated(false, completion: nil);
-         MainModel.hunt.progress = 0
-         }
-         }
-         */
     }
     
     @IBAction func onTourTypeChanged(sender: UISegmentedControl) {

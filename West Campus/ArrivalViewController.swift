@@ -22,14 +22,9 @@ class ArrivalViewController: UIViewController {
         super.viewDidLoad()
         
         currProj = scavengerHunt.currentProject
+        imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
         
-        let imageView = UIImageView(frame: self.view.frame); // set as you want
-        let image = UIImage(named: "success");
-        imageView.image = image;
-        self.view.addSubview(imageView);
-        self.view.sendSubviewToBack(imageView)
-        
-        announcement.text = "Congratulations! You have reached the site!"
+        announcement.text = "Congratulations, you have reached " + currProj.title + "!"
         //projectTitle.text = currProj.title
         summaryLabel.text = currProj.summary
     }
@@ -45,7 +40,13 @@ class ArrivalViewController: UIViewController {
 
     @IBAction func moreInfoPressed(sender: AnyObject) {     //go to projectViewController
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
-        presentViewController(vc, animated: false, completion: nil) //transition to project view controller
+        vc.project = scavengerHunt.projects[scavengerHunt.progress]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        NSLog("button pressed")
+        
+        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
+        //presentViewController(vc, animated: false, completion: nil) //transition to project view controller
     }
     
     /*

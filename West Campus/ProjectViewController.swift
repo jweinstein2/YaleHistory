@@ -37,7 +37,7 @@ class ProjectViewController: MyViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(MKPinAnnotationView.redPinColor(), [project])]
+        vc.displayData = [(UIColor.blueColor(), [project])]
         vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height)
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)

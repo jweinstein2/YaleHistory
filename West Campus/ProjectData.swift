@@ -135,9 +135,9 @@ class ProjectData: NSObject {
                 if i <= upperBound && i >= closeId {
                     projects.append(projectData[i])
                 }
-                else if i >= closeId || i <= upperBound {
-                    projects.append(projectData[i])
-                }
+            }
+            else if i >= closeId || i <= upperBound {
+                projects.append(projectData[i])
             }
         }
         
