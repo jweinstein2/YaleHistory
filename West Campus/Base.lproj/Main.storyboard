@@ -1225,7 +1225,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="Gdd-Rl-QZU"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="projects" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-yJ-vWp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="points_of_interest" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-yJ-vWp">
                                                 <rect key="frame" x="0.0" y="60" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="lbw-yJ-vWp" secondAttribute="height" multiplier="1:1" id="TlP-2s-qtZ"/>
@@ -1644,7 +1644,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
         <image name="list_light" width="290" height="290"/>
         <image name="logo" width="1024" height="1024"/>
         <image name="map_light" width="290" height="290"/>
-        <image name="projects" width="303" height="303"/>
+        <image name="points_of_interest" width="303" height="303"/>
         <image name="scavenger" width="303" height="303"/>
     </resources>
 </document>
