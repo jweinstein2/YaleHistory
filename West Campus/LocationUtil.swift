@@ -59,4 +59,30 @@ class LocationUtil : NSObject, CLLocationManagerDelegate {
             return false
         }
     }
+    
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .NotDetermined:
+            // If status has not yet been determied, ask for authorization
+            break
+        case .AuthorizedWhenInUse:
+            // If authorized when in use
+            break
+        case .AuthorizedAlways:
+            // If always authorized
+            break
+        case .Restricted:
+            // If restricted by e.g. parental controls. User can't enable Location Services
+            break
+        case .Denied:
+            // If user denied your app access to Location Services, but can grant access from Settings.app
+            break
+        default:
+            break
+        }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.locationPermissionStatusChange, object: nil)
+    }
 }

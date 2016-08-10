@@ -11,6 +11,9 @@ import Foundation
 import CoreLocation
 
 class ViewController: MyViewController {
+    @IBOutlet weak var guidedTourButton: UIButton!
+    @IBOutlet weak var guidedTourImage: UIImageView!
+    
     @IBOutlet weak var notificationCenterConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var scavengerHunt: UIButton!
@@ -30,6 +33,7 @@ class ViewController: MyViewController {
         bottomNotificationView.layer.borderColor = UIColor.whiteColor().CGColor
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNearbyProject(_:)), name: GlobalNotificationKeys.onNearbyProject, object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocationPermissionsChanged(_:)), name: GlobalNotificationKeys.locationPermissionStatusChange, object: nil)
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
@@ -56,7 +60,26 @@ class ViewController: MyViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if LocationUtil.isLocationAvailable() {
+            guidedTourButton.alpha = 1.0
+            guidedTourImage.alpha = 1.0
+        } else {
+            guidedTourButton.alpha = 0.4
+            guidedTourImage.alpha = 0.4
+        }
+        guidedTourButton.enabled = LocationUtil.isLocationAvailable()
+        updateBottomNotification(MainModel.projects.nearestProject)
+    }
+    
+    func onLocationPermissionsChanged(notification: NSNotification) {
+        guidedTourButton.enabled = LocationUtil.isLocationAvailable()
+        if LocationUtil.isLocationAvailable() {
+            guidedTourButton.alpha = 1.0
+            guidedTourImage.alpha = 1.0
+        } else {
+            guidedTourButton.alpha = 0.4
+            guidedTourImage.alpha = 0.4
+        }
         updateBottomNotification(MainModel.projects.nearestProject)
     }
     
@@ -68,6 +91,7 @@ class ViewController: MyViewController {
     
     private func updateBottomNotification (nearbyProj: Project?){
         if !LocationUtil.isLocationAvailable() {
+            NSLog("LOCATION NOT AVALIBLE ")
             //Configure notification to alert user that loc is required for awesome experience
             
             let title = "Location is not available"
@@ -75,6 +99,7 @@ class ViewController: MyViewController {
             let buttonText = "Settings >"
             let instantiateProjectVC = {
                 NSLog("Open System Settings")
+                UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
             }
             setNotification(title, text: text, buttonText: buttonText, action: instantiateProjectVC)
             return
@@ -89,7 +114,11 @@ class ViewController: MyViewController {
         let text = "\(nearbyProj!.summary)"
         let buttonText = "Learn More >"
         let instantiateProjectVC = {
-            NSLog("Transition to \(nearbyProj!.title)")
+            let proj = nearbyProj
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
+            vc.project = proj
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         setNotification(title, text: text, buttonText: buttonText, action: instantiateProjectVC)
     }
@@ -103,6 +132,10 @@ class ViewController: MyViewController {
             self.notificationTitle.text = title
             self.notificationText.text = text
             self.notificationButton.setTitle(buttonText, forState: .Normal)
+            self.notificationButton.actionHandle(controlEvents: UIControlEvents.TouchUpInside,
+                ForAction:{() -> Void in
+                    action()
+            })
             
             
             self.view.layoutIfNeeded()
