@@ -88,7 +88,7 @@ extension SHWelcomeViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("scavengerHuntListCell")!
         let project = self.currentHunt.projects[indexPath.row]
         cell.textLabel?.text = project.title
-        cell.detailTextLabel?.text = project.summary
+        //cell.detailTextLabel?.text = project.summary
         return cell
     }
     

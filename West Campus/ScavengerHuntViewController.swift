@@ -153,7 +153,7 @@ class ScavengerHuntViewController: MyViewController {
         
         if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
-            presentViewController(vc, animated: false, completion: nil) //transition to arrival view controller
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

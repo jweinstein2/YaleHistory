@@ -33,8 +33,7 @@ class ArrivalViewController: UIViewController {
     @IBAction func buttonPressed(sender: AnyObject) {
         
         scavengerHunt.transition = true
-        self.dismissViewControllerAnimated(false, completion: nil);
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 
@@ -42,11 +41,6 @@ class ArrivalViewController: UIViewController {
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
         vc.project = scavengerHunt.projects[scavengerHunt.progress]
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        NSLog("button pressed")
-        
-        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
-        //presentViewController(vc, animated: false, completion: nil) //transition to project view controller
     }
     
     /*
