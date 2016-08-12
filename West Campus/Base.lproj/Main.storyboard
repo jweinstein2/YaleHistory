@@ -241,7 +241,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                             </label>
                                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Wp-XjU">
                                                 <rect key="frame" x="0.0" y="331" width="570" height="256"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="0.56408900439999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ady-Wp-XjU" secondAttribute="height" multiplier="560:251" id="17E-jl-mS7"/>
                                                 </constraints>
@@ -715,6 +715,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                             </button>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeK-3P-PrB">
                                 <rect key="frame" x="0.0" y="286" width="600" height="244"/>
+                                <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="6s1-Hc-jdb" kind="embed" id="5TL-mk-TaE"/>
                                 </connections>
@@ -1050,7 +1051,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                             </button>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
                                 <rect key="frame" x="0.0" y="122" width="600" height="478"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-22-wpW">
                                 <rect key="frame" x="20" y="40" width="67" height="67"/>
@@ -1415,12 +1416,11 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                 </connections>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="W2m-Ef-9zM" secondAttribute="bottom" id="Aa7-hx-XU9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="W2m-Ef-9zM" secondAttribute="trailing" constant="-20" id="Liw-TM-GfH"/>
-                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="top" secondItem="G2i-aw-U7O" secondAttribute="topMargin" id="b0e-2t-k6U"/>
-                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="leading" secondItem="G2i-aw-U7O" secondAttribute="leadingMargin" constant="-20" id="zqe-su-ZTG"/>
+                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="centerY" secondItem="G2i-aw-U7O" secondAttribute="centerY" id="KpU-Hf-JY4"/>
+                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="centerX" secondItem="G2i-aw-U7O" secondAttribute="centerX" id="aKw-zk-JQa"/>
+                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="width" secondItem="G2i-aw-U7O" secondAttribute="width" id="hWI-AF-T5d"/>
+                            <constraint firstItem="W2m-Ef-9zM" firstAttribute="height" secondItem="G2i-aw-U7O" secondAttribute="height" id="pBb-Ef-O3S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1573,7 +1573,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                                     <rect key="frame" x="15" y="0.0" width="530" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
