@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-lA-WTh">
-                                <rect key="frame" x="0.0" y="30" width="540" height="87"/>
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ta9-lA-WTh" secondAttribute="height" multiplier="169:27" id="Fk3-uy-Fbd"/>
                                     <constraint firstAttribute="width" secondItem="ta9-lA-WTh" secondAttribute="height" multiplier="169:27" id="QFu-if-WkB"/>
@@ -61,7 +61,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cND-mo-So7">
-                                <rect key="frame" x="20" y="40" width="67" height="67"/>
+                                <rect key="frame" x="20" y="40" width="66.5" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cND-mo-So7" secondAttribute="height" multiplier="1:1" id="0Cj-2h-NE7"/>
                                     <constraint firstAttribute="height" constant="43" id="4ZJ-jD-ZUf"/>
@@ -79,61 +79,67 @@
                                     <action selector="buttonPressed:" destination="T5x-nP-qhd" eventType="touchUpInside" id="QZN-C2-mrY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
-                                <rect key="frame" x="96" y="30" width="85" height="87"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YALE HISTORY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
+                                <rect key="frame" x="96" y="30" width="173" height="86.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-4a-800">
-                                <rect key="frame" x="30" y="121" width="560" height="469"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-sV-889">
+                                <rect key="frame" x="210" y="462" width="180" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAY-ha-Use">
-                                        <rect key="frame" x="0.0" y="10" width="550" height="264"/>
-                                        <string key="text">Yale has grown and evolved for 300-plus years, passing many milestones and forging traditions along the way. 
-
-The university traces its roots to the 1640s when colonial clergymen led an effort to establish a local college to preserve the tradition of European liberal education in the New World. In 1701 the charter was granted for a school “wherein Youth may be instructed in the Arts and Sciences (and) through the blessing of Almighty God may be fitted for Publick employment both in Church and Civil State.”
-
-The school officially became Yale College in 1718, when it was renamed in honor of Welsh merchant Elihu Yale, who had donated the proceeds from the sale of nine bales of goods together with 417 books and a portrait of King George I.</string>
-                                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stG-rK-ZCA">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Learn More">
+                                            <color key="titleColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="learnMorePressed:" destination="T5x-nP-qhd" eventType="touchUpInside" id="fhT-fs-Vu2"/>
+                                            <action selector="nextbuttonPressed:" destination="laT-Es-oYc" eventType="touchUpInside" id="bvx-40-aoj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.47020474140000001" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="jAY-ha-Use" secondAttribute="trailing" id="ATh-bA-KSt"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="leading" secondItem="NJA-4a-800" secondAttribute="leading" id="VDd-zj-9l8"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="NJA-4a-800" secondAttribute="width" id="ciI-33-Vsk"/>
-                                    <constraint firstAttribute="bottom" secondItem="jAY-ha-Use" secondAttribute="bottom" id="jFW-Im-PCL"/>
-                                    <constraint firstItem="jAY-ha-Use" firstAttribute="top" secondItem="NJA-4a-800" secondAttribute="top" constant="10" id="rir-SE-EQt"/>
+                                    <constraint firstAttribute="width" secondItem="JeX-sV-889" secondAttribute="height" multiplier="3:1" id="44m-4i-fCl"/>
+                                    <constraint firstItem="stG-rK-ZCA" firstAttribute="centerY" secondItem="JeX-sV-889" secondAttribute="centerY" id="Eg0-eB-Pff"/>
+                                    <constraint firstItem="stG-rK-ZCA" firstAttribute="width" secondItem="JeX-sV-889" secondAttribute="width" id="SFM-qQ-aVh"/>
+                                    <constraint firstAttribute="width" constant="180" id="Y6a-0J-bqS"/>
+                                    <constraint firstItem="stG-rK-ZCA" firstAttribute="height" secondItem="JeX-sV-889" secondAttribute="height" id="e2g-Wc-NVl"/>
+                                    <constraint firstItem="stG-rK-ZCA" firstAttribute="centerX" secondItem="JeX-sV-889" secondAttribute="centerX" id="xdS-a9-YP0"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ciI-33-Vsk"/>
-                                    </mask>
-                                </variation>
-                            </scrollView>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iq7-91-zu9">
+                                <rect key="frame" x="20" y="165.5" width="560" height="267.5"/>
+                                <mutableString key="text">Yale University traces its roots to the 1640s when colonial clergymen led an effort to establish a local college to preserve the tradition of European liberal education in the New World.   In 1701 the charter was granted for a school “wherein Youth may be instructed in the Arts and Sciences (and) through the blessing of Almighty God may be fitted for Publick employment both in Church and Civil State.”   The school officially became Yale College in 1718, when it was renamed in honor of Welsh merchant Elihu Yale, who had donated the proceeds from the sale of nine bales of goods together with 417 books and a portrait of King George I.   Visit the Illuminating Yale's History website to learn more.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ta9-lA-WTh" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" constant="-20" id="3q8-FY-Y35"/>
-                            <constraint firstItem="jAY-ha-Use" firstAttribute="width" secondItem="MWH-wZ-DTQ" secondAttribute="width" constant="-50" id="9N9-Ss-FlP"/>
+                            <constraint firstItem="Iq7-91-zu9" firstAttribute="width" secondItem="MWH-wZ-DTQ" secondAttribute="width" constant="-40" id="6qq-dN-nKq"/>
+                            <constraint firstItem="JeX-sV-889" firstAttribute="top" secondItem="Iq7-91-zu9" secondAttribute="bottom" constant="10" id="EpJ-Qr-ONW"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="height" secondItem="ta9-lA-WTh" secondAttribute="height" id="HXo-sM-p0v"/>
-                            <constraint firstItem="zZo-3Y-x5n" firstAttribute="top" secondItem="NJA-4a-800" secondAttribute="bottom" constant="10" id="IQK-jp-ahJ"/>
                             <constraint firstItem="ta9-lA-WTh" firstAttribute="top" secondItem="BYN-aM-1a1" secondAttribute="bottom" constant="10" id="ImG-M8-wAj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jAY-ha-Use" secondAttribute="trailing" constant="20" id="RUW-Fi-dF2"/>
-                            <constraint firstItem="NJA-4a-800" firstAttribute="top" secondItem="ta9-lA-WTh" secondAttribute="bottom" constant="5" id="XHT-mb-RjA"/>
-                            <constraint firstItem="NJA-4a-800" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" constant="10" id="Zfd-1X-dO6"/>
+                            <constraint firstItem="Iq7-91-zu9" firstAttribute="centerY" secondItem="MWH-wZ-DTQ" secondAttribute="centerY" id="JaT-0T-RTy"/>
+                            <constraint firstItem="zZo-3Y-x5n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Iq7-91-zu9" secondAttribute="bottom" constant="20" id="aRq-RA-n70"/>
                             <constraint firstItem="cND-mo-So7" firstAttribute="leading" secondItem="MWH-wZ-DTQ" secondAttribute="leadingMargin" id="akK-pa-kxW"/>
                             <constraint firstItem="cND-mo-So7" firstAttribute="top" secondItem="ta9-lA-WTh" secondAttribute="top" constant="10" id="ipq-cH-KQb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NJA-4a-800" secondAttribute="trailing" constant="-10" id="j8G-Az-4kz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ta9-lA-WTh" secondAttribute="trailing" constant="40" id="ja2-pY-TR2"/>
+                            <constraint firstItem="JeX-sV-889" firstAttribute="centerX" secondItem="MWH-wZ-DTQ" secondAttribute="centerX" id="k7d-cz-tIk"/>
+                            <constraint firstItem="Iq7-91-zu9" firstAttribute="centerX" secondItem="MWH-wZ-DTQ" secondAttribute="centerX" id="mfF-4R-pKz"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="leading" secondItem="cND-mo-So7" secondAttribute="trailing" constant="10" id="oe4-me-3QE"/>
+                            <constraint firstItem="zZo-3Y-x5n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JeX-sV-889" secondAttribute="bottom" constant="20" id="sko-AU-b0e"/>
                             <constraint firstItem="eQ3-59-aFn" firstAttribute="centerY" secondItem="ta9-lA-WTh" secondAttribute="centerY" id="tc4-KG-4dh"/>
                             <constraint firstItem="cND-mo-So7" firstAttribute="bottom" secondItem="ta9-lA-WTh" secondAttribute="bottom" constant="-10" id="uNT-LR-rdq"/>
+                            <constraint firstItem="JeX-sV-889" firstAttribute="width" secondItem="JeX-sV-889" secondAttribute="height" multiplier="3:1" id="ybS-iB-jy4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="RUW-Fi-dF2"/>
+                                <exclude reference="aRq-RA-n70"/>
                             </mask>
                         </variation>
                     </view>
@@ -151,11 +157,11 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                         <viewControllerLayoutGuide type="bottom" id="OxC-hO-N4G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lVN-Wy-rHI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
-                                <rect key="frame" x="0.0" y="-1" width="600" height="188"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-Zn-SJ5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="262.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kgz-Zn-SJ5" secondAttribute="height" multiplier="16:7" id="1Hv-kQ-PGi"/>
                                 </constraints>
@@ -190,13 +196,13 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                     <action selector="buttonPressed:" destination="abw-Ph-xwY" eventType="touchUpInside" id="MQE-pI-7BN"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-85-r7e">
-                                <rect key="frame" x="5" y="228" width="590" height="352"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-85-r7e">
+                                <rect key="frame" x="5" y="302.5" width="590" height="577.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-es-hUX">
                                         <rect key="frame" x="10" y="0.0" width="570" height="611"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT WE DO..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-Lx-s4T">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE BUILDING" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-Lx-s4T">
                                                 <rect key="frame" x="0.0" y="0.0" width="570" height="31"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,7 +215,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT TO DO HERE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-mP-nnr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE NAMESAKE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-mP-nnr">
                                                 <rect key="frame" x="0.0" y="182" width="570" height="31"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,7 +227,7 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTRIBUTERS" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2my-YR-54N" userLabel="CONTRIBUTERS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO LEARN MORE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2my-YR-54N" userLabel="CONTRIBUTERS">
                                                 <rect key="frame" x="0.0" y="244" width="570" height="31"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,14 +277,14 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Dh-NC-eJN">
-                                <rect key="frame" x="164" y="61" width="272" height="66"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Dh-NC-eJN">
+                                <rect key="frame" x="184" y="102.5" width="232.5" height="58"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XC2-Je-6B4">
-                                    <rect key="frame" x="0.0" y="0.0" width="272" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="232.5" height="58"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PROJECT TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
-                                            <rect key="frame" x="5" y="5" width="262" height="56"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-KH-Fj5">
+                                            <rect key="frame" x="5" y="5.5" width="222.5" height="48"/>
                                             <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="34"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -330,6 +336,8 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                             <constraint firstItem="kgz-Zn-SJ5" firstAttribute="leading" secondItem="lVN-Wy-rHI" secondAttribute="leadingMargin" constant="-20" id="zjP-j6-uTf"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="900"/>
                     <connections>
                         <outlet property="actionLabel" destination="Tf9-Va-4ce" id="f7w-RX-d41"/>
                         <outlet property="contributersLabel" destination="Q7r-8M-j3p" id="yyk-bb-zMV"/>
@@ -961,18 +969,19 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kvh-GG-CqC">
-                                <rect key="frame" x="259" y="218" width="82" height="82"/>
+                                <rect key="frame" x="259" y="167" width="82" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="6rt-Yf-sjn"/>
                                     <constraint firstAttribute="width" secondItem="kvh-GG-CqC" secondAttribute="height" multiplier="1:1" id="Rnq-Nn-aHE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whatever text you guys want.... " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Ay-cp8">
-                                <rect key="frame" x="189" y="320" width="222" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EQ-Ay-cp8">
+                                <rect key="frame" x="21" y="269" width="559.5" height="122.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9EQ-Ay-cp8" secondAttribute="height" multiplier="131:71" id="1TO-Ti-KnY"/>
                                     <constraint firstAttribute="width" secondItem="9EQ-Ay-cp8" secondAttribute="height" multiplier="59:32" id="Qaw-Wa-GtJ"/>
                                 </constraints>
+                                <string key="text">In April 2016 President Peter Salovey announced the launch of an interactive history project drawing on the insights of Yale’s scholars, students, and staff. This app, together with the Illuminating Yale’s History website, serves to illuminate the lesser-known people, events, and narratives behind the familiar facades of Yale’s campus. The project will evolve over time to cover additional sites and histories.</string>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1029,32 +1038,22 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-cS-e8t">
-                                <rect key="frame" x="0.0" y="30" width="540" height="87"/>
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u5r-cS-e8t" secondAttribute="height" multiplier="169:27" id="snM-5Y-xw3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT INFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yio-fK-RdV">
-                                <rect key="frame" x="97" y="30" width="173" height="87"/>
+                                <rect key="frame" x="96" y="30" width="173" height="86.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ife-ir-Eti">
-                                <rect key="frame" x="550" y="40" width="67" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ife-ir-Eti" secondAttribute="height" multiplier="1:1" id="oPm-kb-BGi"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="map_light"/>
-                                <connections>
-                                    <action selector="mapListTogglePressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="DuI-pw-n0b"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHA-Qj-NAV">
-                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
+                                <rect key="frame" x="0.0" y="154" width="600" height="445.5"/>
                                 <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNH-22-wpW">
-                                <rect key="frame" x="20" y="40" width="67" height="67"/>
+                                <rect key="frame" x="20" y="40" width="66.5" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gNH-22-wpW" secondAttribute="height" multiplier="1:1" id="SLs-P2-Ir3"/>
                                     <constraint firstAttribute="width" constant="34" id="Zsq-no-foB"/>
@@ -1071,8 +1070,19 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                     <action selector="buttonPressed:" destination="Gd5-Ao-i4S" eventType="touchUpInside" id="5Pl-ua-D0X"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-VK-tdz">
-                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-ax-y0X">
+                                <rect key="frame" x="20" y="121" width="560" height="29"/>
+                                <segments>
+                                    <segment title="List"/>
+                                    <segment title="Map"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="Gd5-Ao-i4S" eventType="valueChanged" id="tZh-KC-dtr"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-VK-tdz">
+                                <rect key="frame" x="0.0" y="161" width="600" height="438.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectCell" rowHeight="100" id="baH-i1-kjk" customClass="ProjectTableViewCell" customModule="Yale_History" customModuleProvider="target">
@@ -1093,24 +1103,38 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-8d-TKL">
-                                                    <rect key="frame" x="28" y="35" width="143" height="30"/>
+                                                    <rect key="frame" x="28" y="25" width="143" height="30"/>
                                                     <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="25"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit and Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFU-Et-shn">
+                                                    <rect key="frame" x="28" y="53" width="108" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="HBN-8d-TKL" firstAttribute="centerY" secondItem="7Dy-yf-ZOv" secondAttribute="centerY" id="6Vl-fV-TdF"/>
+                                                <constraint firstItem="gm8-MK-BjD" firstAttribute="centerY" secondItem="Zc4-RG-M8X" secondAttribute="centerY" id="1W7-CN-Ody"/>
+                                                <constraint firstItem="HBN-8d-TKL" firstAttribute="centerY" secondItem="7Dy-yf-ZOv" secondAttribute="centerY" constant="-10" id="6Vl-fV-TdF"/>
                                                 <constraint firstItem="Zc4-RG-M8X" firstAttribute="leading" secondItem="7Dy-yf-ZOv" secondAttribute="leadingMargin" constant="-8" id="EEU-Kh-bwr"/>
                                                 <constraint firstItem="gm8-MK-BjD" firstAttribute="baseline" secondItem="HBN-8d-TKL" secondAttribute="baseline" id="Mkx-w9-PgU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zc4-RG-M8X" secondAttribute="trailing" constant="-8" id="SMi-bS-Pov"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zc4-RG-M8X" secondAttribute="bottom" constant="-12.5" id="T7h-TT-Ff9"/>
+                                                <constraint firstItem="oFU-Et-shn" firstAttribute="top" secondItem="HBN-8d-TKL" secondAttribute="bottom" constant="-2" id="ZzY-bi-LJt"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="HBN-8d-TKL" secondAttribute="leading" constant="-20" id="aAP-Cm-ZgH"/>
                                                 <constraint firstItem="Zc4-RG-M8X" firstAttribute="top" secondItem="7Dy-yf-ZOv" secondAttribute="topMargin" constant="-8" id="c4h-eE-leb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gm8-MK-BjD" secondAttribute="trailing" constant="8" id="dKN-ei-xKo"/>
+                                                <constraint firstItem="oFU-Et-shn" firstAttribute="leading" secondItem="HBN-8d-TKL" secondAttribute="leading" id="fjX-lW-EBR"/>
                                                 <constraint firstItem="gm8-MK-BjD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HBN-8d-TKL" secondAttribute="trailing" constant="10" id="kfJ-Md-f3g"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Mkx-w9-PgU"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -1128,32 +1152,40 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                         </subviews>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="0jv-ax-y0X" secondAttribute="bottom" constant="5" id="1vI-eC-t1y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u5r-cS-e8t" secondAttribute="trailing" constant="40" id="AVZ-DC-dme"/>
-                            <constraint firstItem="Ife-ir-Eti" firstAttribute="bottom" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="-10" id="D5f-as-nxJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MHA-Qj-NAV" secondAttribute="trailing" constant="-20" id="FR0-SI-stN"/>
                             <constraint firstItem="yio-fK-RdV" firstAttribute="centerY" secondItem="u5r-cS-e8t" secondAttribute="centerY" id="FRw-NF-sIY"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="bottom" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="-10" id="G6d-cy-Sd7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Z8V-VK-tdz" secondAttribute="leading" constant="20" id="GO0-EI-4Qu"/>
+                            <constraint firstItem="0jv-ax-y0X" firstAttribute="width" secondItem="99h-ob-TuI" secondAttribute="width" constant="-40" id="H25-R0-7ie"/>
                             <constraint firstItem="u5r-cS-e8t" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" constant="-20" id="JKO-up-gED"/>
                             <constraint firstItem="yio-fK-RdV" firstAttribute="leading" secondItem="gNH-22-wpW" secondAttribute="trailing" constant="10" id="Rwo-xT-Geg"/>
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" constant="-20" id="VpI-gf-MTD"/>
                             <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="bottom" id="aUc-2y-A2R"/>
-                            <constraint firstItem="Ife-ir-Eti" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="top" constant="10" id="c8S-RH-2kg"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" id="cJS-HT-t7s"/>
                             <constraint firstItem="u5r-cS-e8t" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" constant="10" id="ejq-ah-5X5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" constant="-20" id="gAW-jW-P4S"/>
-                            <constraint firstItem="Ife-ir-Eti" firstAttribute="leading" secondItem="u5r-cS-e8t" secondAttribute="trailing" constant="10" id="hHD-qI-FMW"/>
-                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="5" id="hXj-ei-vxN"/>
+                            <constraint firstItem="0jv-ax-y0X" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="gSv-RY-8BW"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="45" id="hXj-ei-vxN"/>
                             <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="MHA-Qj-NAV" secondAttribute="bottom" id="hao-be-PBB"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="top" constant="10" id="jPi-yu-Nh7"/>
-                            <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="5" id="kh4-Q6-ELa"/>
+                            <constraint firstItem="Z8V-VK-tdz" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="45" id="kh4-Q6-ELa"/>
+                            <constraint firstItem="MHA-Qj-NAV" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="top" id="lqp-6r-4hm"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="centerY" secondItem="yio-fK-RdV" secondAttribute="centerY" id="sns-RB-dM2"/>
                             <constraint firstItem="yio-fK-RdV" firstAttribute="height" secondItem="u5r-cS-e8t" secondAttribute="height" id="v7r-xg-vwp"/>
+                            <constraint firstItem="0jv-ax-y0X" firstAttribute="top" secondItem="u5r-cS-e8t" secondAttribute="bottom" constant="5" id="xqy-1x-7Qe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hXj-ei-vxN"/>
+                                <exclude reference="kh4-Q6-ELa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="map" destination="MHA-Qj-NAV" id="ggb-uw-Lfy"/>
-                        <outlet property="mapListButton" destination="Ife-ir-Eti" id="i1d-7x-sqH"/>
+                        <outlet property="mapListSegmented" destination="0jv-ax-y0X" id="qrf-7U-s2O"/>
                         <outlet property="table" destination="Z8V-VK-tdz" id="vkh-CF-oIw"/>
                         <segue destination="abw-Ph-xwY" kind="show" identifier="listToProject" id="nW7-T4-Jem"/>
                     </connections>
@@ -1175,17 +1207,17 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heO-j1-FcB">
-                                <rect key="frame" x="0.0" y="396" width="600" height="164"/>
+                                <rect key="frame" x="0.0" y="396" width="600" height="163.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-Yh-90s">
-                                <rect key="frame" x="0.0" y="30" width="540" height="87"/>
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GB6-Yh-90s" secondAttribute="height" multiplier="169:27" id="PUU-Ul-mgZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIDDEN HISTORY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-jc-v6e">
-                                <rect key="frame" x="40" y="30" width="211" height="87"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPLORE YALE'S HISTORY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-jc-v6e">
+                                <rect key="frame" x="40" y="30" width="311" height="87"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1202,16 +1234,6 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                     <segue destination="xPe-ja-9gO" kind="show" id="Ik6-Av-QRP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-P9-YVg">
-                                <rect key="frame" x="20" y="317" width="560" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="LAu-Pc-b4Q"/>
-                                </constraints>
-                                <string key="text">Yale's residential colleges have a deep and hidden history. Take a tour or explore on your own to learn a little bit more about Yale's campus</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jhk-Xm-Ovn" userLabel="TopView">
                                 <rect key="frame" x="20" y="127" width="560" height="182"/>
                                 <subviews>
@@ -1243,15 +1265,25 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                         <rect key="frame" x="17" y="69" width="513" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
-                                        <state key="normal" title="        Historical Landmarks">
+                                        <state key="normal" title="        Residential Colleges">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="Gd5-Ao-i4S" kind="show" id="zn5-2l-DJr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
-                                        <rect key="frame" x="17" y="9" width="513" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
+                                        <rect key="frame" x="17" y="129" width="513" height="44"/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
+                                        <state key="normal" title="        About This App">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="T5x-nP-qhd" kind="show" animates="NO" id="Yr9-oD-aFC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
+                                        <rect key="frame" x="17" y="8" width="513" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
                                         <state key="normal" title="        Guided Tour">
@@ -1259,16 +1291,6 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                         </state>
                                         <connections>
                                             <action selector="scavengerHuntButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bpj-7J-HWp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
-                                        <rect key="frame" x="17" y="129" width="513" height="44"/>
-                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
-                                        <state key="normal" title="        About Yale History">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="T5x-nP-qhd" kind="show" animates="NO" id="Yr9-oD-aFC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1334,6 +1356,16 @@ The school officially became Yale College in 1718, when it was renamed in honor 
                                     <constraint firstItem="y5z-kN-pBy" firstAttribute="leading" secondItem="9RJ-J0-JgV" secondAttribute="leading" constant="16" id="gIG-En-S7S"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-P9-YVg">
+                                <rect key="frame" x="20" y="317.5" width="560" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="LAu-Pc-b4Q"/>
+                                </constraints>
+                                <string key="text">Yale's complex, 300-plus-year history is reflected in the names given to many campus buildings and other landmarks. Take a guided tour or explore on your own to learn the stories behind these iconic names.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.29803921570000003" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1644,7 +1676,6 @@ The school officially became Yale College in 1718, when it was renamed in honor 
         <image name="header" width="874" height="128"/>
         <image name="list_light" width="290" height="290"/>
         <image name="logo" width="1024" height="1024"/>
-        <image name="map_light" width="290" height="290"/>
         <image name="points_of_interest" width="303" height="303"/>
         <image name="scavenger" width="303" height="303"/>
     </resources>

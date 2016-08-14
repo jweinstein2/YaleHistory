@@ -16,23 +16,22 @@ class ProjectListViewController: MyViewController {
     var isList = true
     var projectList = MainModel.projects.projectData
     var locationEnabled : Bool = false
-    @IBOutlet weak var mapListButton: UIButton!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var map: UIView!
-    
-    @IBAction func mapListTogglePressed(sender: AnyObject) {
-        if isList {
-            isList = false
-            map.hidden = false
-            table.hidden = true
-            mapListButton.setBackgroundImage(UIImage(named: "list_light"), forState: UIControlState.Normal)
-        }else{
+    @IBOutlet weak var mapListSegmented: UISegmentedControl!
+
+    @IBAction func segmentValueChanged(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
             isList = true
             map.hidden = true
             table.hidden = false
-            mapListButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
+            //mapListButton.setBackgroundImage(UIImage(named: "list_light"), forState: UIControlState.Normal)
+        } else {
+            isList = false
+            map.hidden = false
+            table.hidden = true
+            //mapListButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
         }
-        
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {

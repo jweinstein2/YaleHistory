@@ -32,7 +32,7 @@ class SHWelcomeViewController: MyViewController {
     
         let shortScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: basicTourCount) ?? [])
         shortScavenger.delegate = self
-        possibleTours.append(("Take a quick tour of the 5 nearest points of interest", shortScavenger))
+        possibleTours.append(("Take a quick tour of the five nearest points of interest", shortScavenger))
         let fullScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: fullTourCount) ?? [])
         fullScavenger.delegate = self
         possibleTours.append(("Embark on a full tour of all 14 colleges and their hidden historical significance", fullScavenger))
