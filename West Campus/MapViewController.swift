@@ -14,6 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var route : MKRoute?
     var displayData = [(color: UIColor, projects: [Project])]()
+    var initialLocation : CLLocationCoordinate2D?
     var shouldDisplayUsersLocation = false
 
     private let reuseId = "com.yalehistory.mappin"
@@ -31,23 +32,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = shouldDisplayUsersLocation
-        var initialLocation : CLLocationCoordinate2D
-        if map.showsUserLocation && LocationUtil.lastLocation != nil {
+        //let initialLocation = CLLocationCoordinate2D(latitude: 41.310011,longitude: -72.927863)
+        if shouldDisplayUsersLocation && (LocationUtil.lastLocation != nil) {
             initialLocation = (LocationUtil.lastLocation?.coordinate)!
         }
-        else if displayData.count == 1 {
-            initialLocation = displayData[0].projects[0].coordinate
+        else if displayData[0].projects.count == 1 {
+            initialLocation = displayData[0].projects[0].location.coordinate
         }
         else {
             initialLocation = CLLocationCoordinate2D(latitude: 41.310011,longitude: -72.927863)
         }
-        map.setCenterCoordinate(initialLocation, animated: true)
+        map.setCenterCoordinate(initialLocation!, animated: true)
         let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2.0, regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated: true)
         }
-        centerMapOnLocation(initialLocation)
+        centerMapOnLocation(initialLocation!)
     }
     
     private func addOverlay(){

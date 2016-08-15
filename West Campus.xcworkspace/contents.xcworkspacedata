@@ -5,6 +5,9 @@
       location = "group:Stiles.gpx">
    </FileRef>
    <FileRef
+      location = "group:Silliman.gpx">
+   </FileRef>
+   <FileRef
       location = "group:/Users/jaredweinstein/Yale History/GitRepository/Yale History.xcodeproj">
    </FileRef>
    <FileRef
