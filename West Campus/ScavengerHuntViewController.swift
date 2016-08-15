@@ -34,7 +34,6 @@ class ScavengerHuntViewController: MyViewController {
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var projectTitle: UILabel!
-    @IBOutlet weak var mapImageButton: UIButton!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var Header: UILabel!
     @IBOutlet weak var map: UIView!
@@ -45,29 +44,29 @@ class ScavengerHuntViewController: MyViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var previousLabel: UILabel!
 
-    @IBAction func mapImageTogglePressed(sender: AnyObject) {
-        if mapShown==true {
-            mapShown = false
-            map.hidden = true
-            table.hidden = false
-            mapImageButton.setBackgroundImage(UIImage(named: "map_light"), forState: UIControlState.Normal)
-        }else{
+    @IBAction func segmentedValueChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            //Show the map
             mapShown = true
             map.hidden = false
             table.hidden = true
-            mapImageButton.setBackgroundImage(UIImage(named: "list_light"), forState: UIControlState.Normal)
+        case 1:
+            //Show the list
+            mapShown = false
+            map.hidden = true
+            table.hidden = false
+        default:
+            NSLog("Error: Segmented control not handled properly")
         }
-        
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         projectList = scavengerHunt.projects
         currProj = scavengerHunt.currentProject
-        
-        Header.text = "You are looking for"
-        clueLabel.text = "Your destination is in yellow. Use the top right button to switch between the map and direction list."
+        clueLabel.hidden = true
+        Header.text = "You are walking to"
         calculateDirections()
         displaySetup()
         
@@ -117,6 +116,7 @@ class ScavengerHuntViewController: MyViewController {
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the hunt!"
+            clueLabel.hidden = false
             clueLabel.text = "Click the top left arrow to return to the Main Menu"
             distanceLabel.hidden = true
             foundIt.hidden = true
@@ -124,7 +124,6 @@ class ScavengerHuntViewController: MyViewController {
             previousButton.hidden = true
             previousLabel.hidden = true
             scavengerHunt.transition = false
-            mapImageButton.userInteractionEnabled = false
         }
     }
     
