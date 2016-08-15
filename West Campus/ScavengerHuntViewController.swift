@@ -195,9 +195,6 @@ class ScavengerHuntViewController: MyViewController {
         vc.view.frame = map.bounds
         self.table.reloadData()
         }
-        else {
-            //Loading screen
-        }
         table.hidden = true
         map.hidden = false
         mapShown = true

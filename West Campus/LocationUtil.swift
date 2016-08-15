@@ -11,7 +11,11 @@ import CoreLocation
 
 
 class LocationUtil : NSObject, CLLocationManagerDelegate {
-    static var lastLocation : CLLocation?
+    static var lastLocation : CLLocation?{
+        didSet{
+            NSLog("LocationSet: " + String(LocationUtil.lastLocation!.coordinate.latitude) + ", " + String(LocationUtil.lastLocation!.coordinate.longitude))
+        }
+    }
     static let sharedInstance = LocationUtil()
     let manager = CLLocationManager()
     
@@ -33,9 +37,7 @@ class LocationUtil : NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         let currentLoc = locations.last!
         LocationUtil.lastLocation = currentLoc
-        print("did update location to \(String(currentLoc))")
-        
-        LocationUtil.lastLocation = currentLoc
+        NSLog("did update location to \(String(currentLoc))")
         
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.locationUpdate, object: currentLoc)
     }
