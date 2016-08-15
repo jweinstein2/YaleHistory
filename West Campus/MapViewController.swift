@@ -31,7 +31,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.zoomEnabled = true
         map.scrollEnabled = true
         map.showsUserLocation = shouldDisplayUsersLocation
-        let initialLocation = CLLocationCoordinate2D(latitude: 41.3120434,longitude: -72.9311489)
+        var initialLocation : CLLocationCoordinate2D
+        if map.showsUserLocation && LocationUtil.lastLocation != nil {
+            initialLocation = (LocationUtil.lastLocation?.coordinate)!
+        }
+        else if displayData.count == 1 {
+            initialLocation = displayData[0].projects[0].coordinate
+        }
+        else {
+            initialLocation = CLLocationCoordinate2D(latitude: 41.310011,longitude: -72.927863)
+        }
         map.setCenterCoordinate(initialLocation, animated: true)
         let regionRadius: CLLocationDistance = 1000
         func centerMapOnLocation(location: CLLocationCoordinate2D) {

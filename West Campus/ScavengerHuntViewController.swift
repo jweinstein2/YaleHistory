@@ -17,7 +17,6 @@ class ScavengerHuntViewController: MyViewController {
     var vc : MapViewController!
     var mapShown = false
     var currProj: Project!
-    let regionRadius = 15.0
     var projectList : [Project]!
     var currentRoute:MKRoute?{
         didSet{
@@ -31,7 +30,6 @@ class ScavengerHuntViewController: MyViewController {
     //Silliman Courtyard (latitude: 41.31079366, longitude: -72.92481198)
     
     //@IBOutlet weak var locationLabel: UILabel! //for testing purposes
-    @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -65,7 +63,6 @@ class ScavengerHuntViewController: MyViewController {
         super.viewDidLoad()
         projectList = scavengerHunt.projects
         currProj = scavengerHunt.currentProject
-        clueLabel.hidden = true
         Header.text = "You are walking to"
         calculateDirections()
         displaySetup()
@@ -116,9 +113,7 @@ class ScavengerHuntViewController: MyViewController {
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the hunt!"
-            clueLabel.hidden = false
-            clueLabel.text = "Click the top left arrow to return to the Main Menu"
-            distanceLabel.hidden = true
+            distanceLabel.text = "Click the back arrow to return to the Main Menu"
             foundIt.hidden = true
             nextLabel.hidden = true
             previousButton.hidden = true
