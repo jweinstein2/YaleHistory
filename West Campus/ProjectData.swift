@@ -119,6 +119,9 @@ class ProjectData: NSObject {
         }
         
         let sortedByDistance = projectData.sort({ $0.distanceToUser < $1.distanceToUser })
+        if sortedByDistance.count == 0 {
+            return []
+        }
         let firstN = sortedByDistance[0]
         
         let closeId = Int(firstN.projectId)! - 1      //avoids off by one error below

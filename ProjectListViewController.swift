@@ -14,7 +14,7 @@ import MapKit
 
 class ProjectListViewController: MyViewController {
     var isList = true
-    var projectList = MainModel.projects.projectData
+    var projectList = MainModel.projects.projectData.sort { $0.title < $1.title}
     var locationEnabled : Bool = false
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var map: UIView!
@@ -93,7 +93,7 @@ extension ProjectListViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        let proj = MainModel.projects.projectData[row]
+        let proj = projectList[row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
         vc.project = proj

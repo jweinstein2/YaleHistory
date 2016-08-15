@@ -77,8 +77,8 @@
                                     <action selector="buttonPressed:" destination="T5x-nP-qhd" eventType="touchUpInside" id="QZN-C2-mrY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YALE HISTORY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
-                                <rect key="frame" x="96" y="30" width="173" height="86.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YALE'S HISTORY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-59-aFn">
+                                <rect key="frame" x="96" y="30" width="193" height="86.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -374,7 +374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-1b-dtR">
-                                <rect key="frame" x="0.0" y="30" width="540" height="86"/>
+                                <rect key="frame" x="0.0" y="30" width="540" height="86.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ENo-1b-dtR" secondAttribute="height" multiplier="169:27" id="xHb-Qa-rRB"/>
                                 </constraints>
@@ -385,7 +385,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-Ys-YSH">
-                                <rect key="frame" x="10" y="40" width="66" height="66"/>
+                                <rect key="frame" x="10" y="40" width="66.5" height="66.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="5eP-pB-dB8"/>
                                     <constraint firstAttribute="height" constant="67" id="Bes-hz-WaL"/>
@@ -409,8 +409,8 @@
                                     <action selector="buttonPressed:" destination="HUo-ni-9gb" eventType="touchUpInside" id="ijV-Og-GN5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAVENGER HUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="Zas-sy-lHp">
-                                <rect key="frame" x="86" y="34" width="201" height="78"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDED TOUR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="Zas-sy-lHp">
+                                <rect key="frame" x="86.5" y="44" width="150.5" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zas-sy-lHp" secondAttribute="height" multiplier="226:87" id="NlD-Ko-VQ8"/>
                                 </constraints>
@@ -418,7 +418,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2W-kj-o6k">
-                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                                <rect key="frame" x="0.0" y="118" width="600" height="481.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Announcement" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="282-fT-6bU">
                                         <rect key="frame" x="33" y="0.0" width="535" height="69"/>
@@ -756,7 +756,7 @@
                                     <action selector="segmentedValueChanged:" destination="7kc-BK-ggn" eventType="valueChanged" id="T2U-fi-khb"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAVENGER HUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="mAQ-nS-D4T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDED TOUR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="mAQ-nS-D4T">
                                 <rect key="frame" x="86" y="-14" width="453.5" height="174.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mAQ-nS-D4T" secondAttribute="height" multiplier="226:87" id="T3M-qt-Zcx"/>
@@ -1048,8 +1048,8 @@
                                     <constraint firstAttribute="width" secondItem="u5r-cS-e8t" secondAttribute="height" multiplier="169:27" id="snM-5Y-xw3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT INFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yio-fK-RdV">
-                                <rect key="frame" x="96" y="30" width="173" height="86.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESIDENTIAL COLLEGES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="yio-fK-RdV">
+                                <rect key="frame" x="96" y="30" width="290.5" height="86.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1097,9 +1097,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zc4-RG-M8X">
+                                                <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zc4-RG-M8X">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.4 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-MK-BjD">
                                                     <rect key="frame" x="537" y="41" width="47" height="21"/>
@@ -1169,6 +1169,7 @@
                             <constraint firstItem="MHA-Qj-NAV" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" constant="-20" id="VpI-gf-MTD"/>
                             <constraint firstItem="RhF-al-2KQ" firstAttribute="top" secondItem="Z8V-VK-tdz" secondAttribute="bottom" id="aUc-2y-A2R"/>
                             <constraint firstItem="gNH-22-wpW" firstAttribute="leading" secondItem="99h-ob-TuI" secondAttribute="leadingMargin" id="cJS-HT-t7s"/>
+                            <constraint firstItem="u5r-cS-e8t" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yio-fK-RdV" secondAttribute="trailing" constant="40" id="dYO-LW-wUm"/>
                             <constraint firstItem="u5r-cS-e8t" firstAttribute="top" secondItem="fyf-OW-JcE" secondAttribute="bottom" constant="10" id="ejq-ah-5X5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8V-VK-tdz" secondAttribute="trailing" constant="-20" id="gAW-jW-P4S"/>
                             <constraint firstItem="0jv-ax-y0X" firstAttribute="centerX" secondItem="99h-ob-TuI" secondAttribute="centerX" id="gSv-RY-8BW"/>
