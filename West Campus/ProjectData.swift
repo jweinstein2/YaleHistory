@@ -36,19 +36,19 @@ class ProjectData: NSObject {
             for i in 0 ..< inputArray.count {
                 NSLog("doing \(i)")
                 let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
-                let id = Int(jsonElement.objectForKey("id") as! Int)
-                let alphabetical = Int(jsonElement.objectForKey("alphabetical") as! Int)
+                let id = Int(String(jsonElement.objectForKey("id") as! String))!
+                let alphabetical = Int(String(jsonElement.objectForKey("alphabetical") as! String))!
                 let title = String(jsonElement.objectForKey("title")as! String)
                 let link = String(jsonElement.objectForKey("link")as! String)
                 let imageLink = String(jsonElement.objectForKey("photo")as! String)
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
                     _ = ImageUtil.imageFromURL(imageLink)
                 }
-                let gpsLatitude = Double(jsonElement.objectForKey("gps_latitude")as! Double)
-                let gpsLongitude = Double(jsonElement.objectForKey("gps_longitude")as! Double)
+                let gpsLatitude = Double(String(jsonElement.objectForKey("gps_latitude")as! String))!
+                let gpsLongitude = Double(String(jsonElement.objectForKey("gps_longitude")as! String))!
                 let theBuilding = String(jsonElement.objectForKey("theBuilding")as! String)
                 let theNamesake = String(jsonElement.objectForKey("theNamesake")as! String)
-                let radius = Int(jsonElement.objectForKey("radius")as! Int)
+                let radius = Int(String(jsonElement.objectForKey("radius")as! String))!
                 let namesakeName = String(jsonElement.objectForKey("namesakeName")as! String)
                 let collegeWebsite = String(jsonElement.objectForKey("collegeWebsite")as! String)
                 
