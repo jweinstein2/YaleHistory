@@ -14,7 +14,7 @@ import MapKit
 
 class ProjectListViewController: MyViewController {
     var isList = true
-    var projectList = MainModel.projects.projectData.sort { $0.title < $1.title}
+    var projectList = MainModel.projects.projectData.sort { $0.alphabetical < $1.alphabetical}
     var locationEnabled : Bool = false
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var map: UIView!

@@ -35,7 +35,7 @@ class SHWelcomeViewController: MyViewController {
         possibleTours.append(("Take a quick tour of the five nearest points of interest", shortScavenger))
         let fullScavenger = ScavengerHunt(destinations: MainModel.projects.nearestProjects(num: fullTourCount) ?? [])
         fullScavenger.delegate = self
-        possibleTours.append(("Embark on a full tour of all fourteen colleges and their hidden historical significance", fullScavenger))
+        possibleTours.append(("Embark on a full tour of all fourteen colleges and the histories behind their names", fullScavenger))
         
         updateViewForSegment(currentlySelectedIndex)
     }

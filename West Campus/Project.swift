@@ -20,12 +20,14 @@ class Project {
     var imageLink : String
     var theBuilding : String
     var theNamesake : String
+    var namesakeName : String
+    var collegeWebsite : String
     var radius: Int
     
     //Run Time Variables
     var distanceToUser : Double? = nil        //Distance is always stored in meters
     
-    init(projectId: Int, alphabetical: Int, title: String, link: String, gpsLatitude: Double, gpsLongitude: Double, theBuilding: String, theNamesake: String, imageLink: String, radius: Int){
+    init(projectId: Int, alphabetical: Int, title: String, link: String, gpsLatitude: Double, gpsLongitude: Double, theBuilding: String, theNamesake: String, imageLink: String, radius: Int, namesakeName : String, collegeWebsite: String){
         self.projectId = projectId
         self.alphabetical = alphabetical
         self.title = title
@@ -37,6 +39,8 @@ class Project {
         self.imageLink = imageLink
         self.theBuilding = theBuilding
         self.theNamesake = theNamesake
+        self.namesakeName = namesakeName
+        self.collegeWebsite = collegeWebsite
         self.radius = radius
     }
 }

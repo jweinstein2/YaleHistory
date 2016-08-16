@@ -111,7 +111,7 @@ class ViewController: MyViewController {
         }
         
         let title = "\(nearbyProj!.title) is nearby"
-        let text = "\(nearbyProj!.summary)"
+        let text = "\(nearbyProj!.theNamesake)"
         let buttonText = "Learn More >"
         let instantiateProjectVC = {
             let proj = nearbyProj

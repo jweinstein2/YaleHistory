@@ -25,8 +25,16 @@ extension Double {
 
 extension NSTimeInterval {
     func toString() -> String {
+        let hr = Int(self % 60)
         let min = Int(self / 60)
-        return "\(min) minutes"
+        
+        if hr == 0{
+            return "\(min) minutes"
+        }
+        else{
+            return "\(hr) hours \(min) minutes"
+        }
+        
     }
 }
 

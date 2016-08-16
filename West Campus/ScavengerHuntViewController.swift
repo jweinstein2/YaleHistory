@@ -112,7 +112,7 @@ class ScavengerHuntViewController: MyViewController {
             MainModel.hunt = nil
             
             Header.text = "Congratulations!"
-            projectTitle.text = "You've finished the hunt!"
+            projectTitle.text = "You've finished the tour!"
             distanceLabel.text = "Click the back arrow to return to the Main Menu"
             foundIt.hidden = true
             nextLabel.hidden = true

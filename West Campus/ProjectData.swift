@@ -49,9 +49,10 @@ class ProjectData: NSObject {
                 let theBuilding = String(jsonElement.objectForKey("theBuilding")as! String)
                 let theNamesake = String(jsonElement.objectForKey("theNamesake")as! String)
                 let radius = Int(jsonElement.objectForKey("radius")as! Int)
+                let namesakeName = String(jsonElement.objectForKey("namesakeName")as! String)
+                let collegeWebsite = String(jsonElement.objectForKey("collegeWebsite")as! String)
                 
-                
-                let currentProject = Project.init(projectId: id, alphabetical: alphabetical, title: title, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius)
+                let currentProject = Project.init(projectId: id, alphabetical: alphabetical, title: title, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
                 projectData.append(currentProject)
             }
         }
@@ -99,7 +100,7 @@ class ProjectData: NSObject {
         }
         let firstN = sortedByDistance[0]
         
-        let closeId = Int(firstN.projectId)! - 1      //avoids off by one error below
+        let closeId = firstN.projectId - 1      //avoids off by one error below
         let projectCountMinus = n - 1 //avoids off by one error below
         var projects : [Project] = []
         

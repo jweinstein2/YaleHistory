@@ -24,9 +24,9 @@ class ArrivalViewController: UIViewController {
         currProj = scavengerHunt.currentProject
         imageView.image = ImageUtil.imageFromURL(currProj.imageLink)
         
-        announcement.text = "Congratulations, you have reached " + currProj.title + "!"
+        announcement.text = "You have reached " + currProj.title
         //projectTitle.text = currProj.title
-        summaryLabel.text = currProj.summary
+        summaryLabel.text = currProj.theBuilding
     }
     
     

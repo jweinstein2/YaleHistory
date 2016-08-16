@@ -19,7 +19,7 @@ class ProjectViewController: MyViewController {
     @IBOutlet weak var linkLabel: UILabel!
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var mapContainer: UIView!
-    @IBOutlet weak var contributersLabel: UILabel!
+    @IBOutlet weak var collegeWebsite: UILabel!
     
     @IBAction func buttonPressed(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -27,13 +27,15 @@ class ProjectViewController: MyViewController {
     
     override func viewDidLoad() {
         linkLabel.userInteractionEnabled = true
-        let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.labelTapped))
+        collegeWebsite.userInteractionEnabled = true
+        let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.historyTapped))
         linkLabel.addGestureRecognizer(tapGesture)
+        let tapGesture2 : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.websiteTapped))
+        collegeWebsite.addGestureRecognizer(tapGesture2)
         
         super.viewDidLoad()
         projTitle.text = project.title.capitalizedString
-        summary.text = project.summary
-        contributersLabel.text = project.contributors
+        summary.text = project.theBuilding
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
@@ -43,7 +45,9 @@ class ProjectViewController: MyViewController {
         mapContainer.bringSubviewToFront(vc.view)
         
         linkLabel.text = "Learn More"
-        actionLabel.text = project.action
+        actionLabel.text = project.theNamesake
+        linkLabel.text = "History of " + project.namesakeName + " >"
+        collegeWebsite.text = project.title + " Website >"
         
         //Edit the code below to display a custom image for each project
         projImage.image = ImageUtil.imageFromURL(project.imageLink)
@@ -51,8 +55,13 @@ class ProjectViewController: MyViewController {
         
 }
 
-    @IBAction func labelTapped() {
+    @IBAction func historyTapped() {
         let url = NSURL(string: project.link)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
+    @IBAction func websiteTapped() {
+        let url = NSURL(string: project.collegeWebsite)! //this requires a link in the form "html:// ..." doesnt work for just "www.goog..."
         UIApplication.sharedApplication().openURL(url)
     }
     
