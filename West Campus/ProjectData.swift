@@ -36,47 +36,22 @@ class ProjectData: NSObject {
             for i in 0 ..< inputArray.count {
                 NSLog("doing \(i)")
                 let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
-                let id = String(jsonElement.objectForKey("id") as! String)
+                let id = Int(jsonElement.objectForKey("id") as! Int)
+                let alphabetical = Int(jsonElement.objectForKey("alphabetical") as! Int)
                 let title = String(jsonElement.objectForKey("title")as! String)
-                let summary = String(jsonElement.objectForKey("summary")as! String)
                 let link = String(jsonElement.objectForKey("link")as! String)
-                let gpsLatitude = String(jsonElement.objectForKey("gps_latitude")as! String)
-                let gpsLongitude = String(jsonElement.objectForKey("gps_longitude")as! String)
-                let clue = String(jsonElement.objectForKey("clue")as! String)
-                let action = String(jsonElement.objectForKey("action")as! String)
                 let imageLink = String(jsonElement.objectForKey("photo")as! String)
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
                     _ = ImageUtil.imageFromURL(imageLink)
                 }
-                let radius = String(jsonElement.objectForKey("radius")as! String)
-                let contributors = String(jsonElement.objectForKey("contributors")as! String)
-                
-                let innovations: Bool
-                let ecology: Bool
-                let health: Bool
-                
-                if String(jsonElement.objectForKey("innovation")as! String) == "1" {
-                    innovations = true
-                }
-                else{
-                    innovations = false
-                }
-                if String(jsonElement.objectForKey("ecology")as! String) == "1" {
-                    ecology = true
-                }
-                else{
-                    ecology = false
-                }
-                if String(jsonElement.objectForKey("health")as! String) == "1" {
-                    health = true
-                }
-                else{
-                    health = false
-                }
+                let gpsLatitude = Double(jsonElement.objectForKey("gps_latitude")as! Double)
+                let gpsLongitude = Double(jsonElement.objectForKey("gps_longitude")as! Double)
+                let theBuilding = String(jsonElement.objectForKey("theBuilding")as! String)
+                let theNamesake = String(jsonElement.objectForKey("theNamesake")as! String)
+                let radius = Int(jsonElement.objectForKey("radius")as! Int)
                 
                 
-                //Need to handle errors if this doens't load or if certain elements arent there. We want to download as much data as possible
-                let currentProject = Project.init(projectId: id, title: title, summary: summary, link: link, gpsLatitude: Double(gpsLatitude)!, gpsLongitude: Double(gpsLongitude)!, clue: clue, action: action, contributors: contributors, imageLink: imageLink, innovations: innovations, ecology: ecology, health: health, radius: Int(radius)!)
+                let currentProject = Project.init(projectId: id, alphabetical: alphabetical, title: title, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius)
                 projectData.append(currentProject)
             }
         }

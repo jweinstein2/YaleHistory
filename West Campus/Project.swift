@@ -11,42 +11,32 @@ import CoreLocation
 
 class Project {
     //Database Variables
-    var projectId: String
+    var projectId: Int
+    var alphabetical: Int
     var title: String
-    var summary: String
     var link: String
-    //var gpsLatitude: Double
-    //var gpsLongitude: Double
     var location: CLLocation
     var mapItem: MKMapItem
-    var clue: String
-    var action: String
-    var contributors: String
     var imageLink : String
-    var innovations: Bool
-    var ecology: Bool
-    var health: Bool
+    var theBuilding : String
+    var theNamesake : String
     var radius: Int
     
     //Run Time Variables
     var distanceToUser : Double? = nil        //Distance is always stored in meters
     
-    init(projectId: String, title: String, summary: String, link: String, gpsLatitude: Double, gpsLongitude: Double, clue: String, action: String, contributors: String, imageLink: String, innovations: Bool, ecology: Bool, health: Bool, radius: Int){
+    init(projectId: Int, alphabetical: Int, title: String, link: String, gpsLatitude: Double, gpsLongitude: Double, theBuilding: String, theNamesake: String, imageLink: String, radius: Int){
         self.projectId = projectId
+        self.alphabetical = alphabetical
         self.title = title
-        self.summary = summary
         self.link = link
         self.location = CLLocation.init(latitude: gpsLatitude, longitude: gpsLongitude)
         let loc = CLLocationCoordinate2D.init(latitude: gpsLatitude, longitude: gpsLongitude)
         self.mapItem = MKMapItem(placemark: MKPlacemark(coordinate: loc, addressDictionary: nil))
         self.mapItem.name = title
-        self.clue = clue
-        self.action = action
         self.imageLink = imageLink
-        self.contributors = contributors
-        self.innovations = innovations
-        self.ecology = ecology
-        self.health = health
+        self.theBuilding = theBuilding
+        self.theNamesake = theNamesake
         self.radius = radius
     }
 }
