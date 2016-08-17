@@ -28,31 +28,30 @@ class ProjectData: NSObject {
     override init() {
     }
     
-    func add(let inputArray: NSArray){
+    func add(let inputArray: [NSDictionary]){
         //NSLog(String(inputArray[0] as! NSDictionary)) //This shows that the input array is filled correctly (This just prints out the data for the first project)
-        
-        if inputArray != "" {
-            
+        if inputArray.count != 0 {
             for i in 0 ..< inputArray.count {
                 NSLog("doing \(i)")
-                let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
-                let id = Int(String(jsonElement.objectForKey("id") as? String ?? "0"))!
-                let alphabetical = Int(String(jsonElement.objectForKey("alphabetical") as? String ?? "0"))!
-                let title = String(jsonElement.objectForKey("title")as? String ?? "College")
-                let link = String(jsonElement.objectForKey("link")as? String ?? "")
-                let imageLink = String(jsonElement.objectForKey("photo")as? String ?? "")
+                let jsonElement = inputArray[i]
+                NSLog(String(jsonElement))
+                let id = Int(jsonElement.objectForKey("id") as? String ?? "0")
+                let alphabetical = Int(jsonElement.objectForKey("print_order") as? String ?? "0")
+                let title = jsonElement.objectForKey("title") as? String ?? "College"
+                let link = jsonElement.objectForKey("link")as? String ?? ""
+                let imageLink = jsonElement.objectForKey("photo") as? String ?? ""
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
                     _ = ImageUtil.imageFromURL(imageLink)
                 }
-                let gpsLatitude = Double(String(jsonElement.objectForKey("gps_latitude")as? String ?? ""))!
-                let gpsLongitude = Double(String(jsonElement.objectForKey("gps_longitude")as? String ?? ""))!
-                let theBuilding = String(jsonElement.objectForKey("theBuilding")as? String ?? "Information Not Available")
-                let theNamesake = String(jsonElement.objectForKey("theNamesake")as? String ?? "Information Not Available")
-                let radius = Int(String(jsonElement.objectForKey("radius")as? String ?? "20"))!
-                let namesakeName = String(jsonElement.objectForKey("namesakeName")as? String ?? "N/A")
-                let collegeWebsite = String(jsonElement.objectForKey("collegeWebsite")as? String ?? "")
+                let gpsLatitude = Double(jsonElement.objectForKey("gps_latitude") as? String ?? "0.0")
+                let gpsLongitude = Double(jsonElement.objectForKey("gps_longitude")as? String ?? "0.0")
+                let theBuilding = jsonElement.objectForKey("building") as? String ?? "Information Not Available"
+                let theNamesake = jsonElement.objectForKey("namesake") as? String ?? "Information Not Available"
+                let radius = jsonElement.objectForKey("radius") as? Int ?? 12
+                let namesakeName = jsonElement.objectForKey("namesake_name") as? String ?? "N/A"
+                let collegeWebsite = jsonElement.objectForKey("link_additional") as? String ?? ""
                 
-                let currentProject = Project.init(projectId: id, alphabetical: alphabetical, title: title, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
+                let currentProject = Project.init(projectId: id!, alphabetical: alphabetical!, title: title, link: link, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
                 projectData.append(currentProject)
             }
         }

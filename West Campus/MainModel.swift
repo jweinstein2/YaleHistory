@@ -25,7 +25,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         if json != nil && json!.count > 0 {
             NSLog("Retrieving NSUserDefaults")
             //NSLog(String(jsonData))
-            projects.add(json!)
+            projects.add(json as! [NSDictionary])
             prefs.synchronize()
             //Previously saved defaults are availible
             
@@ -38,7 +38,7 @@ class MainModel : NSObject, NSURLConnectionDelegate{
     }
     
     class func downloadData(){
-        projects.add(jsonData)
+        projects.add(jsonData as! [NSDictionary])
         
         if projects.projectData.count == 0 {        //set availability of scavenger hunt
             scavengerHuntAvailable = false
@@ -50,8 +50,8 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         //Save Data as Defaults
         //NSLog(String(jsonData))
         NSLog("Data saved to NSUserDefaults")
-        prefs.setObject(jsonData, forKey: key)
-        prefs.synchronize()
+        //prefs.setObject(jsonData, forKey: key)
+        //prefs.synchronize()
     }
     
     //MARK: Json Connection Methods
