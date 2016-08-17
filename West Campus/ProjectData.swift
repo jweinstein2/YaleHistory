@@ -36,21 +36,21 @@ class ProjectData: NSObject {
             for i in 0 ..< inputArray.count {
                 NSLog("doing \(i)")
                 let jsonElement : NSDictionary = inputArray[i] as! NSDictionary;
-                let id = Int(String(jsonElement.objectForKey("id") as! String))!
-                let alphabetical = Int(String(jsonElement.objectForKey("alphabetical") as! String))!
-                let title = String(jsonElement.objectForKey("title")as! String)
-                let link = String(jsonElement.objectForKey("link")as! String)
-                let imageLink = String(jsonElement.objectForKey("photo")as! String)
+                let id = Int(String(jsonElement.objectForKey("id") as? String ?? "0"))!
+                let alphabetical = Int(String(jsonElement.objectForKey("alphabetical") as? String ?? "0"))!
+                let title = String(jsonElement.objectForKey("title")as? String ?? "College")
+                let link = String(jsonElement.objectForKey("link")as? String ?? "")
+                let imageLink = String(jsonElement.objectForKey("photo")as? String ?? "")
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
                     _ = ImageUtil.imageFromURL(imageLink)
                 }
-                let gpsLatitude = Double(String(jsonElement.objectForKey("gps_latitude")as! String))!
-                let gpsLongitude = Double(String(jsonElement.objectForKey("gps_longitude")as! String))!
-                let theBuilding = String(jsonElement.objectForKey("theBuilding")as! String)
-                let theNamesake = String(jsonElement.objectForKey("theNamesake")as! String)
-                let radius = Int(String(jsonElement.objectForKey("radius")as! String))!
-                let namesakeName = String(jsonElement.objectForKey("namesakeName")as! String)
-                let collegeWebsite = String(jsonElement.objectForKey("collegeWebsite")as! String)
+                let gpsLatitude = Double(String(jsonElement.objectForKey("gps_latitude")as? String ?? ""))!
+                let gpsLongitude = Double(String(jsonElement.objectForKey("gps_longitude")as? String ?? ""))!
+                let theBuilding = String(jsonElement.objectForKey("theBuilding")as? String ?? "Information Not Available")
+                let theNamesake = String(jsonElement.objectForKey("theNamesake")as? String ?? "Information Not Available")
+                let radius = Int(String(jsonElement.objectForKey("radius")as? String ?? "20"))!
+                let namesakeName = String(jsonElement.objectForKey("namesakeName")as? String ?? "N/A")
+                let collegeWebsite = String(jsonElement.objectForKey("collegeWebsite")as? String ?? "")
                 
                 let currentProject = Project.init(projectId: id, alphabetical: alphabetical, title: title, link: link, gpsLatitude: gpsLatitude, gpsLongitude: gpsLongitude, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
                 projectData.append(currentProject)
