@@ -1302,7 +1302,7 @@
                                 <rect key="frame" x="0.0" y="393" width="600" height="167"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-J0-JgV">
-                                        <rect key="frame" x="162" y="36" width="276" height="95"/>
+                                        <rect key="frame" x="20" y="-13" width="560" height="193"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sia-Py-MZp">
                                                 <rect key="frame" x="16" y="37" width="250" height="21"/>
@@ -1344,7 +1344,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="9RJ-J0-JgV" firstAttribute="leading" secondItem="heO-j1-FcB" secondAttribute="leading" constant="20" id="DYi-M6-BLU"/>
                                     <constraint firstItem="9RJ-J0-JgV" firstAttribute="centerX" secondItem="heO-j1-FcB" secondAttribute="centerX" id="hdk-Re-JcU"/>
+                                    <constraint firstAttribute="trailing" secondItem="9RJ-J0-JgV" secondAttribute="trailing" constant="20" id="rbb-V7-Q1d"/>
                                     <constraint firstItem="9RJ-J0-JgV" firstAttribute="centerY" secondItem="heO-j1-FcB" secondAttribute="centerY" id="vSg-bM-klX"/>
                                 </constraints>
                             </view>
