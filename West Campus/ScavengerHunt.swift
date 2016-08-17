@@ -46,13 +46,13 @@ class ScavengerHunt: NSObject {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             // do the task in the background
-            self.timeEstimate = self.calculateDirections()
+            self.calculateDirections()
         }
     }
     
     
     //calculate directions for the entire hunt
-    func calculateDirections() -> NSTimeInterval? {
+    func calculateDirections() {
         NSLog("CALCULATED DIRECTIONS")
         
         var localTimeEstimate : NSTimeInterval = 0
@@ -87,7 +87,12 @@ class ScavengerHunt: NSObject {
                     else {
                         self.routes.append(quickestRouteForSegment)
                     }
-                    localTimeEstimate = (self.timeEstimate ?? 0) + quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                    
+                    localTimeEstimate += quickestRouteForSegment.expectedTravelTime as NSTimeInterval!
+                    
+                    if it == self.projects.count {
+                        self.timeEstimate = localTimeEstimate
+                    }
                     
                 } else if let error = error {
                     //If the directions fail to load
@@ -97,6 +102,5 @@ class ScavengerHunt: NSObject {
             })
         }
         
-        return localTimeEstimate
     }
 }

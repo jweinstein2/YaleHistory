@@ -55,7 +55,7 @@ class ProjectData: NSObject {
                 projectData.append(currentProject)
             }
         }
-        
+        projectData.sortInPlace { $0.projectId < $1.projectId}
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
@@ -99,7 +99,7 @@ class ProjectData: NSObject {
         }
         let firstN = sortedByDistance[0]
         
-        let closeId = firstN.projectId - 1      //avoids off by one error below
+        let closeId = firstN.projectId
         let projectCountMinus = n - 1 //avoids off by one error below
         var projects : [Project] = []
         

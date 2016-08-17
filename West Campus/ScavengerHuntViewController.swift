@@ -69,12 +69,14 @@ class ScavengerHuntViewController: MyViewController {
         
         //hide previous button if necessary
         if scavengerHunt.progress == 0 {
-            previousButton.hidden = true
-            previousLabel.hidden = true
+            previousButton.userInteractionEnabled = false
+            previousLabel.alpha = 0.4
+            previousButton.alpha = 0.4
         }
         else{
-            previousButton.hidden = false
-            previousLabel.hidden = false
+            previousButton.userInteractionEnabled = true
+            previousLabel.alpha = 1
+            previousButton.alpha = 1
         }
         
         //Subscribe to location update notification
@@ -89,12 +91,14 @@ class ScavengerHuntViewController: MyViewController {
             currProj = scavengerHunt.currentProject  //update currProj
                       
             if scavengerHunt.progress == 0 {
-                previousButton.hidden = true
-                previousLabel.hidden = true
+                previousButton.userInteractionEnabled = false
+                previousLabel.alpha = 0.4
+                previousButton.alpha = 0.4
             }
             else{
-                previousButton.hidden = false
-                previousLabel.hidden = false
+                previousButton.userInteractionEnabled = true
+                previousLabel.alpha = 1
+                previousButton.alpha = 1
             }
             foundIt.hidden = false
             nextLabel.hidden = false
@@ -108,21 +112,22 @@ class ScavengerHuntViewController: MyViewController {
         else if (scavengerHunt.transition == true) {
             progressBar.setProgress(1.0, animated: false)
             scavengerHunt.progress = -1
-           
-            MainModel.hunt = nil
             
             Header.text = "Congratulations!"
             projectTitle.text = "You've finished the tour!"
             distanceLabel.text = "Click the back arrow to return to the Main Menu"
-            foundIt.hidden = true
-            nextLabel.hidden = true
-            previousButton.hidden = true
-            previousLabel.hidden = true
+            foundIt.userInteractionEnabled = false
+            nextLabel.alpha = 0.4
+            foundIt.alpha = 0.4
             scavengerHunt.transition = false
         }
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
+        if (scavengerHunt.progress == -1){
+            MainModel.hunt = nil
+        }
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -133,6 +138,17 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     @IBAction func previousButtonPressed(sender: AnyObject) {
+        if scavengerHunt.progress == -1{
+            foundIt.userInteractionEnabled = true
+            nextLabel.alpha = 1
+            foundIt.alpha = 1
+        
+            scavengerHunt.progress = scavengerHunt.projects.count
+            
+            Header.text = "You are walking to"
+            distanceLabel.text = "Distance: ~"
+        }
+        
         currentRoute = nil
         scavengerHunt.progress = scavengerHunt.progress - 2
         scavengerHunt.transition = true
