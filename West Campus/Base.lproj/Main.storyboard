@@ -47,6 +47,7 @@
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
             <string>YaleNew-Roman</string>
+            <string>YaleNew-Roman</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -736,10 +737,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="At4-ns-7bO">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" id="At4-ns-7bO">
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -771,7 +772,7 @@
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-PI-ap7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" misplaced="YES" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="foB-PI-ap7">
                                 <rect key="frame" x="270" y="182" width="59" height="21"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -799,6 +800,7 @@
                         <constraints>
                             <constraint firstItem="1pB-JF-6iL" firstAttribute="top" secondItem="zXT-Cb-NVk" secondAttribute="bottom" constant="5" id="0EG-u9-eg6"/>
                             <constraint firstItem="Asg-53-bdR" firstAttribute="top" secondItem="DHJ-Ls-yX3" secondAttribute="bottom" constant="9" id="0Fq-3F-B7p"/>
+                            <constraint firstItem="foB-PI-ap7" firstAttribute="width" secondItem="1FI-gK-JSa" secondAttribute="width" id="3ba-Q3-eiX"/>
                             <constraint firstItem="DHJ-Ls-yX3" firstAttribute="centerX" secondItem="1FI-gK-JSa" secondAttribute="centerX" id="4Yw-fY-hGX"/>
                             <constraint firstItem="SeK-3P-PrB" firstAttribute="width" secondItem="1pB-JF-6iL" secondAttribute="width" id="5dm-v4-wPV"/>
                             <constraint firstItem="SeK-3P-PrB" firstAttribute="centerX" secondItem="1pB-JF-6iL" secondAttribute="centerX" id="69N-6p-PMw"/>
@@ -1400,7 +1402,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ek-Jph">
                                         <rect key="frame" x="16" y="127" width="513" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="24"/>
                                         <state key="normal" title="        Guided Tour">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1411,7 +1413,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-3M-pBa">
                                         <rect key="frame" x="16" y="69" width="513" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="22"/>
                                         <state key="normal" title="        Residential Colleges">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1421,7 +1423,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-5z-NXH">
                                         <rect key="frame" x="16" y="8" width="513" height="44"/>
-                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="26"/>
+                                        <fontDescription key="fontDescription" name="YaleNew-Roman" family="YaleNew" pointSize="24"/>
                                         <state key="normal" title="        Yale's History">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1617,7 +1619,7 @@
                                     <action selector="buttonPressed:" destination="7kc-BK-ggn" eventType="touchUpInside" id="A8S-uI-bH7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GUIDED TOUR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hY-2x-mm7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GUIDED TOUR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="7hY-2x-mm7">
                                 <rect key="frame" x="90" y="30" width="170" height="87"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="27"/>
                                 <nil key="highlightedColor"/>
