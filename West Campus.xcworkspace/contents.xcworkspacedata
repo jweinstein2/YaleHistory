@@ -8,6 +8,9 @@
       location = "group:Silliman.gpx">
    </FileRef>
    <FileRef
+      location = "group:Berkeley.gpx">
+   </FileRef>
+   <FileRef
       location = "group:/Users/jaredweinstein/Yale History/GitRepository/Yale History.xcodeproj">
    </FileRef>
    <FileRef
