@@ -350,7 +350,7 @@
 				TargetAttributes = {
 					894CA6DA1BE99FBE005D2B2A = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 9455Y4TF5V;
+						DevelopmentTeam = JKE2CE3SSD;
 					};
 					894CA6F11BE99FBE005D2B2A = {
 						CreatedOnToolsVersion = 7.1;
@@ -633,7 +633,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "West Campus/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.yale.history;
@@ -651,7 +651,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "West Campus/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.yale.history;

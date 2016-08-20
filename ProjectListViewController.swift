@@ -85,7 +85,13 @@ extension ProjectListViewController {
         } else {
             cell.distanceLabel.text = ""
         }
-        cell.backgroundImage.image = ImageUtil.imageFromURL(proj.imageLink)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let image = ImageUtil.imageFromURL(proj.imageLink)
+            dispatch_async(dispatch_get_main_queue()){
+                cell.backgroundImage.image = image
+            }
+        }
         return cell
     }
     

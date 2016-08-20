@@ -47,9 +47,12 @@ class MainModel : NSObject, NSURLConnectionDelegate{
             scavengerHuntAvailable = true
         }
         
+        //TODO: This crashes when data is null... needs to be updated to save what I can
+        
         //Save Data as Defaults
         //NSLog(String(jsonData))
-        NSLog("Data saved to NSUserDefaults")
+        
+        //NSLog("Data saved to NSUserDefaults")
         //prefs.setObject(jsonData, forKey: key)
         //prefs.synchronize()
     }
