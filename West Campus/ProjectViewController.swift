@@ -27,11 +27,23 @@ class ProjectViewController: MyViewController {
     
     override func viewDidLoad() {
         linkLabel.userInteractionEnabled = true
-        collegeWebsite.userInteractionEnabled = true
         let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.historyTapped))
         linkLabel.addGestureRecognizer(tapGesture)
+        actionLabel.text = project.theNamesake
+        linkLabel.text = "History of " + project.namesakeName + " >"
+        
+        if project.collegeWebsite != ""{
+            
+        collegeWebsite.userInteractionEnabled = true
         let tapGesture2 : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(self.websiteTapped))
         collegeWebsite.addGestureRecognizer(tapGesture2)
+        collegeWebsite.text = project.title + " Website >"
+        }
+        else{
+            collegeWebsite.userInteractionEnabled = false
+            collegeWebsite.text = "Website Currently Unavailable"
+            collegeWebsite.alpha = 0.4
+        }
         
         super.viewDidLoad()
         projTitle.text = project.title.capitalizedString
@@ -43,11 +55,6 @@ class ProjectViewController: MyViewController {
         vc.view.frame = CGRectMake(0, 0, mapContainer.frame.size.width, mapContainer.frame.size.height)
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
-        
-        linkLabel.text = "Learn More"
-        actionLabel.text = project.theNamesake
-        linkLabel.text = "History of " + project.namesakeName + " >"
-        collegeWebsite.text = project.title + " Website >"
         
         //Edit the code below to display a custom image for each project
         projImage.image = ImageUtil.imageFromURL(project.imageLink)
