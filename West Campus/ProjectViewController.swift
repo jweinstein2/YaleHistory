@@ -58,8 +58,7 @@ class ProjectViewController: MyViewController {
         
         //Edit the code below to display a custom image for each project
         projImage.image = ImageUtil.imageFromURL(project.imageLink)
-        
-        
+ 
 }
 
     @IBAction func historyTapped() {
