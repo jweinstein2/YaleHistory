@@ -34,6 +34,7 @@ class ViewController: MyViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNearbyProject(_:)), name: GlobalNotificationKeys.onNearbyProject, object: nil)
          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocationPermissionsChanged(_:)), name: GlobalNotificationKeys.locationPermissionStatusChange, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onNoData(_:)), name: GlobalNotificationKeys.noData, object: nil)
     }
 
     @IBAction func scavengerHuntButtonPressed(sender: AnyObject) {
@@ -81,6 +82,15 @@ class ViewController: MyViewController {
             guidedTourImage.alpha = 0.4
         }
         updateBottomNotification(MainModel.projects.nearestProject)
+    }
+    
+    func onNoData(notification: NSNotification) {
+        let title = "College data could not be accessed"
+        let text = "Please check your network settings and try again later."
+        let buttonText = ""
+        let instantiateProjectVC = { }
+        setNotification(title, text: text, buttonText: buttonText, action: instantiateProjectVC)
+        return
     }
     
     func onNearbyProject(notification: NSNotification){

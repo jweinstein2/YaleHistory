@@ -16,4 +16,5 @@ struct GlobalNotificationKeys {
     static let locationUpdate = "on_loc_update"
     static let onNearbyProject = "on_nearby_project"
     static let locationPermissionStatusChange = "on_loc_permission_changed"
+    static let noData = "no_location_data"
 }

@@ -11,6 +11,8 @@
 		451F68161C10DC6E008CB714 /* SHWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */; };
 		45901F1E1BF3F1B0003FB793 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45901F1D1BF3F1B0003FB793 /* CoreLocation.framework */; };
 		45A7ED481C0E3032007BD402 /* ArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */; };
+		8902B23B1D6E1A11002EBEB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B23A1D6E1A11002EBEB8 /* HeaderView.swift */; };
+		8902B23D1D6E1AE7002EBEB8 /* HeaderXIBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B23C1D6E1AE7002EBEB8 /* HeaderXIBView.xib */; };
 		890503471C05355600420D6F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890503461C05355600420D6F /* ProjectTableViewCell.swift */; };
 		892B372F1BE9B1FB00E1174C /* YaleNew-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71C1BE9A895005D2B2A /* YaleNew-Bold.otf */; };
 		892B37301BE9B1FB00E1174C /* YaleNew-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 894CA71D1BE9A895005D2B2A /* YaleNew-BoldItalic.otf */; };
@@ -69,6 +71,8 @@
 		45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalViewController.swift; sourceTree = "<group>"; };
 		5F792180E798887E2B7C5DB6 /* Pods_West_Campus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_West_Campus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88758A95F6D5243903318E63 /* Pods-West Campus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-West Campus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-West Campus/Pods-West Campus.debug.xcconfig"; sourceTree = "<group>"; };
+		8902B23A1D6E1A11002EBEB8 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8902B23C1D6E1AE7002EBEB8 /* HeaderXIBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderXIBView.xib; sourceTree = "<group>"; };
 		890503461C05355600420D6F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		892B37351BE9B9C600E1174C /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectListViewController.swift; path = ../ProjectListViewController.swift; sourceTree = "<group>"; };
 		892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				890503461C05355600420D6F /* ProjectTableViewCell.swift */,
 				894CA6EA1BE99FBE005D2B2A /* LaunchScreen.storyboard */,
 				894CA6E21BE99FBE005D2B2A /* Main.storyboard */,
+				8902B23A1D6E1A11002EBEB8 /* HeaderView.swift */,
+				8902B23C1D6E1AE7002EBEB8 /* HeaderXIBView.xib */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				894CA6EC1BE99FBE005D2B2A /* LaunchScreen.storyboard in Resources */,
 				894CA6E91BE99FBE005D2B2A /* Assets.xcassets in Resources */,
 				896A5A911BEEC63A00780F79 /* Screen Shot 2015-11-06 at 5.58.30 PM.png in Resources */,
+				8902B23D1D6E1AE7002EBEB8 /* HeaderXIBView.xib in Resources */,
 				894CA6E41BE99FBE005D2B2A /* Main.storyboard in Resources */,
 				896A5A951BEECB2E00780F79 /* Yale Y small.png in Resources */,
 			);
@@ -489,6 +496,7 @@
 				892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */,
 				89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */,
 				898136051BEEDD2800ACD35C /* Project.swift in Sources */,
+				8902B23B1D6E1A11002EBEB8 /* HeaderView.swift in Sources */,
 				898E8C401D3B585300D4CB1B /* ImageUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

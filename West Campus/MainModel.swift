@@ -31,6 +31,8 @@ class MainModel : NSObject, NSURLConnectionDelegate{
             
         }else{
             NSLog("No Data found. Unable to continue.")
+            NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.noData, object: nil)
+            
             //No data is found. Need to alert the user that the app is unusable until we connect to data
             
             _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(MainModel.startConnection), userInfo: nil, repeats: false)
@@ -48,13 +50,14 @@ class MainModel : NSObject, NSURLConnectionDelegate{
         }
         
         //TODO: This crashes when data is null... needs to be updated to save what I can
+        //Currently we force all database columsn to never be null. Not ideal.
         
         //Save Data as Defaults
         //NSLog(String(jsonData))
         
-        //NSLog("Data saved to NSUserDefaults")
-        //prefs.setObject(jsonData, forKey: key)
-        //prefs.synchronize()
+        NSLog("Data saved to NSUserDefaults")
+        prefs.setObject(jsonData, forKey: key)
+        prefs.synchronize()
     }
     
     //MARK: Json Connection Methods

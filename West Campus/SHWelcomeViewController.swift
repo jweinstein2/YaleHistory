@@ -102,12 +102,13 @@ extension SHWelcomeViewController : ScavengerHuntDelegate {
         updateTimeEstimate()
     }
     
+    func onDirectionsFailed() {
+        
+    }
+    
     private func updateTimeEstimate(){
-        let timeString = currentHunt.timeEstimate?.toString()
-        if timeString == nil {
-            timeEstimateLabel.text = "Estimated Time: calculating..."
-            return
-        }
-        timeEstimateLabel.text = "Estimated Time: \(timeString!)"
+        
+        let timeString = currentHunt.timeEstimateString
+        timeEstimateLabel.text = "Estimated Time: \(timeString)"
     }
 }

@@ -25,10 +25,15 @@ class ScavengerHunt: NSObject {
         didSet{
             NSLog("DID SET TIME ESTIMATE")
             if timeEstimate != nil {
+                timeEstimateString = timeEstimate!.toString()
                 delegate?.onTimeEstimateChanged?(timeEstimate!)
+            } else {
+                timeEstimateString = "not available"
+                delegate?.onTimeEstimateChanged?(-1)
             }
         }
     }
+    var timeEstimateString = "loading..."
     
     var currentProject : Project {
         return projects[progress]
@@ -56,6 +61,14 @@ class ScavengerHunt: NSObject {
         NSLog("CALCULATED DIRECTIONS")
         
         var localTimeEstimate : NSTimeInterval = 0
+        
+        if projects.count == 0 {
+            NSLog("Scavenger Hunt is empty")
+            self.delegate?.onDirectionsFailed?()
+            NSLog("Error loading directions because scavenger hunt was empty")
+            timeEstimate = nil
+            return
+        }
         
         for it in 1...projects.count {
         
