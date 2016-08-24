@@ -41,6 +41,7 @@ class ScavengerHuntViewController: MyViewController {
     @IBOutlet weak var nextLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var previousLabel: UILabel!
+    @IBOutlet weak var backHeader: HeaderView!
 
     @IBAction func segmentedValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -81,6 +82,12 @@ class ScavengerHuntViewController: MyViewController {
         
         //Subscribe to location update notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
+        
+        backHeader.backActions = {
+            if (self.scavengerHunt.progress == -1){
+                MainModel.hunt = nil
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -121,14 +128,6 @@ class ScavengerHuntViewController: MyViewController {
             foundIt.alpha = 0.4
             scavengerHunt.transition = false
         }
-    }
-    
-    @IBAction func buttonPressed(sender: AnyObject) {
-        if (scavengerHunt.progress == -1){
-            MainModel.hunt = nil
-        }
-        
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func foundButtonPressed(sender: AnyObject) {

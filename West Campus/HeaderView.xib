@@ -9,35 +9,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="headerView" id="iN0-l3-epB" customClass="HeaderXIBView" customModule="Yale_History" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="HeaderView" id="iN0-l3-epB" customClass="HeaderXIBView" customModule="Yale_History" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="544" height="57"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="qxQ-hg-5l1">
                     <rect key="frame" x="0.0" y="0.0" width="536" height="57"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER LABEL" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bOz-rc-MjA">
+                    <rect key="frame" x="70" y="14" width="144" height="29.5"/>
+                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="21"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecl-zI-FTk">
-                    <rect key="frame" x="5" y="5" width="47" height="47"/>
+                    <rect key="frame" x="15" y="5" width="47" height="47"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ecl-zI-FTk" secondAttribute="height" multiplier="1:1" id="W9P-uB-UcO"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                     <state key="normal" backgroundImage="back_light"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bOz-rc-MjA">
-                    <rect key="frame" x="60" y="14" width="144" height="29.5"/>
-                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="21"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ecl-zI-FTk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="1id-9t-4Rv"/>
+                <constraint firstItem="Ecl-zI-FTk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="1id-9t-4Rv"/>
                 <constraint firstItem="Ecl-zI-FTk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8Gm-Ml-whR"/>
                 <constraint firstItem="qxQ-hg-5l1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GKr-bf-r7F"/>
                 <constraint firstItem="bOz-rc-MjA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qxQ-hg-5l1" secondAttribute="top" constant="5" id="HIm-d5-TY1"/>
                 <constraint firstAttribute="trailing" secondItem="qxQ-hg-5l1" secondAttribute="trailing" constant="8" id="Hfc-V6-0jC"/>
+                <constraint firstItem="bOz-rc-MjA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="999" constant="10" id="RGm-oe-38w"/>
                 <constraint firstAttribute="bottom" secondItem="Ecl-zI-FTk" secondAttribute="bottom" constant="5" id="cDW-Oy-Vn0"/>
                 <constraint firstItem="bOz-rc-MjA" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="qxQ-hg-5l1" secondAttribute="trailing" multiplier="12:13" constant="-5" id="eOz-0l-wK6"/>
                 <constraint firstItem="bOz-rc-MjA" firstAttribute="leading" secondItem="Ecl-zI-FTk" secondAttribute="trailing" constant="8" id="iBC-GF-x8x"/>
@@ -48,6 +49,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backButton" destination="Ecl-zI-FTk" id="QZY-SE-fd6"/>
+                <outlet property="leadingSpaceConstraint" destination="1id-9t-4Rv" id="cSa-sf-YrT"/>
                 <outlet property="titleLabel" destination="bOz-rc-MjA" id="TAj-ed-yce"/>
             </connections>
             <point key="canvasLocation" x="80" y="344.5"/>

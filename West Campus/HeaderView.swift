@@ -13,18 +13,26 @@ import UIKit
 public class HeaderView : UIView {
     @IBInspectable public var title: String = "Yale History" {
         didSet {
-            self.view.titleLabel.text = title
+            self.view.titleLabel.text = title.uppercaseString
         }
     }
     @IBInspectable public var shouldDisplayBackButton: Bool = true {
         didSet {
-            self.view.backButton.hidden = true
+            if shouldDisplayBackButton == true {
+                
+            } else {
+                self.view.backButton.hidden = true
+                //TODO change this from being hardcoded
+                self.view.leadingSpaceConstraint.constant = -30
+                self.layoutIfNeeded()
+            }
         }
     }
     
-    //private var textFieldDelegate : UITextFieldDelegate!
+    //private var textFieldDelegate : UITextFieldDelegate
     private var view: HeaderXIBView!
     private let nibName: String = "HeaderView"
+    var backActions : () -> () = {}
     
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -51,6 +59,8 @@ public class HeaderView : UIView {
     
     private func xibSetup() {
         view = loadViewFromNib()
+        //Configure view properties
+        view.backButton.addTarget(self, action: #selector(HeaderView.btnClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         // use bounds not frame or it'll be offset
         view.frame = bounds
@@ -68,9 +78,17 @@ public class HeaderView : UIView {
         view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         return view
     }
+    
+    @objc func btnClick(sender: UIButton) {
+        //Pop the viewController if possible
+        backActions()
+        self.getParentViewController()?.navigationController?.popViewControllerAnimated(true)
+    }
 }
 
 class HeaderXIBView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var leadingSpaceConstraint: NSLayoutConstraint!
 }

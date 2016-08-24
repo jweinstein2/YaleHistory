@@ -23,10 +23,6 @@ class AboutThisAppViewController: MyViewController {
     
     }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     @IBAction func learnMorePressed(sender: UIButton) {
         let url = NSURL(string: "http://www.yale.edu/about-yale/traditions-history/illuminating-yales-history")!
         UIApplication.sharedApplication().openURL(url)

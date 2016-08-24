@@ -34,11 +34,6 @@ class ProjectListViewController: MyViewController {
         }
     }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

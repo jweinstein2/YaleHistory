@@ -54,10 +54,6 @@ class SHWelcomeViewController: MyViewController {
         updateTimeEstimate()
     }
     
-    @IBAction func backButtonPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     @IBAction func nextbuttonPressed(sender: AnyObject) {
         if (currentHunt.projects.count == 0) { //if they selected no projects, send error
             //announcement.text = "Sorry, please select at least one tag to move forward"

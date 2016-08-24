@@ -60,3 +60,16 @@ extension UIButton {
     }
 }
 
+extension UIResponder {
+    func getParentViewController() -> UIViewController? {
+        if self.nextResponder() is UIViewController {
+            return self.nextResponder() as? UIViewController
+        } else {
+            if self.nextResponder() != nil {
+                return (self.nextResponder()!).getParentViewController()
+            }
+            else {return nil}
+        }
+    }
+}
+

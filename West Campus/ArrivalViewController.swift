@@ -11,7 +11,7 @@ import UIKit
 class ArrivalViewController: UIViewController {
     let scavengerHunt = MainModel.hunt!
     
-    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var header: HeaderView!
     @IBOutlet weak var announcement: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
@@ -27,15 +27,9 @@ class ArrivalViewController: UIViewController {
         announcement.text = "You have reached " + currProj.title
         //projectTitle.text = currProj.title
         summaryLabel.text = currProj.theBuilding
-    }
-    
-    
-    @IBAction func buttonPressed(sender: AnyObject) {
         
-        scavengerHunt.transition = true
-        self.navigationController?.popViewControllerAnimated(true)
+        header.backActions = { self.scavengerHunt.transition = true }
     }
-
 
     @IBAction func moreInfoPressed(sender: AnyObject) {     //go to projectViewController
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("projectViewController") as! ProjectViewController
