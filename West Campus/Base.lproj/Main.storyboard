@@ -1381,7 +1381,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-tg-XBI">
                                 <rect key="frame" x="5" y="302" width="590" height="598"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fun-E3-scl">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fun-E3-scl">
                                         <rect key="frame" x="-10" y="-20" width="610" height="565"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-j0-AEN">
@@ -1508,7 +1508,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="611" id="6Th-G9-PpH"/>
-                                            <constraint firstAttribute="bottom" secondItem="Fim-j0-AEN" secondAttribute="bottom" constant="20" id="FUo-Zz-a8G"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fim-j0-AEN" secondAttribute="bottom" constant="10" id="FUo-Zz-a8G"/>
                                             <constraint firstAttribute="width" constant="610" id="M1l-RC-aVK"/>
                                             <constraint firstAttribute="trailing" secondItem="Fim-j0-AEN" secondAttribute="trailing" id="UcC-8S-hdX"/>
                                             <constraint firstItem="Fim-j0-AEN" firstAttribute="top" secondItem="fun-E3-scl" secondAttribute="top" constant="20" id="ZcL-0N-kft"/>
