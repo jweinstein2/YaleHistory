@@ -65,6 +65,7 @@ class ScavengerHuntViewController: MyViewController {
         projectList = scavengerHunt.projects
         currProj = scavengerHunt.currentProject
         Header.text = "You are walking to"
+        
         calculateDirections()
         displaySetup()
         
@@ -81,7 +82,7 @@ class ScavengerHuntViewController: MyViewController {
         }
         
         //Subscribe to location update notification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
+        /*NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)*/
         
         backHeader.backActions = {
             if (self.scavengerHunt.progress == -1){
@@ -91,6 +92,10 @@ class ScavengerHuntViewController: MyViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        //subscribe to location update notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)
+        
         if (scavengerHunt.transition == true && (scavengerHunt.progress + 1) < scavengerHunt.projects.count){
 
             scavengerHunt.progress += 1
@@ -163,6 +168,7 @@ class ScavengerHuntViewController: MyViewController {
         if (distance < Double(currProj.radius)){
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("arrivalViewController") as! ArrivalViewController
             self.navigationController?.pushViewController(vc, animated: true)
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: GlobalNotificationKeys.locationUpdate, object: nil)
         }
     }
     
