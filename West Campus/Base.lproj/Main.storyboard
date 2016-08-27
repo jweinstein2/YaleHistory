@@ -537,11 +537,11 @@
                                 <exclude reference="8vY-Tf-eog"/>
                                 <exclude reference="HNZ-iY-tif"/>
                                 <exclude reference="Omc-Jz-J4Q"/>
-                                <exclude reference="mmj-Fi-oyp"/>
-                                <exclude reference="8KR-g4-TaK"/>
                                 <exclude reference="Aby-Tc-ZgE"/>
                                 <exclude reference="rhM-NW-3nX"/>
                                 <exclude reference="sdj-zv-Yxp"/>
+                                <exclude reference="mmj-Fi-oyp"/>
+                                <exclude reference="8KR-g4-TaK"/>
                                 <exclude reference="4Yw-fY-hGX"/>
                                 <exclude reference="Fvd-0j-Eo2"/>
                                 <exclude reference="LqI-xg-euv"/>
@@ -1349,40 +1349,17 @@
                                     <action selector="buttonPressed:" destination="N6y-cl-AXs" eventType="touchUpInside" id="xbH-OQ-loi"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-f0-ERj">
-                                <rect key="frame" x="173" y="106" width="254" height="51"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N0P-VU-lbX">
-                                    <rect key="frame" x="0.0" y="0.0" width="254" height="51"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="HIe-WQ-vJt">
-                                            <rect key="frame" x="5" y="5" width="244" height="41"/>
-                                            <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="34"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="HIe-WQ-vJt" firstAttribute="leading" secondItem="N0P-VU-lbX" secondAttribute="leading" constant="5" id="2sA-Xd-WW4"/>
-                                        <constraint firstAttribute="bottom" secondItem="HIe-WQ-vJt" secondAttribute="bottom" constant="5" id="O52-lF-YTk"/>
-                                        <constraint firstItem="HIe-WQ-vJt" firstAttribute="centerX" secondItem="N0P-VU-lbX" secondAttribute="centerX" id="PSM-2v-5ug"/>
-                                        <constraint firstAttribute="trailing" secondItem="HIe-WQ-vJt" secondAttribute="trailing" constant="5" id="Zjj-oS-Crn"/>
-                                        <constraint firstItem="HIe-WQ-vJt" firstAttribute="top" secondItem="N0P-VU-lbX" secondAttribute="top" constant="5" id="aUn-hn-zDG"/>
-                                        <constraint firstItem="HIe-WQ-vJt" firstAttribute="centerY" secondItem="N0P-VU-lbX" secondAttribute="centerY" id="nOX-Ig-DPV"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="nOX-Ig-DPV"/>
-                                        </mask>
-                                    </variation>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HIe-WQ-vJt">
+                                <rect key="frame" x="178" y="110" width="244" height="41"/>
+                                <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-tg-XBI">
                                 <rect key="frame" x="5" y="302" width="590" height="598"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fun-E3-scl">
-                                        <rect key="frame" x="-10" y="-20" width="610" height="565"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fun-E3-scl">
+                                        <rect key="frame" x="-10" y="-20" width="610" height="555"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-j0-AEN">
                                                 <rect key="frame" x="10" y="20" width="600" height="525"/>
@@ -1529,8 +1506,8 @@
                                     <constraint firstItem="fun-E3-scl" firstAttribute="top" secondItem="sXa-tg-XBI" secondAttribute="top" constant="-20" id="qqe-nh-dmX"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="College Website &gt;" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WdR-AR-mfv">
-                                <rect key="frame" x="234" y="270" width="132" height="22"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College Website &gt;" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WdR-AR-mfv">
+                                <rect key="frame" x="233.5" y="270" width="133.5" height="22"/>
                                 <fontDescription key="fontDescription" name="YaleNew-Bold" family="YaleNew" pointSize="18"/>
                                 <color key="textColor" red="0.67450980392156867" green="0.7803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1545,15 +1522,18 @@
                             <constraint firstItem="RmW-JL-kXz" firstAttribute="top" secondItem="PZY-hi-OMT" secondAttribute="bottom" id="BRV-ek-QKD"/>
                             <constraint firstItem="JAF-Ob-B4b" firstAttribute="leading" secondItem="i3r-fT-IQy" secondAttribute="leadingMargin" id="GY3-9o-sjy"/>
                             <constraint firstItem="WdR-AR-mfv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JAF-Ob-B4b" secondAttribute="trailing" constant="10" id="Hyn-lF-Gbv"/>
-                            <constraint firstItem="HIe-WQ-vJt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i3r-fT-IQy" secondAttribute="leadingMargin" constant="10" id="NXV-Ys-Fmq"/>
+                            <constraint firstItem="HIe-WQ-vJt" firstAttribute="centerX" secondItem="PZY-hi-OMT" secondAttribute="centerX" id="Jhu-hc-AJi"/>
+                            <constraint firstItem="HIe-WQ-vJt" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="PZY-hi-OMT" secondAttribute="trailing" constant="-30" id="LsD-1F-uAx"/>
                             <constraint firstItem="RmW-JL-kXz" firstAttribute="centerX" secondItem="i3r-fT-IQy" secondAttribute="centerX" id="Pm1-d2-TbZ"/>
                             <constraint firstItem="sXa-tg-XBI" firstAttribute="top" secondItem="PZY-hi-OMT" secondAttribute="bottom" constant="40" id="TiO-Ar-a6c"/>
                             <constraint firstItem="Fim-j0-AEN" firstAttribute="width" secondItem="i3r-fT-IQy" secondAttribute="width" id="X3k-5p-FZz"/>
+                            <constraint firstItem="HIe-WQ-vJt" firstAttribute="centerY" secondItem="PZY-hi-OMT" secondAttribute="centerY" id="YVE-LW-ZQb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sXa-tg-XBI" secondAttribute="trailing" constant="-15" id="Z0Q-vf-7ec"/>
                             <constraint firstItem="WdR-AR-mfv" firstAttribute="centerY" secondItem="JAF-Ob-B4b" secondAttribute="centerY" id="Z8C-YI-Fvx"/>
                             <constraint firstItem="piK-5b-xZ2" firstAttribute="width" secondItem="i3r-fT-IQy" secondAttribute="width" id="ZWg-wt-do8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="sXa-tg-XBI" secondAttribute="leading" constant="15" id="axw-M0-wPJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PZY-hi-OMT" secondAttribute="trailing" constant="-20" id="bI1-wH-fNm"/>
+                            <constraint firstItem="HIe-WQ-vJt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PZY-hi-OMT" secondAttribute="top" constant="20" id="cle-GX-f5X"/>
                             <constraint firstItem="WdR-AR-mfv" firstAttribute="centerX" secondItem="i3r-fT-IQy" secondAttribute="centerX" id="f1c-EX-pPh"/>
                             <constraint firstItem="sXa-tg-XBI" firstAttribute="top" secondItem="piK-5b-xZ2" secondAttribute="bottom" id="gyX-1m-vJa"/>
                             <constraint firstItem="wwF-59-gZ6" firstAttribute="width" secondItem="PZY-hi-OMT" secondAttribute="width" id="gzH-PN-MQe"/>
@@ -1563,9 +1543,6 @@
                             <constraint firstItem="wwF-59-gZ6" firstAttribute="centerX" secondItem="PZY-hi-OMT" secondAttribute="centerX" id="lxO-vZ-hrh"/>
                             <constraint firstItem="faM-Bu-2W4" firstAttribute="top" secondItem="sXa-tg-XBI" secondAttribute="bottom" id="tbI-VS-oWG"/>
                             <constraint firstItem="piK-5b-xZ2" firstAttribute="centerX" secondItem="i3r-fT-IQy" secondAttribute="centerX" id="uxl-uZ-P7y"/>
-                            <constraint firstItem="bsa-f0-ERj" firstAttribute="centerX" secondItem="PZY-hi-OMT" secondAttribute="centerX" id="voX-4n-Leu"/>
-                            <constraint firstItem="bsa-f0-ERj" firstAttribute="centerY" secondItem="PZY-hi-OMT" secondAttribute="centerY" id="yCZ-Wi-APN"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="HIe-WQ-vJt" secondAttribute="trailing" constant="10" id="zn1-Qs-PDK"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
