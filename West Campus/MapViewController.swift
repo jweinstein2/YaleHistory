@@ -41,7 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             initialLocation = displayData[0].projects[0].location.coordinate
         }
         else {
-            initialLocation = CLLocationCoordinate2D(latitude: 41.310011,longitude: -72.927863)
+            initialLocation = CLLocationCoordinate2D(latitude: 41.312,longitude: -72.927863)
         }
         map.setCenterCoordinate(initialLocation!, animated: true)
         let regionRadius: CLLocationDistance = 1000
