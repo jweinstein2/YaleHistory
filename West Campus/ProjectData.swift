@@ -47,15 +47,15 @@ class ProjectData: NSObject {
                 let gpsLongitude = Double(jsonElement.objectForKey("gps_longitude")as? String ?? "0.0")
                 let theBuilding = jsonElement.objectForKey("building") as? String ?? "Information Not Available"
                 let theNamesake = jsonElement.objectForKey("namesake") as? String ?? "Information Not Available"
-                let radius = jsonElement.objectForKey("radius") as? Int ?? 12
+                let radius = Int(jsonElement.objectForKey("radius") as? String ?? "25")
                 let namesakeName = jsonElement.objectForKey("namesake_name") as? String ?? "N/A"
                 let collegeWebsite = jsonElement.objectForKey("link_additional") as? String ?? ""
                 
-                let currentProject = Project.init(projectId: id!, alphabetical: alphabetical!, title: title, link: link, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
+                let currentProject = Project.init(projectId: id!, alphabetical: alphabetical!, title: title, link: link, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, theBuilding: theBuilding, theNamesake: theNamesake, imageLink: imageLink, radius: radius!, namesakeName: namesakeName, collegeWebsite: collegeWebsite)
                 projectData.append(currentProject)
             }
         }
-        projectData.sortInPlace { $0.projectId < $1.projectId}
+        projectData.sortInPlace { $0.projectId < $1.projectId }
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)

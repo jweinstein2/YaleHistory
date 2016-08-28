@@ -22,4 +22,6 @@ struct GlobalNotificationKeys {
 
 struct ThemeColors {
     static let lightMapBlue = UIColor(red: (87/255), green: (213/255), blue: (255/255), alpha: 1)
+    static let lightBlue = UIColor(red: (186/255), green: (232/255), blue: (255/255), alpha: 1)
+    static let darkBlue = UIColor(red: (0/255), green: (53/255), blue: (107/255), alpha: 1)
 }

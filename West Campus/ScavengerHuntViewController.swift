@@ -13,7 +13,6 @@ import CoreLocation
 
 class ScavengerHuntViewController: MyViewController {
     let scavengerHunt = MainModel.hunt!
-    var storyboardtwo : UIStoryboard!
     var vc : MapViewController!
     var mapShown = false
     var currProj: Project!
@@ -83,12 +82,6 @@ class ScavengerHuntViewController: MyViewController {
         
         //Subscribe to location update notification
         /*NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onLocUpdate(_:)), name: GlobalNotificationKeys.locationUpdate, object: nil)*/
-        
-        backHeader.backActions = {
-            if (self.scavengerHunt.progress == -1){
-                MainModel.hunt = nil
-            }
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -122,15 +115,11 @@ class ScavengerHuntViewController: MyViewController {
         }
             
         else if (scavengerHunt.transition == true) {
-            progressBar.setProgress(1.0, animated: false)
-            scavengerHunt.progress = -1
-            
-            Header.text = "Congratulations!"
-            projectTitle.text = "You've finished the tour!"
-            distanceLabel.text = "Click the back arrow to return to the Main Menu"
-            foundIt.userInteractionEnabled = false
-            nextLabel.alpha = 0.4
-            foundIt.alpha = 0.4
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("sHFinishViewController")
+            var vcs = self.navigationController?.viewControllers
+            vcs?.removeLast()
+            vcs?.append(vc)
+            self.navigationController?.viewControllers = vcs!
             scavengerHunt.transition = false
         }
     }
@@ -203,8 +192,8 @@ class ScavengerHuntViewController: MyViewController {
         projectTitle.text = currProj.title
         
         if currentRoute != nil{
-        storyboardtwo = UIStoryboard(name: "Main", bundle: nil)
-        vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        vc = sb.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         var notDestination = scavengerHunt.projects
         notDestination.removeAtIndex(scavengerHunt.progress)
         vc.displayData = [(ThemeColors.lightMapBlue, notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]

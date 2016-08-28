@@ -17,13 +17,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="536" height="57"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER LABEL" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bOz-rc-MjA">
-                    <rect key="frame" x="70" y="14" width="144" height="29.5"/>
+                    <rect key="frame" x="75" y="14" width="144" height="29.5"/>
                     <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="21"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecl-zI-FTk">
-                    <rect key="frame" x="15" y="5" width="47" height="47"/>
+                    <rect key="frame" x="20" y="5" width="47" height="47"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ecl-zI-FTk" secondAttribute="height" multiplier="1:1" id="W9P-uB-UcO"/>
                     </constraints>
@@ -33,7 +33,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ecl-zI-FTk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="1id-9t-4Rv"/>
+                <constraint firstItem="Ecl-zI-FTk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1id-9t-4Rv"/>
                 <constraint firstItem="Ecl-zI-FTk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8Gm-Ml-whR"/>
                 <constraint firstItem="qxQ-hg-5l1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GKr-bf-r7F"/>
                 <constraint firstItem="bOz-rc-MjA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qxQ-hg-5l1" secondAttribute="top" constant="5" id="HIm-d5-TY1"/>

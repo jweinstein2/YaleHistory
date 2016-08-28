@@ -43,6 +43,7 @@
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
 		89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */; };
 		89CFE16C1D72864C00BD1ED3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFE16B1D72864C00BD1ED3 /* Utility.swift */; };
+		89CFE16E1D735BCD00BD1ED3 /* SHFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFE16D1D735BCD00BD1ED3 /* SHFinishViewController.swift */; };
 		A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */; };
 		ADD597FFD49EB8FC49D9652C /* Pods_West_Campus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F792180E798887E2B7C5DB6 /* Pods_West_Campus.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		89CFE16B1D72864C00BD1ED3 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		89CFE16D1D735BCD00BD1ED3 /* SHFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHFinishViewController.swift; sourceTree = "<group>"; };
 		A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,19 +266,28 @@
 		89C08DA11BF1446C00B91EC0 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				89CFE16F1D735BD600BD1ED3 /* Scavenger Hunt */,
 				893AA7851BF65BDE00B451A0 /* MapViewController.swift */,
 				89958D1E1D33211E009E020F /* MapPointAnnotation.swift */,
 				89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */,
 				89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */,
-				894CA6E01BE99FBE005D2B2A /* HomeViewController.swift */,
 				45A7ED471C0E3032007BD402 /* ArrivalViewController.swift */,
-				451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */,
 				892B37351BE9B9C600E1174C /* ProjectListViewController.swift */,
-				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
 				896A5A961BEED24900780F79 /* AboutViewController.swift */,
 				A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */,
 			);
 			name = VCs;
+			sourceTree = "<group>";
+		};
+		89CFE16F1D735BD600BD1ED3 /* Scavenger Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				894CA6E01BE99FBE005D2B2A /* HomeViewController.swift */,
+				89CFE16D1D735BCD00BD1ED3 /* SHFinishViewController.swift */,
+				892B37371BE9B9FC00E1174C /* ScavengerHuntViewController.swift */,
+				451F68151C10DC6E008CB714 /* SHWelcomeViewController.swift */,
+			);
+			name = "Scavenger Hunt";
 			sourceTree = "<group>";
 		};
 		ED57A77A08BF92EAC50B2382 /* Frameworks */ = {
@@ -487,6 +498,7 @@
 				894CA6E11BE99FBE005D2B2A /* HomeViewController.swift in Sources */,
 				894CA6DF1BE99FBE005D2B2A /* AppDelegate.swift in Sources */,
 				89958D211D332A58009E020F /* GlobalKeys.swift in Sources */,
+				89CFE16E1D735BCD00BD1ED3 /* SHFinishViewController.swift in Sources */,
 				89C04CB61D41DFB300D34A29 /* Extensions.swift in Sources */,
 				893AA7861BF65BDE00B451A0 /* MapViewController.swift in Sources */,
 				A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */,

@@ -81,8 +81,6 @@ class LocationUtil : NSObject, CLLocationManagerDelegate {
         case .Denied:
             // If user denied your app access to Location Services, but can grant access from Settings.app
             break
-        default:
-            break
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName(GlobalNotificationKeys.locationPermissionStatusChange, object: nil)

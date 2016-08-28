@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArrivalViewController: UIViewController {
+class ArrivalViewController: MyViewController {
     let scavengerHunt = MainModel.hunt!
     
     @IBOutlet weak var header: HeaderView!
