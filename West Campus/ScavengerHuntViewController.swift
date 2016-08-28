@@ -183,6 +183,9 @@ class ScavengerHuntViewController: MyViewController {
                 
             } else if error != nil {
                 self.currentRoute = nil
+                self.mapShown = false
+                self.map.hidden = true
+                self.table.hidden = false
             }
         })
 
@@ -191,20 +194,24 @@ class ScavengerHuntViewController: MyViewController {
     func displaySetup(){
         projectTitle.text = currProj.title
         
-        if currentRoute != nil{
+
         let sb = UIStoryboard(name: "Main", bundle: nil)
         vc = sb.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         var notDestination = scavengerHunt.projects
         notDestination.removeAtIndex(scavengerHunt.progress)
         vc.displayData = [(ThemeColors.lightMapBlue, notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
-        vc.route = currentRoute
+        if currentRoute != nil {
+            vc.route = currentRoute
+        }
+        else {
+            vc.route = nil
+        }
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)
         self.addChildViewController(vc)
         map.layoutIfNeeded()
         vc.view.frame = map.bounds
         self.table.reloadData()
-        }
         table.hidden = true
         map.hidden = false
         mapShown = true
