@@ -23,7 +23,7 @@ public class HeaderView : UIView {
             } else {
                 self.view.backButton.hidden = true
                 //TODO change this from being hardcoded
-                self.view.leadingSpaceConstraint.constant = -20
+                self.view.leadingSpaceConstraint.constant = -15
                 self.layoutIfNeeded()
             }
         }
