@@ -207,7 +207,7 @@ class ScavengerHuntViewController: MyViewController {
         vc = storyboardtwo.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
         var notDestination = scavengerHunt.projects
         notDestination.removeAtIndex(scavengerHunt.progress)
-        vc.displayData = [(UIColor.blueColor(), notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
+        vc.displayData = [(ThemeColors.lightMapBlue, notDestination),(UIColor.yellowColor(), [scavengerHunt.projects[scavengerHunt.progress]])]
         vc.route = currentRoute
         vc.shouldDisplayUsersLocation = true
         map.addSubview(vc.view)

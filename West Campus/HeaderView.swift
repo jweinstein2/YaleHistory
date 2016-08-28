@@ -76,6 +76,30 @@ public class HeaderView : UIView {
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! HeaderXIBView
         view.frame = bounds
         view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        //Hardcoded font sizes based on iPhone size 
+        var fontSize : CGFloat = 21.0
+        switch Utility.currentPhone() {
+        case .iPhone4:
+            fontSize = 16.0
+            //self.titleLabel.font =
+            break
+        case .iPhone5:
+            fontSize = 18.0
+            break
+        case .iPhone6:
+            fontSize = 21.0
+            break
+        case .iPhone6Plus:
+            fontSize = 24.0
+            break
+        case .unknown:
+            NSLog("Error: unknown phone size when caclulating header font size")
+        }
+        view.titleLabel.font = view.titleLabel.font.fontWithSize(fontSize)
+        //Set the font size of the label
+        
+        
         return view
     }
     

@@ -28,6 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.addOverlay()
         
         map.mapType = MKMapType.Hybrid
+        map.showsPointsOfInterest = false
 
         map.zoomEnabled = true
         map.scrollEnabled = true

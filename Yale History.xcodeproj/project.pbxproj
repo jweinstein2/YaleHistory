@@ -42,6 +42,7 @@
 		89C04CB61D41DFB300D34A29 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04CB51D41DFB300D34A29 /* Extensions.swift */; };
 		89C08DA01BF1444300B91EC0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */; };
 		89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */; };
+		89CFE16C1D72864C00BD1ED3 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFE16B1D72864C00BD1ED3 /* Utility.swift */; };
 		A35829231C0F3DA1007BEECE /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */; };
 		ADD597FFD49EB8FC49D9652C /* Pods_West_Campus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F792180E798887E2B7C5DB6 /* Pods_West_Campus.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,7 @@
 		89C04CB51D41DFB300D34A29 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		89C08D9F1BF1444300B91EC0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		89C08DA21BF14A2E00B91EC0 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		89CFE16B1D72864C00BD1ED3 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A35829221C0F3DA1007BEECE /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 				898E8C3F1D3B585300D4CB1B /* ImageUtil.swift */,
 				896141971D3BF608001B21A3 /* LocationUtil.swift */,
 				89C04CB51D41DFB300D34A29 /* Extensions.swift */,
+				89CFE16B1D72864C00BD1ED3 /* Utility.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				898136061BEEDD2800ACD35C /* ProjectData.swift in Sources */,
 				892B37361BE9B9C600E1174C /* ProjectListViewController.swift in Sources */,
 				89C08DA31BF14A2E00B91EC0 /* MyViewController.swift in Sources */,
+				89CFE16C1D72864C00BD1ED3 /* Utility.swift in Sources */,
 				898136051BEEDD2800ACD35C /* Project.swift in Sources */,
 				8902B23B1D6E1A11002EBEB8 /* HeaderView.swift in Sources */,
 				898E8C401D3B585300D4CB1B /* ImageUtil.swift in Sources */,

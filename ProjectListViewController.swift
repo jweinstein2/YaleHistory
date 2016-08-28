@@ -39,7 +39,7 @@ class ProjectListViewController: MyViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(vcIdentifiers.mapVC) as! MapViewController
-        vc.displayData = [(UIColor.blueColor(), projectList)]
+        vc.displayData = [(ThemeColors.lightMapBlue, projectList)]
         map.addSubview(vc.view)
         self.addChildViewController(vc)
         map.layoutIfNeeded()
