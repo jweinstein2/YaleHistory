@@ -36,6 +36,7 @@ class ScavengerHuntViewController: MyViewController {
     @IBOutlet weak var map: UIView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var huntProgress: UILabel!
+    @IBOutlet weak var mapDirectionToggle: UISegmentedControl!
     @IBOutlet weak var foundIt: UIButton!
     @IBOutlet weak var nextLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
@@ -183,9 +184,8 @@ class ScavengerHuntViewController: MyViewController {
                 
             } else if error != nil {
                 self.currentRoute = nil
-                self.mapShown = false
-                self.map.hidden = true
-                self.table.hidden = false
+                self.mapDirectionToggle.selectedSegmentIndex = 1
+                self.segmentedValueChanged(self.mapDirectionToggle)
             }
         })
 

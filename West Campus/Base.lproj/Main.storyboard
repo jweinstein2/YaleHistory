@@ -575,6 +575,7 @@
                         <outlet property="foundIt" destination="vpx-Nz-sS5" id="PMp-T9-dq2"/>
                         <outlet property="huntProgress" destination="D2b-jd-2kC" id="017-zb-awr"/>
                         <outlet property="map" destination="SeK-3P-PrB" id="Bzn-bO-nFx"/>
+                        <outlet property="mapDirectionToggle" destination="zXT-Cb-NVk" id="7ft-9J-FBB"/>
                         <outlet property="nextLabel" destination="YCO-vu-DI0" id="REx-at-7Rv"/>
                         <outlet property="previousButton" destination="yQH-JX-Z6V" id="JhT-Oj-dtC"/>
                         <outlet property="previousLabel" destination="gCS-7o-XWf" id="nyO-ye-NAG"/>
