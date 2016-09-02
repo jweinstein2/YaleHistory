@@ -157,7 +157,7 @@ class ScavengerHuntViewController: MyViewController {
     func onLocUpdate(notification: NSNotification){        
         //Take Action on Notification
         let userLoc = notification.object as! CLLocation
-        let distance = currProj.location.distanceFromLocation(userLoc)
+        let distance = currProj.location.distanceFromLocation(userLoc) - Double(currProj.radius)
         self.distanceLabel.text = "Distance: " + distance.toDistanceString()
         
         if (distance < Double(currProj.radius)){

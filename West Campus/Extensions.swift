@@ -12,6 +12,10 @@ import UIKit
 
 extension Double {
     func toDistanceString() -> String {
+        if self <= 0 {
+            return "0 meters"
+        }
+        
         if self <= 1000 {
             return String(format: "%.1f meters", self)
         } else {

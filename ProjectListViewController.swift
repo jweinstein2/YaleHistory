@@ -75,7 +75,8 @@ extension ProjectListViewController {
         let proj = projectList[indexPath.row]
         cell.titleLabel.text = proj.title
         cell.locationEnabled = self.locationEnabled
-        if let dist = proj.distanceToUser {
+        if var dist = proj.distanceToUser  {
+            dist = dist - Double(proj.radius)
             cell.distanceLabel.text = dist.toDistanceString()
         } else {
             cell.distanceLabel.text = ""
