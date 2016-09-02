@@ -56,9 +56,13 @@ class ProjectViewController: MyViewController {
         mapContainer.addSubview(vc.view)
         mapContainer.bringSubviewToFront(vc.view)
         
-        //Edit the code below to display a custom image for each project
-        projImage.image = ImageUtil.imageFromURL(project.imageLink)
- 
+        //Load image in background to prevent from halting the screen
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let image = ImageUtil.imageFromURL(self.project.imageLink)
+            dispatch_async(dispatch_get_main_queue()){
+                self.projImage.image = image
+            }
+        }
 }
 
     @IBAction func historyTapped() {

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class AboutThisAppViewController: MyViewController {
+class AboutThisAppViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
