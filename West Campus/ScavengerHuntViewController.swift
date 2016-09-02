@@ -69,6 +69,11 @@ class ScavengerHuntViewController: MyViewController {
         calculateDirections()
         displaySetup()
         
+        //show map, hide directions
+        table.hidden = true
+        map.hidden = false
+        mapShown = true
+        
         //hide previous button if necessary
         if scavengerHunt.progress == 0 {
             previousButton.userInteractionEnabled = false
@@ -184,8 +189,6 @@ class ScavengerHuntViewController: MyViewController {
                 
             } else if error != nil {
                 self.currentRoute = nil
-                self.mapDirectionToggle.selectedSegmentIndex = 1
-                self.segmentedValueChanged(self.mapDirectionToggle)
             }
         })
 
@@ -212,9 +215,6 @@ class ScavengerHuntViewController: MyViewController {
         map.layoutIfNeeded()
         vc.view.frame = map.bounds
         self.table.reloadData()
-        table.hidden = true
-        map.hidden = false
-        mapShown = true
         
         //update progress bar
         progressBar.setProgress(Float(scavengerHunt.progress)/Float(scavengerHunt.projects.count), animated: false)
